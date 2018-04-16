@@ -1,2 +1,1 @@
-# Estimulema
-Firmware and GUI for Estimulema 
+GUI_EstimulemaPyQt
