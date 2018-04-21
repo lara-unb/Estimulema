@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>881</width>
-    <height>584</height>
+    <width>736</width>
+    <height>631</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,11 +15,10 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normalon>imagenes/estimulema.png</normalon>
-   </iconset>
+    <normaloff>imagenes/ema (1)_001.png</normaloff>imagenes/ema (1)_001.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="GroupBox_CH1">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -30,8 +29,8 @@
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
-      <pointsize>15</pointsize>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
       <kerning>true</kerning>
      </font>
     </property>
@@ -45,50 +44,22 @@
      <bool>true</bool>
     </property>
     <property name="checked">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>10</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Extended</family>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="title">
-     <string>Channel 2</string>
-    </property>
-    <property name="flat">
      <bool>true</bool>
     </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
    </widget>
-   <widget class="QLabel" name="Freq_Lb_2">
+   <widget class="QLabel" name="Label_FrequencyValCH1">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>230</y>
+      <x>290</x>
+      <y>280</y>
       <width>51</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
@@ -97,15 +68,24 @@
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QSlider" name="TherapyTimeSlider">
+   <widget class="QSlider" name="Slider_TherapyCH1">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>110</y>
+      <y>80</y>
       <width>261</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
@@ -114,6 +94,678 @@
      <bool>false</bool>
     </property>
     <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TherapyCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Therapy Time</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_PulseWidthCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>330</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PulseWidthCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pulse Width</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_PulseWidthCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>330</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_FrequencyCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Frequency</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_FrequencyCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>270</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Btn_StartCH1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>490</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start CH1</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_PulseWidthCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>360</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_FrequencyCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_FrequencyCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>270</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TherapyValCH1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>60</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="RadioButton_RampCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>470</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ramp %</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_TherapyCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>50</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_TherapyCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_PulseWidthValCH1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>340</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_TOnCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>130</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_CurrentValCH1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>420</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TOnValCH1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>140</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_TOnCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>130</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_CurrentCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>410</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Current</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_CurrentCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>410</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_TOffCH1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>190</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TOffValCH1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>200</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_TonCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>T On</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_TOffCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_CurrentCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>410</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ToffCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>T Off</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_TOffCH1">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>190</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_CurrentCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>440</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_TOnCH1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
      <number>10</number>
     </property>
     <property name="value">
@@ -129,19 +781,88 @@
      <number>5</number>
     </property>
    </widget>
-   <widget class="QLabel" name="Pw_Lb_3">
+   <widget class="QSlider" name="Slider_CurrentCH2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>370</y>
+      <x>400</x>
+      <y>440</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_TherapyCH2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>50</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Btn_StartCH2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>490</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start CH2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_PulseWidthValCH2">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>340</y>
       <width>51</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
@@ -150,76 +871,188 @@
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="Label_TherapyValCH2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>291</width>
+      <x>670</x>
+      <y>60</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_TOnCH2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>130</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_CurrentValCH2">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>420</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_TherapyCH2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>50</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TOffValCH2">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>200</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_TOffCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>220</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PulseWidthCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>330</y>
+      <width>161</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Therapy time</string>
+     <string>Pulse Width</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Pw_MinusBtn_3">
+   <widget class="QPushButton" name="BtnPlus_PulseWidthCH2">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>430</y>
-      <width>75</width>
+      <x>570</x>
+      <y>330</y>
+      <width>41</width>
       <height>23</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>350</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Extended</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Pulse width</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pw_PlusBtn_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>430</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
@@ -227,37 +1060,84 @@
      <string>+</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="Label_TOnValCH2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>210</y>
-      <width>291</width>
+      <x>670</x>
+      <y>140</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
-      <pointsize>16</pointsize>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
      </font>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
     <property name="text">
-     <string>Frequency</string>
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="Freq_MinusBtn_2">
+   <widget class="QPushButton" name="BtnPlus_FrequencyCH2">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>290</y>
-      <width>75</width>
+      <x>570</x>
+      <y>270</y>
+      <width>41</width>
       <height>23</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnPlus_CurrentCH2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>410</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_TOffCH2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>190</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
@@ -265,136 +1145,81 @@
      <string>-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="StartCh1">
+   <widget class="QLabel" name="Label_FrequencyValCH2">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>670</x>
+      <y>280</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_TherapyCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>50</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Therapy Time</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="RadioButton_RampCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
       <y>470</y>
       <width>101</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Std</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QSlider" name="PulseWidthSlider">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>390</y>
-      <width>261</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QSlider" name="FreqSlider">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>261</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Freq_PlusBtn">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>290</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>+</string>
+     <string>Ramp %</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Tht_Lb">
+   <widget class="QPushButton" name="BtnMinus_CurrentCH2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>90</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>82</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ramp</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="TheT_PlusBtn">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>75</width>
+      <x>620</x>
+      <y>410</y>
+      <width>41</width>
       <height>23</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="TheT_MinusBtn">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>150</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
@@ -402,18 +1227,106 @@
      <string>-</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QSlider" name="Slider_FrequencyCH2">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>210</y>
+      <x>400</x>
+      <y>300</y>
       <width>261</width>
-      <height>31</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ToffCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>190</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>T Off</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_PulseWidthCH2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>330</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_CurrentCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>410</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Current</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_FrequencyCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>270</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
@@ -421,50 +1334,116 @@
      <string>Frequency</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QGroupBox" name="GroupBox_CH2">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>350</y>
-      <width>261</width>
-      <height>31</height>
+      <x>400</x>
+      <y>10</y>
+      <width>291</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="title">
+     <string>Channel 2</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnMinus_FrequencyCH2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>270</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Pulse width</string>
+     <string>-</string>
     </property>
    </widget>
-   <widget class="QSlider" name="FreqSlider_2">
+   <widget class="QPushButton" name="BtnPlus_TOffCH2">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>250</y>
+      <x>570</x>
+      <y>190</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_PulseWidthCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>360</y>
       <width>261</width>
       <height>22</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
    </widget>
-   <widget class="QPushButton" name="Freq_MinusBtn_3">
+   <widget class="QPushButton" name="BtnMinus_TOnCH2">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>290</y>
-      <width>75</width>
+      <x>620</x>
+      <y>130</y>
+      <width>41</width>
       <height>23</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
@@ -472,242 +1451,236 @@
      <string>-</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Tht_Lb_2">
+   <widget class="QLabel" name="label_TonCH2">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>90</y>
-      <width>51</width>
-      <height>31</height>
+      <x>400</x>
+      <y>130</y>
+      <width>151</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>40</y>
-      <width>82</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ramp</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pw_MinusBtn_4">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>430</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
+      <family>Arial</family>
       <pointsize>16</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>-</string>
+     <string>T On</string>
     </property>
    </widget>
-   <widget class="QSlider" name="TherapyTimeSlider_2">
+   <widget class="QSlider" name="Slider_TherapyCH2">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>400</x>
+      <y>80</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Slider_TOnCH2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>160</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>20</y>
+      <width>20</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
       <y>110</y>
-      <width>261</width>
-      <height>22</height>
+      <width>301</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="PulseWidthSlider_2">
+   <widget class="Line" name="line_3">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>20</x>
+      <y>250</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
       <y>390</y>
-      <width>261</width>
-      <height>22</height>
+      <width>301</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="Pw_Lb_4">
+   <widget class="Line" name="line_5">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>370</y>
-      <width>51</width>
+      <x>400</x>
+      <y>110</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>250</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_7">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>390</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_terminal">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>580</y>
+      <width>711</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
+    <property name="documentTitle">
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QGroupBox" name="GroupBox_Terminal">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>80</y>
-      <width>261</width>
+      <x>10</x>
+      <y>550</y>
+      <width>711</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>OCR A Extended</family>
-      <pointsize>16</pointsize>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <kerning>true</kerning>
      </font>
     </property>
-    <property name="text">
-     <string>Therapy time</string>
+    <property name="title">
+     <string>Terminal</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="Pw_PlusBtn_4">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>430</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
+    <property name="flat">
+     <bool>true</bool>
     </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="TheT_MinusBtn_2">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>150</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Freq_Lb_3">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>230</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DS-Digital</family>
-      <pointsize>26</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="TheT_PlusBtn_2">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>150</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Freq_PlusBtn_2">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>290</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>470</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>OCR A Std</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Start</string>
+    <property name="checked">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
@@ -716,12 +1689,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>881</width>
+     <width>736</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
