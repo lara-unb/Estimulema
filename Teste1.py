@@ -1,6 +1,7 @@
+# All values about tim have to in microseconds
+
 from PyQt5 import QtWidgets, uic
 import serial
-import struct
 
 # Enable serial communication
 serPort = "COM11"
@@ -10,8 +11,8 @@ ser = serial.Serial(serPort, baudRate, timeout=1, xonxoff=1)
 print("Serial port: " + serPort + ", Baud rate:" + str(baudRate))
 
 # First String communication - global variables
-valT_CH1 = 0  # Save de Therapy value
-valF_CH1 = 0  # Save de Frequency value
+valT_CH1 = 0.00  # Save de Therapy value
+valF_CH1 = 0.00  # Save de Frequency value
 valPw_CH1 = 0  # Save de PulseWidth value
 valTn_CH1 = 0  # Save de TOn value
 valTf_CH1 = 0  # Save de TOff value
@@ -21,6 +22,9 @@ valC_CH1 = 0  # Save de Current value
 ini_char = '<'
 end_char = '!>'
 separate_char = ';'
+
+# Times variables
+micros_time = 1000000
 
 # Variables for flow control
 # StrBtn has 3 options
@@ -47,12 +51,12 @@ def the_plus1():
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
 
-    valT_CH1 = val
+    valT_CH1 = val * micros_time
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
         data_out = data_out + "T" + str(val)
-        print("data from T_M btn: " + data_out)
+        print("data from therapy plus btn: " + data_out)
         send_data(data_out)
 
 
@@ -71,12 +75,12 @@ def the_minus1():
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
 
-    valT_CH1 = val
+    valT_CH1 = val * micros_time
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
         data_out = data_out + "T" + str(val)
-        print("data from T_M btn: " + data_out)
+        print("data from therapy minus btn: " + data_out)
         send_data(data_out)
 
 
@@ -84,8 +88,112 @@ def the_slider1():
     # This function enable slider interaction to increase/decrease the Therapy time
     global valT_CH1
     val = interface.Slider_TherapyCH1.value()
-    valT_CH1 = val
+    valT_CH1 = val * micros_time
     interface.Label_TherapyValCH1.setText(str(val))
+
+
+# ---------------------------- T On
+def ton_plus1():
+    global valTn_CH1
+    global FC_StrBtn_CH1
+    # The limit of this value depends of Therapy value
+    global valT_CH1
+    max_value = valT_CH1/micros_time
+    interface.Label_TOnValCH1.setMaximum(max_value)
+
+    data = interface.Label_TOnValCH1.text()
+    val = int(data)
+    if val < max_value:
+        val = val + 1
+        interface.Label_TOnValCH1.setText(str(val))
+        interface.Slider_TOnCH1.setValue(val)
+        interface.Slider_TOffCH1.setValue(max_value - val)
+    else:
+        val = max_value
+        interface.Label_TOnValCH1.setText(str(val))
+        interface.Slider_TOnCH1.setValue(val)
+        interface.Slider_TOffCH1.setValue(max_value - val)
+
+    valTn_CH1 = val
+
+    if FC_StrBtn_CH1 == 1:
+        data_out = msg_ini(0)  # "0" for single data
+        data_out = data_out + "N" + str(val)
+        print("data from TOn plus btn: " + data_out)
+        send_data(data_out)
+
+
+def ton_minus1():
+    global valTn_CH1
+    global FC_StrBtn_CH1
+    global valT_CH1
+    max_value = valT_CH1 / micros_time
+    interface.Label_TOnValCH1.setMaximum(max_value)
+    data = interface.Label_TOnValCH1.text()
+    val = int(data)
+    if val > 0 & val < 10:
+        val = val - 1
+        interface.Label_TOnValCH1.setText(str(val))
+        interface.Slider_TOnCH1.setValue(val)
+        interface.Slider_TOffCH1.setValue(max_value - val)
+    else:
+        val = 0
+        interface.Label_TOnValCH1.setText(str(val))
+        interface.Slider_TOnCH1.setValue(val)
+        interface.Slider_TOffCH1.setValue(max_value - val)
+
+
+def ton_slider1():
+    global valTn_CH1
+    global valT_CH1
+    max_value = valT_CH1 / micros_time
+    val = interface.Slider_TOnCH1.value()
+    valTn_CH1 = micros_time / val
+    interface.Label_TOnValCH1.setText(str(val))
+    interface.Slider_TOffCH1.setValue(max_value - val)
+
+
+# ---------------------------- T Off
+def toff_plus1():
+    global valTf_CH1
+    global FC_StrBtn_CH1
+    data = interface.Label_TOffValCH1.text()
+    val = int(data)
+    if val < 10:
+        val = val + 1
+        interface.Label_TOffValCH1.setText(str(val))
+        interface.Slider_TOffCH1.setValue(val)
+    else:
+        val = 10
+        interface.Label_TOffValCH1.setText(str(val))
+        interface.Slider_TOffCH1.setValue(val)
+
+    valTf_CH1 = val
+
+    if FC_StrBtn_CH1 == 1:
+        data_out = msg_ini(0)  # "0" for single data
+        data_out = data_out + "N" + str(val)
+        print("data from TOn plus btn: " + data_out)
+        send_data(data_out)
+
+
+def toff_minus1():
+    global FC_StrBtn_CH1
+    data = interface.Label_TOffValCH1.text()
+    val = int(data)
+    if val > 0 & val < 10:
+        val = val - 1
+        interface.Label_TOffValCH1.setText(str(val))
+        interface.Slider_TOffCH1.setValue(val)
+    else:
+        val = 0
+        interface.Label_TOffValCH1.setText(str(val))
+        interface.Slider_TOffCH1.setValue(val)
+
+
+def toff_slider1():
+    interface.Label_TOffValCH1.setText(str(interface.Slider_TOffCH1.value()))
+
 
 
 # ---------------------------- Frequency
@@ -105,12 +213,12 @@ def frequency_plus1():
         interface.Label_FrequencyValCH1.setText(str(val))
         interface.Slider_FrequencyCH1.setValue(val)
 
-    valF_CH1 = val
+    valF_CH1 = micros_time / val
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
         data_out = data_out + "F" + str(val)
-        print("data about Therapy time: " + data_out)
+        print("data from Frequency plus btn: " + data_out)
         send_data(data_out)
 
 
@@ -130,12 +238,12 @@ def frequency_minus1():
         interface.Label_FrequencyValCH1.setText(str(val))
         interface.Slider_FrequencyCH1.setValue(val)
 
-    valF_CH1 = val
+    valF_CH1 = micros_time / val
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
         data_out = data_out + "F" + str(val)
-        print("data about Frequency: " + data_out)
+        print("data from Frequency minus btn: " + data_out)
         send_data(data_out)
 
 
@@ -144,12 +252,14 @@ def frequency_slider1():
     # and return the period time in milliseconds
     global valF_CH1
     val = interface.Slider_FrequencyCH1.value()
-    valF_CH1 = val
+    valF_CH1 = micros_time / val
     interface.Label_FrequencyValCH1.setText(str(val))
 
 
 # ---------------------------- Pulse Witdth
 def pulsewidth_plus1():
+    global valPw_CH1
+    global FC_StrBtn_CH1
     data = interface.Label_PulseWidthValCH1.text()
     val = int(data)
     if val < 10:
@@ -160,9 +270,19 @@ def pulsewidth_plus1():
         val = 10
         interface.Label_PulseWidthValCH1.setText(str(val))
         interface.Slider_PulseWidthCH1.setValue(val)
+
+    valPw_CH1 = val
+
+    if FC_StrBtn_CH1 == 1:
+        data_out = msg_ini(0)  # "0" for single data
+        data_out = data_out + "P" + str(val)
+        print("data from Pulse width plus btn: " + data_out)
+        send_data(data_out)
 
 
 def pulsewidth_minus1():
+    global valPw_CH1
+    global FC_StrBtn_CH1
     data = interface.Label_PulseWidthValCH1.text()
     val = int(data)
     if val > 0 & val < 10:
@@ -174,75 +294,25 @@ def pulsewidth_minus1():
         interface.Label_PulseWidthValCH1.setText(str(val))
         interface.Slider_PulseWidthCH1.setValue(val)
 
+    valPw_CH1 = val
+
+    if FC_StrBtn_CH1 == 1:
+        data_out = msg_ini(0)  # "0" for single data
+        data_out = data_out + "P" + str(val)
+        print("data from Pulse width minus btn: " + data_out)
+        send_data(data_out)
+
 
 def pulsewidth_slider1():
-    interface.Label_PulseWidthValCH1.setText(str(interface.Slider_PulseWidthCH1.value()))
-
-
-# ---------------------------- T On
-def ton_plus1():
-    data = interface.Label_TOnValCH1.text()
-    val = int(data)
-    if val < 10:
-        val = val + 1
-        interface.Label_TOnValCH1.setText(str(val))
-        interface.Slider_TOnCH1.setValue(val)
-    else:
-        val = 10
-        interface.Label_TOnValCH1.setText(str(val))
-        interface.Slider_TOnCH1.setValue(val)
-
-
-def ton_minus1():
-    data = interface.Label_TOnValCH1.text()
-    val = int(data)
-    if val > 0 & val < 10:
-        val = val - 1
-        interface.Label_TOnValCH1.setText(str(val))
-        interface.Slider_TOnCH1.setValue(val)
-    else:
-        val = 0
-        interface.Label_TOnValCH1.setText(str(val))
-        interface.Slider_TOnCH1.setValue(val)
-
-
-def ton_slider1():
-    interface.Label_TOnValCH1.setText(str(interface.Slider_TOnCH1.value()))
-
-
-# ---------------------------- T Off
-def toff_plus1():
-    data = interface.Label_TOffValCH1.text()
-    val = int(data)
-    if val < 10:
-        val = val + 1
-        interface.Label_TOffValCH1.setText(str(val))
-        interface.Slider_TOffCH1.setValue(val)
-    else:
-        val = 10
-        interface.Label_TOffValCH1.setText(str(val))
-        interface.Slider_TOffCH1.setValue(val)
-
-
-def toff_minus1():
-    data = interface.Label_TOffValCH1.text()
-    val = int(data)
-    if val > 0 & val < 10:
-        val = val - 1
-        interface.Label_TOffValCH1.setText(str(val))
-        interface.Slider_TOffCH1.setValue(val)
-    else:
-        val = 0
-        interface.Label_TOffValCH1.setText(str(val))
-        interface.Slider_TOffCH1.setValue(val)
-
-
-def toff_slider1():
-    interface.Label_TOffValCH1.setText(str(interface.Slider_TOffCH1.value()))
+    global valPw_CH1
+    val = interface.Slider_PulseWidthCH1.value()
+    valPw_CH1 = micros_time / val
+    interface.Label_PulseWidthValCH1.setText(str(val))
 
 
 # ---------------------------- Current
 def current_plus1():
+    global FC_StrBtn_CH1
     data = interface.Label_CurrentValCH1.text()
     val = int(data)
     if val < 10:
@@ -256,6 +326,7 @@ def current_plus1():
 
 
 def current_minus1():
+    global FC_StrBtn_CH1
     data = interface.Label_CurrentValCH1.text()
     val = int(data)
     if val > 0 & val < 10:
@@ -467,8 +538,8 @@ def start_ch1():
     FC_StrBtn_CH1 = 1
     ini_msg = msg_ini(1)  # The two first data
 
-    data_out = ini_msg + str(valT_CH1) + separate_char + str(valTn_CH1) +\
-               separate_char + str(valTf_CH1) + separate_char + str(valF_CH1) +\
+    data_out = ini_msg + str(valT_CH1) + separate_char + str(valTn_CH1) + \
+               separate_char + str(valTf_CH1) + separate_char + str(valF_CH1) + \
                separate_char + str(valPw_CH1) + separate_char + str(valC_CH1)
 
     print("data from Star Button: " + data_out)
@@ -508,6 +579,19 @@ def msg_ini(string_type_data):
 
     data_out = str(string_type_data) + separate_char + str(ch_sal_activation) + separate_char
     return data_out
+
+
+def min_seg():
+    min_check = interface.rBtn_minCH1.isChecked()
+    if min_check is True:
+        interface.Label_ValMaxTCH1.setText("60 min Therapy max time")
+        interface.Label_ValMaxTCH1.setStyleSheet("color: blue")
+        interface.Label_Therapy_UCH1.setText("m")
+
+    else:
+        interface.Label_ValMaxTCH1.setText("600 seg Therapy max time")
+        interface.Label_ValMaxTCH1.setStyleSheet("color: green")
+        interface.Label_Therapy_UCH1.setText("s")
 
 
 # ####################################################################### End actions
@@ -578,7 +662,12 @@ interface.Btn_StartCH1.clicked.connect(start_ch1)
 
 # ------------------------#
 # StartButton for Channel 1 - send all stimulate parameters to Teensy
-interface.Btn_StartCH2.clicked.connect(start_ch1)*-*-*-* adicionar las demas cosas y las funciones en cada conexion
+interface.Btn_StartCH2.clicked.connect(start_ch1)
+
+# ------------------------#
+# Interface information's
+interface.rBtn_minCH1.clicked.connect(min_seg)
+interface.rBtn_segCH1.clicked.connect(min_seg)
 
 interface.show()
 app.exec()
