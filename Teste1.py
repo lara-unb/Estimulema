@@ -25,6 +25,7 @@ separate_char = ';'
 
 # Times variables
 micros_time = 1000000
+millis_time = 1000
 
 # Variables for flow control
 # StrBtn has 3 options
@@ -40,18 +41,18 @@ def the_plus1():
     # This function enable button interaction to increase the Therapy time
     global valT_CH1
     global FC_StrBtn_CH1
-    data = interface.Label_TherapyValCH1.text()
-    val = int(data)
-    if val < 100:
+    update_variables()
+    val = valT_CH1
+    if val < 60:
         val = val + 1
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
     else:
-        val = 100
+        val = 60
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
 
-    valT_CH1 = val * micros_time
+    valT_CH1 = val
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
@@ -64,9 +65,9 @@ def the_minus1():
     # This function enable button interaction to decrease the Therapy time
     global valT_CH1
     global FC_StrBtn_CH1
-    data = interface.Label_TherapyValCH1.text()
-    val = int(data)
-    if val > 0 & val < 100:
+    update_variables()
+    val = valT_CH1
+    if val > 0 & val < 60:
         val = val - 1
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
@@ -75,7 +76,7 @@ def the_minus1():
         interface.Label_TherapyValCH1.setText(str(val))
         interface.Slider_TherapyCH1.setValue(val)
 
-    valT_CH1 = val * micros_time
+    valT_CH1 = val
 
     if FC_StrBtn_CH1 == 1:
         data_out = msg_ini(0)  # "0" for single data
@@ -88,7 +89,7 @@ def the_slider1():
     # This function enable slider interaction to increase/decrease the Therapy time
     global valT_CH1
     val = interface.Slider_TherapyCH1.value()
-    valT_CH1 = val * micros_time
+    valT_CH1 = val
     interface.Label_TherapyValCH1.setText(str(val))
 
 
@@ -98,7 +99,16 @@ def ton_plus1():
     global FC_StrBtn_CH1
     # The limit of this value depends of Therapy value
     global valT_CH1
-    max_value = valT_CH1/micros_time
+
+    # Verify if the therapy is min or seg
+    therapy_u = interface.Label_Therapy_UCH1.text()
+    if therapy_u == "m":
+        max_value = valT_CH1
+        interface.Label_TOn_UCH1.setText("m")
+    else:
+        max_value = valT_CH1
+        interface.Label_TOn_UCH1.setText("m")
+
     interface.Label_TOnValCH1.setMaximum(max_value)
 
     data = interface.Label_TOnValCH1.text()
@@ -193,7 +203,6 @@ def toff_minus1():
 
 def toff_slider1():
     interface.Label_TOffValCH1.setText(str(interface.Slider_TOffCH1.value()))
-
 
 
 # ---------------------------- Frequency
@@ -592,6 +601,21 @@ def min_seg():
         interface.Label_ValMaxTCH1.setText("600 seg Therapy max time")
         interface.Label_ValMaxTCH1.setStyleSheet("color: green")
         interface.Label_Therapy_UCH1.setText("s")
+
+
+def update_variables():
+    global valT_CH1  # Save de Therapy value
+    global valF_CH1  # Save de Frequency value
+    global valPw_CH1  # Save de PulseWidth value
+    global valTn_CH1  # Save de TOn value
+    global valTf_CH1  # Save de TOff value
+    global valC_CH1  # Save de Current value
+    valT_CH1 = int(interface.Label_TherapyValCH1.text())
+    valF_CH1 = int(interface.Label_FrequencyValCH1.text())
+    valPw_CH1 = int(interface.Label_PulseWidthValCH1.text())
+    valTn_CH1 = int(interface.Label_TOnValCH1.text())
+    valTf_CH1 = int(interface.Label_TOffValCH1.text())
+    valC_CH1 = int(interface.Label_CurrentValCH1.text())
 
 
 # ####################################################################### End actions
