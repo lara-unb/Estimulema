@@ -9,7 +9,7 @@
 #define Pin_signal_Control 14 // ativa a capture of data
 #define med_out_signal1 15 // for measure the output estimulation for ch1
 #define med_out_signal2 16 // for measure the output estimulation for ch2
-#define Pin_Inter 23 
+#define Pin_Inter 23 // Emergency Button
 
 // Original values for DAC conversion 
 #define CH1_MAX_POS 1883
@@ -469,12 +469,13 @@ void stimulation_training(int ch1, int ch2){
 
   bool tn1 = 1;
   bool tn2 = 1;
+  bool B_i = false;
   unsigned long t_tn1 = 0, t_tf1 = 0;
   unsigned long t_tn2 = 0, t_tf2 = 0;
 
   unsigned long t_ts_temp = 0, t_ts_cal = 0, t_ts_cal_temp = 0;
 
-  //unsigned long seg10 = 0;
+  unsigned long min_elapsed = 0, Buzzer_Ini = 0;
 
   // print_dataIn();
 
@@ -493,8 +494,8 @@ void stimulation_training(int ch1, int ch2){
   t_ini_temp = t_ts_temp; // para actualizar tiempo de terapia
 
   //Para testar seg en el while de ts
-  //seg10 = 1e6 + micros();
-  //int cont_s = 0;
+  min_elapsed = 60e6 + micros();
+  int cont_s = 0;
 
   //print_dataIn();
 
@@ -671,18 +672,26 @@ void stimulation_training(int ch1, int ch2){
       lr2 = 1;
     }
     
-    
-    /*if(micros() >= seg10){
+    // Verify the time for every minute
+    if(micros() >= min_elapsed){
       Serial.print(cont_s);
       Serial.println(" s");
       cont_s += 1;
-      seg10 = 1e6 + micros();
-    }*/
-    
+      min_elapsed = 60e6 + micros();
+      B_i = true;
+      digitalWrite(BuzzerPin, 1); // Enable pin buzzer
+      Buzzer_Ini = 1e5 + micros();
+    }
+
+    //Activate the buzzer sequence
+    if (micros() >= Buzzer_Ini && B_i) {
+      digitalWrite(BuzzerPin, 0); // Disable pin buzzer
+      B_i = false;
+    }
+
     //Serial.flush();
     read_dataIn();
     
-
     if(upd){ //si upd = 1 há atualização
       //Serial.println("Entro para actualizar los datos");
 
@@ -820,8 +829,10 @@ void Stop_functions() {
   //Serial.println("Interrupcion activada");
   //Serial.println("Para captura de datos por interrupcion");
   s_c = 0;
-  digitalWrite(Pin_Sync_Data, 0);
-  digitalWrite(Pin_signal_Control, 0);
+  data_sp[0].ma = 0;
+  data_sp[1].ma = 0;
+  digitalWrite(Pin_Sync_Data, 0); // Control sigal for Accel
+  digitalWrite(Pin_signal_Control, 0); // Activation capure for Accel
 }
 
 void zeroChannels() {

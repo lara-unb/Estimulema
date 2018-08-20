@@ -175,7 +175,7 @@ class MainWindow(QMainWindow):
         s_c = s_ch2 = rh = cr = False
 
         self.update_var()
-        s_c = s_ch2 = rh = cr = False
+        s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
@@ -184,7 +184,7 @@ class MainWindow(QMainWindow):
         s_c = s_ch1 = rh = cr = False
 
         self.update_var()
-        s_c = s_ch2 = rh = cr = False
+        s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch1_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
@@ -193,7 +193,7 @@ class MainWindow(QMainWindow):
         s_c = rh = cr = False
 
         self.update_var()
-        s_c = s_ch2 = rh = cr = False
+        s_c = s_ch2 = rh = cr = start = False
         self.btn_stop_stim()
 
     def btn_stop_stim(self):
@@ -590,7 +590,7 @@ def plot_and_filt():
 
     # aqui testo las saludas
     # rh = False
-    #rh = True
+    # rh = True
 
     if rh is True:
         print("Vamos plotar para Reobase")
@@ -672,7 +672,6 @@ def plot_and_filt():
     val_max = np.max(acxyz_fil)
     print("Valor maximo del vector: " + str(val_max))
     # signal_pulse = signal_pulse * val_max
-
 
     # read stim data
     if rh is True:
@@ -773,7 +772,13 @@ def butter_lowpass_filter(data, cut_off, fs, order=5):
     return y
 
 
+def exit_program_and_stim():
+    print("Aplication closed, Stop Stimulation")
+    ex.btn_stop_stim()
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.aboutToQuit.connect(exit_program_and_stim)
     ex = MainWindow()
     sys.exit(app.exec_())
