@@ -108,6 +108,7 @@ void loop() {
 
   //separate and functionality
   split_functionality();
+  digitalWrite(BuzzerPin, 0);
 
   zeroChannels();
 
@@ -346,13 +347,13 @@ void split_functionality(){
   
   // for training stimulation
   if(data_sp[0].ch_act && data_sp[1].ch_act == 0 && s_c){
-    Serial.println("Solo canal 1");
+    //Serial.println("Solo canal 1");
     stimulation_training(1,0);
   }else if(data_sp[0].ch_act == 0 && data_sp[1].ch_act){
-    Serial.println("Solo canal 2");
+    //Serial.println("Solo canal 2");
     stimulation_training(0,1);
   }else if(data_sp[0].ch_act && data_sp[1].ch_act && s_c){
-    Serial.println("Canal 1 e 2");
+    //Serial.println("Canal 1 e 2");
     stimulation_training(1,1);
   }
 
@@ -484,7 +485,7 @@ void stimulation_training(int ch1, int ch2){
 
   //digitalWrite(BuzzerPin, 1);
 
-  Serial.println(F("Entro en el ts"));
+  //Serial.println(F("Entro en el ts"));
   //Inicializo variables
   t_ts_cal = ts * min_t;
   t_stop = micros() + t_ts_cal;
@@ -674,8 +675,7 @@ void stimulation_training(int ch1, int ch2){
     
     // Verify the time for every minute
     if(micros() >= min_elapsed){
-      Serial.print(cont_s);
-      Serial.println(" s");
+      Serial.println("m");
       cont_s += 1;
       min_elapsed = 60e6 + micros();
       B_i = true;
@@ -763,9 +763,18 @@ void stimulation_training(int ch1, int ch2){
 
   t_ts_temp = micros(); //update micros
 }//fin while uppdate
+  Serial.println("f");
+  //Serial.print("Salió del while treinamento - terapía: ");
+  //Serial.println(micros());
 
-  Serial.print("Salió del while treinamento - terapía: ");
-  Serial.println(micros());
+  digitalWrite(BuzzerPin, 1);
+  delay(200);
+  digitalWrite(BuzzerPin, 0);
+  delay(100);
+  digitalWrite(BuzzerPin, 1);
+  delay(100);
+  digitalWrite(BuzzerPin, 0);
+
 
   //Termina estimulacion
   zeroChannels();
@@ -833,6 +842,7 @@ void Stop_functions() {
   data_sp[1].ma = 0;
   digitalWrite(Pin_Sync_Data, 0); // Control sigal for Accel
   digitalWrite(Pin_signal_Control, 0); // Activation capure for Accel
+  
 }
 
 void zeroChannels() {

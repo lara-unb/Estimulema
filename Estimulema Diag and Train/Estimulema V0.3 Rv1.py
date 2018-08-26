@@ -8,6 +8,8 @@ import numpy as np
 import time
 from scipy.signal import butter, lfilter, medfilt
 
+__author__ = 'Miguel Gutierrez'
+
 serPort1 = "COM13"
 serPort2 = "COM14"
 baudRate = 2000000
@@ -27,6 +29,7 @@ cr_acz = []
 cont_fig = 1
 plot_show = True
 sel_test = True
+start_receiver = False
 
 # lock to serialize console output
 lock = threading.Lock()
@@ -542,6 +545,15 @@ def save_data2():
 
 def stim_training():
     global msg_bytes, start, serPort1, baudRate
+    """
+    global serPort1, baudRate
+    try:
+        t3 = threading.Thread(target=read_while_stim, args=(serPort1, baudRate))
+        t3.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+        t3.start()
+
+    except Exception as e1:
+        print("Error: unable to start thread 1" + str(e1))"""
 
     ser = serial.Serial()
     ser.port = serPort1
@@ -558,6 +570,48 @@ def stim_training():
     if ser.isOpen():
         try:
             ser.write(msg_bytes)
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1))
+
+
+def read_while_stim(port, baud):
+    global msg_bytes, start, start_receiver
+
+    start_receiver = True
+    cont = 1
+
+    ser = serial.Serial()
+    ser.port = port
+    ser.timeout = 1
+    ser.baudrate = baud
+    ser.xonxoff = 1
+
+    try:
+        ser.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e))
+        exit()
+
+    if ser.isOpen():
+        try:
+            ser.write(msg_bytes)
+            print("Count Minutes")
+            while start_receiver is True:
+                c = ser.readline()
+                if len(c) > 0:
+                    str_msn = c.decode("utf-8")
+                    str_msn = str_msn.rstrip()
+                    print(str_msn)
+                    if str_msn == 'f':
+                        start_receiver = False
+                        print("End therapy time")
+                        ex.upd_terminal("End therapy time")
+                    else:
+                        print("Min: " + str(cont))
+                        cont = cont + 1
+                        ex.upd_terminal("Min: " + str(cont))
+            # ser.close()
 
         except Exception as e1:
             print("Error communicating...: " + str(e1))
@@ -753,7 +807,7 @@ def plot_and_filt():
 
 
     print("Ends plot desde archivo para aceleracion")
-    val_int = 4;
+    # val_int = 4;
     ex.upd_val_rh(val_int*2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
     plt.show()
@@ -773,6 +827,9 @@ def butter_lowpass_filter(data, cut_off, fs, order=5):
 
 
 def exit_program_and_stim():
+    global start_receiver
+
+    start_receiver = False
     print("Aplication closed, Stop Stimulation")
     ex.btn_stop_stim()
 
