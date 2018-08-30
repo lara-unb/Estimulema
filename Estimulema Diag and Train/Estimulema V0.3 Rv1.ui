@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>572</width>
-    <height>573</height>
+    <height>599</height>
    </rect>
   </property>
   <property name="font">
@@ -31,7 +31,7 @@
       <x>260</x>
       <y>340</y>
       <width>301</width>
-      <height>161</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="title">
@@ -65,7 +65,7 @@ color: rgb(255, 255, 255);
 border-radius: 20px;</string>
      </property>
      <property name="text">
-      <string>STOP</string>
+      <string>STOP ALL</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_sp_ch1">
@@ -128,7 +128,7 @@ border-radius: 20px;</string>
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>100</y>
+       <y>140</y>
        <width>111</width>
        <height>41</height>
       </rect>
@@ -146,7 +146,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>140</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -162,7 +162,7 @@ color: rgb(255, 255, 255);</string>
       <x>10</x>
       <y>340</y>
       <width>241</width>
-      <height>161</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="title">
@@ -192,11 +192,11 @@ color: rgb(255, 255, 255);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox_limit_mA">
+    <widget class="QSpinBox" name="spinBox_limit_ini_mA">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>60</y>
+       <y>70</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -217,14 +217,14 @@ color: rgb(255, 255, 255);</string>
       <number>50</number>
      </property>
      <property name="value">
-      <number>5</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QSpinBox" name="spinBox_limit_pW">
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>60</y>
+       <y>120</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -258,7 +258,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>160</y>
        <width>101</width>
        <height>41</height>
       </rect>
@@ -276,7 +276,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>100</y>
+       <y>160</y>
        <width>101</width>
        <height>41</height>
       </rect>
@@ -306,6 +306,97 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Current limit</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_limit_fin_mA">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe MDL2 Assets</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+     <property name="suffix">
+      <string> mA</string>
+     </property>
+     <property name="maximum">
+      <number>50</number>
+     </property>
+     <property name="value">
+      <number>5</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>101</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>101</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>End</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>100</y>
+       <width>101</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>End</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -851,7 +942,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>510</y>
+      <y>540</y>
       <width>551</width>
       <height>61</height>
      </rect>

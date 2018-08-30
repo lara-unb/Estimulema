@@ -14,14 +14,22 @@ int16_t ax = 0, ay = 0, az = 0;
 bool capture = false, loops = true;
 int pint = 0;
 
+bool uno = true, dos = false; 
+int co = 0;
+
+unsigned long time_count = 0;
+
 void setup() {
   // join I2C bus (I2Cdev library doesn't do this automatically)
-#if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
-  Wire.begin();
-#elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
-  Fastwire::setup(400, true);
-#endif
+  #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+    Wire.begin();
+  #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
+    Fastwire::setup(400, true);
+  #endif
+
+  // Initialize parameters for Stim-Accel communication
   Serial.begin(2000000);
+  Serial1.begin(2000000);
   //Serial.println("Initializing I2C devices...");
   //accelgyro.initialize();
   accel.initialize();
@@ -33,16 +41,40 @@ void setup() {
   pinMode(Pin_signal_Control, INPUT_PULLUP);
   pinMode(Pin_Led_Control, OUTPUT);
   attachInterrupt(Pin_Inter, Communication_data, CHANGE);
-  digitalWrite(Pin_Led_Control,0);
+  
+  digitalWrite(Pin_Led_Control,1);
 
-  loops_led();
+  //loops_led();
 }
 
 void loop() {
-  if(capture == false){
-    loops = true;
-    loops_led();
+  time_count = micros() + 5e5;
+
+  while(capture == false){
+    if(micros() >= time_count && uno){
+      Serial.print("valor: ");
+      Serial.println(co);
+      co += 1;
+      uno = false;
+      dos = true;
+      time_count = micros() + 5e5;
+      digitalWrite(Pin_Led_Control, 0);
+    }
+
+    if(micros() >= time_count && dos){
+      Serial.print("valor: ");
+      Serial.println(co);
+      co += 1;
+      uno = true;
+      dos = false;
+      time_count = micros() + 5e5;
+      digitalWrite(Pin_Led_Control, 1);
+    }
+
+    read_data();
   }
+
+  // digitalWrite(Pin_Led_Control, 1);  
 
   pint = 0;
   ax = 0;
@@ -64,7 +96,6 @@ void loop() {
 
     while(capture) {
       pint = digitalRead(Pin_signal_Control);
-      //Serial.print(pint ? String(micros()) + ";" : "0;");
       Serial.print("0;");
       accel.getAcceleration(&ax, &ay, &az);
       Serial.print(ax);
@@ -73,9 +104,9 @@ void loop() {
       Serial.print(";");
       Serial.print(az);
       Serial.print(";");
-      Serial.println(pint);      
+      Serial.println(pint);
+      read_data();      
     }  
-    //Serial.print("a");
     Serial.print(micros());
     Serial.print(";");
     Serial.print(ax);
@@ -103,3 +134,33 @@ void loops_led(){
   }
 }
 
+void read_data(){
+
+  if(Serial.available() != 0){
+      char input = Serial.read();
+      int input2 = (int)input - '0';
+
+      Serial.print("Input: ");
+      Serial.println(input2);
+
+      switch (input2) {
+        case 1:
+          //loops = false;
+          capture = !capture;
+          //Serial.print("Número 1");
+          break;
+        case 2:
+          //loops = false;
+          Serial1.println("1");
+          Serial.println("Número 2");  
+          /*if(Serial1.available() != 0){
+          }*/
+          delay(5000);  
+          break;
+        case 3:
+          //loops = false;
+          Serial.println("Número 3");
+          break;
+      }
+    }
+}

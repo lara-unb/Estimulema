@@ -10,8 +10,15 @@ from scipy.signal import butter, lfilter, medfilt
 
 __author__ = 'Miguel Gutierrez'
 
+# Original ports
 serPort1 = "COM13"
 serPort2 = "COM14"
+
+# Ports for teste
+# serPort1 = "COM8"  # Stim
+# serPort2 = "COM3"  # Accel
+
+
 baudRate = 2000000
 
 arrayt = []
@@ -54,9 +61,11 @@ solo_mode = 0  # to control test 0 - Open communication !-! 1 Just print data
 # 1 stim_(rh and rh) and acel_(rh and rh) plus data .txt
 plot_xyz = False
 name_file = False
+start_tread = True
 
 msg_bytes = ''
-limit_ma = 0
+limit_ma_ini = 0
+limit_ma_fin = 0
 limit_pw = 0
 limit_start = 0  # To count the final message
 
@@ -113,7 +122,8 @@ class MainWindow(QMainWindow):
         self.pushButton_sp_ch2.clicked.connect(self.btn_stop_ch2)
 
         # limits for tests
-        self.spinBox_limit_mA.valueChanged.connect(self.update_var)
+        self.spinBox_limit_ini_mA.valueChanged.connect(self.update_var)
+        self.spinBox_limit_fin_mA.valueChanged.connect(self.update_var)
         self.spinBox_limit_pW.valueChanged.connect(self.update_var)
 
         # for general parameters
@@ -200,10 +210,11 @@ class MainWindow(QMainWindow):
         self.btn_stop_stim()
 
     def btn_stop_stim(self):
-        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx
+        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx, start_tread
 
         upd = False
         start = True
+        start_tread = True
 
         rh = cr = s_ch1 = s_ch2 = False
         s_c = stop_chx = upd = True
@@ -261,10 +272,11 @@ class MainWindow(QMainWindow):
         self.lineEdit_terminal.setText(msn)
 
     def upd_val_rh(self, new_val_rh):
-        self.spinBox_limit_mA.setValue(new_val_rh)
+        self.spinBox_limit_ini_mA.setValue(new_val_rh)
+        self.spinBox_limit_fin_mA.setValue(new_val_rh)
 
     def update_var(self):
-        global limit_ma, limit_pw, ch1, ch2, ts, freq, pw, msg, cs
+        global limit_ma_ini, limit_ma_fin, limit_pw, ch1, ch2, ts, freq, pw, msg, cs
         global rh, cr, s_ch1, s_ch2, s_c, msg_bytes, upd, ctr_upd, start
 
         # general parameters
@@ -285,7 +297,8 @@ class MainWindow(QMainWindow):
         ch2.ma = self.spinBox_ma_2.value()
 
         # limits for tests
-        limit_ma = self.spinBox_limit_mA.value()
+        limit_ma_ini = self.spinBox_limit_ini_mA.value()
+        limit_ma_fin = self.spinBox_limit_fin_mA.value()
         limit_pw = self.spinBox_limit_pW.value()
 
         # general parameters = 3
@@ -298,7 +311,7 @@ class MainWindow(QMainWindow):
         msg = msg + cs + str(ch2.tn) + cs + str(ch2.tf) + cs + str(ch2.r) + cs + str(ch2.ma)
 
         # parameters for tests = 2
-        msg = msg + cs + str(limit_ma) + cs + str(limit_pw) + cs
+        msg = msg + cs + str(limit_ma_ini) + cs + str(limit_ma_fin) + cs + str(limit_pw) + cs
 
         # msg of activation control = 4
         if rh is True:
@@ -351,7 +364,7 @@ class MainWindow(QMainWindow):
 
 
 def read_serial(port, baud):
-    global msg_bytes, arrayt, limit_ma
+    global msg_bytes, arrayt
     global start_thread_s
 
     arrayt = []  # array for stim data
@@ -365,7 +378,7 @@ def read_serial(port, baud):
     try:
         ser.open()
     except Exception as e:
-        print("Error open serial port: " + str(e))
+        print("Error open serial port: " + str(e) + " En -- read_serial --")
         exit()
 
     if ser.isOpen():
@@ -390,10 +403,10 @@ def read_serial(port, baud):
             ser.close()
 
         except Exception as e1:
-            print("Error communicating...: " + str(e1))
+            print("Error communicating...: " + str(e1) + "En -- read_serial --")
 
     else:
-        print("Cannot open serial port " + str(port))
+        print("Cannot open serial port " + str(port) + "En -- read_serial --")
         exit()
 
     save_data()  # Thread for acel data
@@ -401,7 +414,7 @@ def read_serial(port, baud):
 
 
 def read_serial2(port, baud):
-    global msg_bytes, start, arrayt2, limit_ma
+    global msg_bytes, start, arrayt2
     global start_thread_a
 
     arrayt2 = []  # Array for acel data
@@ -415,7 +428,7 @@ def read_serial2(port, baud):
     try:
         ser2.open()
     except Exception as e:
-        print("Error open serial port: " + str(e))
+        print("Error open serial port: " + str(e) + " En -- read_serial2 --")
         exit()
 
     if ser2.isOpen():
@@ -441,10 +454,10 @@ def read_serial2(port, baud):
             ser2.close()
 
         except Exception as e1:
-            print("Error communicating...: " + str(e1))
+            print("Error communicating...: " + str(e1) + " En -- read_serial2 --")
 
     else:
-        print("Cannot open serial port " + str(port))
+        print("Cannot open serial port " + str(port) + " En -- read_serial2 --")
         exit()
 
     save_data2()  # Thread for acel data
@@ -544,16 +557,17 @@ def save_data2():
 
 
 def stim_training():
-    global msg_bytes, start, serPort1, baudRate
-    """
-    global serPort1, baudRate
-    try:
-        t3 = threading.Thread(target=read_while_stim, args=(serPort1, baudRate))
-        t3.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
-        t3.start()
+    global serPort1, serPort2, baudRate, msg_bytes, start, start_tread
 
-    except Exception as e1:
-        print("Error: unable to start thread 1" + str(e1))"""
+    if start_tread is True:
+        start_tread = False
+        try:
+            t3 = threading.Thread(target=read_while_stim, args=(serPort2, baudRate))
+            t3.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+            t3.start()
+
+        except Exception as e1:
+            print("Error: unable to start thread 1" + str(e1))
 
     ser = serial.Serial()
     ser.port = serPort1
@@ -564,7 +578,7 @@ def stim_training():
     try:
         ser.open()
     except Exception as e:
-        print("Error open serial port: " + str(e))
+        print("Error open serial port: " + str(e) + "En -- Stim_training -- ")
         exit()
 
     if ser.isOpen():
@@ -572,14 +586,14 @@ def stim_training():
             ser.write(msg_bytes)
 
         except Exception as e1:
-            print("Error communicating...: " + str(e1))
+            print("Error communicating...: " + str(e1) + " En -- Stim_training --")
 
 
 def read_while_stim(port, baud):
-    global msg_bytes, start, start_receiver
+    global start, start_receiver, ts, start_tread
 
     start_receiver = True
-    cont = 1
+    cont = 0
 
     ser = serial.Serial()
     ser.port = port
@@ -590,31 +604,38 @@ def read_while_stim(port, baud):
     try:
         ser.open()
     except Exception as e:
-        print("Error open serial port: " + str(e))
+        print("Error open serial port: " + str(e) + "En -- read_while_stim --")
+        print("Possibly the serial port is already open")
         exit()
 
     if ser.isOpen():
         try:
-            ser.write(msg_bytes)
             print("Count Minutes")
+            print("Remaining minutes: " + str(ts - cont))
+            ex.upd_terminal("Remaining minutes: " + str(ts - cont))
             while start_receiver is True:
                 c = ser.readline()
                 if len(c) > 0:
                     str_msn = c.decode("utf-8")
                     str_msn = str_msn.rstrip()
                     print(str_msn)
-                    if str_msn == 'f':
+                    if str_msn == "f":
                         start_receiver = False
                         print("End therapy time")
                         ex.upd_terminal("End therapy time")
                     else:
-                        print("Min: " + str(cont))
                         cont = cont + 1
-                        ex.upd_terminal("Min: " + str(cont))
-            # ser.close()
+                        print("Remaining minutes: " + str(ts - cont))
+                        ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+
+            ser.close()
+            start_tread = True
+            ex.upd_terminal("End therapy time")
 
         except Exception as e1:
-            print("Error communicating...: " + str(e1))
+            print("Error communicating...: " + str(e1) + " En -- read_while_stim --")
+
+        ex.upd_terminal("Ends Stimulation ...")
 
 
 # Create two threads as follows
@@ -653,8 +674,6 @@ def plot_and_filt():
         cr = True
         print("Vamos plotar para Cronaxia")
 
-    print("Vamos plotar para")
-
     file = ""
 
     if rh is True:
@@ -664,7 +683,13 @@ def plot_and_filt():
         file = 'acel_c.txt'
         # file = file_name_out_s
 
-    data = np.loadtxt(file, delimiter=';')
+    try:
+        data = np.loadtxt(file, delimiter=';')
+    except Exception as e:
+        print("Error: " + str(e) + " in --" + file + "-- file")
+        exit()
+
+    # data = np.loadtxt(file, delimiter=';')
     # data = np.array(arrayt.rstrip().split(';')).astype(int)
 
     # data of signal
@@ -733,7 +758,14 @@ def plot_and_filt():
     elif cr is True:
         file = 'stim_c.txt'
 
-    data_s = np.loadtxt(file, delimiter=';')
+    try:
+        data_s = np.loadtxt(file, delimiter=';')
+    except Exception as e:
+        print("Error: " + str(e) + " in --" + file + "-- file")
+        print("Please review the file and check the internal format")
+        exit()
+
+    # data_s = np.loadtxt(file, delimiter=';')
     data_ma = data_s[:, 1]
     max_ma = np.max(data_ma)
 
@@ -807,7 +839,7 @@ def plot_and_filt():
 
 
     print("Ends plot desde archivo para aceleracion")
-    # val_int = 4;
+    val_int = 4;
     ex.upd_val_rh(val_int*2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
     plt.show()
