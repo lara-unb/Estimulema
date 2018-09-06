@@ -17596,7 +17596,7 @@ Based on the following sources:
 <part name="D38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
 <part name="RG4" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="78*" device="TV" package3d_urn="urn:adsk.eagle:package:16417/1" technology="18" value="LM7808"/>
 <part name="D39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
-<part name="C72" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-024X044" package3d_urn="urn:adsk.eagle:package:23630/1" value="100nf"/>
+<part name="C72" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf"/>
 <part name="J+15_D3" library="con-ptr500" library_urn="urn:adsk.eagle:library:181" deviceset="AK300/2" device="" package3d_urn="urn:adsk.eagle:package:9881/1"/>
 <part name="GND_D15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
 <part name="JP9" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X7" device="" package3d_urn="urn:adsk.eagle:package:22477/2"/>
@@ -17624,7 +17624,6 @@ Based on the following sources:
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device="" value="GND_HV"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device="" value="GND_HV"/>
 <part name="J1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="JUMPERS" device="12MM" package3d_urn="urn:adsk.eagle:package:1627863/4" value="JUMPERS12MM"/>
-<part name="X1" library="con-ptr500" library_urn="urn:adsk.eagle:library:181" deviceset="AK300/2" device="" package3d_urn="urn:adsk.eagle:package:9881/1" value="HV+"/>
 <part name="X3" library="con-ptr500" library_urn="urn:adsk.eagle:library:181" deviceset="AK300/2" device="" package3d_urn="urn:adsk.eagle:package:9881/1" value="HV-"/>
 <part name="J2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="JUMPERS" device="15MM" package3d_urn="urn:adsk.eagle:package:1627865/4" value="J15MM"/>
 <part name="J3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="JUMPERS" device="7MM" package3d_urn="urn:adsk.eagle:package:1627862/4" value="J_7MM"/>
@@ -17675,6 +17674,8 @@ Based on the following sources:
 <part name="GND_D4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
 <part name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
 <part name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
+<part name="X1C" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
+<part name="K_CH2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
 </parts>
 <sheets>
 <sheet>
@@ -17703,9 +17704,7 @@ Based on the following sources:
 <instance part="J+15_D3" gate="-2" x="29.21" y="48.26"/>
 <instance part="GND_D15" gate="G$1" x="36.83" y="17.78"/>
 <instance part="JP9" gate="A" x="-6.35" y="20.32"/>
-<instance part="X1" gate="-1" x="111.76" y="2.54" rot="MR0"/>
-<instance part="X1" gate="-2" x="111.76" y="-2.54" rot="MR0"/>
-<instance part="X3" gate="-1" x="111.76" y="-12.7" rot="MR0"/>
+<instance part="X3" gate="-1" x="130.81" y="-16.51" rot="MR0"/>
 <instance part="X3" gate="-2" x="111.76" y="-17.78" rot="MR0"/>
 <instance part="J2" gate="1" x="96.52" y="62.23"/>
 <instance part="J6" gate="1" x="86.36" y="-22.86" rot="R180"/>
@@ -17717,6 +17716,10 @@ Based on the following sources:
 <instance part="X4" gate="-2" x="-139.7" y="20.32"/>
 <instance part="X4" gate="-3" x="-139.7" y="15.24"/>
 <instance part="D4" gate="G$1" x="-87.63" y="-22.86" rot="MR0"/>
+<instance part="X1C" gate="P1" x="111.76" y="2.54"/>
+<instance part="X1C" gate="P2" x="111.76" y="-1.27"/>
+<instance part="K_CH2" gate="P1" x="111.76" y="-7.62"/>
+<instance part="K_CH2" gate="P2" x="111.76" y="-11.43"/>
 </instances>
 <busses>
 </busses>
@@ -17842,11 +17845,8 @@ Based on the following sources:
 <segment>
 <pinref part="X3" gate="-1" pin="KL"/>
 <wire x1="101.6" y1="-7.62" x2="101.6" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="-12.7" x2="106.68" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-12.7" x2="125.73" y2="-16.51" width="0.1524" layer="91"/>
 <label x="90.17" y="-7.62" size="1.778" layer="95"/>
-<pinref part="X1" gate="-2" pin="KL"/>
-<wire x1="106.68" y1="-2.54" x2="101.6" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="-2.54" x2="101.6" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="101.6" y="-7.62"/>
 <wire x1="101.6" y1="-7.62" x2="60.96" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-7.62" x2="54.61" y2="-7.62" width="0.1524" layer="91"/>
@@ -17863,6 +17863,13 @@ Based on the following sources:
 <pinref part="GND_HV" gate="A" pin="2"/>
 <pinref part="GND_HV" gate="A" pin="3"/>
 <pinref part="GND_HV" gate="A" pin="4"/>
+<pinref part="X1C" gate="P2" pin="S"/>
+<wire x1="109.22" y1="-1.27" x2="104.14" y2="-1.27" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-1.27" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-7.62" x2="101.6" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="K_CH2" gate="P1" pin="S"/>
+<wire x1="109.22" y1="-7.62" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="104.14" y="-7.62"/>
 </segment>
 </net>
 <net name="N$158" class="2">
@@ -18013,8 +18020,10 @@ Based on the following sources:
 <net name="1HV+" class="3">
 <segment>
 <label x="90.17" y="2.54" size="1.778" layer="95"/>
-<pinref part="X1" gate="-1" pin="KL"/>
-<wire x1="106.68" y1="2.54" x2="90.17" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="X1C" gate="P1" pin="S"/>
+<wire x1="104.14" y1="2.54" x2="90.17" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="2.54" x2="105.41" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="105.41" y1="2.54" x2="104.14" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="135.89" y1="-52.07" x2="149.86" y2="-52.07" width="0.1524" layer="91"/>
@@ -18025,8 +18034,13 @@ Based on the following sources:
 <net name="1HV-" class="3">
 <segment>
 <pinref part="X3" gate="-2" pin="KL"/>
-<wire x1="106.68" y1="-17.78" x2="99.06" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-17.78" x2="105.41" y2="-17.78" width="0.1524" layer="91"/>
 <label x="99.06" y="-20.32" size="1.778" layer="95"/>
+<pinref part="K_CH2" gate="P2" pin="S"/>
+<wire x1="105.41" y1="-17.78" x2="99.06" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-11.43" x2="105.41" y2="-11.43" width="0.1524" layer="91"/>
+<wire x1="105.41" y1="-11.43" x2="105.41" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="105.41" y="-17.78"/>
 </segment>
 <segment>
 <wire x1="135.89" y1="-25.4" x2="149.86" y2="-25.4" width="0.1524" layer="91"/>
