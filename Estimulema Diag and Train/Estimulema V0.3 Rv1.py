@@ -1,9 +1,9 @@
 import sys
 import matplotlib.pyplot as plt
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 import serial
-import threadingr
+import threading
 import numpy as np
 import time
 from scipy.signal import butter, lfilter, medfilt
@@ -11,8 +11,8 @@ from scipy.signal import butter, lfilter, medfilt
 __author__ = 'Miguel Gutierrez'
 
 # Original ports
-serPort1 = "COM13"
-serPort2 = "COM14"
+serPort1 = "COM14"
+serPort2 = "COM13"
 
 # Ports for teste
 # serPort1 = "COM8"  # Stim
@@ -88,14 +88,16 @@ class stim_param_channel:
 ch1 = stim_param_channel()
 ch1.tn = 0  # Save de Frequency value
 ch1.tf = 0  # Save de PulseWidth value
-ch1.r = 0  # Save de TOff value
+ch1.ri = 0  # Save de TOff value
+ch1.rf = 0  # Save de TOff value
 ch1.ma = 0  # Save de Current value
 
 # For channel 2
 ch2 = stim_param_channel()
 ch2.tn = 0  # Save de Frequency value
 ch2.tf = 0  # Save de PulseWidth value
-ch2.r = 0  # Save de TOff value
+ch2.ri = 0  # Save de TOff value
+ch2.rf = 0  # Save de TOff value
 ch2.ma = 0  # Save de Current value
 
 
@@ -134,13 +136,15 @@ class MainWindow(QMainWindow):
         # for channel 1
         self.spinBox_tn_1.valueChanged.connect(self.update_var)
         self.spinBox_tf_1.valueChanged.connect(self.update_var)
-        self.spinBox_r_1.valueChanged.connect(self.update_var)
+        self.spinBox_ri_1.valueChanged.connect(self.ramp_check)
+        self.spinBox_rf_1.valueChanged.connect(self.ramp_check)
         self.spinBox_ma_1.valueChanged.connect(self.btn_change_ma1)
 
         # for channel 2
         self.spinBox_tn_2.valueChanged.connect(self.update_var)
         self.spinBox_tf_2.valueChanged.connect(self.update_var)
-        self.spinBox_r_2.valueChanged.connect(self.update_var)
+        self.spinBox_ri_2.valueChanged.connect(self.ramp_check)
+        self.spinBox_rf_2.valueChanged.connect(self.ramp_check)
         self.spinBox_ma_2.valueChanged.connect(self.btn_change_ma2)
 
         # Show interface
@@ -268,6 +272,27 @@ class MainWindow(QMainWindow):
     def btn_fil_plot():
         plot_and_filt()
 
+    def ramp_check(self):
+        global ch1, ch2
+
+        ch1.ri = self.spinBox_ri_1.value()
+        ch1.rf = self.spinBox_rf_1.value()
+        ch2.ri = self.spinBox_ri_2.value()
+        ch2.rf = self.spinBox_rf_2.value()
+
+        ch1.tn = self.spinBox_tn_1.value()
+        ch2.tn = self.spinBox_tn_2.value()
+
+        # parameters for channel 1 = 4
+        if (ch1.ri + ch1.rf) > ch1.tn:
+            self.message_box(1)
+
+        # parameters for channel 1 = 4
+        if (ch2.ri + ch2.rf) > ch2.tn:
+            self.message_box(2)
+
+        self.update_var()
+
     def upd_terminal(self, msn):
         self.lineEdit_terminal.setText(msn)
 
@@ -287,13 +312,15 @@ class MainWindow(QMainWindow):
         # for channel 1
         ch1.tn = self.spinBox_tn_1.value()
         ch1.tf = self.spinBox_tf_1.value()
-        ch1.r = self.spinBox_r_1.value()
+        ch1.ri = self.spinBox_ri_1.value()
+        ch1.rf = self.spinBox_rf_1.value()
         ch1.ma = self.spinBox_ma_1.value()
 
         # for channel 2
         ch2.tn = self.spinBox_tn_2.value()
         ch2.tf = self.spinBox_tf_2.value()
-        ch2.r = self.spinBox_r_2.value()
+        ch2.ri = self.spinBox_ri_2.value()
+        ch2.rf = self.spinBox_rf_2.value()
         ch2.ma = self.spinBox_ma_2.value()
 
         # limits for tests
@@ -304,11 +331,10 @@ class MainWindow(QMainWindow):
         # general parameters = 3
         msg = str(ts) + cs + str(freq) + cs + str(pw)
 
-        # parameters for channel 1 = 4
-        msg = msg + cs + str(ch1.tn) + cs + str(ch1.tf) + cs + str(ch1.r) + cs + str(ch1.ma)
+        msg = msg + cs + str(ch1.tn) + cs + str(ch1.tf) + cs + str(ch1.ri) + cs + str(ch1.rf) + cs + str(ch1.ma)
 
         # parameters for channel 2 = 4
-        msg = msg + cs + str(ch2.tn) + cs + str(ch2.tf) + cs + str(ch2.r) + cs + str(ch2.ma)
+        msg = msg + cs + str(ch2.tn) + cs + str(ch2.tf) + cs + str(ch2.ri) + cs + str(ch2.rf) + cs + str(ch2.ma)
 
         # parameters for tests = 2
         msg = msg + cs + str(limit_ma_ini) + cs + str(limit_ma_fin) + cs + str(limit_pw) + cs
@@ -361,6 +387,36 @@ class MainWindow(QMainWindow):
             print("Excitability tests start")
         else:
             print("Solo mode:   " + msg + "<<<<")
+
+    def message_box(self, sel):
+        global msg
+        msg = ""
+        if sel == 1:
+            QMessageBox.about(self, "Error", "Ramp value erro")
+            if ch1.ri > ch1.rf:
+                ch1.ri = ch1.ri - 0.5
+                self.spinBox_ri_1.setValue(ch1.ri)
+            else:
+                ch1.rf = ch1.rf - 0.5
+                self.spinBox_rf_1.setValue(ch1.rf)
+
+        if sel == 2:
+            QMessageBox.about(self, "Error", "Ramp value erro")
+            if ch2.ri > ch2.rf:
+                ch2.ri = ch2.ri - 0.5
+                self.spinBox_ri_2.setValue(ch2.ri)
+            else:
+                ch2.rf = ch2.rf - 0.5
+                self.spinBox_rf_2.setValue(ch2.rf)
+
+
+
+
+        """
+        m.setIcon(QMessageBox.Critical)
+        m.setText("Error")
+        m.setInformativeText(e)
+        m.setWindowTitle("Error")"""
 
 
 def read_serial(port, baud):
@@ -709,9 +765,9 @@ def plot_and_filt():
     eje_y = eje_y / bits_dac
     eje_z = eje_z / bits_dac
 
-    eje_x2 = eje_x**2
-    eje_y2 = eje_y**2
-    eje_z2 = eje_z**2
+    eje_x2 = eje_x ** 2
+    eje_y2 = eje_y ** 2
+    eje_z2 = eje_z ** 2
 
     xyz = eje_x2 + eje_y2 + eje_z2
     # Magnitude of the resulting vector
@@ -776,7 +832,7 @@ def plot_and_filt():
     c1 = 0
 
     if cr is True:
-       div_signal = val_max
+        div_signal = val_max
 
     for i in range(n):
         # contar milies
@@ -814,7 +870,7 @@ def plot_and_filt():
                 val_int = int(val_int / div)
                 print("Div miliamps: " + str(val_int))
                 if val_int > 0:
-                    #val_int = val_int + 1
+                    # val_int = val_int + 1
                     break
     elif cr is True:
         c_dx = 0  # contador de delta x
@@ -834,13 +890,12 @@ def plot_and_filt():
                 val_int = int(val_int / div)
                 print("Div miliamps: " + str(val_int))
                 if val_int > 0:
-                    #val_int = val_int + 1
+                    # val_int = val_int + 1
                     break
-
 
     print("Ends plot desde archivo para aceleracion")
     val_int = 4;
-    ex.upd_val_rh(val_int*2)
+    ex.upd_val_rh(val_int * 2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
     plt.show()
 
