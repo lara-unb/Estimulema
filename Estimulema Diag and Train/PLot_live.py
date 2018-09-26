@@ -1,143 +1,185 @@
-"""
-    Notebook for streaming data from a microphone in realtime
-
-    audio is captured using pyaudio
-    then converted from binary data to ints using struct
-    then displayed using matplotlib
-
-    scipy.fftpack computes the FFT
-
-    if you don't have pyaudio, then run
-
-    >>> pip install pyaudio
-
-    note: with 2048 samples per chunk, I'm getting 20FPS
-    when also running the spectrum, its about 15FPS
-"""
-"""
-import matplotlib.pyplot as plt
-import numpy as np
-import pyaudio
-from pyqtgraph.Qt import QtGui, QtCore
-import pyqtgraph as pg
-import struct
-from scipy.fftpack import fft
 import sys
+import matplotlib.pyplot as plt
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
+import serial
+import numpy as np
+from drawnow import *
+import atexit
+import threading
 import time
 
+values = []
 
-class AudioStream(object):
+plt.ion()
+cnt = 0
+control = False
+
+__author__ = 'Miguel Gutierrez'
+
+# Original ports
+serPort1 = "COM19"  # Stim
+baudRate = 2000000
+file_name_out_lc = ""
+
+#serialArduino = serial.Serial(serPort1, baudRate)
+
+
+class MainWindow(QMainWindow):
     def __init__(self):
+        super().__init__()
 
-        # stream constants
-        self.CHUNK = 1024 * 2
-        self.FORMAT = pyaudio.paInt16
-        self.CHANNELS = 1
-        self.RATE = 44100
-        self.pause = False
+        # Set up the user interface from Designer.
+        uic.loadUi("Load_cell.ui", self)
 
-        # stream object
-        self.p = pyaudio.PyAudio()
-        self.stream = self.p.open(
-            format=self.FORMAT,
-            channels=self.CHANNELS,
-            rate=self.RATE,
-            input=True,
-            output=True,
-            frames_per_buffer=self.CHUNK,
-        )
-        self.init_plots()
-        self.start_plot()
+        # Connect up the buttons.
+        self.pushButton_s.clicked.connect(self.btn_s)
+        self.pushButton_f.clicked.connect(self.btn_f)
+        self.pushButton_pad.clicked.connect(self.btn_pad)
+        self.letf = 10
+        self.top = 100
+        self.width = 312
+        self.height = 112
 
-    def init_plots(self):
+        self.set_position()
 
-        # x variables for plotting
-        x = np.arange(0, 2 * self.CHUNK, 2)
-        xf = np.linspace(0, self.RATE, self.CHUNK)
+        self.show()
 
-        # create matplotlib figure and axes
-        self.fig, (ax1, ax2) = plt.subplots(2, figsize=(15, 7))
-        self.fig.canvas.mpl_connect('button_press_event', self.onClick)
+    def set_position(self):
+        self.setGeometry(self.letf, self.top, self.width, self.height)
 
-        # create a line object with random data
-        self.line, = ax1.plot(x, np.random.rand(self.CHUNK), '-', lw=2)
+    def btn_s(self):
+        global control
+        control = True
+        start_capture()
 
-        # create semilogx line for spectrum
-        self.line_fft, = ax2.semilogx(
-            xf, np.random.rand(self.CHUNK), '-', lw=2)
+    def btn_f(self):
+        global control
+        control = False
+        print("Ends data capture")
+        #exit()
 
-        # format waveform axes
-        ax1.set_title('AUDIO WAVEFORM')
-        ax1.set_xlabel('samples')
-        ax1.set_ylabel('volume')
-        ax1.set_ylim(0, 255)
-        ax1.set_xlim(0, 2 * self.CHUNK)
-        plt.setp(
-            ax1, yticks=[0, 128, 255],
-            xticks=[0, self.CHUNK, 2 * self.CHUNK],
-        )
-        plt.setp(ax2, yticks=[0, 1],)
+    def btn_pad(self):
+        ## file_name_out_lc = "load_cell Mon 24 21h50.txt"
+        ## file_name_out_lc = "load_cell Mon 24 21h50.txt"
+        plot_all_data(file_name_out_lc)
 
-        # format spectrum axes
-        ax2.set_xlim(20, self.RATE / 2)
+def plotValues():
+    plt.title('Serial value from Arduino')
+    plt.grid(True)
+    plt.ylabel('Kg')
+    plt.xlabel('samples * 100us')
+    plt.plot(values, 'rx-', label='Kilos variation')
+    plt.legend(loc='upper right')
 
-        # show axes
-        thismanager = plt.get_current_fig_manager()
-        thismanager.window.setGeometry(5, 120, 1910, 1070)
-        plt.show(block=False)
 
-    def start_plot(self):
+def doAtExit():
+    serialArduino.close()
+    print("Close serial")
+    print("serialArduino.isOpen() = " + str(serialArduino.isOpen()))
 
-        print('stream started')
-        frame_count = 0
-        start_time = time.time()
 
-        while not self.pause:
-            data = self.stream.read(self.CHUNK)
-            data_int = struct.unpack(str(2 * self.CHUNK) + 'B', data)
-            data_np = np.array(data_int, dtype='b')[::2] + 128
+def plot_data(port, baud):
+    global file_name_out_lc
 
-            self.line.set_ydata(data_np)
+    atexit.register(doAtExit)
 
-            # compute FFT and update line
-            yf = fft(data_int)
-            self.line_fft.set_ydata(
-                np.abs(yf[0:self.CHUNK]) / (128 * self.CHUNK))
+    ser = serial.Serial()
+    ser.port = port
+    ser.baudrate = baud
+    ser.timeout = 1
+    ser.xonxoff = 1
 
-            # update figure canvas
-            self.fig.canvas.draw()
-            self.fig.canvas.flush_events()
-            frame_count += 1
+    try:
+        ser.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + "En -- plot_data --")
+        print("Possibly the serial port is already open")
+        exit()
 
-        else:
-            self.fr = frame_count / (time.time() - start_time)
-            print('average frame rate = {:.0f} FPS'.format(self.fr))
-            self.exit_app()
+    ini = 's'
+    ini_b = str.encode(ini)
 
-    def exit_app(self):
-        print('stream closed')
-        self.p.close(self.stream)
+    hora = time.strftime("%H")
+    n_dia = time.strftime("%a")
+    dia = time.strftime("%d")
+    mm = time.strftime("%M")
+    file_name_out_lc = 'load_cell ' + n_dia + ' ' + dia + ' ' + hora + 'h' + mm + '.txt'
+    load_cell_save = open(file_name_out_lc, 'w')
 
-    def onClick(self, event):
-        self.pause = True
+    # pre-load dummy data
+    for i in range(0, 100):
+        values.append(0)
+
+    if ser.isOpen():
+        plt.figure(1)
+        try:
+            ser.write(ini_b) ## manda el msng
+            while control is True:
+                c = ser.readline()
+                if len(c) > 0:
+                    str_msn = c.decode("utf-8")
+                    str_msn = str_msn.rstrip()
+                    values.append(float(str_msn))
+                    load_cell_save.write(str_msn)
+                    load_cell_save.write("\n")
+                    values.pop(0)
+                    drawnow(plotValues)
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + " En -- plot data while --")
+
+        if control is False:
+            ini = 'f'
+            ini_b = str.encode(ini)
+            ser.write(ini_b)  ## manda el msng
+            ser.close()
+            load_cell_save.close()
+            plt.close(1)
+
+
+def plot_all_data(file):
+    try:
+        data = np.loadtxt(file)
+    except Exception as e:
+        print("Error: " + str(e) + " in --" + file + "-- file")
+        exit()
+
+    n = len(data)
+
+    plt.figure(2)
+    t = np.arange(0, n)
+    plt.title('Serial value from Arduino')
+    plt.grid(True)
+    plt.ylabel('Kg')
+    plt.xlabel('samples * 100us')
+    plt.plot(t, data, 'b', label='Kilogram values')
+    plt.legend(loc=2)
+    plt.show(2)
+
+
+# Create two threads as follows
+def start_capture():
+    global serPort1, baudRate
+
+    try:
+        t1 = threading.Thread(target=plot_data, args=(serPort1, baudRate))
+        t1.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+        t1.start()
+
+    except Exception as e1:
+        print("Error: unable to start thread 1" + str(e1))
+
+
+def exit_program_and_stim():
+    global start_receiver
+
+    start_receiver = False
+    print("Aplication closed, Stop Stimulation")
+    ex.btn_stop_stim()
 
 
 if __name__ == '__main__':
-    AudioStream()
-
-"""
-
-# !/usr/bin/python3
-from tkinter import *
-from tkinter import messagebox
-
-top = Tk()
-top.geometry("100x100")
-
-def hello():
-   messagebox.showinfo("Say Hello", "Hello World")
-
-B1 = Button(top, text = "Say Hello", command = hello)
-B1.place(x = 35,y = 50)
-
-top.mainloop()
+    app = QApplication(sys.argv)
+    app.aboutToQuit.connect(exit_program_and_stim)
+    ex = MainWindow()
+    sys.exit(app.exec_())

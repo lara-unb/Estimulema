@@ -29,33 +29,29 @@ unsigned int pwrc = 2e6;        // Time of rest used in tests rh and cr
 String data_in;                 // General variable
 
 // Global variables
-unsigned int rh = 0, cr = 0, s_c = 1, upd = 0;
-unsigned int ts = 0, freq = 0, lim_pw = 0, pw_b = 50;
-unsigned int one_freq = 0;
+bool rh = 0, cr = 0, s_c = 1, upd = 0;
+unsigned int freq = 0, lim_pw = 0, pw_b = 50;
 unsigned int lim_ma_ini = 0, lim_ma_fin = 0;
 unsigned long pw = 0, pw_r = 0; 
-unsigned long min_t = 60e6; // Time multiplicator for minutes to us
+unsigned long ts = 0, one_freq = 0, min_t = 60e6; // Time multiplicator for minutes to us
 unsigned long t_stop = 0; // End time for while's
 
 //Control loops and if variables 
 bool loop_s = true, c_cr = true;
 unsigned int t_adc = 23; // Sampling time
 // Calculo paso de amplitud para la rampa del ch1
-float up_ma1 = 0, down_ma1 = 0;
-float up_ma2 = 0, down_ma2 = 0;
-
-//Aqui coloco las variables para saber si no hay rampa
-float ramp_ch1 = 0, ramp_ch2  = 0;
+float ma_u1 = 0, ma_d1 = 0, up_ma1 = 0, down_ma1 = 0;
+float ma_u2 = 0, ma_d2 = 0, up_ma2 = 0, down_ma2 = 0;
 
 // Struct for channels data
 struct stimulation_parameters{
-  unsigned int ch_act;
+  bool ch_act;
   unsigned long tn; // in us
   unsigned long tf; // in us
   float ri; // in us
   float rf; // in us
   unsigned int ma; // Hz converted on Period T in us
-  unsigned long tn_s; // in us tn of uplift
+  //unsigned long tn_s; // in us tn of uplift
 };
 
 // Initialize structure
@@ -72,6 +68,7 @@ void sendStimValue(int address, int operation_mode, uint16_t value);
 long val_ma(int Am, int limit);
 void Stop_functions();
 void zeroChannels();
+void beep(int sel, int t);
 
 /***** adicionar las funciones que faltan ***/
 
@@ -174,7 +171,7 @@ void read_dataIn() {
     //---------------------- Pulse width ---------------------//
     data_in = Serial.readStringUntil(fin);
     pw = data_in.toInt();
-    one_freq = int(1e6 / freq);
+    one_freq = long(1e6 / freq);
 
     // Calculation of pulse width time
     if(pw > 0){
@@ -196,7 +193,7 @@ void read_dataIn() {
     data_in = Serial.readStringUntil(fin);
     data_sp[0].ri = data_in.toFloat();
 
-    ata_in = Serial.readStringUntil(fin);
+    data_in = Serial.readStringUntil(fin);
     data_sp[0].rf = data_in.toFloat();
 
     //------- Current --------//
@@ -268,32 +265,10 @@ void read_dataIn() {
 
     //******* End data split *******//
 
-    ////----------------------------------------------------////
-
-    // Fix values when exist ramp value
-    ramp_ch1 = data_sp[0].ri + data_sp[0].rf;
-    ramp_ch2 = data_sp[1].ri + data_sp[1].rf;
-
-    if(ramp_ch1 > 0){
-      if(ramp_ch1 <= data_sp[0].tn){
-        data_sp[0].tn_s = data_sp[0].tn - ramp_ch1;
-      }
-    }else{
-      data_sp[0].tn_s = data_sp[0].tn;
-    }
-      
-    if(ramp_ch2 > 0){
-      if(ramp_ch2 <= data_sp[1].tn){
-        data_sp[1].tn_s = data_sp[1].tn - ramp_ch2;
-      }
-    }else{
-      data_sp[1].tn_s = data_sp[1].tn;
-    }
-
     // Pass data to structures in us
     for(int i=0; i<=1; i++){
       data_sp[i].tn = data_sp[i].tn * 1e6;
-      data_sp[i].tn_s = data_sp[i].tn_s * 1e6;
+      //data_sp[i].tn_s = data_sp[i].tn_s * 1e6;
       data_sp[i].tf = data_sp[i].tf * 1e6;
       data_sp[i].ri = data_sp[i].ri * 1e6;
       data_sp[i].rf = data_sp[i].rf * 1e6;
@@ -301,15 +276,17 @@ void read_dataIn() {
 
     // Copy data for temporal structures, this occur just one time
     if(upd == 0){
+      data_sp[2].ch_act = data_sp[0].ch_act;
       data_sp[2].tn = data_sp[0].tn;
-      data_sp[2].tn_s = data_sp[0].tn_s;
+      //data_sp[2].tn_s = data_sp[0].tn_s;
       data_sp[2].tf = data_sp[0].tf;
       data_sp[2].ri = data_sp[0].ri;
       data_sp[2].rf = data_sp[0].rf;
       data_sp[2].ma = data_sp[0].ma;
 
+      data_sp[3].ch_act = data_sp[1].ch_act;
       data_sp[3].tn = data_sp[1].tn;
-      data_sp[3].tn_s = data_sp[1].tn_s;
+      //data_sp[3].tn_s = data_sp[1].tn_s;
       data_sp[3].tf = data_sp[1].tf;
       data_sp[3].ri = data_sp[1].ri;
       data_sp[3].rf = data_sp[1].rf;
@@ -337,6 +314,10 @@ void read_dataIn() {
       loop_s = true; 
       Serial.println("Corrupt message or no stimulation - Try again");
     }
+
+    //Serial.println("Primeros valores");
+    //print_dataIn();
+    //delay(5000);
   }// End if serial available
 }// End function read_data
 
@@ -345,6 +326,8 @@ void read_dataIn() {
 /******************** Read input data *************************/
 /**************************************************************/
 void split_functionality(){
+  //Serial.println("Entro en Split funcionalidad");
+
   // Execute the rheobase test function
   if(rh && s_c){
     // Inicial Beep
@@ -489,12 +472,15 @@ void split_functionality(){
   
   // for training stimulation
   if(data_sp[0].ch_act && data_sp[1].ch_act == 0 && s_c){
+    //Serial.println("Canal 1 activado");
     /* For CH 1 */ 
     stimulation_training(1,0);
   }else if(data_sp[0].ch_act == 0 && data_sp[1].ch_act){
+    //Serial.println("Canal 2 activado");
     /* For CH 1 */
     stimulation_training(0,1);
   }else if(data_sp[0].ch_act && data_sp[1].ch_act && s_c){
+    //Serial.println("Canal 1 y 2 activado");
     /* For CH 1 */
     stimulation_training(1,1);
   }
@@ -502,8 +488,9 @@ void split_functionality(){
   /* Resset all  variables */
   rh = 0;
   cr = 0;
-  data_sp[0].ch_act = 0;
-  data_sp[1].ch_act = 0;
+  for(int i=0; i<4; i++){
+    data_sp[i].ch_act = 0;
+  }
 }// End function of split funcionality
 
 
@@ -661,10 +648,10 @@ void chronaxie(int mA_sP, int mA_sN, unsigned int t1, unsigned int t2) {
 
 
 /**************************************************************/
-/******************** Cronaxie function ***********************/
+/*************** Stimulation Training function ****************/
 /**************************************************************/
 void stimulation_training(int ch1, int ch2){
-
+  //Start beep
   beep(1, 100);
 
   // Variables para el ts
@@ -674,210 +661,172 @@ void stimulation_training(int ch1, int ch2){
   unsigned long min_elapsed = 0, Buzzer_Ini = 0;    // Control notification sound
 
   // For sound activation and minutes count
-  min_elapsed = min_t + micros();
   int cont_s = 0;   
 
   // variables para ton y toff para ch1
-  unsigned long t_tn1 = 0;
   unsigned long t_tf1 = 0;
 
   // CONTADOR TIEMPO PARA LA RAMPA DOWN E UP
   unsigned long t_ru = 0, t_rd = 0;
-  
-  bool ls_ltf1 = 1;
+
   bool lts1 = 1; // variable de control loop ton y toff par ch 1
-  bool ramp_1u = 1; // var control loop rampa subida
-  bool ramp_1d = 0; // var control loop rampa bajada
 
-  bool lr1 = 0;  // var control sinal loop + rampa
-  bool lrm1 = 0; // var control sinal loop - rampa
-  bool lrf1 = 0; // var control pw_r da rampa
-  bool ls1 = 0;  // var control loop sustentacion
+  bool lr1 = 0, lrm1 = 0, lrf1 = 0;   // var control sinal loop + rampa up/down
 
-  bool lsp1 = 0;  // var control signal loop + sustentacion
-  bool lsn1 = 0;  // var control signal loop - sustentacion
-  bool lsr1 = 0;  // var control signal loop rest sustentacion
+  bool lsp1 = 1, lsn1 = 0, lsr1 = 0;  // var control signal loop + sustentacion
 
   // var tiempo pw para ramp +/- y los pulsos +/-
-  unsigned long t_pw1 = 0;
-  unsigned long t_pw_r1 = 0;
-  unsigned long t_tn_s = 0;
+  unsigned long t_pw1 = 0, t_pw_r1 = 0, t_tn = 0;
 
-  // var auxiliar para convertir valor float a a entero de la var anterior
-  // up y down
-  float ma_u1 = 0, ma_d1 = 0;
-
-  if (data_sp[0].ri > 0){
-    float div = data_sp[0].ri / one_freq; // divido el tiempo en la fequencia
-    up_ma1 = data_sp[0].ma / div; // valor de paso de mA segun el tiempo
-    ramp_1u = 1;
-  }else{
-    ramp_1u = 0;
-    ma_u1 = data_sp[0].ma;
-  } 
-
-  if (data_sp[0].rf > 0){
-    float div = data_sp[0].rf / one_freq; // divido el tiempo en la fequencia
-    down_ma1 = data_sp[0].ma / div; // valor de paso de mA segun el tiempo
-    ramp_1d = 1;
-  }else{
-    ramp_1d = 0;
-    ma_d1 = 0;
-  } 
+  int control = 1;
+  act_value_ramp(0); // 0 ch1, 1 ch2
 
   // Setando los valores iniciales
-  unsigned long t_ts_cal = ts;
-  ts_micros = micros();
-  unsigned long t_ini_temp = ts_micros;
-  t_stop = micros() + ts;
-
+  unsigned long t_stop_fin = 0, ts_micros_ini = 0;
 
   // habilita el canal 1 para salida
   if(ch1){
-    Tempo valores y activaciones para canal 1
-    t_tn1 = micros() + data_sp[0].tn;
-    t_pw1 = micros() + pw;
-    t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
-    t_rd = micros() + data_sp[0].rf; // actualiza el valor de la duracion de la rampa
-
+    // Tempo valores y activaciones para canal 1
     digitalWrite(RELAY_CH_1, 1);
+    sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
+    t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
+    t_pw1 = micros() + pw;
   }
-  
+
+  ts_micros = micros();
+  t_stop = ts_micros + ts;
+  min_elapsed = min_t + ts_micros;
+  ts_micros_ini = ts_micros;
+  t_stop_fin = t_stop;
+
   // Here occur the magic for therapy stimulation
   while(ts_micros < t_stop){
 
-    // ramp up ch1
-    if(lts1 && ramp_1u){ // colocar verificacion para inicio y fin
+    if(lts1 && control == 1){ // colocar verificacion para inicio y fin
       if(micros() <= t_ru && ma_u1 < data_sp[0].ma){
+        //Serial.println("Rampa up");
         if(micros() >= t_pw1 && lr1 == 0 ){
+          //Serial.println("Rampa up negativa");
           sendStimValue(0, 1, STIM_ZERO - val_ma(ma_u1, CH1_MIN_NEG));
-          lr1 = 1;
-          lrm1 = 1;
+          lr1 = 1; lrm1 = 1;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         }else if(micros() >= t_pw1 && lrm1){
+          //Serial.println("Rampa up reposo");
           sendStimValue(0, 1, STIM_ZERO + 1);
-          lrf1 = 1;
-          lrm1 = 0;
+          lrf1 = 1; lrm1 = 0;
           t_pw_r1 = micros() + pw_r; // actualiza el valor de pw
         } else if(micros() >= t_pw_r1 && lrf1){
+          //Serial.println("Rampa up positiva");
           ma_u1 +=  up_ma1;
           sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
           lrf1 = 0;
           lr1 = 0;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         }
-      }else{ // si ya paso el tiempo de la rampa o llegó al valor
-        ls1 = 1; // habilita sustentacion sustentacion
-        lsp1 = 0;
+      }else{
+        //Serial.println("Sale de la rampa up");
+        //Serial.println("Pasando de rampa up a sustentacion");
+        //Serial.println("Sustentacion positiva");
+        control = 2; lsp1 = 0; lsn1 = 0; lsr1 = 0; ma_u1 = 0;
+        t_tn = micros() + data_sp[0].tn;
         sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
-        // Actualiza tiempos para tempo de
-        if(data_sp[0].rf > 0){
-          t_tn_s = micros() + data_sp[0].tn_s - ; // actualiza tiempo sustentacion        
-        } else{
-          t_tn_s = micros() + data_sp[0].tn_s; // actualiza tiempo sustentacion
+        t_pw1 = micros() + pw;
         }
-        // inicia el componente positivo
-        t_pw1 = micros() + pw; // actualiza el valor de pw
-      }
-    }else if(ls_ltf1){
-      ls1 = 1; // habilita sustentacion sustentacion
-      lsp1 = 0;
-      sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
-      // Actualiza tiempos para tempo de 
-      t_tn_s = micros() + data_sp[0].tn_s; // actualiza tiempo sustentacion
-      // inicia el componente positivo
-      t_pw1 = micros() + pw; // actualiza el valor de pw
     }
 
-    // For positive stimulation in ch1
-    if(lts1 && ls1){ // Sustentacion
-      if(micros() <= t_tn_s){
-        //Serial.println("Entra ciclo 1");
+    // ----------------------- For positive stimulation in ch1
+    if(lts1 && control == 2){ // Sustentacion
+      if(micros() <= t_tn){
+        //Serial.println("Sustentacion");
         if(micros() >= t_pw1 && lsp1 == 0){
+          //Serial.println("Sustentacion negativa");
           sendStimValue(0, 1, STIM_ZERO - val_ma(data_sp[0].ma, CH1_MIN_NEG));
-          lsp1 = 1;
-          lsn1 = 1;
+          lsp1 = 1; lsn1 = 1;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         }else if(micros() >= t_pw1 && lsn1){
+          //Serial.println("Sustentacion reposo");
           sendStimValue(0, 1, STIM_ZERO + 1);
-          lsr1 = 1;
-          lsn1 = 0;
+          lsr1 = 1; lsn1 = 0;
           t_pw_r1 = micros() + pw_r; // actualiza el valor de pw
         }else if(micros() >= t_pw_r1 && lsr1){
+          //Serial.println("Sustentacion positiva");
           sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
-          lsr1 = 0;
-          lsp1 = 0;
+          lsr1 = 0; lsp1 = 0;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         }
       }else{
-        if(data_sp[0].rf > 0){
-          ramp_1d = 1;
+        //Serial.println("Sale de la sustentacion");
+        if(lts1 && data_sp[0].rf > 0){
+          //Serial.println("Pasando de sustentacion a rampa down");
+          //Serial.println("Actualiza parametros para rampa down");
+          lr1 = 0; lrm1 = 0; lrf1 = 0; control = 3;
           ma_d1 = data_sp[0].ma;
-          sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
-          lr1 = 0;
-          lrm1 = 0;
-          lrf1 = 0;
-          t_r = micros() + data_sp[0].r; // actualiza el valor de la duracion de la rampa
-          t_pw1 = micros() + pw; // actualiza el valor de pw
-        }else{ // termin el ciclo de tn y habilita tf
-          ramp_1d = 0;
-          ls1 = 1;
-          lts1 = 0;
+          //Serial.println("Rampa down positiva");
+          t_rd = micros() + data_sp[0].rf; // actualiza el valor de la duracion de la rampa down
+          sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
+          t_pw1 = micros() + pw;
+        }else{
+          control = 4; lts1 = 0;
+          sendStimValue(0, 1, STIM_ZERO + 1);
+          digitalWrite(RELAY_CH_1, 0);
           t_tf1 = micros() + data_sp[0].tf;
-        }       
+        }
       }
     }
 
     // ramp down ch1
-    if(lts1 && ramp_1d){ // colocar verificacion para inicio y fin
-      if(micros() <= t_r && ma_d1 > 0){
+    if(lts1 && control == 3){ // colocar verificacion para inicio y fin
+      if(micros() <= t_rd && ma_d1 > 0){
+        //Serial.println("Rampa down");
         if(micros() >= t_pw1 && lr1 == 0){
-          sendStimValue(0, 1, STIM_ZERO - val_ma(ma_u1, CH1_MIN_NEG));
-          lr1 = 1;
-          lrm1 = 1;
+          //Serial.println("Rampa down negativa");
+          sendStimValue(0, 1, STIM_ZERO - val_ma(ma_d1, CH1_MIN_NEG));
+          lr1 = 1; lrm1 = 1;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         } else if(micros() >= t_pw1 && lrm1){
+          //Serial.println("Rampa down reposo");
           sendStimValue(0, 1, STIM_ZERO + 1);
-          lrm1 = 0;
-          lrf1 = 1;
+          lrm1 = 0; lrf1 = 1;
           t_pw_r1 = micros() + pw_r; // actualiza el valor de pw
         }else if(micros() >= t_pw_r1 && lrf1){
-          ma_u1 -=  up_down_ma1;
-          sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
-          lrf1 = 0;
-          lr1 = 0;
+          ma_d1 -=  down_ma1;
+          //Serial.println("Rampa down positiva");
+          sendStimValue(0, 1, STIM_ZERO + val_ma(ma_d1, CH1_MAX_POS));
+          lrf1 = 0; lr1 = 0;
           t_pw1 = micros() + pw; // actualiza el valor de pw
         }
       }else{
-        if cotrol re marcion de parametros
-
-        sendStimValue(0, 1, STIM_ZERO + 1); // cera la salida
-        lr1 = 0;
-        ma_u1 = 0;
-        if(data_sp[0].r == 0){
-          ramp_1u = 0;
-          ramp_1d = 0;
-        }else{
-          ramp_1d = 0;
-          ramp_1u = 1;
-        }
-        lts1 = 0;
-        ma_u1 = 0;
+        //Serial.println("Sale de la rampa down");
+        control = 4; lts1 = 0;
+        sendStimValue(0, 1, STIM_ZERO + 1);
+        digitalWrite(RELAY_CH_1, 0);
         t_tf1 = micros() + data_sp[0].tf;
       }
     }
 
     // For Tf in Ch1
-    if(lts1 == 0){
+    if(lts1 == 0 && control == 4){
+      //Serial.println("Toff activado");
       //zeroChannels();
-      digitalWrite(RELAY_CH_1, 0);
-      if(micros() >= t_tf1 && ch1){
+      if(micros() >= t_tf1){
+        //Serial.println("Ton activado");
         digitalWrite(RELAY_CH_1, 1);
+        if(data_sp[0].ri > 0){
+          //Serial.println("Pasando de Toff a rampa up");
+          control = 1; lr1 = 0; lrm1 = 0; lrf1 = 0;
+          ma_u1 = up_ma1;
+          sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
+          t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
+          t_pw1 = micros() + pw;
+        }else{
+          //Serial.println("Sin rampa up");
+          control = 2; lsp1 = 0; lsn1 = 0; lsr1 = 0;
+          ma_d1 = data_sp[0].ma;
+          t_tn = micros() + data_sp[0].tn;
+          sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
+          t_pw1 = micros() + pw;
+        }
         lts1 = 1;
-        t_tn1 = micros() + data_sp[0].tn;
-        t_r = micros() + data_sp[0].r;
-        t_pw1 = micros() + pw;
-        ma_u1 = 0;
       }
     }
 
@@ -900,91 +849,70 @@ void stimulation_training(int ch1, int ch2){
       B_i = false;
     }
 
-    if(s_c == 0){
-      t_stop = ts_micros;
-    }
-
-
-
     // Read imput data for update values
     read_dataIn();
 
-  // Update values
-    if(upd){ 
+    // Update values
+    if(upd && t_stop != ts_micros){
+      //Serial.println("Entro en UPDATE");
+
       sendStimValue(0, 1, STIM_ZERO);
       sendStimValue(1, 1, STIM_ZERO);
 
-      // Update time therapy
-      unsigned long t_ts_cal_temp = ts; // nuevo valor entrando
-      if(t_ts_cal != t_ts_cal_temp){
-        if(t_ts_cal < t_ts_cal_temp){
-          t_stop = t_ini_temp + t_ts_cal_temp;
-        } 
-        if((ts_micros - t_ini_temp) < (t_ini_temp + t_ts_cal_temp)) {
-          t_stop = t_ini_temp + t_ts_cal_temp;
-        } else{
-          s_c = 0;
+      // Para actualizar el tiempo de ts
+
+      if(t_stop_fin != (ts_micros_ini + ts)){
+        if(t_stop_fin < (ts_micros_ini + ts)){
+          t_stop = ts_micros_ini + ts;
+          t_stop_fin = t_stop;
+        }else{ 
+          if((ts_micros - ts_micros_ini) < (ts_micros_ini + ts)){
+            t_stop = ts_micros_ini + ts;
+            t_stop_fin = t_stop;
+          }else{
+            s_c = 0;
+          }
         }
-      }
+      }// end update t_stop 
 
       // Activation/Deactivation of channel
-      if(data_sp[0].ma == 0){
-        ch1 = 0;
-      }else if(data_sp[0].ch_act && data_sp[0].ma > 0){
-        ch1 = 1;
-      }
+      if (data_sp[0].ch_act != data_sp[2].ch_act){
 
-      if(data_sp[1].ma == 0){
-        ch2 = 0;
-      }else if(data_sp[1].ch_act && data_sp[1].ma > 0){
-        ch2 = 1;
-      }
-      
-      // For stop stimulation or emergency stop
-      if(data_sp[0].ma == 0 && data_sp[1].ma == 0){
-        Serial.println("Parada de emergencia");
-        s_c = 0; 
-        // Stop stimulation
-        zeroChannels();
-      }
-      
-      // Current Update 
-      if(data_sp[0].ma != data_sp[2].ma){
-        if (lsp1 == 0){
-          sendStimValue(0, 1, STIM_ZERO + val_ma(data_sp[0].ma, CH1_MAX_POS));
-        } else if (lsn1){
-          sendStimValue(0, 1, STIM_ZERO - val_ma(data_sp[0].ma, CH1_MIN_NEG));
+        if(data_sp[0].ch_act == 0){
+          control = 0;
+          data_sp[2].ch_act = data_sp[0].ch_act;
         }
-        data_sp[2].ma = data_sp[0].ma;
-      }
 
-      /*if(data_sp[1].ma != data_sp[3].ma){
-        if (lp1 == 0 && ln1 && lf1){
-          sendStimValue(1, 1, STIM_ZERO + val_ma(data_sp[1].ma, CH2_MAX_POS));
-        } else if (ln1 == 0 && lf1){
-          sendStimValue(1, 1, STIM_ZERO - val_ma(data_sp[1].ma, CH2_MIN_NEG));
+        if(data_sp[0].ch_act){ 
+          control = 1; lr1 = 0; lrm1 = 0; lrf1 = 0;
+          lsp1 = 0; lsn1 = 0; lsr1 = 0;
+
+          data_sp[2].ch_act = data_sp[0].ch_act;
+          sendStimValue(0, 1, STIM_ZERO);
+          digitalWrite(RELAY_CH_1, 1);
+          t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
+          t_pw1 = micros() + pw;
         }
-        data_sp[3].ma = data_sp[1].ma;
-      }*/
-
-      if(data_sp[0].r == 0){
-        ramp_1u = 0;
-        ramp_1d = 0;
-      }else{
-        ramp_1u = 1;
       }
 
-      if (data_sp[0].r > 0){
-        float div = data_sp[0].r / one_freq; // divido el tiempo en la fequencia
-        up_down_ma1 = data_sp[0].ma / div; // valor de paso de mA segun el tiempo
-      }else{
-        ma_u1 = data_sp[0].ma;
-      }
-      
-      upd = 0; // desactivo la actualizacion
-      ma_u1 = 0;
-    } // Fin update
+      act_value_ramp(0);
+      //Serial.println("Actualiza valores de Rampas");
+      data_sp[2].ri = data_sp[0].ri;
+      data_sp[2].rf = data_sp[0].rf;
 
+      lr1 = 0; lrm1 = 0; lrf1 = 0;
+      lsp1 = 0; lsn1 = 0; lsr1 = 0;
+
+      upd  = 0;
+    }
+
+    if(s_c == 0){
+      //Serial.println("Stop estimulacion");
+      zeroChannels();
+      t_stop = ts_micros;
+      s_c = 1;
+      control = 1;
+    }
 
   ts_micros = micros(); // Update micros variable
 }// End while update
@@ -1002,14 +930,31 @@ void stimulation_training(int ch1, int ch2){
 }// Ends therapy function
 
 
+void act_value_ramp(int chx){
+
+  if (data_sp[chx].ri > 0 ){
+    float div = data_sp[chx].ri / one_freq; // divido el tiempo en la fequencia
+    up_ma1 = data_sp[chx].ma / div; // valor de paso de mA segun el tiempo
+    ma_u1 = up_ma1;
+  }else{
+    ma_u1 = data_sp[chx].ma;
+  } 
+
+  if (data_sp[chx].rf > 0 ){
+    float div = data_sp[chx].rf / one_freq; // divido el tiempo en la fequencia
+    down_ma1 = data_sp[chx].ma / div; // valor de paso de mA segun el tiempo
+  }
+}
+
+
 void InitializVal_struct(int ch){
   // For data of stimulation parameters
   data_sp[ch].ch_act = 0;
   data_sp[ch].tn = 0;
   data_sp[ch].tf = 0;
-  data_sp[ch].r = 0;
+  data_sp[ch].ri = 0;
+  data_sp[ch].rf = 0;
   data_sp[ch].ma = 0;
-  data_sp[ch].tn_s = 0;
 }
 
 
@@ -1111,23 +1056,88 @@ void beep(int sel, int t){
 
 
 void print_dataIn(){
-  String msg = "";
 
-  msg = String(ts) + fin + String(freq) + fin + String(pw) + fin ;
-  //ch1
-  msg = msg + String(data_sp[0].tn) + fin + String(data_sp[0].tf) + fin + String(data_sp[0].r) + fin + String(data_sp[0].ma);
-  //ch1
-  msg = msg + fin + String(data_sp[1].tn) + fin + String(data_sp[1].tf) + fin + String(data_sp[1].r) + fin + String(data_sp[1].ma);
-  //limits
-  msg = msg + fin + String(lim_ma_ini) + fin + String(lim_ma_fin) + fin + String(lim_pw) + fin;
-  //activation
-  msg = msg + String(rh) + fin + String(cr) + fin + String(data_sp[0].ch_act) + fin + String(data_sp[1].ch_act) + fin;
-  //stop
-  msg = msg + String(s_c) + fin + String(upd) + "> -- " + String(pw_r);
+  Serial.println("------------------------------------- Print all Data");
 
-  Serial.println(msg);
-  Serial.print("");
-  Serial.print("");
-  Serial.print("");
-  Serial.print("");
+  Serial.print("Valor de TS: ");
+  Serial.println(ts);
+
+  Serial.print("Valor de frequencia: ");
+  Serial.println(freq);
+
+  Serial.print("Valor de PW: ");
+  Serial.println(pw);
+
+  Serial.print("Valor de PW_r: ");
+  Serial.println(pw_r);
+
+  /////////////////////////////////////// CH1
+  Serial.println("-------------------------------- CH1 ");
+  Serial.print("Valor de tn: ");
+  Serial.println(data_sp[0].tn);
+
+  Serial.print("Valor de tf: ");
+  Serial.println(data_sp[0].tf);
+
+  Serial.print("Valor de ri: ");
+  Serial.println(data_sp[0].ri);
+
+  Serial.print("Valor de rf: ");
+  Serial.println(data_sp[0].rf);
+
+  Serial.print("Valor de ma: ");
+  Serial.println(data_sp[0].ma);
+
+    /////////////////////////////////////// CH2
+  Serial.println("-------------------------------- CH2 ");
+  Serial.print("Valor de tn: ");
+  Serial.println(data_sp[1].tn);
+
+  Serial.print("Valor de tf: ");
+  Serial.println(data_sp[1].tf);
+
+  Serial.print("Valor de ri: ");
+  Serial.println(data_sp[1].ri);
+
+  Serial.print("Valor de rf: ");
+  Serial.println(data_sp[1].rf);
+
+  Serial.print("Valor de ma: ");
+  Serial.println(data_sp[1].ma);
+
+  ////////////////////////////// limits
+  Serial.println("-------------------------------- Limites ");
+  Serial.print("Valor de lim rh ini: ");
+  Serial.println(lim_ma_ini);
+
+  Serial.print("Valor de lim rh fin: ");
+  Serial.println(lim_ma_fin);
+
+  Serial.print("Valor de lim pw cr: ");
+  Serial.println(lim_pw);
+
+  /////////////////////////////////////// Activations
+  Serial.println("-------------------------------- Activations ");
+  Serial.print("Valor de act rh: ");
+  Serial.println(rh);
+
+  Serial.print("Valor de act cr: ");
+  Serial.println(cr);
+
+  Serial.print("Valor de act ch1: ");
+  Serial.println(data_sp[0].ch_act);
+
+  Serial.print("Valor de act ch2: ");
+  Serial.println(data_sp[1].ch_act);
+
+  Serial.print("Valor de act stop control: ");
+  Serial.println(s_c);
+
+  Serial.print("Valor de act update: ");
+  Serial.println(upd);
+
+  Serial.println("");
+  Serial.println("");
+  Serial.println("");
+  Serial.println("");
 }

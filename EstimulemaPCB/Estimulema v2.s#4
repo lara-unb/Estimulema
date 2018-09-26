@@ -8,34 +8,34 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,21 +53,21 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="58" name="b3D" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="Invisible" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="61" name="stand" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="58" name="b3D" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="Invisible" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="61" name="stand" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="yes"/>
@@ -472,35 +472,35 @@ grid 15 mm, outline 6.4 x 18.3 mm</description>
 <text x="-5.969" y="3.159" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-5.889" y="-4.262" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="TEENSY_3.0-3.2_DIL" urn="urn:adsk.eagle:footprint:1283571/1" library_version="24">
-<pad name="GND" x="-7.62" y="16.51" drill="0.9652"/>
-<pad name="0" x="-7.62" y="13.97" drill="0.9652"/>
-<pad name="1" x="-7.62" y="11.43" drill="0.9652"/>
-<pad name="2" x="-7.62" y="8.89" drill="0.9652"/>
-<pad name="3" x="-7.62" y="6.35" drill="0.9652"/>
-<pad name="4" x="-7.62" y="3.81" drill="0.9652"/>
-<pad name="5" x="-7.62" y="1.27" drill="0.9652"/>
-<pad name="6" x="-7.62" y="-1.27" drill="0.9652"/>
-<pad name="7" x="-7.62" y="-3.81" drill="0.9652"/>
-<pad name="8" x="-7.62" y="-6.35" drill="0.9652"/>
-<pad name="9" x="-7.62" y="-8.89" drill="0.9652"/>
-<pad name="10" x="-7.62" y="-11.43" drill="0.9652"/>
-<pad name="11" x="-7.62" y="-13.97" drill="0.9652"/>
-<pad name="12" x="-7.62" y="-16.51" drill="0.9652"/>
-<pad name="13" x="7.62" y="-16.51" drill="0.9652"/>
-<pad name="14/A0" x="7.62" y="-13.97" drill="0.9652"/>
-<pad name="15/A1" x="7.62" y="-11.43" drill="0.9652"/>
-<pad name="16/A2" x="7.62" y="-8.89" drill="0.9652"/>
-<pad name="17/A3" x="7.62" y="-6.35" drill="0.9652"/>
-<pad name="18/A4" x="7.62" y="-3.81" drill="0.9652"/>
-<pad name="19/A5" x="7.62" y="-1.27" drill="0.9652"/>
-<pad name="20/A6" x="7.62" y="1.27" drill="0.9652"/>
-<pad name="21/A7" x="7.62" y="3.81" drill="0.9652"/>
-<pad name="22/A8" x="7.62" y="6.35" drill="0.9652"/>
-<pad name="23/A9" x="7.62" y="8.89" drill="0.9652"/>
-<pad name="3.3V" x="7.62" y="11.43" drill="0.9652"/>
-<pad name="AGND" x="7.62" y="13.97" drill="0.9652"/>
-<pad name="VIN" x="7.62" y="16.51" drill="0.9652"/>
+<package name="TEENSY_3.0-3.2_DIL" urn="urn:adsk.eagle:footprint:1283571/2" library_version="80">
+<pad name="GND" x="-7.62" y="16.51" drill="0.9652" diameter="1.778"/>
+<pad name="0" x="-7.62" y="13.97" drill="0.9652" diameter="1.778"/>
+<pad name="1" x="-7.62" y="11.43" drill="0.9652" diameter="1.778"/>
+<pad name="2" x="-7.62" y="8.89" drill="0.9652" diameter="1.778"/>
+<pad name="3" x="-7.62" y="6.35" drill="0.9652" diameter="1.778"/>
+<pad name="4" x="-7.62" y="3.81" drill="0.9652" diameter="1.778"/>
+<pad name="5" x="-7.62" y="1.27" drill="0.9652" diameter="1.778"/>
+<pad name="6" x="-7.62" y="-1.27" drill="0.9652" diameter="1.778"/>
+<pad name="7" x="-7.62" y="-3.81" drill="0.9652" diameter="1.778"/>
+<pad name="8" x="-7.62" y="-6.35" drill="0.9652" diameter="1.778"/>
+<pad name="9" x="-7.62" y="-8.89" drill="0.9652" diameter="1.778"/>
+<pad name="10" x="-7.62" y="-11.43" drill="0.9652" diameter="1.778"/>
+<pad name="11" x="-7.62" y="-13.97" drill="0.9652" diameter="1.778"/>
+<pad name="12" x="-7.62" y="-16.51" drill="0.9652" diameter="1.778"/>
+<pad name="13" x="7.62" y="-16.51" drill="0.9652" diameter="1.778"/>
+<pad name="14/A0" x="7.62" y="-13.97" drill="0.9652" diameter="1.778"/>
+<pad name="15/A1" x="7.62" y="-11.43" drill="0.9652" diameter="1.778"/>
+<pad name="16/A2" x="7.62" y="-8.89" drill="0.9652" diameter="1.778"/>
+<pad name="17/A3" x="7.62" y="-6.35" drill="0.9652" diameter="1.778"/>
+<pad name="18/A4" x="7.62" y="-3.81" drill="0.9652" diameter="1.778"/>
+<pad name="19/A5" x="7.62" y="-1.27" drill="0.9652" diameter="1.778"/>
+<pad name="20/A6" x="7.62" y="1.27" drill="0.9652" diameter="1.778"/>
+<pad name="21/A7" x="7.62" y="3.81" drill="0.9652" diameter="1.778"/>
+<pad name="22/A8" x="7.62" y="6.35" drill="0.9652" diameter="1.778"/>
+<pad name="23/A9" x="7.62" y="8.89" drill="0.9652" diameter="1.778"/>
+<pad name="3.3V" x="7.62" y="11.43" drill="0.9652" diameter="1.778"/>
+<pad name="AGND" x="7.62" y="13.97" drill="0.9652" diameter="1.778"/>
+<pad name="VIN" x="7.62" y="16.51" drill="0.9652" diameter="1.778"/>
 <wire x1="-8.89" y1="17.78" x2="8.89" y2="17.78" width="0.127" layer="51"/>
 <wire x1="8.89" y1="17.78" x2="8.89" y2="-17.78" width="0.127" layer="51"/>
 <wire x1="8.89" y1="-17.78" x2="-8.89" y2="-17.78" width="0.127" layer="51"/>
@@ -969,7 +969,7 @@ grid 5 mm, outline 2.4 x 4.4 mm</description>
 <rectangle x1="3.5606" y1="-1.0922" x2="4.094" y2="1.0922" layer="51"/>
 <rectangle x1="-2.1" y1="-3.1" x2="-0.85" y2="3.1" layer="21"/>
 </package>
-<package name="RESM4226X229" urn="urn:adsk.eagle:footprint:4574991/1" locally_modified="yes" library_version="75" library_locally_modified="yes">
+<package name="RESM4226X229" urn="urn:adsk.eagle:footprint:4574991/2" library_version="80">
 <description>Molded Body, 4.25 X 2.67 X 2.29 mm body
 &lt;p&gt;Molded Body package with body size 4.25 X 2.67 X 2.29 mm&lt;/p&gt;</description>
 <text x="0" y="2.03" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
@@ -1087,7 +1087,7 @@ grid 15 mm, outline 6.4 x 18.3 mm</description>
 <packageinstance name="CAP_CER_16X7"/>
 </packageinstances>
 </package3d>
-<package3d name="TEENSY_3.0-3.2_DIL" urn="urn:adsk.eagle:package:1283572/3" type="model" library_version="69">
+<package3d name="TEENSY_3.0-3.2_DIL" urn="urn:adsk.eagle:package:1283572/4" type="model" library_version="80">
 <packageinstances>
 <packageinstance name="TEENSY_3.0-3.2_DIL"/>
 </packageinstances>
@@ -1123,7 +1123,7 @@ TI-Postfix DW (R-PDSO-G16)</description>
 <packageinstance name="BUZZER"/>
 </packageinstances>
 </package3d>
-<package3d name="DACMOD_P" urn="urn:adsk.eagle:package:1966569/1" type="box" library_version="69">
+<package3d name="DACMOD_P" urn="urn:adsk.eagle:package:1966569/2" type="model" library_version="83">
 <packageinstances>
 <packageinstance name="DACMOD_P"/>
 </packageinstances>
@@ -1132,12 +1132,6 @@ TI-Postfix DW (R-PDSO-G16)</description>
 <description>SOIC, 0.15 inch width</description>
 <packageinstances>
 <packageinstance name="SO14OP"/>
-</packageinstances>
-</package3d>
-<package3d name="DIL14" urn="urn:adsk.eagle:package:2101781/1" locally_modified="yes" type="box" library_version="75" library_locally_modified="yes">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
-<packageinstances>
-<packageinstance name="DIL14"/>
 </packageinstances>
 </package3d>
 <package3d name="TRIMPOT-PTH-3386U" urn="urn:adsk.eagle:package:1360028/4" type="model" library_version="70" library_locally_modified="yes">
@@ -1263,11 +1257,17 @@ Number of pins: 2</description>
 <packageinstance name="SMC"/>
 </packageinstances>
 </package3d>
-<package3d name="RESM4226X229" urn="urn:adsk.eagle:package:4574534/1" locally_modified="yes" type="model" library_version="75" library_locally_modified="yes">
+<package3d name="RESM4226X229" urn="urn:adsk.eagle:package:4574534/2" type="model" library_version="80">
 <description>Molded Body, 4.25 X 2.67 X 2.29 mm body
 &lt;p&gt;Molded Body package with body size 4.25 X 2.67 X 2.29 mm&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="RESM4226X229"/>
+</packageinstances>
+</package3d>
+<package3d name="DIL14" urn="urn:adsk.eagle:package:2101781/2" type="box" library_version="80">
+<description>Dual In Line Package</description>
+<packageinstances>
+<packageinstance name="DIL14"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -1671,7 +1671,7 @@ Number of pins: 2</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="DIODO" urn="urn:adsk.eagle:component:1282957/35" locally_modified="yes" library_version="75" library_locally_modified="yes">
+<deviceset name="DIODO" urn="urn:adsk.eagle:component:1282957/36" library_version="80">
 <description>Diodo usado para protecion en las fuentes de alimentacion</description>
 <gates>
 <gate name="G$1" symbol="DIODO" x="0" y="0"/>
@@ -1767,7 +1767,7 @@ Number of pins: 2</description>
 <connect gate="G$1" pin="C" pad="CA"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:4574534/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4574534/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1943,7 +1943,7 @@ Number of pins: 2</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TEENSY_3.0_A_3.2" urn="urn:adsk.eagle:component:1283573/30" library_version="69">
+<deviceset name="TEENSY_3.0_A_3.2" urn="urn:adsk.eagle:component:1283573/31" library_version="80">
 <description>Unidade de controle baseada em Teensy 3.x</description>
 <gates>
 <gate name="G$1" symbol="TEENSY_3.0_DIL" x="0" y="0"/>
@@ -1981,7 +1981,7 @@ Number of pins: 2</description>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:1283572/3"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:1283572/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -2096,7 +2096,7 @@ Number of pins: 2</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DAC_MODULE" urn="urn:adsk.eagle:component:1966570/1" prefix="DACM" library_version="69">
+<deviceset name="DAC_MODULE" urn="urn:adsk.eagle:component:1966570/2" prefix="DACM" library_version="83">
 <description>Modulo feito para o dac com seu regulador</description>
 <gates>
 <gate name="G$1" symbol="DACMOD_S" x="0" y="0"/>
@@ -2122,7 +2122,7 @@ Number of pins: 2</description>
 <connect gate="G$1" pin="VREFD" pad="VREFD"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:1966569/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:1966569/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -2130,7 +2130,7 @@ Number of pins: 2</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TL084" urn="urn:adsk.eagle:component:1360030/26" locally_modified="yes" uservalue="yes" library_version="75" library_locally_modified="yes">
+<deviceset name="TL084" urn="urn:adsk.eagle:component:1360030/27" uservalue="yes" library_version="80">
 <description>&lt;h3&gt;IC TL084 Quad Op Amp &lt;/h3&gt;</description>
 <gates>
 <gate name="A" symbol="OP-AMP" x="-12.7" y="10.16"/>
@@ -2185,7 +2185,7 @@ Number of pins: 2</description>
 <connect gate="PWD" pin="P$V-" pad="11"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2101781/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2101781/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -17465,19 +17465,19 @@ Based on the following sources:
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
-<class number="1" name="GND_HV" width="0.8128" drill="0">
+<class number="1" name="GND_HV" width="0.508" drill="0">
 </class>
-<class number="2" name="SIGNAL" width="0.508" drill="0">
+<class number="2" name="SIGNAL" width="0.3556" drill="0">
 </class>
-<class number="3" name="GND_D" width="0.6096" drill="0">
+<class number="3" name="GND_D" width="0.3556" drill="0">
 </class>
-<class number="4" name="+5_D" width="0.6096" drill="0">
+<class number="4" name="+5_D" width="0.3556" drill="0">
 </class>
-<class number="5" name="GND_HV1" width="0.8128" drill="0">
+<class number="5" name="GND_HV1" width="0.508" drill="0">
 </class>
 </classes>
 <parts>
-<part name="UC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TEENSY_3.0_A_3.2" device="VERSION_MINIMA" package3d_urn="urn:adsk.eagle:package:1283572/3" value="TEENSY_3"/>
+<part name="UC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TEENSY_3.0_A_3.2" device="VERSION_MINIMA" package3d_urn="urn:adsk.eagle:package:1283572/4" value="TEENSY_3"/>
 <part name="K2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_BTHC-06" device="HC-06" package3d_urn="urn:adsk.eagle:package:1346152/5" value="HC-06"/>
 <part name="AC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_ACELEROMETRO_MPU6050" device="CONECTOR_MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value=""/>
 <part name="IC4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="ISO7240_SMD" device="DW" package3d_urn="urn:adsk.eagle:package:1379024/2" value="ISO7240S"/>
@@ -17492,9 +17492,9 @@ Based on the following sources:
 <part name="SG2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="BUZZER" device="" package3d_urn="urn:adsk.eagle:package:1734311/2"/>
 <part name="LED3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="LED" device="LED_T_3MM" package3d_urn="urn:adsk.eagle:package:1238520/2" value="LEDLED_T_3MM"/>
 <part name="R22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7"/>
-<part name="D2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="R23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="120R"/>
-<part name="DAC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DAC_MODULE" device="" package3d_urn="urn:adsk.eagle:package:1966569/1" value="DAC"/>
+<part name="DAC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DAC_MODULE" device="" package3d_urn="urn:adsk.eagle:package:1966569/2" value="DAC"/>
 <part name="CHANNELS" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device="" value="GND_HV"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device="" value="GND_HV"/>
@@ -17581,19 +17581,19 @@ Based on the following sources:
 <part name="RG1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="78*" device="TV" package3d_urn="urn:adsk.eagle:package:16417/1" technology="05" value="LM7805"/>
 <part name="C66" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf"/>
 <part name="PRINCIPALES7" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device="" value="Principales IC"/>
-<part name="D31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
-<part name="D33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
+<part name="D33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="RG2" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="78*" device="TV" package3d_urn="urn:adsk.eagle:package:16417/1" technology="18" value="LM7808"/>
-<part name="D34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="C68" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf"/>
 <part name="PE39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="GND_HV" device=""/>
 <part name="C70" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="CPOL-US" device="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10uf"/>
 <part name="RG3" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="78*" device="TV" package3d_urn="urn:adsk.eagle:package:16417/1" technology="05" value="LM7805"/>
 <part name="C71" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf"/>
-<part name="D37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
-<part name="D38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
+<part name="D38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="RG4" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="78*" device="TV" package3d_urn="urn:adsk.eagle:package:16417/1" technology="18" value="LM7808"/>
-<part name="D39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="C72" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf"/>
 <part name="GND_D15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
 <part name="JP9" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X7" device="" package3d_urn="urn:adsk.eagle:package:22477/2"/>
@@ -17629,7 +17629,7 @@ Based on the following sources:
 <part name="GND_HV" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="5G_D" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X4" device="" package3d_urn="urn:adsk.eagle:package:22461/2"/>
-<part name="UC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TEENSY_3.0_A_3.2" device="VERSION_MINIMA" package3d_urn="urn:adsk.eagle:package:1283572/3" value="TEENSY_3"/>
+<part name="UC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TEENSY_3.0_A_3.2" device="VERSION_MINIMA" package3d_urn="urn:adsk.eagle:package:1283572/4" value="TEENSY_3"/>
 <part name="INTEXT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="AC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_ACELEROMETRO_MPU6050" device="CONECTOR_MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value="MPU6050"/>
 <part name="GNDI1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
@@ -17642,8 +17642,8 @@ Based on the following sources:
 <part name="VR2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
 <part name="VR3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
 <part name="VR4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
-<part name="D1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
-<part name="D3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
+<part name="D3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="X4" library="con-ptr500" library_urn="urn:adsk.eagle:library:181" deviceset="AK300/3" device="" package3d_urn="urn:adsk.eagle:package:9878/1">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
@@ -17656,7 +17656,7 @@ Based on the following sources:
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="R7" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R"/>
 <part name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
-<part name="D4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/1" value="1N4007S"/>
+<part name="D4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="R9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R"/>
 <part name="JP6" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="R18" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R"/>
@@ -17676,6 +17676,7 @@ Based on the following sources:
 <part name="JP11" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X7" device="" package3d_urn="urn:adsk.eagle:package:22477/2"/>
 <part name="5G_D1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="UART_COM" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2"/>
+<part name="GPIO2_ACCEL" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -18156,6 +18157,7 @@ Based on the following sources:
 <instance part="C6" gate="G$1" x="168.91" y="-30.48"/>
 <instance part="C7" gate="G$1" x="171.45" y="81.28"/>
 <instance part="UART_COM" gate="A" x="59.69" y="74.93"/>
+<instance part="GPIO2_ACCEL" gate="A" x="45.72" y="-62.23" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -18829,9 +18831,16 @@ Based on the following sources:
 <pinref part="INTEXT2" gate="G$1" pin="2"/>
 <pinref part="INTEXT" gate="G$1" pin="2"/>
 <wire x1="74.93" y1="-69.85" x2="74.93" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="74.93" y1="-81.28" x2="74.93" y2="-92.71" width="0.1524" layer="91"/>
+<wire x1="74.93" y1="-81.28" x2="74.93" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="74.93" y1="-86.36" x2="74.93" y2="-92.71" width="0.1524" layer="91"/>
 <wire x1="97.79" y1="-81.28" x2="74.93" y2="-81.28" width="0.1524" layer="91"/>
 <junction x="74.93" y="-81.28"/>
+<pinref part="GPIO2_ACCEL" gate="A" pin="1"/>
+<wire x1="48.26" y1="-67.31" x2="55.88" y2="-67.31" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="-67.31" x2="55.88" y2="-82.55" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="-82.55" x2="55.88" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="-86.36" x2="74.93" y2="-86.36" width="0.1524" layer="91"/>
+<junction x="74.93" y="-86.36"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -18979,6 +18988,36 @@ Based on the following sources:
 <junction x="87.63" y="81.28"/>
 <wire x1="87.63" y1="81.28" x2="87.63" y2="74.93" width="0.1524" layer="91"/>
 <wire x1="87.63" y1="74.93" x2="62.23" y2="74.93" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$37" class="0">
+<segment>
+<pinref part="UC2" gate="G$1" pin="13/SCK/LED"/>
+<wire x1="97.79" y1="-55.88" x2="76.2" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-55.88" x2="76.2" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="GPIO2_ACCEL" gate="A" pin="4"/>
+<wire x1="76.2" y1="-58.42" x2="76.2" y2="-59.69" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-59.69" x2="48.26" y2="-59.69" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$39" class="0">
+<segment>
+<pinref part="UC2" gate="G$1" pin="14/A0"/>
+<wire x1="97.79" y1="-58.42" x2="77.47" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="77.47" y1="-58.42" x2="77.47" y2="-59.69" width="0.1524" layer="91"/>
+<pinref part="GPIO2_ACCEL" gate="A" pin="3"/>
+<wire x1="77.47" y1="-59.69" x2="77.47" y2="-62.23" width="0.1524" layer="91"/>
+<wire x1="77.47" y1="-62.23" x2="48.26" y2="-62.23" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$40" class="0">
+<segment>
+<pinref part="UC2" gate="G$1" pin="15/A1/T"/>
+<wire x1="97.79" y1="-60.96" x2="80.01" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="80.01" y1="-60.96" x2="80.01" y2="-63.5" width="0.1524" layer="91"/>
+<pinref part="GPIO2_ACCEL" gate="A" pin="2"/>
+<wire x1="80.01" y1="-63.5" x2="80.01" y2="-64.77" width="0.1524" layer="91"/>
+<wire x1="80.01" y1="-64.77" x2="48.26" y2="-64.77" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

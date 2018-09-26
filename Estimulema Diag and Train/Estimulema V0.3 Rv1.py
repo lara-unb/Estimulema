@@ -11,8 +11,8 @@ from scipy.signal import butter, lfilter, medfilt
 __author__ = 'Miguel Gutierrez'
 
 # Original ports
-serPort1 = "COM14"
-serPort2 = "COM13"
+serPort1 = "COM14"  # Stim
+serPort2 = "COM13"  # Accel
 
 # Ports for teste
 # serPort1 = "COM8"  # Stim
@@ -214,7 +214,7 @@ class MainWindow(QMainWindow):
         self.btn_stop_stim()
 
     def btn_stop_stim(self):
-        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx, start_tread
+        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx, start_tread, ctr_upd
 
         upd = False
         start = True
@@ -227,6 +227,7 @@ class MainWindow(QMainWindow):
         self.spinBox_ma_2.setValue(0)
         self.update_var()
         upd = start = False
+        ctr_upd = 0
 
     def btn_stop_ch1(self):
         global upd, start, stop_chx
@@ -296,6 +297,9 @@ class MainWindow(QMainWindow):
     def upd_terminal(self, msn):
         self.lineEdit_terminal.setText(msn)
 
+    def upd_lcdNumber(self, msn):
+        self.lcdNumber.setValue(msn)
+
     def upd_val_rh(self, new_val_rh):
         self.spinBox_limit_ini_mA.setValue(new_val_rh)
         self.spinBox_limit_fin_mA.setValue(new_val_rh)
@@ -315,6 +319,7 @@ class MainWindow(QMainWindow):
         ch1.ri = self.spinBox_ri_1.value()
         ch1.rf = self.spinBox_rf_1.value()
         ch1.ma = self.spinBox_ma_1.value()
+        ch1.tn = ch1.tn - (ch1.ri + ch1.rf)
 
         # for channel 2
         ch2.tn = self.spinBox_tn_2.value()
@@ -322,6 +327,7 @@ class MainWindow(QMainWindow):
         ch2.ri = self.spinBox_ri_2.value()
         ch2.rf = self.spinBox_rf_2.value()
         ch2.ma = self.spinBox_ma_2.value()
+        ch2.tn = ch2.tn - (ch2.ri + ch2.rf)
 
         # limits for tests
         limit_ma_ini = self.spinBox_limit_ini_mA.value()
@@ -666,9 +672,11 @@ def read_while_stim(port, baud):
 
     if ser.isOpen():
         try:
+            rest = ts - cont
             print("Count Minutes")
-            print("Remaining minutes: " + str(ts - cont))
-            ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+            print("Remaining minutes: " + str(rest))
+            ex.upd_terminal("Remaining minutes: " + str(rest))
+            ex.upd_lcdNumber(rest)
             while start_receiver is True:
                 c = ser.readline()
                 if len(c) > 0:
@@ -721,7 +729,7 @@ def plot_and_filt():
 
     # aqui testo las saludas
     # rh = False
-    # rh = True
+    rh = True
 
     if rh is True:
         print("Vamos plotar para Reobase")
@@ -786,7 +794,7 @@ def plot_and_filt():
     lin_thsdxyz = np.ones((n, 1)) * (med_xyz + thsdxyz)
 
     # Plot the threshold signal
-    plt.plot(t, lin_thsdxyz, 'b')
+    plt.plot(t, lin_thsdxyz, 'y', label='Threshold')
     if plot_xyz is True:
         plt.plot(t, eje_x, 'b')
         plt.plot(t, eje_y, 'b')
@@ -799,10 +807,10 @@ def plot_and_filt():
     order = 10
 
     acxyz_fil = butter_lowpass_filter(eje_xyz, cut_off, fs, order)
-    plt.plot(t, acxyz_fil, 'r', linewidth=1)
+    plt.plot(t, acxyz_fil, 'r', linewidth=1, label='Butterworth Filter Accel Signal')
 
     xyz_mf = medfilt(eje_xyz, 5)
-    plt.plot(t, xyz_mf, 'y', linewidth=1)
+    plt.plot(t, xyz_mf, 'b', linewidth=1, label='Median Filter Accel signal')
 
     val_max = np.max(acxyz_fil)
     print("Valor maximo del vector: " + str(val_max))
@@ -824,6 +832,12 @@ def plot_and_filt():
     # data_s = np.loadtxt(file, delimiter=';')
     data_ma = data_s[:, 1]
     max_ma = np.max(data_ma)
+    min_ma = data_ma[1]
+
+    if min_ma == 1:
+        min_ma = 0
+    else:
+        min_ma = min_ma - 1
 
     # split stimulation signal
     div = val_max / max_ma
@@ -851,7 +865,7 @@ def plot_and_filt():
 
     # Stimulation signal
     # plt.plot(t, signal_pulse[i], 'g')
-    plt.plot(t, new_stim_signal, 'g')
+    plt.plot(t, new_stim_signal, 'g', label='Stim signal')
 
     # plt.title = 'Acceleration magnitude resulting from the XYZ axis'
     # plt.xlabel = 'time (s)'
@@ -860,17 +874,26 @@ def plot_and_filt():
     # Spike detection
     th = med_xyz + thsdxyz
 
+    # indice de interceptacion y valor en miliaps
+    indx_x = 0
+    indx_y = 0
+    val_int_str = ""
+
     if rh is True:
         for j in range(500, n):
             # contar milies
-            val_ac = acxyz_fil[j]
+            ##val_ac = acxyz_fil[j]
+            val_ac = xyz_mf[j]
             if val_ac >= th:
                 print("Indice de interceptacion: " + str(j))
+                indx_x = j
                 val_int = new_stim_signal[j]
                 val_int = int(val_int / div)
-                print("Div miliamps: " + str(val_int))
+                val_int_str = str(int(val_int + min_ma))
+                print("Div miliamps: " + val_int_str)
+                indx_y = val_ac
                 if val_int > 0:
-                    # val_int = val_int + 1
+                    val_int = val_int
                     break
     elif cr is True:
         c_dx = 0  # contador de delta x
@@ -885,6 +908,8 @@ def plot_and_filt():
         for j in range(3000, n):
             val_ac = acxyz_fil[j]
             if val_ac >= th:
+                print("Valor de x: ")
+                print(j)
                 print("Indice de interceptacion: " + str(j))
                 val_int = new_stim_signal[j]
                 val_int = int(val_int / div)
@@ -893,11 +918,18 @@ def plot_and_filt():
                     # val_int = val_int + 1
                     break
 
+    plt.plot(indx_x, indx_y + (indx_y / 40), marker=11)
+
+    plt.text(indx_x, indx_y + (indx_y / 30), val_int_str, fontsize=16, color='r')
+
     print("Ends plot desde archivo para aceleracion")
-    val_int = 4;
+    # val_int = 4
     ex.upd_val_rh(val_int * 2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
+    plt.legend(loc=2)
     plt.show()
+
+    ## para leer el valor de la celula de carga
 
 
 def butter_lowpass(cut_off, fs, order=5):
