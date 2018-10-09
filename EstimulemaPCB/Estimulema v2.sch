@@ -712,7 +712,7 @@ TI-Postfix DW (R-PDSO-G16)&lt;/p&gt;</description>
 <text x="-9.271" y="-3.048" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-6.731" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="TRIMPOT-PTH-3386U" urn="urn:adsk.eagle:footprint:1360022/3" library_version="46">
+<package name="TRIMPOT-PTH-3386U" urn="urn:adsk.eagle:footprint:1360022/4" library_version="90">
 <description>&lt;h3&gt;Trimpot - PTH, Trimpot w/ finger-adjustable knob&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://www.sparkfun.com/products/9806"&gt;Trimpot 10K with Knob&lt;/a&gt; (COM-09806)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.sparkfun.com/datasheets/Components/General/TSR-3386.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;</description>
@@ -723,8 +723,8 @@ TI-Postfix DW (R-PDSO-G16)&lt;/p&gt;</description>
 <pad name="1" x="-2.54" y="-0.015" drill="0.9" diameter="1.8796" shape="square"/>
 <pad name="2" x="0" y="-0.015" drill="0.9" diameter="1.8796"/>
 <pad name="3" x="2.54" y="-0.015" drill="0.9" diameter="1.8796"/>
-<text x="0" y="3.048" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
-<text x="0" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
+<text x="-4.699" y="2.794" size="1.27" layer="21">&gt;NAME</text>
+<text x="-4.826" y="-3.683" size="1.27" layer="21">&gt;VALUE</text>
 </package>
 <package name="TO220" urn="urn:adsk.eagle:footprint:1360024/3" library_version="37" library_locally_modified="yes">
 <description>&lt;b&gt;Molded Package&lt;/b&gt;&lt;p&gt;
@@ -1273,10 +1273,10 @@ TI-Postfix DW (R-PDSO-G16)</description>
 <packageinstance name="SO14OP"/>
 </packageinstances>
 </package3d>
-<package3d name="TRIMPOT-PTH-3386U" urn="urn:adsk.eagle:package:1360028/4" type="model" library_version="70" library_locally_modified="yes">
-<description>Trimpot - PTH, Trimpot w/ finger-adjustable knob
-Trimpot 10K with Knob (COM-09806)
-Datasheet</description>
+<package3d name="TRIMPOT-PTH-3386U" urn="urn:adsk.eagle:package:1360028/5" type="model" library_version="90">
+<description>&lt;h3&gt;Trimpot - PTH, Trimpot w/ finger-adjustable knob&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.sparkfun.com/products/9806"&gt;Trimpot 10K with Knob&lt;/a&gt; (COM-09806)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.sparkfun.com/datasheets/Components/General/TSR-3386.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="TRIMPOT-PTH-3386U"/>
 </packageinstances>
@@ -2398,7 +2398,7 @@ Number of pins: 2</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TRIMPOT" urn="urn:adsk.eagle:component:1360031/24" prefix="VR" uservalue="yes" library_version="70" library_locally_modified="yes">
+<deviceset name="TRIMPOT" urn="urn:adsk.eagle:component:1360031/25" prefix="VR" uservalue="yes" library_version="90">
 <description>&lt;h3&gt;Trimming Potentiometer (Trimpot)&lt;/h3&gt;</description>
 <gates>
 <gate name="R?" symbol="TRIMPOT" x="0" y="0"/>
@@ -2411,7 +2411,7 @@ Number of pins: 2</description>
 <connect gate="R?" pin="WIPER" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:1360028/4"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:1360028/5"/>
 </package3dinstances>
 <technologies>
 <technology name="">
@@ -17204,8 +17204,8 @@ Based on the following sources:
 <part name="C19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CAP_CERAMICO" device="_SMD" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf"/>
 <part name="C20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CAP_CERAMICO" device="_SMD" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf"/>
 <part name="PE15" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="GND_HV" device=""/>
-<part name="VR5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="TRP"/>
-<part name="VR6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="2k"/>
+<part name="VR5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="1K"/>
+<part name="VR6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="2K"/>
 <part name="R42" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R"/>
 <part name="PE16" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="GND_HV" device=""/>
 <part name="Q17" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TIP48" device="_TH" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48"/>
@@ -17239,8 +17239,8 @@ Based on the following sources:
 <part name="C31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CAP_CERAMICO" device="_SMD" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf"/>
 <part name="C32" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CAP_CERAMICO" device="_SMD" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf"/>
 <part name="PE29" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="GND_HV" device=""/>
-<part name="VR9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="TRP"/>
-<part name="VR10" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="2k"/>
+<part name="VR9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="1K"/>
+<part name="VR10" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="2K"/>
 <part name="R58" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R"/>
 <part name="PE30" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="GND_HV" device=""/>
 <part name="Q33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TIP48" device="_TH" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48"/>
@@ -17331,10 +17331,10 @@ Based on the following sources:
 <part name="2N3904" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="*-NPN-" device="TO92-EBC" package3d_urn="urn:adsk.eagle:package:29915/2" technology="29"/>
 <part name="R1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="T_LARGO" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS"/>
 <part name="R5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="T_LARGO" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS"/>
-<part name="VR1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
-<part name="VR2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
-<part name="VR3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
-<part name="VR4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/4" value="150R"/>
+<part name="VR1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R"/>
+<part name="VR2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R"/>
+<part name="VR3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R"/>
+<part name="VR4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="TRIMPOT" device="_TH" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R"/>
 <part name="D1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="D3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="R8" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K"/>
@@ -17358,8 +17358,8 @@ Based on the following sources:
 <part name="JP8" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="JP10" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND_D4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
-<part name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
-<part name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
+<part name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820r"/>
+<part name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820R"/>
 <part name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
 <part name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
 <part name="X2+15-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
@@ -17367,7 +17367,7 @@ Based on the following sources:
 <part name="5G_D1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="UART_COM" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2"/>
 <part name="GPIO2_ACCEL" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
-<part name="1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_3_PTR500" device="" package3d_urn="urn:adsk.eagle:package:5402944/3"/>
+<part name="1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_3_PTR500" device="" package3d_urn="urn:adsk.eagle:package:5402944/3" value="PTR500"/>
 </parts>
 <sheets>
 <sheet>
@@ -17501,7 +17501,7 @@ Based on the following sources:
 <junction x="-8.89" y="12.7"/>
 </segment>
 </net>
-<net name="GND_HV" class="5">
+<net name="GND_HV" class="1">
 <segment>
 <pinref part="PE39" gate="M" pin="PE"/>
 <wire x1="-90.17" y1="20.32" x2="-77.47" y2="20.32" width="0.1524" layer="91"/>
@@ -18132,23 +18132,6 @@ Based on the following sources:
 <label x="-154.94" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GNDI" class="3">
-<segment>
-<pinref part="IC4" gate="G$1" pin="GND1@2"/>
-<pinref part="IC4" gate="G$1" pin="GND1@1"/>
-<wire x1="-154.94" y1="-40.64" x2="-154.94" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-154.94" y1="-38.1" x2="-149.86" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-149.86" y1="-40.64" x2="-154.94" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-154.94" y="-40.64"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="-167.64" y1="-40.64" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="-165.1" y1="-7.62" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="-154.94" y1="-40.64" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="-167.64" y1="-45.72" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-167.64" y="-40.64"/>
-<pinref part="GND_D11" gate="G$1" pin="GNDI"/>
-</segment>
-</net>
 <net name="N$73" class="2">
 <segment>
 <pinref part="LED3" gate="G$1" pin="C"/>
@@ -18285,6 +18268,21 @@ Based on the following sources:
 <junction x="-57.15" y="95.25"/>
 <label x="-57.15" y="82.55" size="1.778" layer="95" rot="R270"/>
 </segment>
+<segment>
+<pinref part="IC4" gate="G$1" pin="GND1@2"/>
+<pinref part="IC4" gate="G$1" pin="GND1@1"/>
+<wire x1="-154.94" y1="-40.64" x2="-154.94" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-154.94" y1="-38.1" x2="-149.86" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-149.86" y1="-40.64" x2="-154.94" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-154.94" y="-40.64"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="-167.64" y1="-40.64" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-165.1" y1="-7.62" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-154.94" y1="-40.64" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="-167.64" y1="-45.72" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-167.64" y="-40.64"/>
+<pinref part="GND_D11" gate="G$1" pin="GNDI"/>
+</segment>
 </net>
 <net name="+5_D" class="4">
 <segment>
@@ -18366,7 +18364,7 @@ Based on the following sources:
 <label x="-64.77" y="82.55" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
-<net name="GND_HV" class="5">
+<net name="GND_HV" class="1">
 <segment>
 <pinref part="IC4" gate="G$1" pin="GND2@1"/>
 <wire x1="-111.76" y1="-38.1" x2="-106.68" y2="-38.1" width="0.1524" layer="91"/>
@@ -19036,7 +19034,7 @@ Based on the following sources:
 <pinref part="IC1" gate="C" pin="OUT"/>
 </segment>
 </net>
-<net name="GND_HV" class="5">
+<net name="GND_HV" class="1">
 <segment>
 <pinref part="PE16" gate="M" pin="PE"/>
 <wire x1="-44.45" y1="-11.43" x2="-44.45" y2="-8.89" width="0.1524" layer="91"/>
@@ -19438,7 +19436,7 @@ Based on the following sources:
 <junction x="-77.47" y="69.85"/>
 </segment>
 </net>
-<net name="GND_HV" class="5">
+<net name="GND_HV" class="1">
 <segment>
 <pinref part="PE30" gate="M" pin="PE"/>
 <wire x1="-44.45" y1="-11.43" x2="-44.45" y2="-8.89" width="0.1524" layer="91"/>
@@ -19911,7 +19909,7 @@ Based on the following sources:
 <junction x="81.28" y="-34.29"/>
 </segment>
 </net>
-<net name="GND_HV" class="5">
+<net name="GND_HV" class="1">
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="GND2" gate="1" pin="GNDA"/>
