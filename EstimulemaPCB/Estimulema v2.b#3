@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.2.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -860,20 +860,6 @@ Set 2018</text>
 <text x="85.3694" y="64.6684" size="1.27" layer="26" font="vector">GND</text>
 <text x="38.6334" y="65.1764" size="1.27" layer="26" font="vector">GND</text>
 <text x="88.1888" y="181.0512" size="1.27" layer="26" font="vector">-15</text>
-<polygon width="0.4064" layer="29">
-<vertex x="2" y="211"/>
-<vertex x="151" y="211"/>
-<vertex x="151" y="51"/>
-<vertex x="2" y="51"/>
-</polygon>
-<polygon width="0.4064" layer="29">
-<vertex x="2" y="211"/>
-<vertex x="151" y="211"/>
-<vertex x="151" y="51"/>
-<vertex x="147" y="51"/>
-<vertex x="2" y="51"/>
-<vertex x="2" y="58"/>
-</polygon>
 </plain>
 <libraries>
 <library name="7DI Library" urn="urn:adsk.eagle:library:1229688">
@@ -3542,19 +3528,19 @@ design rules under a new name.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
+<param name="mdWireWire" value="24mil"/>
+<param name="mdWirePad" value="20mil"/>
+<param name="mdWireVia" value="20mil"/>
+<param name="mdPadPad" value="20mil"/>
+<param name="mdPadVia" value="20mil"/>
+<param name="mdViaVia" value="20mil"/>
 <param name="mdSmdPad" value="6mil"/>
 <param name="mdSmdVia" value="6mil"/>
 <param name="mdSmdSmd" value="6mil"/>
 <param name="mdViaViaSameLayer" value="6mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
 <param name="mdCopperDimension" value="40mil"/>
-<param name="mdDrill" value="6mil"/>
+<param name="mdDrill" value="10mil"/>
 <param name="mdSmdStop" value="0mil"/>
 <param name="msWidth" value="6mil"/>
 <param name="msDrill" value="0.35mm"/>
@@ -3708,199 +3694,666 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="C4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="69.3945" y="180.848" rot="MR180"/>
-<element name="C3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="58.42" y="180.848" rot="MR180"/>
-<element name="AC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value="" x="34.036" y="203.581" rot="R90"/>
-<element name="K2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_BTHC-06" package3d_urn="urn:adsk.eagle:package:1346152/5" value="HC-06" x="10.3505" y="173.6725" rot="R270"/>
-<element name="R10" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7S" x="73.4695" y="191.792" rot="MR180"/>
-<element name="R11" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="33RS" x="39.3065" y="163.068" rot="MR90"/>
-<element name="R13" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="33RS" x="34.8615" y="166.0779" rot="MR90"/>
-<element name="IC4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="SO-16DW" package3d_urn="urn:adsk.eagle:package:1379024/2" value="ISO7240S" x="63.9445" y="188.595" rot="MR90"/>
-<element name="UC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TEENSY_3.0-3.2_DIL" package3d_urn="urn:adsk.eagle:package:1283572/5" value="TEENSY_3" x="35.306" y="188.849" rot="R90"/>
-<element name="R15" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="6K8S" x="17.399" y="167.259" rot="MR270"/>
-<element name="R16" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="3k3S" x="19.939" y="173.863" rot="MR90"/>
+<element name="C4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="69.3945" y="180.848" rot="MR180">
+<attribute name="NAME" x="68.1245" y="179.578" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="68.1245" y="183.388" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="C3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="58.42" y="180.848" rot="MR180">
+<attribute name="NAME" x="57.15" y="179.578" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="57.15" y="183.388" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="AC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value="" x="34.036" y="203.581" rot="R90">
+<attribute name="NAME" x="29.591" y="199.771" size="1.27" layer="21" rot="R90"/>
+<attribute name="VALUE" x="42.291" y="199.771" size="1.27" layer="21" rot="R90"/>
+</element>
+<element name="K2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_BTHC-06" package3d_urn="urn:adsk.eagle:package:1346152/5" value="HC-06" x="10.3505" y="173.6725" rot="R270">
+<attribute name="NAME" x="8.3105" y="180.3275" size="1.016" layer="25" ratio="10"/>
+<attribute name="VALUE" x="14.243" y="179.675" size="1.016" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="R10" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7S" x="73.4695" y="191.792" rot="MR180">
+<attribute name="NAME" x="72.1995" y="190.522" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="72.1995" y="194.332" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="R11" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="33RS" x="39.3065" y="163.068" rot="MR90">
+<attribute name="NAME" x="40.5765" y="161.798" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="36.7665" y="161.798" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="R13" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="33RS" x="34.8615" y="166.0779" rot="MR90">
+<attribute name="NAME" x="36.1315" y="164.8079" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="32.3215" y="164.8079" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="IC4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="SO-16DW" package3d_urn="urn:adsk.eagle:package:1379024/2" value="ISO7240S" x="63.9445" y="188.595" rot="MR90">
+<attribute name="NAME" x="65.2145" y="184.15" size="1.27" layer="26" ratio="9" rot="MR90"/>
+<attribute name="VALUE" x="61.4045" y="184.15" size="1.27" layer="28" ratio="9" rot="MR90"/>
+</element>
+<element name="UC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TEENSY_3.0-3.2_DIL" package3d_urn="urn:adsk.eagle:package:1283572/5" value="TEENSY_3" x="35.306" y="188.849" rot="R90">
+<attribute name="NAME" x="21.336" y="185.039" size="1.27" layer="25" font="vector" rot="R90"/>
+<attribute name="VALUE" x="49.276" y="185.039" size="1.27" layer="27" font="vector" rot="R90"/>
+</element>
+<element name="R15" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="6K8S" x="17.399" y="167.259" rot="MR270">
+<attribute name="NAME" x="16.129" y="168.529" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="19.939" y="168.529" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R16" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="3k3S" x="19.939" y="173.863" rot="MR90">
+<attribute name="NAME" x="21.209" y="172.593" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="17.399" y="172.593" size="1.27" layer="28" rot="MR90"/>
+</element>
 <element name="SG2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="BUZZER" package3d_urn="urn:adsk.eagle:package:1734311/2" value="BUZZER" x="50.546" y="158.4325">
 <attribute name="MF" value="" x="50.546" y="158.4325" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="50.546" y="158.4325" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="54.991" y="162.8775" size="1.27" layer="25" ratio="10"/>
 <attribute name="OC_FARNELL" value="unknown" x="50.546" y="158.4325" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="50.546" y="158.4325" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="47.371" y="154.6225" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="LED3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="LED3MM" package3d_urn="urn:adsk.eagle:package:1238520/2" value="LEDLED_T_3MM" x="59.6265" y="168.656" rot="R270"/>
-<element name="R22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7" x="59.436" y="174.5615" rot="MR90"/>
-<element name="D2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="59.563" y="161.528" rot="MR90"/>
-<element name="R23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="120R" x="44.196" y="176.8475" rot="MR270"/>
-<element name="DAC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DACMOD_P" package3d_urn="urn:adsk.eagle:package:1966569/2" value="DAC" x="76.835" y="167.7035"/>
-<element name="CHANNELS" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="80.645" y="156.2735"/>
-<element name="R24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="44.196" y="172.4025" rot="MR90"/>
-<element name="GPIO2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="29.21" y="173.736" rot="R180"/>
-<element name="INT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="22.5425" y="201.041"/>
-<element name="GPIO3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="47.625" y="201.041"/>
-<element name="C19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="21.844" y="135.255" rot="R270"/>
-<element name="C20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="38.481" y="135.382" rot="MR90"/>
-<element name="C22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="43.7896" y="127.762" rot="R90"/>
-<element name="C21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="17.907" y="126.873"/>
-<element name="C23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="21.1328" y="113.919"/>
-<element name="C24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="39.243" y="113.919" rot="R180"/>
-<element name="Q17" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="40.132" y="119.761"/>
-<element name="Q18" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="20.066" y="119.761"/>
-<element name="Q19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="40.132" y="98.679"/>
-<element name="Q20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="40.132" y="107.569"/>
-<element name="Q21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="40.259" y="90.297" rot="R180"/>
-<element name="Q22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="20.066" y="107.569" rot="R180"/>
-<element name="Q23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="20.066" y="90.297" rot="R180"/>
-<element name="Q24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="20.066" y="98.679" rot="R180"/>
-<element name="R48" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="10.287" y="99.949" rot="R270"/>
-<element name="R41" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820RS" x="12.2428" y="140.4112" rot="MR270"/>
-<element name="R42" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R" x="38.481" y="139.827" rot="MR90"/>
-<element name="R45" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="48.641" y="107.569"/>
-<element name="R46" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="49.911" y="99.949" rot="R90"/>
-<element name="R47" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="11.557" y="107.569"/>
+<element name="LED3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="LED3MM" package3d_urn="urn:adsk.eagle:package:1238520/2" value="LEDLED_T_3MM" x="59.6265" y="168.656" rot="R270">
+<attribute name="NAME" x="60.0075" y="166.751" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="57.9755" y="166.751" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="R22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7" x="59.436" y="174.5615" rot="MR90">
+<attribute name="NAME" x="60.706" y="173.2915" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="56.896" y="173.2915" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="D2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="59.563" y="161.528" rot="MR90">
+<attribute name="NAME" x="61.593" y="161.528" size="1.27" layer="26" rot="MR90" align="bottom-center"/>
+<attribute name="VALUE" x="57.533" y="161.528" size="1.27" layer="28" rot="MR90" align="top-center"/>
+</element>
+<element name="R23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="120R" x="44.196" y="176.8475" rot="MR270">
+<attribute name="NAME" x="42.926" y="178.1175" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="46.736" y="178.1175" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="DAC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DACMOD_P" package3d_urn="urn:adsk.eagle:package:1966569/2" value="DAC" x="76.835" y="167.7035">
+<attribute name="NAME" x="66.675" y="176.8983" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="66.675" y="157.5435" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="CHANNELS" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="80.645" y="156.2735">
+<attribute name="NAME" x="74.2188" y="158.1023" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="74.295" y="153.0985" size="1.27" layer="27"/>
+</element>
+<element name="R24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="44.196" y="172.4025" rot="MR90">
+<attribute name="NAME" x="45.466" y="171.1325" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="41.656" y="171.1325" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="GPIO2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="29.21" y="173.736" rot="R180">
+<attribute name="NAME" x="35.6362" y="171.9072" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="35.56" y="176.911" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="INT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="22.5425" y="201.041">
+<attribute name="NAME" x="19.9263" y="202.8698" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="20.0025" y="197.866" size="1.27" layer="27"/>
+</element>
+<element name="GPIO3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="47.625" y="201.041">
+<attribute name="NAME" x="41.1988" y="202.8698" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="41.275" y="197.866" size="1.27" layer="27"/>
+</element>
+<element name="C19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="21.844" y="135.255" rot="R270">
+<attribute name="NAME" x="23.114" y="136.525" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="19.304" y="136.525" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="C20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="38.481" y="135.382" rot="MR90">
+<attribute name="NAME" x="39.751" y="134.112" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="35.941" y="134.112" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="C22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="43.7896" y="127.762" rot="R90">
+<attribute name="NAME" x="42.2656" y="125.476" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="46.5836" y="125.476" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="C21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="17.907" y="126.873">
+<attribute name="NAME" x="15.621" y="128.397" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="15.621" y="124.079" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="C23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="21.1328" y="113.919">
+<attribute name="NAME" x="15.1638" y="117.078" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="15.2438" y="109.657" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="C24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="39.243" y="113.919" rot="R180">
+<attribute name="NAME" x="45.212" y="110.76" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="45.132" y="118.181" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q17" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="40.132" y="119.761">
+<attribute name="NAME" x="35.052" y="116.2558" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="35.052" y="114.681" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q18" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="20.066" y="119.761">
+<attribute name="NAME" x="14.986" y="116.2558" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="14.986" y="114.681" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="40.132" y="98.679">
+<attribute name="NAME" x="35.052" y="95.1738" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="35.052" y="93.599" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="40.132" y="107.569">
+<attribute name="NAME" x="35.052" y="104.0638" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="35.052" y="102.489" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="40.259" y="90.297" rot="R180">
+<attribute name="NAME" x="45.339" y="93.8022" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="45.339" y="95.377" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="20.066" y="107.569" rot="R180">
+<attribute name="NAME" x="25.146" y="111.0742" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="25.146" y="112.649" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="20.066" y="90.297" rot="R180">
+<attribute name="NAME" x="25.146" y="93.8022" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="25.146" y="95.377" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q24" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="20.066" y="98.679" rot="R180">
+<attribute name="NAME" x="25.146" y="102.1842" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="25.146" y="103.759" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="R48" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="10.287" y="99.949" rot="R270">
+<attribute name="NAME" x="11.4554" y="102.0826" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="7.9756" y="102.0826" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="R41" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820RS" x="12.2428" y="140.4112" rot="MR270">
+<attribute name="NAME" x="10.9728" y="141.6812" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="14.7828" y="141.6812" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R42" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R" x="38.481" y="139.827" rot="MR90">
+<attribute name="NAME" x="39.751" y="138.557" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="35.941" y="138.557" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="R45" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="48.641" y="107.569">
+<attribute name="NAME" x="46.5074" y="108.7374" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="46.5074" y="105.2576" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R46" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="49.911" y="99.949" rot="R90">
+<attribute name="NAME" x="48.7426" y="97.8154" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="52.2224" y="97.8154" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R47" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="11.557" y="107.569">
+<attribute name="NAME" x="9.4234" y="108.7374" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="9.4234" y="105.2576" size="1.27" layer="27" ratio="10"/>
+</element>
 <element name="VR5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="1K" x="16.637" y="142.0114" rot="R270">
+<attribute name="NAME" x="19.431" y="146.7104" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="16.637" y="142.0114" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="16.637" y="142.0114" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="12.954" y="146.8374" size="1.27" layer="21" rot="R270"/>
 </element>
 <element name="VR6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="2K" x="46.228" y="138.176" rot="R270">
+<attribute name="NAME" x="49.022" y="142.875" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="46.228" y="138.176" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="46.228" y="138.176" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="42.545" y="143.002" size="1.27" layer="21" rot="R270"/>
 </element>
-<element name="IC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="" x="29.845" y="134.366" rot="R270"/>
-<element name="GS_AMP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="17.907" y="131.826" rot="R180"/>
-<element name="GS_1_DAC" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="21.844" y="143.256" rot="R270"/>
-<element name="C31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="67.818" y="135.255" rot="R270"/>
-<element name="C32" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="84.455" y="135.382" rot="MR90"/>
-<element name="C34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="54.4322" y="129.159" rot="R180"/>
-<element name="C33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="92.964" y="125.73" rot="R180"/>
-<element name="C35" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="85.3948" y="114.046" rot="R180"/>
-<element name="C36" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="66.294" y="113.919" rot="R180"/>
-<element name="Q33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="65.659" y="119.761" rot="R180"/>
-<element name="Q34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="85.217" y="119.761" rot="R180"/>
-<element name="Q35" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="65.659" y="98.679" rot="R180"/>
-<element name="Q36" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="65.659" y="107.569" rot="R180"/>
-<element name="Q37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="65.278" y="90.8558" rot="R180"/>
-<element name="Q38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="85.217" y="107.569"/>
-<element name="Q39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="85.217" y="90.297"/>
-<element name="Q40" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="85.217" y="98.679"/>
-<element name="R64" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="94.488" y="99.949" rot="R270"/>
-<element name="R57" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820RS" x="58.2168" y="140.4112" rot="MR270"/>
-<element name="R58" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R" x="84.455" y="139.827" rot="MR90"/>
-<element name="R61" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="57.15" y="107.569" rot="R180"/>
-<element name="R62" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="57.15" y="98.679" rot="R180"/>
-<element name="R63" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="93.218" y="107.569" rot="R180"/>
+<element name="IC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="" x="29.845" y="134.366" rot="R270">
+<attribute name="NAME" x="26.797" y="143.637" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="29.21" y="141.097" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="GS_AMP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="17.907" y="131.826" rot="R180">
+<attribute name="NAME" x="20.5232" y="129.9972" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="20.447" y="135.001" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="GS_1_DAC" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="21.844" y="143.256" rot="R270">
+<attribute name="NAME" x="23.6728" y="145.8722" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="18.669" y="145.796" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="C31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="67.818" y="135.255" rot="R270">
+<attribute name="NAME" x="69.088" y="136.525" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="65.278" y="136.525" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="C32" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="84.455" y="135.382" rot="MR90">
+<attribute name="NAME" x="85.725" y="134.112" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="81.915" y="134.112" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="C34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="54.4322" y="129.159" rot="R180">
+<attribute name="NAME" x="56.7182" y="127.635" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="56.7182" y="131.953" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="C33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_2,54-5X5" package3d_urn="urn:adsk.eagle:package:1281700/3" value="100nf" x="92.964" y="125.73" rot="R180">
+<attribute name="NAME" x="95.25" y="124.206" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="95.25" y="128.524" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="C35" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="85.3948" y="114.046" rot="R180">
+<attribute name="NAME" x="91.3638" y="110.887" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="91.2838" y="118.308" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="C36" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_16X7" package3d_urn="urn:adsk.eagle:package:1360060/3" value="100nf" x="66.294" y="113.919" rot="R180">
+<attribute name="NAME" x="72.263" y="110.76" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="72.183" y="118.181" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="65.659" y="119.761" rot="R180">
+<attribute name="NAME" x="70.739" y="123.2662" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="70.739" y="124.841" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="85.217" y="119.761" rot="R180">
+<attribute name="NAME" x="90.297" y="123.2662" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="90.297" y="124.841" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q35" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="65.659" y="98.679" rot="R180">
+<attribute name="NAME" x="70.739" y="102.1842" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="70.739" y="103.759" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q36" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50" x="65.659" y="107.569" rot="R180">
+<attribute name="NAME" x="70.739" y="111.0742" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="70.739" y="112.649" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP50_TH" x="65.278" y="90.8558" rot="R180">
+<attribute name="NAME" x="70.358" y="94.361" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="70.358" y="95.9358" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="Q38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48" x="85.217" y="107.569">
+<attribute name="NAME" x="80.137" y="104.0638" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="80.137" y="102.489" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="85.217" y="90.297">
+<attribute name="NAME" x="80.137" y="86.7918" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="80.137" y="85.217" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="Q40" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220" package3d_urn="urn:adsk.eagle:package:1360029/5" value="TIP48_TH" x="85.217" y="98.679">
+<attribute name="NAME" x="80.137" y="95.1738" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="80.137" y="93.599" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R64" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="94.488" y="99.949" rot="R270">
+<attribute name="NAME" x="95.6564" y="102.0826" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="92.1766" y="102.0826" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="R57" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820RS" x="58.2168" y="140.4112" rot="MR270">
+<attribute name="NAME" x="56.9468" y="141.6812" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="60.7568" y="141.6812" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R58" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="270R" x="84.455" y="139.827" rot="MR90">
+<attribute name="NAME" x="85.725" y="138.557" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="81.915" y="138.557" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="R61" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="57.15" y="107.569" rot="R180">
+<attribute name="NAME" x="59.2836" y="106.4006" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="59.2836" y="109.8804" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="R62" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="57.15" y="98.679" rot="R180">
+<attribute name="NAME" x="59.2836" y="97.5106" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="59.2836" y="100.9904" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="R63" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204V" package3d_urn="urn:adsk.eagle:package:1232751/4" value="220R" x="93.218" y="107.569" rot="R180">
+<attribute name="NAME" x="95.3516" y="106.4006" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="95.3516" y="109.8804" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
 <element name="VR9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="1K" x="62.611" y="142.0114" rot="R270">
+<attribute name="NAME" x="65.405" y="146.7104" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="62.611" y="142.0114" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="62.611" y="142.0114" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="58.928" y="146.8374" size="1.27" layer="21" rot="R270"/>
 </element>
 <element name="VR10" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="2K" x="92.202" y="138.176" rot="R270">
+<attribute name="NAME" x="94.996" y="142.875" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="92.202" y="138.176" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="92.202" y="138.176" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="88.519" y="143.002" size="1.27" layer="21" rot="R270"/>
 </element>
-<element name="IC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="" x="75.819" y="134.366" rot="R270"/>
-<element name="GS_CH9" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="63.881" y="131.826" rot="R180"/>
-<element name="GS_CH10" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="67.818" y="143.256" rot="R270"/>
-<element name="C64" library="resistor" library_urn="urn:adsk.eagle:library:348" package="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10uf" x="119.888" y="188.2045"/>
-<element name="C66" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="125.6665" y="185.4835" rot="R90"/>
-<element name="RG1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7805" x="108.585" y="196.977" rot="R90"/>
-<element name="D31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="132.2705" y="200.152" rot="MR180"/>
-<element name="D33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="103.5558" y="197.0278" rot="MR90"/>
-<element name="RG2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7808" x="121.4755" y="197.612" rot="R180"/>
-<element name="D34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="121.4755" y="194.1195" rot="MR0"/>
-<element name="C68" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="128.778" y="192.8495" rot="R270"/>
-<element name="C70" library="resistor" library_urn="urn:adsk.eagle:library:348" package="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10uf" x="118.4275" y="152.273" rot="R180"/>
-<element name="RG3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7805" x="110.641" y="143.002" rot="R180"/>
-<element name="C71" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="111.887" y="152.527"/>
-<element name="D37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="132.6388" y="158.877" rot="MR180"/>
-<element name="D38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="119.38" y="139.954" rot="MR270"/>
-<element name="RG4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7808" x="127.111" y="148.3995" rot="R270"/>
-<element name="D39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="122.2135" y="158.877" rot="MR0"/>
-<element name="C72" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="129.921" y="149.6695" rot="R270"/>
-<element name="JP9" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X07" package3d_urn="urn:adsk.eagle:package:22477/2" value="" x="94.1705" y="189.103" rot="R270"/>
+<element name="IC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="" x="75.819" y="134.366" rot="R270">
+<attribute name="NAME" x="72.771" y="143.637" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="75.184" y="141.097" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="GS_CH9" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="63.881" y="131.826" rot="R180">
+<attribute name="NAME" x="66.4972" y="129.9972" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="66.421" y="135.001" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="GS_CH10" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="67.818" y="143.256" rot="R270">
+<attribute name="NAME" x="69.6468" y="145.8722" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="64.643" y="145.796" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="C64" library="resistor" library_urn="urn:adsk.eagle:library:348" package="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10uf" x="119.888" y="188.2045">
+<attribute name="NAME" x="122.428" y="189.2205" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="122.428" y="186.0455" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="C66" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="125.6665" y="185.4835" rot="R90">
+<attribute name="NAME" x="124.1425" y="183.1975" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="128.4605" y="183.1975" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="RG1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7805" x="108.585" y="196.977" rot="R90">
+<attribute name="NAME" x="114.6302" y="191.897" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="116.205" y="191.897" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="D31" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="132.2705" y="200.152" rot="MR180">
+<attribute name="NAME" x="132.2705" y="198.122" size="1.27" layer="26" rot="MR180" align="bottom-center"/>
+<attribute name="VALUE" x="132.2705" y="202.182" size="1.27" layer="28" rot="MR180" align="top-center"/>
+</element>
+<element name="D33" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="103.5558" y="197.0278" rot="MR90">
+<attribute name="NAME" x="105.5858" y="197.0278" size="1.27" layer="26" rot="MR90" align="bottom-center"/>
+<attribute name="VALUE" x="101.5258" y="197.0278" size="1.27" layer="28" rot="MR90" align="top-center"/>
+</element>
+<element name="RG2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7808" x="121.4755" y="197.612" rot="R180">
+<attribute name="NAME" x="126.5555" y="203.6572" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="126.5555" y="205.232" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="D34" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="121.4755" y="194.1195" rot="MR0">
+<attribute name="NAME" x="121.4755" y="196.1495" size="1.27" layer="26" rot="MR0" align="bottom-center"/>
+<attribute name="VALUE" x="121.4755" y="192.0895" size="1.27" layer="28" rot="MR0" align="top-center"/>
+</element>
+<element name="C68" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="128.778" y="192.8495" rot="R270">
+<attribute name="NAME" x="130.302" y="195.1355" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="125.984" y="195.1355" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="C70" library="resistor" library_urn="urn:adsk.eagle:library:348" package="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10uf" x="118.4275" y="152.273" rot="R180">
+<attribute name="NAME" x="115.8875" y="151.257" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="115.8875" y="154.432" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="RG3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7805" x="110.641" y="143.002" rot="R180">
+<attribute name="NAME" x="115.721" y="149.0472" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="115.721" y="150.622" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="C71" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="111.887" y="152.527">
+<attribute name="NAME" x="109.601" y="154.051" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="109.601" y="149.733" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="D37" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="132.6388" y="158.877" rot="MR180">
+<attribute name="NAME" x="132.6388" y="156.847" size="1.27" layer="26" rot="MR180" align="bottom-center"/>
+<attribute name="VALUE" x="132.6388" y="160.907" size="1.27" layer="28" rot="MR180" align="top-center"/>
+</element>
+<element name="D38" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="119.38" y="139.954" rot="MR270">
+<attribute name="NAME" x="117.35" y="139.954" size="1.27" layer="26" rot="MR270" align="bottom-center"/>
+<attribute name="VALUE" x="121.41" y="139.954" size="1.27" layer="28" rot="MR270" align="top-center"/>
+</element>
+<element name="RG4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TO220V" package3d_urn="urn:adsk.eagle:package:5403030/2" value="LM7808" x="127.111" y="148.3995" rot="R270">
+<attribute name="NAME" x="121.0658" y="153.4795" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="119.491" y="153.4795" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="D39" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="122.2135" y="158.877" rot="MR0">
+<attribute name="NAME" x="122.2135" y="160.907" size="1.27" layer="26" rot="MR0" align="bottom-center"/>
+<attribute name="VALUE" x="122.2135" y="156.847" size="1.27" layer="28" rot="MR0" align="top-center"/>
+</element>
+<element name="C72" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="129.921" y="149.6695" rot="R270">
+<attribute name="NAME" x="131.445" y="151.9555" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="127.127" y="151.9555" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="JP9" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X07" package3d_urn="urn:adsk.eagle:package:22477/2" value="" x="94.1705" y="189.103" rot="R270">
+<attribute name="NAME" x="95.9993" y="198.0692" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="90.9955" y="197.993" size="1.27" layer="27" rot="R270"/>
+</element>
 <element name="X2" library="con-berg" library_urn="urn:adsk.eagle:library:130" package="PN61729" package3d_urn="urn:adsk.eagle:package:6148/1" value="" x="12.827" y="157.607" rot="R270">
 <attribute name="MF" value="" x="12.827" y="157.607" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="12.827" y="157.607" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="19.177" y="163.957" size="1.27" layer="25" rot="R270"/>
 <attribute name="OC_FARNELL" value="unknown" x="12.827" y="157.607" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="12.827" y="157.607" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="3.937" y="149.987" size="1.27" layer="27"/>
 </element>
-<element name="R2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0617V" package3d_urn="urn:adsk.eagle:package:1232754/5" value="10RS" x="23.8125" y="65.7728"/>
-<element name="R3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="12.827" y="81.2165" rot="MR180"/>
-<element name="R4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="29.9974" y="81.2165" rot="MR180"/>
-<element name="RL5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="17.526" y="74.676" rot="R270"/>
-<element name="RL6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="34.7345" y="74.549" rot="R270"/>
-<element name="K_CH3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="46.4439" y="66.294"/>
-<element name="R12" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0617V" package3d_urn="urn:adsk.eagle:package:1232754/5" value="10RS" x="69.6595" y="66.4586" rot="R180"/>
-<element name="R14" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="60.833" y="81.2165" rot="MR0"/>
-<element name="R17" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="79.3115" y="81.2165" rot="MR0"/>
-<element name="RL7" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="63.6905" y="74.549" rot="R270"/>
-<element name="RL8" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="82.1055" y="74.549" rot="R270"/>
-<element name="K_CH4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="93.5355" y="66.3194"/>
-<element name="C2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="116.713" y="131.826" rot="MR0"/>
-<element name="IC3" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="74AC14N" x="108.077" y="124.206" rot="R270"/>
-<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="94.2848" y="78.3717" rot="R180"/>
-<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="47.879" y="78.3463" rot="R180"/>
-<element name="J1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="12" package3d_urn="urn:adsk.eagle:package:1627863/4" value="JUMPERS12MM" x="86.487" y="177.546"/>
-<element name="J2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="15" package3d_urn="urn:adsk.eagle:package:1627865/4" value="J15MM" x="70.993" y="163.957"/>
-<element name="J3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="J_7MM" x="75.9714" y="60.0456" rot="R90"/>
-<element name="J4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="05" package3d_urn="urn:adsk.eagle:package:1627861/2" value="JUMPERS5MM" x="6.858" y="135.636"/>
-<element name="J5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="JUMPERS7MM" x="52.197" y="146.685" rot="R90"/>
-<element name="J6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="J7MM" x="56.134" y="59.817" rot="R90"/>
-<element name="GND_HV" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="145.669" y="129.54" rot="R90"/>
-<element name="5G_D" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="106.8908" y="156.337" rot="R90"/>
-<element name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X04" package3d_urn="urn:adsk.eagle:package:22461/2" value="" x="23.622" y="157.607" rot="R90"/>
-<element name="UC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TEENSY_3.0-3.2_DIL" package3d_urn="urn:adsk.eagle:package:1283572/5" value="TEENSY_3" x="120.777" y="88.8238"/>
-<element name="INTEXT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="133.1214" y="101.5746" rot="R270"/>
-<element name="AC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value="MPU6050" x="135.763" y="90.0938"/>
-<element name="INTEXT" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="144.907" y="100.3046" rot="R180"/>
-<element name="GPIO1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X13" package3d_urn="urn:adsk.eagle:package:22421/2" value="" x="108.966" y="87.5538" rot="R90"/>
-<element name="2N3904" library="transistor" library_urn="urn:adsk.eagle:library:402" package="TO92-EBC" package3d_urn="urn:adsk.eagle:package:29915/2" value="" x="49.022" y="168.275"/>
-<element name="R1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204/5" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS" x="93.5228" y="73.9648" rot="MR180"/>
-<element name="R5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204/5" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS" x="46.609" y="73.9648" rot="MR180"/>
+<element name="R2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0617V" package3d_urn="urn:adsk.eagle:package:1232754/5" value="10RS" x="23.8125" y="65.7728">
+<attribute name="NAME" x="24.4475" y="67.1952" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="24.4475" y="63.1566" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="12.827" y="81.2165" rot="MR180">
+<attribute name="NAME" x="11.557" y="79.9465" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="11.557" y="83.7565" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="R4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="29.9974" y="81.2165" rot="MR180">
+<attribute name="NAME" x="28.7274" y="79.9465" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="28.7274" y="83.7565" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="RL5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="17.526" y="74.676" rot="R270">
+<attribute name="NAME" x="14.605" y="78.74" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="16.891" y="77.089" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="RL6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="34.7345" y="74.549" rot="R270">
+<attribute name="NAME" x="31.8135" y="78.613" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="34.0995" y="76.962" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="K_CH3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="46.4439" y="66.294">
+<attribute name="NAME" x="40.9189" y="62.984" size="1.016" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="43.1414" y="71.4565" size="1.016" layer="27" ratio="10"/>
+</element>
+<element name="R12" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0617V" package3d_urn="urn:adsk.eagle:package:1232754/5" value="10RS" x="69.6595" y="66.4586" rot="R180">
+<attribute name="NAME" x="69.0245" y="65.0362" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="69.0245" y="69.0748" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="R14" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="60.833" y="81.2165" rot="MR0">
+<attribute name="NAME" x="62.103" y="82.4865" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="62.103" y="78.6765" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="R17" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="680R" x="79.3115" y="81.2165" rot="MR0">
+<attribute name="NAME" x="80.5815" y="82.4865" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="80.5815" y="78.6765" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="RL7" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="63.6905" y="74.549" rot="R270">
+<attribute name="NAME" x="60.7695" y="78.613" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="63.0555" y="76.962" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="RL8" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TS210" package3d_urn="urn:adsk.eagle:package:1283545/2" value="RELAY_6P" x="82.1055" y="74.549" rot="R270">
+<attribute name="NAME" x="79.1845" y="78.613" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="81.4705" y="76.962" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="K_CH4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="93.5355" y="66.3194">
+<attribute name="NAME" x="88.0105" y="63.0094" size="1.016" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="90.233" y="71.4819" size="1.016" layer="27" ratio="10"/>
+</element>
+<element name="C2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="116.713" y="131.826" rot="MR0">
+<attribute name="NAME" x="117.983" y="133.096" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="117.983" y="129.286" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="IC3" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" package="DIL14" package3d_urn="urn:adsk.eagle:package:16407/2" value="74AC14N" x="108.077" y="124.206" rot="R270">
+<attribute name="NAME" x="105.029" y="133.477" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="107.442" y="130.937" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="94.2848" y="78.3717" rot="R180">
+<attribute name="NAME" x="96.901" y="76.5429" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="96.8248" y="81.5467" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="47.879" y="78.3463" rot="R180">
+<attribute name="NAME" x="50.4952" y="76.5175" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="50.419" y="81.5213" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="J1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="12" package3d_urn="urn:adsk.eagle:package:1627863/4" value="JUMPERS12MM" x="86.487" y="177.546">
+<attribute name="NAME" x="83.312" y="178.181" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="92.787" y="177.546" size="0.02" layer="27"/>
+</element>
+<element name="J2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="15" package3d_urn="urn:adsk.eagle:package:1627865/4" value="J15MM" x="70.993" y="163.957">
+<attribute name="NAME" x="65.278" y="164.592" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="78.5929" y="163.957" size="0.02" layer="27"/>
+</element>
+<element name="J3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="J_7MM" x="75.9714" y="60.0456" rot="R90">
+<attribute name="NAME" x="75.3364" y="57.5056" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="75.9714" y="63.7456" size="0.02" layer="27" rot="R90"/>
+</element>
+<element name="J4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="05" package3d_urn="urn:adsk.eagle:package:1627861/2" value="JUMPERS5MM" x="6.858" y="135.636">
+<attribute name="NAME" x="4.318" y="136.525" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="9.3581" y="135.636" size="0.02" layer="27"/>
+</element>
+<element name="J5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="JUMPERS7MM" x="52.197" y="146.685" rot="R90">
+<attribute name="NAME" x="51.562" y="144.145" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="52.197" y="150.385" size="0.02" layer="27" rot="R90"/>
+</element>
+<element name="J6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="07" package3d_urn="urn:adsk.eagle:package:1627862/4" value="J7MM" x="56.134" y="59.817" rot="R90">
+<attribute name="NAME" x="55.499" y="57.277" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="56.134" y="63.517" size="0.02" layer="27" rot="R90"/>
+</element>
+<element name="GND_HV" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="145.669" y="129.54" rot="R90">
+<attribute name="NAME" x="143.8402" y="124.3838" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="148.844" y="124.46" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="5G_D" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="106.8908" y="156.337" rot="R90">
+<attribute name="NAME" x="105.062" y="151.1808" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="110.0658" y="151.257" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X04" package3d_urn="urn:adsk.eagle:package:22461/2" value="" x="23.622" y="157.607" rot="R90">
+<attribute name="NAME" x="20.447" y="152.527" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="28.067" y="152.527" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="UC2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TEENSY_3.0-3.2_DIL" package3d_urn="urn:adsk.eagle:package:1283572/5" value="TEENSY_3" x="120.777" y="88.8238">
+<attribute name="NAME" x="116.967" y="102.7938" size="1.27" layer="25" font="vector"/>
+<attribute name="VALUE" x="116.967" y="74.8538" size="1.27" layer="27" font="vector"/>
+</element>
+<element name="INTEXT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="133.1214" y="101.5746" rot="R270">
+<attribute name="NAME" x="134.9502" y="104.1908" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="129.9464" y="104.1146" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="AC1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="MPU6050" package3d_urn="urn:adsk.eagle:package:1282964/7" value="MPU6050" x="135.763" y="90.0938">
+<attribute name="NAME" x="131.953" y="94.5388" size="1.27" layer="21"/>
+<attribute name="VALUE" x="131.953" y="81.8388" size="1.27" layer="21"/>
+</element>
+<element name="INTEXT" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="144.907" y="100.3046" rot="R180">
+<attribute name="NAME" x="147.5232" y="98.4758" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="147.447" y="103.4796" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="GPIO1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X13" package3d_urn="urn:adsk.eagle:package:22421/2" value="" x="108.966" y="87.5538" rot="R90">
+<attribute name="NAME" x="107.1372" y="70.9676" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="112.141" y="71.0438" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="2N3904" library="transistor" library_urn="urn:adsk.eagle:library:402" package="TO92-EBC" package3d_urn="urn:adsk.eagle:package:29915/2" value="" x="49.022" y="168.275">
+<attribute name="NAME" x="46.482" y="170.053" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="46.482" y="163.703" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204/5" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS" x="93.5228" y="73.9648" rot="MR180">
+<attribute name="NAME" x="91.5162" y="72.7964" size="0.9906" layer="26" ratio="10" rot="MR180"/>
+<attribute name="VALUE" x="91.3892" y="76.2762" size="0.9906" layer="28" ratio="10" rot="MR180"/>
+</element>
+<element name="R5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="0204/5" package3d_urn="urn:adsk.eagle:package:1232752/4" value="10RS" x="46.609" y="73.9648" rot="MR180">
+<attribute name="NAME" x="44.6024" y="72.7964" size="0.9906" layer="26" ratio="10" rot="MR180"/>
+<attribute name="VALUE" x="44.4754" y="76.2762" size="0.9906" layer="28" ratio="10" rot="MR180"/>
+</element>
 <element name="VR1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R" x="30.226" y="117.348" rot="R90">
+<attribute name="NAME" x="27.432" y="112.649" size="1.27" layer="21" rot="R90"/>
 <attribute name="PROD_ID" value="''" x="30.226" y="117.348" size="0.1016" layer="27" font="vector" rot="R90" display="off"/>
 <attribute name="SF_SKU" value="''" x="30.226" y="117.348" size="0.1016" layer="27" font="vector" rot="R90" display="off"/>
+<attribute name="VALUE" x="33.909" y="112.522" size="1.27" layer="21" rot="R90"/>
 </element>
 <element name="VR2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R" x="48.8696" y="117.348" rot="R270">
+<attribute name="NAME" x="51.6636" y="122.047" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="48.8696" y="117.348" size="0.1016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="48.8696" y="117.348" size="0.1016" layer="27" font="vector" rot="R270" display="off"/>
+<attribute name="VALUE" x="45.1866" y="122.174" size="1.27" layer="21" rot="R270"/>
 </element>
 <element name="VR3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R" x="56.4388" y="117.348" rot="R270">
+<attribute name="NAME" x="59.2328" y="122.047" size="1.27" layer="21" rot="R270"/>
 <attribute name="PROD_ID" value="''" x="56.4388" y="117.348" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SF_SKU" value="''" x="56.4388" y="117.348" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="52.7558" y="122.174" size="1.27" layer="21" rot="R270"/>
 </element>
 <element name="VR4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="TRIMPOT-PTH-3386U" package3d_urn="urn:adsk.eagle:package:1360028/5" value="500R" x="76.2" y="108.712" rot="R90">
+<attribute name="NAME" x="73.406" y="104.013" size="1.27" layer="21" rot="R90"/>
 <attribute name="PROD_ID" value="''" x="76.2" y="108.712" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SF_SKU" value="''" x="76.2" y="108.712" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="79.883" y="103.886" size="1.27" layer="21" rot="R90"/>
 </element>
-<element name="D1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="130.6576" y="117.5004" rot="MR0"/>
-<element name="D3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="140.2588" y="64.4652" rot="MR90"/>
-<element name="R8" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="26.302" y="201.958" rot="MR90"/>
-<element name="R20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="8.636" y="75.692" rot="MR270"/>
-<element name="R21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="26.67" y="75.438" rot="MR270"/>
-<element name="R25" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="63.246" y="75.438" rot="MR270"/>
-<element name="R26" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="82.042" y="75.438" rot="MR270"/>
-<element name="R6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="48.006" y="122.428" rot="MR0"/>
-<element name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="49.53" y="125.984" rot="R180"/>
-<element name="R7" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="29.972" y="124.46" rot="MR90"/>
-<element name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="31.242" y="107.95"/>
-<element name="D4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="106.426" y="181.61" rot="MR0"/>
-<element name="R9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="59.69" y="119.888" rot="MR180"/>
-<element name="JP6" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="57.658" y="124.714"/>
-<element name="R18" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="75.692" y="114.3" rot="MR180"/>
-<element name="JP7" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="76.454" y="119.126"/>
-<element name="C1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="18.034" y="192.024" rot="R180"/>
-<element name="C5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="124.968" y="111.506"/>
-<element name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="124.46" y="121.666" rot="R180"/>
-<element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="12.7" y="184.404" rot="R270"/>
-<element name="JP8" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="121.92" y="126.746"/>
-<element name="JP10" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="116.84" y="116.078"/>
-<element name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820r" x="116.332" y="126.746" rot="MR180"/>
-<element name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820R" x="115.57" y="120.65" rot="MR270"/>
-<element name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="74.168" rot="R90"/>
-<element name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="112.522" rot="R90"/>
-<element name="X2+15-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="150.876" rot="R90"/>
-<element name="JP11" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X07" package3d_urn="urn:adsk.eagle:package:22477/2" value="" x="98.552" y="189.103" rot="R270"/>
-<element name="5G_D1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="102.362" y="156.337" rot="R90"/>
-<element name="UART_COM" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X02" package3d_urn="urn:adsk.eagle:package:22455/2" value="" x="8.508" y="190" rot="R180"/>
-<element name="GPIO2_ACCEL" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="125.476" y="64.516"/>
-<element name="1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="PTR_AK300/3" package3d_urn="urn:adsk.eagle:package:5402944/3" value="PTR500" x="140.462" y="186.69" rot="R270"/>
+<element name="D1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="130.6576" y="117.5004" rot="MR0">
+<attribute name="NAME" x="130.6576" y="119.5304" size="1.27" layer="26" rot="MR0" align="bottom-center"/>
+<attribute name="VALUE" x="130.6576" y="115.4704" size="1.27" layer="28" rot="MR0" align="top-center"/>
+</element>
+<element name="D3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="140.2588" y="64.4652" rot="MR90">
+<attribute name="NAME" x="142.2888" y="64.4652" size="1.27" layer="26" rot="MR90" align="bottom-center"/>
+<attribute name="VALUE" x="138.2288" y="64.4652" size="1.27" layer="28" rot="MR90" align="top-center"/>
+</element>
+<element name="R8" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="26.302" y="201.958" rot="MR90">
+<attribute name="NAME" x="27.572" y="200.688" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="23.762" y="200.688" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="R20" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="8.636" y="75.692" rot="MR270">
+<attribute name="NAME" x="7.366" y="76.962" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="11.176" y="76.962" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R21" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="26.67" y="75.438" rot="MR270">
+<attribute name="NAME" x="25.4" y="76.708" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="29.21" y="76.708" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R25" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="63.246" y="75.438" rot="MR270">
+<attribute name="NAME" x="61.976" y="76.708" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="65.786" y="76.708" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R26" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10K" x="82.042" y="75.438" rot="MR270">
+<attribute name="NAME" x="80.772" y="76.708" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="84.582" y="76.708" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="R6" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="48.006" y="122.428" rot="MR0">
+<attribute name="NAME" x="49.276" y="123.698" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="49.276" y="119.888" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="49.53" y="125.984" rot="R180">
+<attribute name="NAME" x="52.1462" y="124.1552" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="52.07" y="129.159" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R7" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="29.972" y="124.46" rot="MR90">
+<attribute name="NAME" x="31.242" y="123.19" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="27.432" y="123.19" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="31.242" y="107.95">
+<attribute name="NAME" x="28.6258" y="109.7788" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="28.702" y="104.775" size="1.27" layer="27"/>
+</element>
+<element name="D4" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESM4226X229" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S" x="106.426" y="181.61" rot="MR0">
+<attribute name="NAME" x="106.426" y="183.64" size="1.27" layer="26" rot="MR0" align="bottom-center"/>
+<attribute name="VALUE" x="106.426" y="179.58" size="1.27" layer="28" rot="MR0" align="top-center"/>
+</element>
+<element name="R9" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="59.69" y="119.888" rot="MR180">
+<attribute name="NAME" x="58.42" y="118.618" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="58.42" y="122.428" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="JP6" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="57.658" y="124.714">
+<attribute name="NAME" x="55.0418" y="126.5428" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="55.118" y="121.539" size="1.27" layer="27"/>
+</element>
+<element name="R18" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="10R" x="75.692" y="114.3" rot="MR180">
+<attribute name="NAME" x="74.422" y="113.03" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="74.422" y="116.84" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="JP7" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="76.454" y="119.126">
+<attribute name="NAME" x="73.8378" y="120.9548" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="73.914" y="115.951" size="1.27" layer="27"/>
+</element>
+<element name="C1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="18.034" y="192.024" rot="MR0">
+<attribute name="NAME" x="19.304" y="193.294" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="19.304" y="189.484" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="C5" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CAP_CER_SMD-0805" package3d_urn="urn:adsk.eagle:package:1281702/2" value="100nf" x="124.968" y="111.506">
+<attribute name="NAME" x="123.698" y="112.776" size="1.27" layer="25"/>
+<attribute name="VALUE" x="123.698" y="108.966" size="1.27" layer="27"/>
+</element>
+<element name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="124.46" y="121.666" rot="R180">
+<attribute name="NAME" x="126.746" y="120.142" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="126.746" y="124.46" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nf" x="12.7" y="184.404" rot="R270">
+<attribute name="NAME" x="14.224" y="186.69" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="9.906" y="186.69" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="JP8" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="121.92" y="126.746">
+<attribute name="NAME" x="119.3038" y="128.5748" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="119.38" y="123.571" size="1.27" layer="27"/>
+</element>
+<element name="JP10" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="116.84" y="116.078">
+<attribute name="NAME" x="114.2238" y="117.9068" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="114.3" y="112.903" size="1.27" layer="27"/>
+</element>
+<element name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820r" x="116.332" y="126.746" rot="MR180">
+<attribute name="NAME" x="115.062" y="125.476" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="115.062" y="129.286" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="RESISTENCIA_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820R" x="115.57" y="120.65" rot="MR270">
+<attribute name="NAME" x="114.3" y="121.92" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="118.11" y="121.92" size="1.27" layer="28" rot="MR270"/>
+</element>
+<element name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="74.168" rot="R90">
+<attribute name="NAME" x="143.518" y="68.643" size="1.016" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="135.0455" y="70.8655" size="1.016" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="112.522" rot="R90">
+<attribute name="NAME" x="143.518" y="106.997" size="1.016" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="135.0455" y="109.2195" size="1.016" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="X2+15-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="CONECTOR_X2_5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value="CONECTOR_5.08" x="140.208" y="150.876" rot="R90">
+<attribute name="NAME" x="143.518" y="145.351" size="1.016" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="135.0455" y="147.5735" size="1.016" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="JP11" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X07" package3d_urn="urn:adsk.eagle:package:22477/2" value="" x="98.552" y="189.103" rot="R270">
+<attribute name="NAME" x="100.3808" y="198.0692" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="95.377" y="197.993" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="5G_D1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="102.362" y="156.337" rot="R90">
+<attribute name="NAME" x="100.5332" y="151.1808" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="105.537" y="151.257" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="UART_COM" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X02" package3d_urn="urn:adsk.eagle:package:22455/2" value="" x="8.508" y="190" rot="R180">
+<attribute name="NAME" x="11.048" y="186.825" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="11.048" y="194.445" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="GPIO2_ACCEL" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="125.476" y="64.516">
+<attribute name="NAME" x="120.3198" y="66.3448" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="120.396" y="61.341" size="1.27" layer="27"/>
+</element>
+<element name="1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" package="PTR_AK300/3" package3d_urn="urn:adsk.eagle:package:5402944/3" value="PTR500" x="140.462" y="186.69" rot="R270">
+<attribute name="NAME" x="147.193" y="194.2592" size="1.778" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="131.826" y="194.2592" size="1.778" layer="27" ratio="10" rot="R270"/>
+</element>
 </elements>
 <signals>
 <signal name="3.3V">
@@ -4196,8 +4649,6 @@ design rules under a new name.</description>
 <wire x1="51.562" y1="163.863" x2="51.689" y2="163.736" width="0.3556" layer="16"/>
 <wire x1="48.895" y1="163.736" x2="46.6725" y2="161.5135" width="0.3556" layer="16"/>
 <wire x1="46.6725" y1="161.5135" x2="46.6725" y2="158.506" width="0.3556" layer="16"/>
-<wire x1="59.563" y1="164.228" x2="58.82398125" y2="164.48898125" width="0.3556" layer="16"/>
-<wire x1="51.689" y1="163.736" x2="51.689" y2="163.736" width="0.3556" layer="16"/>
 <wire x1="59.563" y1="164.228" x2="55.516" y2="164.228" width="0.3556" layer="16"/>
 <wire x1="55.516" y1="164.228" x2="55.024" y2="163.736" width="0.3556" layer="16"/>
 <wire x1="55.024" y1="163.736" x2="51.689" y2="163.736" width="0.3556" layer="16"/>
@@ -4254,8 +4705,6 @@ design rules under a new name.</description>
 <wire x1="117.4115" y1="152.273" x2="117.4115" y2="149.606" width="0.3556" layer="1"/>
 <wire x1="80.487" y1="177.546" x2="80.487" y2="188.499" width="0.3556" layer="1"/>
 <wire x1="80.487" y1="188.499" x2="77.1525" y2="191.8335" width="0.3556" layer="1"/>
-<wire x1="77.1525" y1="191.8335" x2="57.404" y2="191.8335" width="0.3556" layer="1"/>
-<wire x1="57.404" y1="191.8335" x2="34.0995" y2="191.8335" width="0.3556" layer="1"/>
 <wire x1="92.487" y1="164.18" x2="92.487" y2="177.546" width="0.3556" layer="16"/>
 <wire x1="129.921" y1="148.3995" x2="129.921" y2="148.336" width="0.3556" layer="16"/>
 <wire x1="129.921" y1="148.336" x2="129.921" y2="143.764" width="0.3556" layer="16"/>
@@ -4340,7 +4789,6 @@ design rules under a new name.</description>
 <wire x1="113.157" y1="105.3338" x2="106.7308" y2="105.3338" width="0.3556" layer="16"/>
 <wire x1="106.7308" y1="105.3338" x2="105.283" y2="103.886" width="0.3556" layer="16"/>
 <wire x1="54.2925" y1="201.041" x2="57.404" y2="197.9295" width="0.3556" layer="1"/>
-<wire x1="57.404" y1="197.9295" x2="57.404" y2="191.8335" width="0.3556" layer="1"/>
 <wire x1="22.352" y1="161.417" x2="22.352" y2="162.052" width="0.3556" layer="16"/>
 <wire x1="16.129" y1="162.687" x2="13.462" y2="160.02" width="0.3556" layer="16"/>
 <wire x1="21.717" y1="162.687" x2="17.272" y2="162.687" width="0.3556" layer="16"/>
@@ -4387,7 +4835,7 @@ design rules under a new name.</description>
 <wire x1="96.52" y1="160.147" x2="102.362" y2="160.147" width="0.3556" layer="16"/>
 <wire x1="102.362" y1="160.147" x2="106.8908" y2="160.147" width="0.3556" layer="16"/>
 <wire x1="102.362" y1="157.607" x2="102.362" y2="160.147" width="0.3556" layer="16"/>
-<wire x1="21.336" y1="192.024" x2="18.984" y2="192.024" width="0.3556" layer="1"/>
+<wire x1="21.336" y1="192.024" x2="18.984" y2="192.024" width="0.3556" layer="16"/>
 <wire x1="140.208" y1="148.336" x2="129.921" y2="148.336" width="0.4064" layer="16"/>
 <wire x1="21.463" y1="191.897" x2="21.336" y2="192.024" width="0.3556" layer="1"/>
 <contactref element="IC4" pad="8"/>
@@ -4402,7 +4850,14 @@ design rules under a new name.</description>
 <wire x1="56.769" y1="185.42" x2="55.88" y2="184.531" width="0.3556" layer="16"/>
 <wire x1="55.88" y1="184.531" x2="55.88" y2="182.438" width="0.3556" layer="16"/>
 <wire x1="55.88" y1="182.438" x2="57.47" y2="180.848" width="0.3556" layer="16"/>
-<wire x1="57.404" y1="191.8335" x2="59.3445" y2="193.04" width="0" layer="19" extent="1-16"/>
+<wire x1="57.404" y1="197.9295" x2="57.404" y2="195.1736" width="0.3556" layer="1"/>
+<wire x1="57.404" y1="195.1736" x2="56.388" y2="194.1576" width="0.3556" layer="1"/>
+<via x="56.388" y="193.04" extent="1-16" drill="0.9" diameter="2" shape="square"/>
+<wire x1="77.1525" y1="191.8335" x2="56.388" y2="191.8335" width="0.3556" layer="1"/>
+<wire x1="56.388" y1="193.04" x2="56.388" y2="191.8335" width="0.3556" layer="1"/>
+<wire x1="59.3445" y1="193.04" x2="56.388" y2="193.04" width="0.3556" layer="16"/>
+<wire x1="56.388" y1="191.8335" x2="34.0995" y2="191.8335" width="0.3556" layer="1"/>
+<wire x1="56.388" y1="194.1576" x2="56.388" y2="193.04" width="0.3556" layer="1"/>
 <wire x1="92.487" y1="177.546" x2="80.487" y2="177.546" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5_D" class="4">
@@ -4491,14 +4946,12 @@ design rules under a new name.</description>
 <contactref element="C5" pad="2"/>
 <contactref element="C6" pad="1"/>
 <wire x1="125.918" y1="111.506" x2="128.397" y2="111.506" width="0.3556" layer="1"/>
-<wire x1="128.397" y1="130.1242" x2="128.397" y2="121.908453125" width="0.3556" layer="1"/>
+<wire x1="128.397" y1="130.1242" x2="128.397" y2="121.793" width="0.3556" layer="1"/>
 <wire x1="128.397" y1="111.506" x2="128.397" y2="121.793" width="0.3556" layer="1"/>
-<wire x1="128.397" y1="121.908453125" x2="128.397" y2="121.793" width="0.3556" layer="1"/>
 <wire x1="125.73" y1="121.666" x2="128.27" y2="121.666" width="0.3556" layer="1"/>
 <wire x1="128.27" y1="121.666" x2="128.397" y2="121.793" width="0.3556" layer="1"/>
-<wire x1="18.796" y1="196.469" x2="16.383" y2="196.469" width="0.3556" layer="16"/>
-<wire x1="12.7" y1="192.786" x2="12.7" y2="185.674" width="0.3556" layer="16"/>
-<wire x1="16.383" y1="196.469" x2="12.7" y2="192.786" width="0.3556" layer="16"/>
+<wire x1="18.796" y1="196.469" x2="15.113" y2="196.469" width="0.3556" layer="16"/>
+<wire x1="12.7" y1="192.024" x2="12.7" y2="185.674" width="0.3556" layer="16"/>
 <wire x1="12.7" y1="185.674" x2="11.43" y2="185.674" width="0.3556" layer="16"/>
 <wire x1="11.43" y1="185.674" x2="10.3505" y2="184.5945" width="0.3556" layer="16"/>
 <wire x1="10.3505" y1="184.5945" x2="10.3505" y2="177.4825" width="0.3556" layer="16"/>
@@ -4511,8 +4964,9 @@ design rules under a new name.</description>
 <wire x1="96.393" y1="155.067" x2="102.362" y2="155.067" width="0.3556" layer="16"/>
 <wire x1="102.362" y1="155.067" x2="102.362" y2="152.527" width="0.3556" layer="16"/>
 <wire x1="102.362" y1="152.527" x2="106.8908" y2="152.527" width="0.3556" layer="16"/>
-<wire x1="17.084" y1="192.024" x2="17.084" y2="194.757" width="0.3556" layer="1"/>
-<wire x1="17.084" y1="194.757" x2="18.796" y2="196.469" width="0.3556" layer="1"/>
+<wire x1="17.084" y1="192.024" x2="12.7" y2="192.024" width="0.3556" layer="16"/>
+<wire x1="12.7" y1="194.056" x2="12.7" y2="192.024" width="0.3556" layer="16"/>
+<wire x1="15.113" y1="196.469" x2="12.7" y2="194.056" width="0.3556" layer="16"/>
 <wire x1="78.493" y1="163.957" x2="63.493" y2="163.957" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND_HV" class="1">
@@ -4523,11 +4977,11 @@ design rules under a new name.</description>
 <contactref element="DAC" pad="GND3"/>
 <contactref element="DAC" pad="GND1"/>
 <contactref element="CHANNELS" pad="1"/>
-<wire x1="68.5445" y1="193.04" x2="67.2465" y2="193.04" width="0.508" layer="16"/>
-<wire x1="67.056" y1="185.42" x2="68.5445" y2="185.42" width="0.508" layer="16"/>
-<wire x1="67.2465" y1="193.04" x2="66.3575" y2="192.151" width="0.508" layer="16"/>
-<wire x1="66.3575" y1="192.151" x2="66.3575" y2="186.1185" width="0.508" layer="16"/>
-<wire x1="66.3575" y1="186.1185" x2="67.056" y2="185.42" width="0.508" layer="16"/>
+<wire x1="68.5445" y1="193.04" x2="67.2465" y2="193.04" width="0.8128" layer="16"/>
+<wire x1="67.056" y1="185.42" x2="68.5445" y2="185.42" width="0.8128" layer="16"/>
+<wire x1="67.2465" y1="193.04" x2="66.3575" y2="192.151" width="0.6096" layer="16"/>
+<wire x1="66.3575" y1="192.151" x2="66.3575" y2="186.1185" width="0.6096" layer="16"/>
+<wire x1="66.3575" y1="186.1185" x2="67.056" y2="185.42" width="0.6096" layer="16"/>
 <wire x1="68.5445" y1="185.42" x2="71.501" y2="185.42" width="0.508" layer="16"/>
 <wire x1="71.501" y1="185.42" x2="73.025" y2="183.896" width="0.508" layer="16"/>
 <wire x1="73.025" y1="183.896" x2="73.025" y2="180.721" width="0.508" layer="16"/>
@@ -4659,11 +5113,11 @@ design rules under a new name.</description>
 <wire x1="94.234" y1="125.73" x2="94.2848" y2="125.6792" width="0.508" layer="16"/>
 <wire x1="146.304" y1="59.69" x2="141.605" y2="54.991" width="0.508" layer="1"/>
 <wire x1="141.605" y1="54.991" x2="114.046" y2="54.991" width="0.508" layer="1"/>
-<wire x1="67.1195" y1="66.4586" x2="67.1195" y2="60.6425" width="0.508" layer="1"/>
+<wire x1="67.1195" y1="66.4586" x2="67.1195" y2="60.6425" width="0.8128" layer="1"/>
 <wire x1="67.1195" y1="60.6425" x2="67.056" y2="60.579" width="0.508" layer="1"/>
-<wire x1="43.9801" y1="66.294" x2="43.9801" y2="60.7187" width="0.508" layer="1"/>
+<wire x1="43.9801" y1="66.294" x2="43.9801" y2="60.7187" width="0.8128" layer="1"/>
 <wire x1="43.9801" y1="60.7187" x2="43.8404" y2="60.579" width="0.508" layer="1"/>
-<wire x1="90.8685" y1="66.2686" x2="90.8685" y2="61.1251" width="0.508" layer="1"/>
+<wire x1="90.8685" y1="66.2686" x2="90.8685" y2="61.1251" width="0.8128" layer="1"/>
 <wire x1="90.8685" y1="61.1251" x2="90.3224" y2="60.579" width="0.508" layer="1"/>
 <contactref element="VR1" pad="1"/>
 <wire x1="22.6822" y1="116.5352" x2="20.1168" y2="113.9698" width="0.508" layer="16"/>
@@ -4742,11 +5196,24 @@ design rules under a new name.</description>
 <contactref element="K_CH3" pad="1"/>
 <contactref element="K_CH4" pad="1"/>
 <via x="74.676" y="178.054" extent="1-16" drill="0.35" shape="square"/>
+<polygon width="0.4064" layer="16">
+<vertex x="2" y="211"/>
+<vertex x="151" y="211"/>
+<vertex x="151" y="51"/>
+<vertex x="2" y="51"/>
+</polygon>
+<polygon width="0.4064" layer="1">
+<vertex x="2" y="211"/>
+<vertex x="151" y="211"/>
+<vertex x="151" y="51"/>
+<vertex x="147" y="51"/>
+<vertex x="2" y="51"/>
+<vertex x="2" y="58"/>
+</polygon>
 </signal>
 <signal name="N$75" class="2">
 <contactref element="UC1" pad="23/A9"/>
 <contactref element="INT2" pad="2"/>
-<wire x1="26.416" y1="196.469" x2="26.3525" y2="196.5325" width="0.3556" layer="16"/>
 <contactref element="R8" pad="1"/>
 <wire x1="23.8125" y1="201.041" x2="26.269" y2="201.041" width="0.3556" layer="16"/>
 <wire x1="26.269" y1="201.041" x2="26.302" y2="201.008" width="0.3556" layer="16"/>
@@ -4760,11 +5227,11 @@ design rules under a new name.</description>
 <wire x1="50.165" y1="198.8185" x2="49.2125" y2="197.866" width="0.3556" layer="16"/>
 <wire x1="49.2125" y1="197.866" x2="49.2125" y2="196.5325" width="0.3556" layer="16"/>
 <wire x1="49.2125" y1="196.5325" x2="49.276" y2="196.469" width="0.3556" layer="16"/>
-<wire x1="49.276" y1="196.469" x2="49.276" y2="194.564" width="0.3556" layer="1"/>
-<wire x1="49.276" y1="194.564" x2="50.038" y2="193.802" width="0.3556" layer="1"/>
-<wire x1="50.038" y1="193.802" x2="54.356" y2="193.802" width="0.3556" layer="1"/>
-<wire x1="54.356" y1="193.802" x2="55.118" y2="194.564" width="0.3556" layer="1"/>
-<wire x1="55.118" y1="194.564" x2="55.118" y2="196.596" width="0.3556" layer="1"/>
+<wire x1="49.276" y1="196.469" x2="49.276" y2="195.072" width="0.3556" layer="1"/>
+<wire x1="49.276" y1="195.072" x2="50.546" y2="193.802" width="0.3556" layer="1"/>
+<wire x1="50.546" y1="193.802" x2="53.848" y2="193.802" width="0.3556" layer="1"/>
+<wire x1="53.848" y1="193.802" x2="55.118" y2="195.072" width="0.3556" layer="1"/>
+<wire x1="55.118" y1="195.072" x2="55.118" y2="196.596" width="0.3556" layer="1"/>
 <via x="55.118" y="196.596" extent="1-16" drill="0.9" diameter="2" shape="square"/>
 <wire x1="55.118" y1="196.596" x2="59.69" y2="196.596" width="0.3556" layer="16"/>
 <via x="59.69" y="196.596" extent="1-16" drill="0.9" diameter="2" shape="square"/>
@@ -4773,24 +5240,20 @@ design rules under a new name.</description>
 <wire x1="91.186" y1="202.692" x2="100.584" y2="202.692" width="0.3556" layer="16"/>
 <via x="100.584" y="202.692" extent="1-16" drill="0.9" diameter="2" shape="square"/>
 <via x="130.81" y="108.966" extent="1-16" drill="0.9" diameter="2" shape="square"/>
-<wire x1="130.81" y1="127.508" x2="130.81" y2="108.966" width="0.3556" layer="1"/>
+<wire x1="130.81" y1="108.966" x2="130.81" y2="127.508" width="0.3556" layer="1"/>
 <contactref element="UC2" pad="20/A6"/>
 <wire x1="124.5362" y1="90.0938" x2="128.397" y2="90.0938" width="0.3556" layer="16"/>
-<wire x1="124.5362" y1="90.0938" x2="124.333" y2="90.297" width="0.3556" layer="16"/>
-<wire x1="124.333" y1="90.297" x2="122.936" y2="91.694" width="0.3556" layer="16"/>
+<wire x1="124.5362" y1="90.0938" x2="122.936" y2="91.694" width="0.3556" layer="16"/>
 <wire x1="122.936" y1="106.934" x2="122.936" y2="91.694" width="0.3556" layer="16"/>
-<wire x1="132.461" y1="129.159" x2="132.207" y2="128.905" width="0.3556" layer="1"/>
-<wire x1="132.207" y1="128.905" x2="130.81" y2="127.508" width="0.3556" layer="1"/>
 <wire x1="62.484" y1="196.596" x2="68.58" y2="202.692" width="0.3556" layer="1"/>
 <wire x1="68.58" y1="202.692" x2="91.186" y2="202.692" width="0.3556" layer="1"/>
 <wire x1="100.584" y1="202.692" x2="101.092" y2="203.2" width="0.3556" layer="1"/>
-<wire x1="130.81" y1="108.966" x2="130.048" y2="108.966" width="0.3556" layer="16"/>
 <wire x1="124.968" y1="108.966" x2="122.936" y2="106.934" width="0.3556" layer="16"/>
-<wire x1="130.048" y1="108.966" x2="124.968" y2="108.966" width="0.3556" layer="16"/>
+<wire x1="130.81" y1="108.966" x2="124.968" y2="108.966" width="0.3556" layer="16"/>
 <wire x1="131.064" y1="203.2" x2="132.588" y2="201.676" width="0.3556" layer="1"/>
-<wire x1="132.588" y1="201.676" x2="132.588" y2="129.286" width="0.3556" layer="1"/>
-<wire x1="132.588" y1="129.286" x2="132.207" y2="128.905" width="0.3556" layer="1"/>
+<wire x1="132.588" y1="129.286" x2="132.588" y2="201.676" width="0.3556" layer="1"/>
 <wire x1="101.092" y1="203.2" x2="131.064" y2="203.2" width="0.3556" layer="1"/>
+<wire x1="130.81" y1="127.508" x2="132.588" y2="129.286" width="0.3556" layer="1"/>
 </signal>
 <signal name="GPIO6" class="2">
 <contactref element="UC1" pad="15/A1"/>
@@ -4993,7 +5456,6 @@ design rules under a new name.</description>
 <wire x1="19.177" y1="126.873" x2="19.177" y2="126.746" width="0.3556" layer="16"/>
 <wire x1="19.177" y1="126.746" x2="20.066" y2="125.857" width="0.3556" layer="16"/>
 <wire x1="20.066" y1="125.857" x2="20.066" y2="119.761" width="0.3556" layer="16"/>
-<wire x1="20.066" y1="119.253" x2="20.066" y2="119.761" width="0.3556" layer="16"/>
 <wire x1="20.066" y1="119.761" x2="20.066" y2="107.569" width="0.508" layer="1"/>
 <wire x1="20.066" y1="107.569" x2="20.066" y2="103.886" width="0.508" layer="1"/>
 <wire x1="20.066" y1="103.886" x2="21.463" y2="102.489" width="0.508" layer="1"/>
@@ -5183,7 +5645,6 @@ design rules under a new name.</description>
 <contactref element="Q37" pad="E"/>
 <contactref element="Q35" pad="C"/>
 <wire x1="68.199" y1="107.569" x2="68.199" y2="98.679" width="0.508" layer="1"/>
-<wire x1="68.199" y1="98.044" x2="68.199" y2="98.679" width="0.508" layer="1"/>
 <wire x1="65.659" y1="98.679" x2="65.659" y2="96.139" width="0.508" layer="16"/>
 <wire x1="65.659" y1="96.139" x2="62.738" y2="93.218" width="0.508" layer="16"/>
 <wire x1="62.738" y1="93.218" x2="62.738" y2="90.8558" width="0.508" layer="16"/>
@@ -5267,11 +5728,11 @@ design rules under a new name.</description>
 <wire x1="134.874" y1="203.962" x2="134.9705" y2="203.8655" width="0.3556" layer="16"/>
 <wire x1="134.9705" y1="203.8655" x2="134.9705" y2="200.152" width="0.3556" layer="16"/>
 <wire x1="94.742" y1="204.978" x2="133.858" y2="204.978" width="0.3556" layer="1"/>
-<wire x1="94.1705" y1="196.723" x2="98.552" y2="196.723" width="0.3556" layer="1"/>
 <wire x1="52.324" y1="143.058" x2="52.197" y2="143.185" width="0.3556" layer="16"/>
 <contactref element="1" pad="1"/>
 <wire x1="140.462" y1="191.6938" x2="140.4493" y2="191.6938" width="0.508" layer="16"/>
 <wire x1="140.4493" y1="191.6938" x2="140.3985" y2="191.643" width="0.508" layer="16"/>
+<wire x1="94.1705" y1="196.723" x2="98.552" y2="196.723" width="0.3556" layer="16"/>
 <wire x1="52.197" y1="150.185" x2="52.197" y2="143.185" width="0" layer="19" extent="1-1"/>
 <wire x1="9.398" y1="135.636" x2="4.318" y2="135.636" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -5283,17 +5744,14 @@ design rules under a new name.</description>
 <contactref element="D39" pad="AN"/>
 <wire x1="124.571" y1="145.8595" x2="123.2535" y2="145.542" width="0.3556" layer="16"/>
 <wire x1="123.2535" y1="145.542" x2="119.38" y2="145.542" width="0.3556" layer="16"/>
-<wire x1="119.38" y1="145.542" x2="117.856" y2="145.542" width="0.3556" layer="16"/>
-<wire x1="117.856" y1="145.542" x2="113.181" y2="145.542" width="0.3556" layer="16"/>
-<wire x1="119.4435" y1="152.273" x2="119.4435" y2="147.574" width="0.3556" layer="16"/>
-<wire x1="119.4435" y1="147.574" x2="119.4435" y2="147.1295" width="0.3556" layer="16"/>
+<wire x1="119.38" y1="145.542" x2="113.181" y2="145.542" width="0.3556" layer="16"/>
 <wire x1="119.38" y1="142.654" x2="119.38" y2="145.542" width="0.3556" layer="16"/>
 <wire x1="119.5135" y1="158.877" x2="119.5" y2="158.8635" width="0.3556" layer="16"/>
 <wire x1="119.5" y1="158.8635" x2="119.5" y2="156" width="0.3556" layer="16"/>
 <wire x1="119.5" y1="156" x2="119.4435" y2="155.9435" width="0.3556" layer="16"/>
 <wire x1="119.4435" y1="155.9435" x2="119.4435" y2="152.273" width="0.3556" layer="16"/>
-<wire x1="119.4435" y1="147.574" x2="119.4435" y2="145.6055" width="0.3556" layer="16"/>
 <wire x1="119.4435" y1="145.6055" x2="119.38" y2="145.542" width="0.3556" layer="16"/>
+<wire x1="119.4435" y1="152.273" x2="119.4435" y2="145.6055" width="0.3556" layer="16"/>
 </signal>
 <signal name="N$157" class="2">
 <contactref element="RG2" pad="1"/>
@@ -5339,8 +5797,8 @@ design rules under a new name.</description>
 <contactref element="JP11" pad="7"/>
 <wire x1="95.377" y1="131.699" x2="98.552" y2="134.874" width="0.3556" layer="1"/>
 <wire x1="98.552" y1="134.874" x2="98.552" y2="181.483" width="0.3556" layer="1"/>
-<wire x1="98.552" y1="181.483" x2="94.1705" y2="181.483" width="0.3556" layer="1"/>
 <wire x1="103.599" y1="181.483" x2="98.552" y2="181.483" width="0.3556" layer="16"/>
+<wire x1="94.1705" y1="181.483" x2="98.552" y2="181.483" width="0.3556" layer="16"/>
 </signal>
 <signal name="N$158" class="2">
 <contactref element="RG4" pad="1"/>
@@ -5350,7 +5808,6 @@ design rules under a new name.</description>
 <wire x1="124.571" y1="150.9395" x2="124.571" y2="159.3545" width="0.3556" layer="16"/>
 <wire x1="124.571" y1="159.3545" x2="124.9135" y2="158.877" width="0.3556" layer="16"/>
 <wire x1="124.571" y1="150.9395" x2="129.921" y2="150.9395" width="0.3556" layer="16"/>
-<wire x1="130.556" y1="150.9395" x2="129.921" y2="150.9395" width="0.3556" layer="16"/>
 <wire x1="129.9388" y1="158.877" x2="129.921" y2="155.5445" width="0.3556" layer="16"/>
 <wire x1="129.921" y1="155.5445" x2="129.921" y2="150.9395" width="0.3556" layer="16"/>
 </signal>
@@ -5365,8 +5822,6 @@ design rules under a new name.</description>
 <wire x1="118.872" y1="194.216" x2="118.7755" y2="194.1195" width="0.3556" layer="16"/>
 <wire x1="118.7755" y1="194.1195" x2="111.9505" y2="194.1195" width="0.3556" layer="16"/>
 <wire x1="111.9505" y1="194.1195" x2="111.125" y2="194.437" width="0.3556" layer="16"/>
-<wire x1="103.9698" y1="194.3862" x2="103.5558" y2="194.3278" width="0.3556" layer="16"/>
-<wire x1="104.554" y1="194.183" x2="103.881725" y2="194.280521875" width="0.3556" layer="16"/>
 <wire x1="103.881725" y1="194.280521875" x2="103.5558" y2="194.3278" width="0.3556" layer="16"/>
 <wire x1="118.872" y1="188.2045" x2="118.872" y2="194.216" width="0.3556" layer="16"/>
 <wire x1="118.872" y1="194.216" x2="118.9355" y2="194.2795" width="0.3556" layer="16"/>
@@ -5578,7 +6033,6 @@ design rules under a new name.</description>
 <wire x1="128.397" y1="97.7138" x2="131.9784" y2="97.7138" width="0.3556" layer="16"/>
 <wire x1="133.1214" y1="98.8568" x2="133.1214" y2="100.3046" width="0.3556" layer="16"/>
 <wire x1="131.9784" y1="97.7138" x2="133.1214" y2="98.8568" width="0.3556" layer="16"/>
-<wire x1="128.2632" y1="97.58" x2="128.397" y2="97.7138" width="0.3556" layer="16"/>
 <wire x1="143.637" y1="100.3046" x2="133.1214" y2="100.3046" width="0.3556" layer="16"/>
 <contactref element="GPIO2_ACCEL" pad="1"/>
 <wire x1="128.397" y1="97.7138" x2="124.8918" y2="97.7138" width="0.3556" layer="1"/>
@@ -5750,7 +6204,6 @@ design rules under a new name.</description>
 </signal>
 <signal name="1HV+" class="3">
 <contactref element="D3" pad="AN"/>
-<wire x1="140.3985" y1="67.3049" x2="140.2588" y2="67.1652" width="0.3556" layer="16"/>
 <contactref element="X1HV+" pad="1"/>
 <wire x1="140.2588" y1="67.1652" x2="140.208" y2="67.216" width="0.508" layer="16"/>
 <wire x1="140.208" y1="67.216" x2="140.208" y2="71.628" width="0.508" layer="16"/>
@@ -5758,7 +6211,6 @@ design rules under a new name.</description>
 <signal name="1HV-" class="3">
 <contactref element="D1" pad="CA"/>
 <contactref element="X3HV-" pad="2"/>
-<wire x1="133.3576" y1="117.5004" x2="133.096" y2="117.2388" width="0.3556" layer="16"/>
 <wire x1="133.3576" y1="117.5004" x2="137.7696" y2="117.5004" width="0.508" layer="16"/>
 <wire x1="137.7696" y1="117.5004" x2="140.208" y2="115.062" width="0.508" layer="16"/>
 </signal>
@@ -5796,11 +6248,11 @@ design rules under a new name.</description>
 </signal>
 <signal name="-15" class="2">
 <contactref element="D4" pad="CA"/>
-<wire x1="109.126" y1="181.61" x2="140.3731" y2="181.61" width="0.3556" layer="16"/>
-<wire x1="140.3731" y1="181.61" x2="140.3985" y2="181.6354" width="0.3556" layer="16"/>
+<wire x1="109.126" y1="181.61" x2="139.954" y2="181.61" width="0.3556" layer="16"/>
 <contactref element="1" pad="3"/>
-<wire x1="140.462" y1="181.6862" x2="140.4493" y2="181.6862" width="0.508" layer="16"/>
-<wire x1="140.4493" y1="181.6862" x2="140.3731" y2="181.61" width="0.508" layer="16"/>
+<wire x1="139.954" y1="181.61" x2="140.3731" y2="181.61" width="0.3556" layer="16"/>
+<wire x1="140.462" y1="181.6862" x2="140.3858" y2="181.61" width="0.3556" layer="16"/>
+<wire x1="140.3858" y1="181.61" x2="140.3731" y2="181.61" width="0.3556" layer="16"/>
 </signal>
 <signal name="N$28" class="2">
 <contactref element="R9" pad="2"/>
@@ -5839,15 +6291,13 @@ design rules under a new name.</description>
 <contactref element="IC2" pad="9"/>
 <wire x1="76.708" y1="128.397" x2="77.597" y2="129.286" width="0.3556" layer="16"/>
 <wire x1="77.597" y1="129.286" x2="79.629" y2="129.286" width="0.3556" layer="16"/>
-<wire x1="82.55" y1="119.888" x2="82.677" y2="119.761" width="0.3556" layer="16"/>
-<wire x1="75.184" y1="120.904" x2="75.184" y2="119.126" width="0.3556" layer="16"/>
+<wire x1="75.184" y1="121.158" x2="75.184" y2="119.126" width="0.3556" layer="16"/>
 <wire x1="74.742" y1="114.3" x2="74.742" y2="118.684" width="0.3556" layer="16"/>
 <wire x1="74.742" y1="118.684" x2="75.184" y2="119.126" width="0.3556" layer="16"/>
-<wire x1="75.184" y1="120.904" x2="75.184" y2="121.158" width="0.3556" layer="16"/>
 <wire x1="75.184" y1="121.158" x2="76.708" y2="122.682" width="0.3556" layer="16"/>
 <wire x1="76.708" y1="122.682" x2="76.708" y2="128.397" width="0.3556" layer="16"/>
-<wire x1="79.756" y1="122.682" x2="76.708" y2="122.682" width="0.3556" layer="16"/>
-<wire x1="82.677" y1="119.761" x2="79.756" y2="122.682" width="0.3556" layer="16"/>
+<wire x1="76.708" y1="122.682" x2="79.756" y2="122.682" width="0.3556" layer="16"/>
+<wire x1="79.756" y1="122.682" x2="82.677" y2="119.761" width="0.3556" layer="16"/>
 </signal>
 <signal name="N$32">
 <contactref element="JP8" pad="1"/>
@@ -5933,23 +6383,23 @@ design rules under a new name.</description>
 <approved hash="21,19,180a1a081a08180a"/>
 <approved hash="21,19,0ac708c508c50ac7"/>
 <approved hash="21,19,dc2dde2fde2fdc2d"/>
-<approved hash="3,16,312d7e912d7dcd38"/>
-<approved hash="3,16,0989e63be52b0a99"/>
-<approved hash="3,16,4bed4880d8fa490c"/>
-<approved hash="3,16,a96a76187508aa7a"/>
-<approved hash="3,16,ffaa3f574b018986"/>
-<approved hash="3,16,8ff05e425d518ce3"/>
-<approved hash="3,16,ad27ab27aed36818"/>
-<approved hash="3,16,ca7cfc4effafc99d"/>
-<approved hash="3,16,10abefd9ef111063"/>
-<approved hash="3,16,72faa248a25c72ee"/>
-<approved hash="3,16,061cc71ca2e3bda8"/>
-<approved hash="3,16,a444ea76eb9da5af"/>
-<approved hash="3,16,91fa2488249d91ef"/>
-<approved hash="3,16,62b15dc35c106362"/>
-<approved hash="3,16,bfd370617381bc33"/>
 <approved hash="21,19,4e6f4e6f4c6d4ded"/>
 <approved hash="21,19,6434663666366434"/>
+<approved hash="3,16,0fa4e598e4180e24"/>
+<approved hash="3,16,ea03043f0482eabe"/>
+<approved hash="3,16,f513e18326befa6c"/>
+<approved hash="3,16,505afa66fb9651aa"/>
+<approved hash="3,16,19be831ea762791c"/>
+<approved hash="11,1,6afb1f4323da5662"/>
+<approved hash="11,1,da87f17fcde7e61f"/>
+<approved hash="11,1,6addc77ac9956432"/>
+<approved hash="5,1,036ad21ddee37fb2"/>
+<approved hash="5,1,0a98786f676f2f86"/>
+<approved hash="5,1,5c5412602e2a06a7"/>
+<approved hash="5,1,91b407b5319001c4"/>
+<approved hash="5,1,03252627225a7fb2"/>
+<approved hash="5,16,cc5cb46d70b678d7"/>
+<approved hash="5,16,305bb46d707d8c9b"/>
 </errors>
 </board>
 </drawing>
