@@ -37,6 +37,8 @@ cont_fig = 1
 plot_show = True
 sel_test = True
 start_receiver = False
+start_rh_test = False # para controlar testes de Treinamento e na sequencia reobase
+ctrl_ch1_rh = False # controle de activacao treinamento - reobase
 
 # lock to serialize console output
 lock = threading.Lock()
@@ -62,6 +64,7 @@ solo_mode = 0  # to control test 0 - Open communication !-! 1 Just print data
 plot_xyz = False
 name_file = False
 start_tread = True
+
 
 msg_bytes = ''
 limit_ma_ini = 0
@@ -147,17 +150,20 @@ class MainWindow(QMainWindow):
         self.spinBox_rf_2.valueChanged.connect(self.ramp_check)
         self.spinBox_ma_2.valueChanged.connect(self.btn_change_ma2)
 
+        # Training and Rheobase Test
+        self.pushButton_ch1_rh.clicked.connect(self.btn_ch1_rh)
+
         # Show interface
         self.show()
 
     # buttons ---------------------------------------------------------------
     def btn_start_rh(self):
-        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2
+        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2,start_rh_test
         global start_thread_a, start_thread_s, msg_bytes, solo_mode
 
         rh = True
         start_thread_s = start_thread_a = True  # To control the threads
-        cr = s_c = s_ch1 = s_ch2 = start = False
+        start_rh_test = cr = s_c = s_ch1 = s_ch2 = start = False
 
         self.spinBox_ma_1.setValue(0)
         self.spinBox_ma_2.setValue(0)
@@ -168,12 +174,17 @@ class MainWindow(QMainWindow):
 
         self.lineEdit_terminal.setText("Start capture data for Rh -- Stim and Acel --")
 
+    def btn_ch1_rh(self):
+        global ctrl_ch1_rh
+        ctrl_ch1_rh = True
+        self.btn_start_ch1()
+
     def btn_start_cr(self):
-        global rh, cr, s_c, start, limit_pw, s_ch1, s_ch2
+        global rh, cr, s_c, start, limit_pw, s_ch1, s_ch2, start_rh_test
         global start_thread_a, start_thread_s
 
         cr = True
-        rh = s_c = s_ch1 = s_ch2 = start = False
+        start_rh_test = rh = s_c = s_ch1 = s_ch2 = start = False
         start_thread_s = start_thread_a = True  # To control the threads
 
         self.spinBox_ma_1.setValue(0)
@@ -187,36 +198,43 @@ class MainWindow(QMainWindow):
 
     def btn_start_ch1(self):
         global s_ch1, s_c, start, s_ch2, ctr_upd, stop_chx, rh, cr
+        global start_rh_test, ctrl_ch1_rh
 
         s_ch1 = start = stop_chx = True
-        s_c = s_ch2 = rh = cr = False
+        start_rh_test = s_c = s_ch2 = rh = cr = False
+
+        if ctrl_ch1_rh is True:
+            start_rh_test = True
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
+        global start_rh_test
 
         s_ch2 = start = stop_chx = True
-        s_c = s_ch1 = rh = cr = False
+        start_rh_test = s_c = s_ch1 = rh = cr = False
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch1_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
+        global start_rh_test
 
         s_ch2 = s_ch1 = start = stop_chx = True
-        s_c = rh = cr = False
+        start_rh_test = s_c = rh = cr = False
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
         self.btn_stop_stim()
 
     def btn_stop_stim(self):
-        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx, start_tread, ctr_upd
+        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx
+        global start_rh_test, start_tread, ctr_upd
 
-        upd = False
+        start_rh_test = upd = False
         start = True
         start_tread = True
 
@@ -230,8 +248,8 @@ class MainWindow(QMainWindow):
         ctr_upd = 0
 
     def btn_stop_ch1(self):
-        global upd, start, stop_chx
-        upd = stop_chx = False
+        global upd, start, stop_chx, start_rh_test
+        start_rh_test = upd = stop_chx = False
         start = True
 
         self.spinBox_ma_1.setValue(0)
@@ -239,8 +257,8 @@ class MainWindow(QMainWindow):
         upd = start = False
 
     def btn_stop_ch2(self):
-        global upd, start, stop_chx
-        upd = stop_chx = False
+        global upd, start, stop_chx, start_rh_test
+        start_rh_test = upd = stop_chx = False
         start = True
 
         self.spinBox_ma_2.setValue(0)
@@ -298,7 +316,7 @@ class MainWindow(QMainWindow):
         self.lineEdit_terminal.setText(msn)
 
     def upd_lcdNumber(self, msn):
-        self.lcdNumber.setValue(msn)
+        self.lcdNumber.display(msn)
 
     def upd_val_rh(self, new_val_rh):
         self.spinBox_limit_ini_mA.setValue(new_val_rh)
@@ -414,15 +432,6 @@ class MainWindow(QMainWindow):
             else:
                 ch2.rf = ch2.rf - 0.5
                 self.spinBox_rf_2.setValue(ch2.rf)
-
-
-
-
-        """
-        m.setIcon(QMessageBox.Critical)
-        m.setText("Error")
-        m.setInformativeText(e)
-        m.setWindowTitle("Error")"""
 
 
 def read_serial(port, baud):
@@ -568,7 +577,7 @@ def save_data():
 def save_data2():
     global arrayt2, rh, cr, cont_fig, plot_show, sel_test, file_name_out_a
     # global rh_acx, rh_acy, rh_acz, cr_acx, cr_acy, cr_acz
-    global name_file
+    global name_file, ctrl_ch1_rh
 
     if rh is True:
         if name_file is True:
@@ -616,6 +625,7 @@ def save_data2():
 
     print("End generation of Acel file")
     ex.upd_terminal("End generation of Acel file, (Plot enable)")
+    ctrl_ch1_rh = False
 
 
 def stim_training():
@@ -652,7 +662,7 @@ def stim_training():
 
 
 def read_while_stim(port, baud):
-    global start, start_receiver, ts, start_tread
+    global start, start_receiver, ts, start_tread, start_rh_test
 
     start_receiver = True
     cont = 0
@@ -691,6 +701,7 @@ def read_while_stim(port, baud):
                         cont = cont + 1
                         print("Remaining minutes: " + str(ts - cont))
                         ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+                        ex.upd_lcdNumber(ts - cont)
 
             ser.close()
             start_tread = True
@@ -700,6 +711,10 @@ def read_while_stim(port, baud):
             print("Error communicating...: " + str(e1) + " En -- read_while_stim --")
 
         ex.upd_terminal("Ends Stimulation ...")
+        ex.upd_lcdNumber(0)
+
+        if start_rh_test is True:
+            ex.btn_start_rh()
 
 
 # Create two threads as follows

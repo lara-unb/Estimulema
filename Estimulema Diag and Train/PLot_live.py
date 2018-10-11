@@ -95,6 +95,7 @@ def plot_data(port, baud):
     except Exception as e:
         print("Error open serial port: " + str(e) + "En -- plot_data --")
         print("Possibly the serial port is already open")
+        ser.close()
         exit()
 
     ini = 's'

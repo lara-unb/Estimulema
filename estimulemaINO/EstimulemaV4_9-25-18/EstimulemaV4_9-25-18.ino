@@ -361,6 +361,7 @@ void split_functionality(){
       Serial.println(";0");
 
       /** Rheobase function for start test stimulation **/ 
+      beep(3, 100);
       rheobase(ma, ppw, pwrc);
 
       // Change value for next stimulation
@@ -1017,26 +1018,7 @@ void zeroChannels() {
 /********************* Stop stimulation ***********************/
 /**************************************************************/
 void beep(int sel, int t){
-  if(sel == 2){
-    digitalWrite(BuzzerPin, 1);
-    delay(500);
-    digitalWrite(BuzzerPin, 0);
-    delay(100);
-    digitalWrite(BuzzerPin, 1);
-    delay(100);
-    digitalWrite(BuzzerPin, 0);
-  }
-
-  if(sel){
-    digitalWrite(BuzzerPin, 1);
-    delay(t*3);
-    digitalWrite(BuzzerPin, 0);
-    delay(t);
-    digitalWrite(BuzzerPin, 1);
-    delay(t);
-    digitalWrite(BuzzerPin, 0);
-  }
-
+  
   if(sel == 0){
     digitalWrite(BuzzerPin, 1);
     delay(t);
@@ -1050,6 +1032,34 @@ void beep(int sel, int t){
     delay(t);
     digitalWrite(BuzzerPin, 0);
   }
+
+  if(sel == 1){
+    digitalWrite(BuzzerPin, 1);
+    delay(t*3);
+    digitalWrite(BuzzerPin, 0);
+    delay(t);
+    digitalWrite(BuzzerPin, 1);
+    delay(t);
+    digitalWrite(BuzzerPin, 0);
+  }
+
+  if(sel == 2){
+    digitalWrite(BuzzerPin, 1);
+    delay(500);
+    digitalWrite(BuzzerPin, 0);
+    delay(100);
+    digitalWrite(BuzzerPin, 1);
+    delay(100);
+    digitalWrite(BuzzerPin, 0);
+  }
+
+  if(sel == 3){
+    digitalWrite(BuzzerPin, 1);
+    delay(t);
+    digitalWrite(BuzzerPin, 0);
+  }
+
+
 
 }
 
