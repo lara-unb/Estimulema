@@ -11,25 +11,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Estimulema V0.3 Rv1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Estimulema V0.3 Rv1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="339" column="18" selection-start-line="339" selection-start-column="18" selection-end-line="339" selection-end-column="35" />
+            <state relative-caret-position="-395">
+              <caret line="675" column="42" selection-start-line="675" selection-start-column="42" selection-end-line="675" selection-end-column="42" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic_teste_comunication.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/New folder/basic_teste_comunication.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,13 +34,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cam</find>
       <find>btn_start_ch1</find>
       <find>setV</find>
       <find>terminou</find>
       <find>cont</find>
       <find>termi</find>
-      <find>start_test</find>
       <find>ini</find>
       <find>btn</find>
       <find>pushBtnStart</find>
@@ -61,7 +47,6 @@
       <find>Enviando:</find>
       <find>btn_stop_ch1</find>
       <find>spinBox_ma_1</find>
-      <find>stim_training</find>
       <find>arrayt</find>
       <find>update_</find>
       <find>update</find>
@@ -73,9 +58,12 @@
       <find>cont_fig</find>
       <find>plot_xyz</find>
       <find>start</find>
-      <find>start</find>
       <find>start_test()</find>
       <find>read_serial</find>
+      <find>start_test</find>
+      <find>read_serial2</find>
+      <find>update_var</find>
+      <find>stim_training</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -87,16 +75,16 @@
         <option value="$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
         <option value="$PROJECT_DIR$/../GUI_Direct/gui_diagnostic.py" />
         <option value="$PROJECT_DIR$/New folder/plotImage.py" />
-        <option value="$PROJECT_DIR$/Estimulema V0.3 Rv1.py" />
         <option value="$PROJECT_DIR$/New folder/basic_teste_comunication.py" />
+        <option value="$PROJECT_DIR$/Estimulema V0.3 Rv1.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="450" />
-    <option name="y" value="-11" />
-    <option name="width" value="652" />
-    <option name="height" value="445" />
+    <option name="x" value="1669" />
+    <option name="y" value="-323" />
+    <option name="width" value="1364" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -124,7 +112,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/New folder/plotImage.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RunDashboard">
@@ -233,18 +221,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20833333" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14752372" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38778877" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35185185" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.17986798" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.17973857" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -302,23 +291,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
-          <line>725</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
           <line>468</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
-          <line>679</line>
+          <line>681</line>
           <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
-          <line>699</line>
-          <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
@@ -330,8 +309,13 @@
           <line>382</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py</url>
+          <line>697</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="138" />
+      <option name="time" value="140" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -342,20 +326,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11529">
@@ -363,20 +335,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11529">
@@ -384,20 +344,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4590">
@@ -405,20 +353,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -426,20 +362,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11475">
@@ -447,20 +371,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10557">
@@ -468,20 +380,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22005">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10557">
@@ -489,20 +389,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22059">
-          <caret line="817" column="21" selection-start-line="817" selection-start-column="21" selection-end-line="817" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10422">
@@ -510,20 +398,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="52" column="12" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4644">
@@ -531,20 +407,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21870">
-          <caret line="812" column="33" selection-start-line="812" selection-start-column="33" selection-end-line="812" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4644">
@@ -552,20 +416,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21870">
-          <caret line="812" column="33" selection-start-line="812" selection-start-column="33" selection-end-line="812" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4806">
@@ -573,20 +425,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21924">
-          <caret line="812" column="33" selection-start-line="812" selection-start-column="33" selection-end-line="812" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5103">
@@ -594,20 +434,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2106">
-          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20142">
-          <caret line="748" column="4" selection-start-line="748" selection-start-column="4" selection-end-line="749" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
     <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/matplotlib/axes/_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -643,27 +471,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../GUI_Direct/gui_diagnostic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="98" column="76" selection-start-line="98" selection-start-column="76" selection-end-line="98" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="820" column="41" selection-start-line="820" selection-start-column="36" selection-end-line="820" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../GUI_Direct/gui_diagnostic.py" />
+    <entry file="file://$PROJECT_DIR$/../EstimulemaPY/testeV2.py" />
+    <entry file="file://$PROJECT_DIR$/../diagnostic_data/serial_datain.py" />
     <entry file="file://$PROJECT_DIR$/New folder/plotImage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -678,22 +488,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
+    <entry file="file://$PROJECT_DIR$/New folder/basic_teste_comunication.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="339" column="18" selection-start-line="339" selection-start-column="18" selection-end-line="339" selection-end-column="35" />
+        <state relative-caret-position="-15">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New folder/basic_teste_comunication.py">
+    <entry file="file://$PROJECT_DIR$/Estimulema V0.3 Rv1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="-395">
+          <caret line="675" column="42" selection-start-line="675" selection-start-column="42" selection-end-line="675" selection-end-column="42" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>

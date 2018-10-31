@@ -673,6 +673,8 @@ def read_while_stim(port, baud):
     ser.baudrate = baud
     ser.xonxoff = 1
 
+    stim_tr = open("Treinamento.txt", 'w')
+
     try:
         ser.open()
     except Exception as e:
@@ -692,18 +694,34 @@ def read_while_stim(port, baud):
                 if len(c) > 0:
                     str_msn = c.decode("utf-8")
                     str_msn = str_msn.rstrip()
-                    print(str_msn)
-                    if str_msn == "f":
-                        start_receiver = False
-                        print("End therapy time")
-                        ex.upd_terminal("End therapy time")
-                    else:
+                    # print(str_msn)
+                    cont_min = str_msn.find("T")
+
+                    if cont_min == 0:
+                        print("Llegó un minuto")
                         cont = cont + 1
                         print("Remaining minutes: " + str(ts - cont))
                         ex.upd_terminal("Remaining minutes: " + str(ts - cont))
                         ex.upd_lcdNumber(ts - cont)
+                    elif cont_min == -1:
+                        cont_min = str_msn.find(";")
+                        if cont_min > 0:
+                            stim_tr.write(str_msn)
+                            stim_tr.write("\n")
+                            print(str_msn)
+                    if str_msn == "f":
+                        start_receiver = False
+                        print("End therapy time")
+                        ex.upd_terminal("End therapy time")
+
+                    """else:
+                        cont = cont + 1
+                        print("Remaining minutes: " + str(ts - cont))
+                        ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+                        ex.upd_lcdNumber(ts - cont)"""
 
             ser.close()
+            stim_tr.close()
             start_tread = True
             ex.upd_terminal("End therapy time")
 

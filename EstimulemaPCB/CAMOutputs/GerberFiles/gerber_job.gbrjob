@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2018-10-17T20:14:23Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.1"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Estimulema v2"
+        },
+        "Owner": "Miguel Eduardo Paredes <meduag@lara.unb.br>",
+        "Size": {
+            "X": 150.984,
+            "Y": 162
+        }
+    }
+}

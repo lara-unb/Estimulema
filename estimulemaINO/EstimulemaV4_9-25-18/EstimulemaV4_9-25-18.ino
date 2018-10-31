@@ -337,6 +337,8 @@ void split_functionality(){
     unsigned int ma = 0;            // Count the variable value of ma
     unsigned long ppw = 5e5;        // Fixed value of pw in rheobase test 500ms
     lim_ma_fin = lim_ma_fin + 1;            // Fix count variable for mA
+
+    // Inicia la sincronizacion de capturados datos
     digitalWrite(Pin_Sync_Data, 1); // Start data sync
     Serial1.println("1>1>");
 
@@ -379,6 +381,7 @@ void split_functionality(){
         Serial.print(";");
         Serial.println(micros());
 
+        // termina la sincronizacion de datos capturados
         digitalWrite(Pin_Sync_Data, 0);  // Stop data sync
         Serial1.println("1>0>");
 
@@ -475,7 +478,14 @@ void split_functionality(){
   if(data_sp[0].ch_act && data_sp[1].ch_act == 0 && s_c){
     //Serial.println("Canal 1 activado");
     /* For CH 1 */ 
+    digitalWrite(Pin_Sync_Data, 1); // Start data sync
+    Serial1.println("1>1>");
+
     stimulation_training(1,0);
+
+    digitalWrite(Pin_Sync_Data, 1); // Start data sync
+    Serial1.println("1>0>");
+
   }else if(data_sp[0].ch_act == 0 && data_sp[1].ch_act){
     //Serial.println("Canal 2 activado");
     /* For CH 1 */
@@ -510,7 +520,7 @@ void rheobase(int mA_s, unsigned int t1, unsigned int t2) {
 
   digitalWrite(RELAY_CH_1, 1);            // Enable CH1 for stimulation
 
-  digitalWrite(Pin_signal_Control, 1);    // Enable accel for data capture
+  digitalWrite(Pin_signal_Control, 1);    // Enable accel for data capture pára el formato de onda
 
   /*** Print data information about test ***/
   Serial.print("1;");
@@ -689,6 +699,9 @@ void stimulation_training(int ch1, int ch2){
   if(ch1){
     // Tempo valores y activaciones para canal 1
     digitalWrite(RELAY_CH_1, 1);
+    digitalWrite(Pin_signal_Control, 1);    // Enable capture for data control
+
+
     sendStimValue(0, 1, STIM_ZERO + val_ma(ma_u1, CH1_MAX_POS));
     t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
     t_pw1 = micros() + pw;
@@ -770,6 +783,7 @@ void stimulation_training(int ch1, int ch2){
           control = 4; lts1 = 0;
           sendStimValue(0, 1, STIM_ZERO + 1);
           digitalWrite(RELAY_CH_1, 0);
+          digitalWrite(Pin_signal_Control, 0);    // Enable capture for data control
           t_tf1 = micros() + data_sp[0].tf;
         }
       }
@@ -801,6 +815,7 @@ void stimulation_training(int ch1, int ch2){
         control = 4; lts1 = 0;
         sendStimValue(0, 1, STIM_ZERO + 1);
         digitalWrite(RELAY_CH_1, 0);
+        digitalWrite(Pin_signal_Control, 0);    // Enable capture for data control
         t_tf1 = micros() + data_sp[0].tf;
       }
     }
@@ -812,6 +827,7 @@ void stimulation_training(int ch1, int ch2){
       if(micros() >= t_tf1){
         //Serial.println("Ton activado");
         digitalWrite(RELAY_CH_1, 1);
+        digitalWrite(Pin_signal_Control, 1);    // Enable capture for data control
         if(data_sp[0].ri > 0){
           //Serial.println("Pasando de Toff a rampa up");
           control = 1; lr1 = 0; lrm1 = 0; lrf1 = 0;
@@ -832,7 +848,7 @@ void stimulation_training(int ch1, int ch2){
 
     // Verify the time for every minute
     if(micros() >= min_elapsed){
-      Serial.println("m");
+      //Serial.println("m");
       cont_s += 1;
       min_elapsed = min_t + micros();
       B_i = true;
@@ -890,6 +906,7 @@ void stimulation_training(int ch1, int ch2){
           data_sp[2].ch_act = data_sp[0].ch_act;
           sendStimValue(0, 1, STIM_ZERO);
           digitalWrite(RELAY_CH_1, 1);
+          digitalWrite(Pin_signal_Control, 1);    // Enable capture for data control
           t_ru = micros() + data_sp[0].ri; // actualiza el valor de la duracion de la rampa
           t_pw1 = micros() + pw;
         }

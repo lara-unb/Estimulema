@@ -18132,23 +18132,6 @@ Based on the following sources:
 <label x="-154.94" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GNDI" class="3">
-<segment>
-<pinref part="IC4" gate="G$1" pin="GND1@2"/>
-<pinref part="IC4" gate="G$1" pin="GND1@1"/>
-<wire x1="-154.94" y1="-40.64" x2="-154.94" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-154.94" y1="-38.1" x2="-149.86" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-149.86" y1="-40.64" x2="-154.94" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-154.94" y="-40.64"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="-167.64" y1="-40.64" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="-165.1" y1="-7.62" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="-154.94" y1="-40.64" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="-167.64" y1="-45.72" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-167.64" y="-40.64"/>
-<pinref part="GND_D11" gate="G$1" pin="GNDI"/>
-</segment>
-</net>
 <net name="N$73" class="2">
 <segment>
 <pinref part="LED3" gate="G$1" pin="C"/>
@@ -18284,6 +18267,21 @@ Based on the following sources:
 <wire x1="-57.15" y1="95.25" x2="-57.15" y2="87.63" width="0.1524" layer="91"/>
 <junction x="-57.15" y="95.25"/>
 <label x="-57.15" y="82.55" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="IC4" gate="G$1" pin="GND1@2"/>
+<pinref part="IC4" gate="G$1" pin="GND1@1"/>
+<wire x1="-154.94" y1="-40.64" x2="-154.94" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-154.94" y1="-38.1" x2="-149.86" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-149.86" y1="-40.64" x2="-154.94" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-154.94" y="-40.64"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="-167.64" y1="-40.64" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-165.1" y1="-7.62" x2="-167.64" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-154.94" y1="-40.64" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="-167.64" y1="-45.72" x2="-167.64" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-167.64" y="-40.64"/>
+<pinref part="GND_D11" gate="G$1" pin="GNDI"/>
 </segment>
 </net>
 <net name="+5_D" class="4">
