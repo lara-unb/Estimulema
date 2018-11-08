@@ -2,22 +2,29 @@
 
 #define DAC_SS_PIN 10
 
-#define CH1_MAX_POS 1432
-#define CH1_MIN_NEG 1330
+//#define CH1_MAX_POS 2047
+//#define CH1_MIN_NEG 2047
 #define STIM_ZERO 2047
+
+#define cs '>'
 
 #define RELAY_CH_1 6
 #define RELAY_CH_2 7
 
 #define Pin_Inter 23 
 
-int mA = 10;
+int MAX_POS = 2047;
+int MIN_NEG = 2047;
+int channel_dac = 0;
+
+int mA = 100;
 long pw = 500;
 long pw_r = 19000;
-bool loop_control = false;
+bool loop_control = true;
 
 void setup(){
 	Serial.begin(2000000);
+
 	pinMode(DAC_SS_PIN, OUTPUT);
 	digitalWrite(DAC_SS_PIN, 1);
 
@@ -35,25 +42,50 @@ void setup(){
 
 void loop(){
 	while(loop_control){
-		sendStimValue(0, 1, STIM_ZERO + val_ma(mA, CH1_MAX_POS));
+		sendStimValue(channel_dac, 1, STIM_ZERO + val_ma(mA, MAX_POS));
 		delayMicroseconds(pw);
-		sendStimValue(0, 1, STIM_ZERO - val_ma(mA, CH1_MIN_NEG));
+		sendStimValue(channel_dac, 1, STIM_ZERO - val_ma(mA, MIN_NEG));
 		delayMicroseconds(pw);
-		sendStimValue(0, 1, STIM_ZERO + 10);
+		sendStimValue(channel_dac, 1, STIM_ZERO + 10);
 		delayMicroseconds(pw_r);
+		read_values();
 	}
 	if(loop_control == false){
-		zeroChannels();
+		zeroChannels(); 
+	}
+}
+
+void read_values(){
+	if(Serial.available() != 0){
+	    String data_in = Serial.readStringUntil(cs);
+	    channel_dac = data_in.toInt();
+	    data_in = Serial.readStringUntil(cs);
+	    MAX_POS = data_in.toInt();
+	    data_in = Serial.readStringUntil(cs);
+	    MIN_NEG = data_in.toInt();
+
+	    if(channel_dac == 0){
+			digitalWrite(RELAY_CH_1, 1);
+			digitalWrite(RELAY_CH_2, 0);
+		}else if(channel_dac == 1){
+			digitalWrite(RELAY_CH_1, 0);
+			digitalWrite(RELAY_CH_2, 1);
+		}else if(channel_dac == 2){
+			digitalWrite(RELAY_CH_1, 0);
+			digitalWrite(RELAY_CH_2, 0);
+		}
 	}
 }
 
 void sendStimValue(int address, int operation_mode, uint16_t value){
 	byte valueToWriteH = 0;
 	byte valueToWriteL = 0;
+
 	valueToWriteH = highByte(value);
 	valueToWriteH = 0b00001111 & valueToWriteH;
 	valueToWriteH = (address << 6) | (operation_mode << 4) | valueToWriteH;
 	valueToWriteL = lowByte(value);
+	
 	digitalWrite(DAC_SS_PIN, LOW);
 	SPI.transfer(valueToWriteH);
 	SPI.transfer(valueToWriteL);
