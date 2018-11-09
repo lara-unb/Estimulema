@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -17184,7 +17184,7 @@ Based on the following sources:
 <part name="R16" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="3k3S"/>
 <part name="SG2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="BUZZER" device="" package3d_urn="urn:adsk.eagle:package:1734311/2"/>
 <part name="LED3" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="LED" device="LED_T_3MM" package3d_urn="urn:adsk.eagle:package:1238520/2" value="LEDLED_T_3MM"/>
-<part name="R22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="4K7"/>
+<part name="R22" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="470R"/>
 <part name="D2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DIODO" device="WEB" package3d_urn="urn:adsk.eagle:package:4574534/2" value="1N4007S"/>
 <part name="R23" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="120R"/>
 <part name="DAC" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="DAC_MODULE" device="" package3d_urn="urn:adsk.eagle:package:1966569/2" value="DAC"/>
@@ -17360,14 +17360,14 @@ Based on the following sources:
 <part name="GND_D4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
 <part name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820r"/>
 <part name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="820R"/>
-<part name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
-<part name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
+<part name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value=""/>
+<part name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4" value=""/>
 <part name="X2+15-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
 <part name="JP11" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X7" device="" package3d_urn="urn:adsk.eagle:package:22477/2"/>
 <part name="5G_D1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="UART_COM" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2"/>
 <part name="GPIO2_ACCEL" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
-<part name="1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_3_PTR500" device="" package3d_urn="urn:adsk.eagle:package:5402944/3" value="PTR500"/>
+<part name="HV-15+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_3_PTR500" device="" package3d_urn="urn:adsk.eagle:package:5402944/3" value=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17507,13 +17507,13 @@ Based on the following sources:
 <attribute name="NAME" x="124.46" y="59.055" size="1.778" layer="95"/>
 <attribute name="VALUE" x="124.46" y="43.18" size="1.778" layer="96"/>
 </instance>
-<instance part="1" gate="G$1" x="-114.3" y="25.4" smashed="yes">
+<instance part="HV-15+" gate="G$1" x="-114.3" y="25.4" smashed="yes">
 <attribute name="NAME" x="-115.57" y="26.289" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="1" gate="G$2" x="-114.3" y="20.32" smashed="yes">
+<instance part="HV-15+" gate="G$2" x="-114.3" y="20.32" smashed="yes">
 <attribute name="NAME" x="-115.57" y="21.209" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="1" gate="G$3" x="-114.3" y="15.24" smashed="yes">
+<instance part="HV-15+" gate="G$3" x="-114.3" y="15.24" smashed="yes">
 <attribute name="NAME" x="-115.57" y="16.129" size="1.778" layer="95" rot="R180"/>
 </instance>
 </instances>
@@ -17535,7 +17535,7 @@ Based on the following sources:
 <pinref part="JP11" gate="A" pin="1"/>
 <wire x1="0" y1="27.94" x2="-8.89" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-8.89" y="27.94"/>
-<pinref part="1" gate="G$1" pin="KL"/>
+<pinref part="HV-15+" gate="G$1" pin="KL"/>
 <wire x1="-109.22" y1="25.4" x2="-101.6" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -17652,7 +17652,7 @@ Based on the following sources:
 <pinref part="JP11" gate="A" pin="6"/>
 <wire x1="0" y1="15.24" x2="-8.89" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-8.89" y="15.24"/>
-<pinref part="1" gate="G$2" pin="KL"/>
+<pinref part="HV-15+" gate="G$2" pin="KL"/>
 <wire x1="-109.22" y1="20.32" x2="-100.33" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -17887,7 +17887,7 @@ Based on the following sources:
 <pinref part="D4" gate="G$1" pin="C"/>
 <wire x1="-101.6" y1="15.24" x2="-67.31" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="15.24" x2="-67.31" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="1" gate="G$3" pin="KL"/>
+<pinref part="HV-15+" gate="G$3" pin="KL"/>
 <wire x1="-109.22" y1="15.24" x2="-106.68" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="15.24" x2="-101.6" y2="15.24" width="0.1524" layer="91"/>
 </segment>
@@ -18258,14 +18258,14 @@ Based on the following sources:
 <pinref part="DAC" gate="G$1" pin="SCLK"/>
 </segment>
 </net>
-<net name="N$67" class="2">
+<net name="RL1" class="2">
 <segment>
 <pinref part="UC1" gate="G$1" pin="6/PWM"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$68" class="2">
+<net name="RL2" class="2">
 <segment>
 <pinref part="UC1" gate="G$1" pin="7/RX3"/>
 <wire x1="99.06" y1="66.04" x2="81.28" y2="66.04" width="0.1524" layer="91"/>

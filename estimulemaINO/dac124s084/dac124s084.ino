@@ -63,6 +63,8 @@ void read_values(){
 	    MAX_POS = data_in.toInt();
 	    data_in = Serial.readStringUntil(cs);
 	    MIN_NEG = data_in.toInt();
+	    data_in = Serial.readStringUntil(cs);
+	    mA = data_in.toInt();
 
 	    if(channel_dac == 0){
 			digitalWrite(RELAY_CH_1, 1);

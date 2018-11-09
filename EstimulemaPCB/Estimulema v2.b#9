@@ -3,7 +3,7 @@
 <eagle version="9.2.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -26,16 +26,16 @@
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,20 +46,20 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -185,12 +185,12 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyOGM0MjA1" projecturn="a.cGVyc29uYWw6dWUyOGM0MjA1IzIwMTgxMDE3MTU1MjAxMDAx" f3durn="urn:adsk.wipprod:dm.lineage:-_tFIlG4SySFKO65mbvzZg" pcbguid="d1ab863f-ec77-482c-9173-545b8b94b9be" lastpulledtime="" lastsyncedchangeguid="e6d7f88f-2d87-25e2-99d3-bfb63bd01041"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyOGM0MjA1" projecturn="a.cGVyc29uYWw6dWUyOGM0MjA1IzIwMTgxMDE3MTU1MjAxMDAx" f3durn="urn:adsk.wipprod:dm.lineage:YrWJLHFmSrSkXG5gXTeEaQ" pcbguid="cdcc5b57-a677-4e81-ab74-f5285da69468" lastpulledtime="" lastsyncedchangeguid="edd42aca-81ab-b042-48ba-ad10a1f7836d"/>
 <plain>
-<wire x1="1.016" y1="50" x2="152" y2="50" width="0" layer="20"/>
-<wire x1="152" y1="50" x2="152" y2="212" width="0" layer="20"/>
-<wire x1="152" y1="212" x2="1.27" y2="212" width="0" layer="20"/>
-<wire x1="1.27" y1="212" x2="1.016" y2="50" width="0" layer="20"/>
+<wire x1="1.016" y1="50" x2="152" y2="50" width="0.4064" layer="20"/>
+<wire x1="152" y1="50" x2="152" y2="212" width="0.4064" layer="20"/>
+<wire x1="152" y1="212" x2="1.27" y2="212" width="0.4064" layer="20"/>
+<wire x1="1.27" y1="212" x2="1.016" y2="50" width="0.4064" layer="20"/>
 <text x="111.1885" y="170.561" size="2.1844" layer="1" ratio="15">2 CHANNELS</text>
 <hole x="6.016" y="54.911" drill="3"/>
 <hole x="147.016" y="54.911" drill="3"/>

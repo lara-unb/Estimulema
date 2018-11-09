@@ -37,8 +37,8 @@ cont_fig = 1
 plot_show = True
 sel_test = True
 start_receiver = False
-start_rh_test = False # para controlar testes de Treinamento e na sequencia reobase
-ctrl_ch1_rh = False # controle de activacao treinamento - reobase
+start_rh_test = False  # para controlar testes de Treinamento e na sequencia reobase
+ctrl_ch1_rh = False  # controle de activacao treinamento - reobase
 
 # lock to serialize console output
 lock = threading.Lock()
@@ -71,6 +71,9 @@ limit_ma_ini = 0
 limit_ma_fin = 0
 limit_pw = 0
 limit_start = 0  # To count the final message
+
+# Num treinamento para los textos de treinamento
+ntrain = 0
 
 # Stim parameters
 ts = 0
@@ -158,7 +161,7 @@ class MainWindow(QMainWindow):
 
     # buttons ---------------------------------------------------------------
     def btn_start_rh(self):
-        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2,start_rh_test
+        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2, start_rh_test
         global start_thread_a, start_thread_s, msg_bytes, solo_mode
 
         rh = True
@@ -662,7 +665,7 @@ def stim_training():
 
 
 def read_while_stim(port, baud):
-    global start, start_receiver, ts, start_tread, start_rh_test
+    global start, start_receiver, ts, start_tread, start_rh_test, ntrain
 
     start_receiver = True
     cont = 0
@@ -673,7 +676,10 @@ def read_while_stim(port, baud):
     ser.baudrate = baud
     ser.xonxoff = 1
 
-    stim_tr = open("Treinamento.txt", 'w')
+    # numeros de treinamento
+    file_training = "Treinamento" + str(ntrain) + ".txt"
+
+    stim_tr = open(file_training, 'w')
 
     try:
         ser.open()
@@ -697,22 +703,22 @@ def read_while_stim(port, baud):
                     # print(str_msn)
                     cont_min = str_msn.find("T")
 
-                    if cont_min == 0:
+                    if cont_min == 0:  # para T cuando es igual en el primer caratcer
                         print("Llegó un minuto")
                         cont = cont + 1
                         print("Remaining minutes: " + str(ts - cont))
                         ex.upd_terminal("Remaining minutes: " + str(ts - cont))
                         ex.upd_lcdNumber(ts - cont)
-                    elif cont_min == -1:
-                        cont_min = str_msn.find(";")
+                    elif cont_min == -1:  # cuando es diferente de t
+                        cont_min = str_msn.find(";") # la coma da un valor mayor que cero
                         if cont_min > 0:
                             stim_tr.write(str_msn)
                             stim_tr.write("\n")
                             print(str_msn)
-                    if str_msn == "f":
-                        start_receiver = False
-                        print("End therapy time")
-                        ex.upd_terminal("End therapy time")
+                        elif str_msn == "f":
+                            start_receiver = False
+                            print("End therapy time")
+                            ex.upd_terminal("End therapy time")
 
                     """else:
                         cont = cont + 1
@@ -722,6 +728,7 @@ def read_while_stim(port, baud):
 
             ser.close()
             stim_tr.close()
+            ntrain = ntrain + 1
             start_tread = True
             ex.upd_terminal("End therapy time")
 
@@ -757,8 +764,10 @@ def start_test():
 
 def plot_and_filt():
     global arrayt, arrayt2, rh, cr, plot_xyz, file_name_out_a, file_name_out_s
-
     global rh_acx, rh_acy, rh_acz, cr_acx, cr_acy, cr_acz
+
+    data = ""
+    data_s = ""
 
     # aqui testo las saludas
     # rh = False
@@ -915,7 +924,7 @@ def plot_and_filt():
     if rh is True:
         for j in range(500, n):
             # contar milies
-            ##val_ac = acxyz_fil[j]
+            # val_ac = acxyz_fil[j]
             val_ac = xyz_mf[j]
             if val_ac >= th:
                 print("Indice de interceptacion: " + str(j))
@@ -956,7 +965,7 @@ def plot_and_filt():
     plt.text(indx_x, indx_y + (indx_y / 30), val_int_str, fontsize=16, color='r')
 
     print("Ends plot desde archivo para aceleracion")
-    # val_int = 4
+    val_int = 1
     ex.upd_val_rh(val_int * 2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
     plt.legend(loc=2)
