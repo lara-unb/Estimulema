@@ -185,7 +185,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyOGM0MjA1" projecturn="a.cGVyc29uYWw6dWUyOGM0MjA1IzIwMTcxMjI2MTA5OTE4NzUx" f3durn="urn:adsk.wipprod:dm.lineage:a3TV6h6ST9ayQOR__9NI6g" pcbguid="653ef68f-6985-4a81-9d55-14a2d5d2a77c" lastpulledtime="" lastsyncedchangeguid="2900474f-b0c0-549d-a1fb-0338951f5030"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyOGM0MjA1" projecturn="a.cGVyc29uYWw6dWUyOGM0MjA1IzIwMTcxMjI2MTA5OTE4NzUx" f3durn="urn:adsk.wipprod:dm.lineage:a3TV6h6ST9ayQOR__9NI6g" pcbguid="653ef68f-6985-4a81-9d55-14a2d5d2a77c" lastpulledtime="" lastsyncedchangeguid="5a15a1f3-7c8a-e3ef-d8af-4544e3fc6519"/>
 <plain>
 <wire x1="1.016" y1="50" x2="152" y2="50" width="0" layer="20"/>
 <wire x1="152" y1="50" x2="152" y2="212" width="0" layer="20"/>
@@ -4812,6 +4812,14 @@ design rules under a new name.</description>
 <wire x1="105.41" y1="189.103" x2="98.552" y2="189.103" width="0.508" layer="1"/>
 <wire x1="94.1705" y1="184.023" x2="98.552" y2="184.023" width="0.508" layer="1"/>
 <via x="140.3985" y="109.7534" extent="1-16" drill="0.35"/>
+<polygon width="0.4064" layer="16" isolate="1.27" orphans="yes">
+<vertex x="2" y="211"/>
+<vertex x="151" y="211"/>
+<vertex x="151" y="51"/>
+<vertex x="147" y="51"/>
+<vertex x="2" y="51"/>
+<vertex x="2" y="58"/>
+</polygon>
 <wire x1="140.3985" y1="109.7534" x2="140.208" y2="109.982" width="0" layer="19" extent="1-1"/>
 <wire x1="140.208" y1="76.708" x2="140.3985" y2="76.6318" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -5960,22 +5968,12 @@ design rules under a new name.</description>
 <wire x1="14.986" y1="177.038" x2="22.606" y2="177.038" width="0.3556" layer="1"/>
 <wire x1="22.606" y1="177.038" x2="23.876" y2="178.308" width="0.3556" layer="1"/>
 </signal>
-<signal name="N$37">
+<signal name="GND_NV">
 <polygon width="0.4064" layer="1" isolate="1.4224" orphans="yes">
 <vertex x="2" y="211"/>
 <vertex x="151" y="211"/>
 <vertex x="151" y="51"/>
 <vertex x="2" y="51"/>
-</polygon>
-</signal>
-<signal name="N$39">
-<polygon width="0.4064" layer="16" isolate="1.27" orphans="yes">
-<vertex x="2" y="211"/>
-<vertex x="151" y="211"/>
-<vertex x="151" y="51"/>
-<vertex x="147" y="51"/>
-<vertex x="2" y="51"/>
-<vertex x="2" y="58"/>
 </polygon>
 </signal>
 </signals>

@@ -5,10 +5,10 @@
 #endif
 
 // #define Pin_Inter 23
-#define Pin_Led_Control 13
-#define Pin_signal_Control 20
+const int Pin_Led_Control = 13;
+const int Pin_signal_Control = 20;
 
-#define fin '>'                 // Character separator used for split data
+const char fin = '>';                 // Character separator used for split data
 
 MPU6050 accel;
 
@@ -33,7 +33,10 @@ void setup() {
 
   // Initialize parameters for Stim-Accel communication
   Serial.begin(2000000);
+  Serial.setTimeout(1);
+  
   Serial1.begin(2000000);
+  Serial1.setTimeout(1);
 
   accel.initialize();
   
@@ -41,7 +44,13 @@ void setup() {
   pinMode(Pin_signal_Control, INPUT_PULLUP);
   pinMode(Pin_Led_Control, OUTPUT);
 
-  //attachInterrupt(Pin_Inter, Communication_data, CHANGE);
+  /*int16_t * ax = (int16_t) malloc(1 * sizeof(int16_t));
+  int16_t *ay = (int16_t) malloc(1 * sizeof(int16_t));
+  int16_t *az = (int16_t) malloc(1 * sizeof(int16_t));
+
+  ax = 0;
+  ay = 0;
+  az = 0;*/
   
   digitalWrite(Pin_Led_Control,1);
 }
@@ -95,9 +104,9 @@ void loop() {
     Serial.print(az);
     Serial.print(";");
     Serial.println(pint);
-    Serial.println(">");
+    Serial.println(">"); // End captura
 
-  }
+  }// end fin captura
 }
 
 void read_data(){
@@ -111,6 +120,7 @@ void read_data(){
     	switch (sel1) {
       		case 1:
       			if(sel2 == 1){ 		// Sel2 is iqual to activate capture function
+      				digitalWrite(Pin_Led_Control, 0);
       	 			capture = true;
       	 			loops = false;
       			}else{
@@ -118,18 +128,49 @@ void read_data(){
       				loops = true;
       			}
         		break;
-      		case 2:
+      		/*case 2: // en este caso se quita porque ocurre un atraso en la señal quitado junto con el bip de min
         		Serial.print("T>");
         		Serial.print(sel2);  // Sel2 is iqual to minutes
         		Serial.println(">");
-        		break;
+        		break;*/
       		case 3:
+      			// No hay mas captura de dados
+      			capture = false;
+      			loops = true;
+
+      			//Imprime el ultimo valor
+      		Serial.print(micros());
+			    Serial.print(";");
+			    pint = digitalRead(Pin_signal_Control);
+			    accel.getAcceleration(&ax, &ay, &az);
+			    Serial.print(ax);
+			    Serial.print(";");
+			    Serial.print(ay);
+			    Serial.print(";");
+			    Serial.print(az);
+			    Serial.print(";");
+			    Serial.println(pint);
+			    
+			    // Finaliza todo
         		Serial.println("f");
         		break;
     	}
   	}
+
+    if(Serial.available() != 0){
+      String car_ini = Serial.readString();
+      if(car_ini == "f"){
+        capture = false;
+        loops = true;
+      }else if(car_ini == "s"){
+        digitalWrite(Pin_Led_Control, 0);
+        capture = true;
+        loops = false;
+      }
+    }
 }
 
+// funcion para hacer blink y leer datos si los hay
 void led_blink_and_read(){
 	while(loops && capture == false){
 		if(micros() >= time_count && uno){

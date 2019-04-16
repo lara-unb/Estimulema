@@ -8,6 +8,8 @@ bool loops = true;
 
 void setup() {
   Serial.begin(2000000);
+  //Serial.setTimeout(10);
+
   scale.set_scale();
   scale.tare();  //Reset the scale to 0
   long zero_factor = scale.read_average(); //Get a baseline reading
@@ -31,12 +33,13 @@ void loop() {
 
 void read_port(){
   if (Serial.available() != 0) {
-      char car_ini = Serial.read();
-      if(car_ini == 's'){
+      String car_ini = Serial.readString();
+      //Serial.println(car_ini);
+      //Serial.readString();
+      if(car_ini == "s"){
         loops = false;
       }else{
         loops = true;
       }
   }
-
 }

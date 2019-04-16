@@ -17673,8 +17673,9 @@ Based on the following sources:
 <part name="GND_D4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device="" value="GND_D"/>
 <part name="R19" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
 <part name="R27" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="RESISTOR" device="SMD_0805" package3d_urn="urn:adsk.eagle:package:1282003/2" value="1K"/>
-<part name="X1C" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
-<part name="K_CH2" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
+<part name="X1HV+" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
+<part name="X3HV-" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
+<part name="X3HV-1" library="7DI Library" library_urn="urn:adsk.eagle:library:1229688" deviceset="CONECTOR_" device="5.08" package3d_urn="urn:adsk.eagle:package:1393551/4"/>
 </parts>
 <sheets>
 <sheet>
@@ -17703,7 +17704,7 @@ Based on the following sources:
 <instance part="J+15_D3" gate="-2" x="29.21" y="48.26"/>
 <instance part="GND_D15" gate="G$1" x="36.83" y="17.78"/>
 <instance part="JP9" gate="A" x="-6.35" y="20.32"/>
-<instance part="J2" gate="1" x="96.52" y="62.23"/>
+<instance part="J2" gate="1" x="97.79" y="62.23"/>
 <instance part="J6" gate="1" x="99.06" y="-41.91" rot="R180"/>
 <instance part="GND_HV" gate="A" x="77.47" y="-3.81" rot="R180"/>
 <instance part="5G_D" gate="A" x="120.65" y="50.8"/>
@@ -17713,10 +17714,12 @@ Based on the following sources:
 <instance part="X4" gate="-2" x="-139.7" y="20.32"/>
 <instance part="X4" gate="-3" x="-139.7" y="15.24"/>
 <instance part="D4" gate="G$1" x="-87.63" y="-22.86" rot="MR0"/>
-<instance part="X1C" gate="P1" x="111.76" y="1.27"/>
-<instance part="X1C" gate="P2" x="111.76" y="-2.54"/>
-<instance part="K_CH2" gate="P1" x="111.76" y="-7.62"/>
-<instance part="K_CH2" gate="P2" x="111.76" y="-11.43"/>
+<instance part="X1HV+" gate="P1" x="111.76" y="1.27"/>
+<instance part="X1HV+" gate="P2" x="111.76" y="-2.54"/>
+<instance part="X3HV-" gate="P1" x="111.76" y="-7.62"/>
+<instance part="X3HV-" gate="P2" x="111.76" y="-11.43"/>
+<instance part="X3HV-1" gate="P1" x="10.16" y="49.53" rot="R180"/>
+<instance part="X3HV-1" gate="P2" x="10.16" y="53.34" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -17855,11 +17858,11 @@ Based on the following sources:
 <pinref part="GND_HV" gate="A" pin="2"/>
 <pinref part="GND_HV" gate="A" pin="3"/>
 <pinref part="GND_HV" gate="A" pin="4"/>
-<pinref part="X1C" gate="P2" pin="S"/>
+<pinref part="X1HV+" gate="P2" pin="S"/>
 <wire x1="109.22" y1="-2.54" x2="104.14" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-2.54" x2="104.14" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-5.08" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="K_CH2" gate="P1" pin="S"/>
+<pinref part="X3HV-" gate="P1" pin="S"/>
 <wire x1="109.22" y1="-7.62" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-5.08" x2="88.9" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="-5.08" x2="96.52" y2="-5.08" width="0.1524" layer="91"/>
@@ -17897,7 +17900,8 @@ Based on the following sources:
 <pinref part="C72" gate="G$1" pin="2"/>
 <wire x1="46.99" y1="25.4" x2="46.99" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="J+15_D3" gate="-2" pin="KL"/>
-<wire x1="34.29" y1="48.26" x2="36.83" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="34.29" y1="48.26" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="48.26" x2="36.83" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="36.83" y1="48.26" x2="36.83" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="97.79" y1="20.32" x2="85.09" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="85.09" y1="20.32" x2="72.39" y2="20.32" width="0.1524" layer="91"/>
@@ -17920,6 +17924,12 @@ Based on the following sources:
 <junction x="107.95" y="50.8"/>
 <pinref part="5G_D" gate="A" pin="3"/>
 <pinref part="5G_D" gate="A" pin="4"/>
+<pinref part="X3HV-1" gate="P1" pin="S"/>
+<wire x1="12.7" y1="49.53" x2="16.51" y2="49.53" width="0.1524" layer="91"/>
+<wire x1="16.51" y1="49.53" x2="16.51" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="16.51" y1="45.72" x2="35.56" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="45.72" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<junction x="35.56" y="48.26"/>
 </segment>
 </net>
 <net name="+5_D" class="4">
@@ -17930,20 +17940,18 @@ Based on the following sources:
 <wire x1="97.79" y1="40.64" x2="97.79" y2="33.02" width="0.1524" layer="91"/>
 <junction x="97.79" y="40.64"/>
 <pinref part="D38" gate="G$1" pin="A"/>
-<wire x1="90.17" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="53.34" x2="97.79" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="90.17" y1="53.34" x2="92.71" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="92.71" y1="53.34" x2="97.79" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="97.79" y1="53.34" x2="97.79" y2="40.64" width="0.1524" layer="91"/>
 <label x="97.79" y="55.88" size="1.778" layer="95"/>
 <junction x="97.79" y="53.34"/>
 <pinref part="J2" gate="1" pin="1"/>
 <wire x1="102.87" y1="53.34" x2="97.79" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="62.23" x2="87.63" y2="62.23" width="0.1524" layer="91"/>
-<wire x1="87.63" y1="62.23" x2="87.63" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="87.63" y1="58.42" x2="91.44" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="58.42" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
-<junction x="91.44" y="53.34"/>
+<wire x1="92.71" y1="62.23" x2="92.71" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="92.71" y1="59.69" x2="92.71" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="92.71" y1="58.42" x2="92.71" y2="53.34" width="0.1524" layer="91"/>
+<junction x="92.71" y="53.34"/>
 <pinref part="J2" gate="1" pin="2"/>
-<wire x1="101.6" y1="62.23" x2="102.87" y2="62.23" width="0.1524" layer="91"/>
 <wire x1="102.87" y1="62.23" x2="102.87" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="5G_D" gate="A" pin="2"/>
 <wire x1="118.11" y1="53.34" x2="107.95" y2="53.34" width="0.1524" layer="91"/>
@@ -18014,7 +18022,7 @@ Based on the following sources:
 <net name="1HV+" class="3">
 <segment>
 <label x="90.17" y="1.27" size="1.778" layer="95"/>
-<pinref part="X1C" gate="P1" pin="S"/>
+<pinref part="X1HV+" gate="P1" pin="S"/>
 <wire x1="104.14" y1="1.27" x2="90.17" y2="1.27" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="1.27" x2="105.41" y2="1.27" width="0.1524" layer="91"/>
 <wire x1="105.41" y1="1.27" x2="104.14" y2="1.27" width="0.1524" layer="91"/>
@@ -18028,7 +18036,7 @@ Based on the following sources:
 <net name="1HV-" class="3">
 <segment>
 <label x="90.17" y="-13.97" size="1.778" layer="95"/>
-<pinref part="K_CH2" gate="P2" pin="S"/>
+<pinref part="X3HV-" gate="P2" pin="S"/>
 <wire x1="99.06" y1="-11.43" x2="90.17" y2="-11.43" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="-11.43" x2="104.14" y2="-11.43" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-11.43" x2="99.06" y2="-11.43" width="0.1524" layer="91"/>
@@ -18043,7 +18051,14 @@ Based on the following sources:
 <segment>
 <pinref part="J+15_D3" gate="-1" pin="KL"/>
 <pinref part="D37" gate="G$1" pin="A"/>
-<wire x1="34.29" y1="53.34" x2="36.83" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="34.29" y1="53.34" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="X3HV-1" gate="P2" pin="S"/>
+<wire x1="35.56" y1="53.34" x2="36.83" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="53.34" x2="16.51" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="16.51" y1="53.34" x2="16.51" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="16.51" y1="58.42" x2="35.56" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="58.42" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
+<junction x="35.56" y="53.34"/>
 </segment>
 </net>
 <net name="-15" class="2">

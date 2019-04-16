@@ -17465,15 +17465,15 @@ Based on the following sources:
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
-<class number="1" name="GND_HV" width="0.8128" drill="0">
+<class number="1" name="GND_HV" width="0.508" drill="0">
 </class>
-<class number="2" name="SIGNAL" width="0.508" drill="0">
+<class number="2" name="SIGNAL" width="0.3556" drill="0">
 </class>
-<class number="3" name="GND_D" width="0.6096" drill="0">
+<class number="3" name="GND_D" width="0.3556" drill="0">
 </class>
-<class number="4" name="+5_D" width="0.6096" drill="0">
+<class number="4" name="+5_D" width="0.3556" drill="0">
 </class>
-<class number="5" name="GND_HV1" width="0.8128" drill="0">
+<class number="5" name="GND_HV1" width="0.508" drill="0">
 </class>
 </classes>
 <parts>

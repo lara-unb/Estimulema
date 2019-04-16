@@ -18006,6 +18006,9 @@ Based on the following sources:
 <segment>
 <label x="82.55" y="-27.94" size="1.778" layer="95"/>
 <wire x1="83.82" y1="-29.21" x2="82.55" y2="-29.21" width="0.1524" layer="91"/>
+<pinref part="D3" gate="G$1" pin="C"/>
+<wire x1="91.44" y1="-29.21" x2="86.36" y2="-29.21" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-29.21" x2="83.82" y2="-29.21" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="1HV+" class="3">
@@ -18051,12 +18054,6 @@ Based on the following sources:
 <label x="-129.54" y="-20.32" size="1.778" layer="95"/>
 <pinref part="D4" gate="G$1" pin="C"/>
 <wire x1="-90.17" y1="-22.86" x2="-133.35" y2="-22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$36" class="3">
-<segment>
-<pinref part="D3" gate="G$1" pin="C"/>
-<wire x1="91.44" y1="-29.21" x2="83.82" y2="-29.21" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
