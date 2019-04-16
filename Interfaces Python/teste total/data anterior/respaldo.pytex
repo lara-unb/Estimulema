@@ -1,0 +1,426 @@
+import sys
+import matplotlib.pyplot as plt
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
+import serial
+import threading
+import numpy as np
+import time
+from scipy.signal import butter, lfilter, medfilt
+
+__author__ = 'Miguel Gutierrez'
+
+# Warning --- Setup configurations
+teste_training = 1  # 0 - teste de exitabilidade **** 1 - Training
+t_s = 1  # 0 - teste simple **** 1 - teste con estimulador
+
+if t_s == 0:
+    # portas teste simple
+    serPort1 = "COM8"  # Stim
+    serPort2 = "COM9"  # Accel
+    serPort3 = "COM10"  # load
+else:
+    # Portas estimulador y loadcell
+    serPort1 = "COM3"  # Stim
+    serPort2 = "COM4"  # Accel
+    serPort3 = "COM11"  # load  >>> ver no nipo
+
+tex_min = 10
+tex_max = 25
+# exemplo 2>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>1>5>500>0>0>0>0>0>1>
+tex = "2>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>" \
+      + str(tex_min) + \
+      ">" \
+      + str(tex_max) + \
+      ">500>1>0>0>0>1>0>"
+
+# Variaveis estimulacion
+ts = 1
+fq = 50
+pw = 500
+tn = 5
+tf = 5
+ru = 1
+rd = 1
+ma = 40
+
+# exemplo 2>50>500>1.0>5>2.0>2.0>10>4.0>1>0.5>0.5>0>1>5>500>0>0>1>0>1>0>
+tng = ""
+
+baudRate = 2000000
+
+# datos de acel y load
+array_stim = []
+array_acel = []
+array_load = []
+
+# lock to serialize console output
+lock = threading.Lock()
+
+end_load_capture = False
+start_thread_stim = True
+start_thread_acel = True
+start_thread_load = True
+
+stop_thread_load = False
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        # Set up the user interface from Designer.
+        uic.loadUi("teste_total.ui", self)
+
+        self.pb_start.clicked.connect(self.btn_start_seq)
+        self.pb_stop.clicked.connect(self.btn_stop_seq)
+
+        # Show interface
+        self.show()
+
+    @staticmethod
+    def btn_start_seq():
+        global tex, tng, teste_training
+
+        if teste_training == 0:
+            start_test()
+        else:
+            concatenar_training()
+            tex = tng
+            start_test()
+
+    @staticmethod
+    def btn_stop_seq():
+        global tex, start_thread_stim, start_thread_acel, start_thread_load
+
+        start_thread_stim = False
+        start_thread_acel = False
+        start_thread_load = False
+
+        tex = "0>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>1>5>500>0>0>0>0>0>1>"
+        stop_test()
+
+    def upd_terminal(self, msn):
+        self.le_terminal.setText(msn)
+
+
+def stop_test():
+    global serPort1, baudRate, tex, end_load_capture
+
+    ser = serial.Serial()
+    ser.port = serPort1
+    ser.timeout = 1
+    ser.baudrate = baudRate
+    ser.xonxoff = 1
+
+    end_load_capture = True
+
+    try:
+        ser.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + "En -- Stim_training -- ")
+        exit()
+
+    if ser.isOpen():
+        try:
+            ser.write(str.encode(tex))
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + " En -- Stim_training --")
+
+# para hacer tex
+def start_test():
+    global serPort1, serPort2, serPort3, baudRate
+
+    try:
+        t1 = threading.Thread(target=read_serial_stim, args=(serPort1, baudRate))
+        t1.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+        t1.start()
+
+    except Exception as e1:
+        print("Error: unable to start thread 1" + str(e1))
+
+    try:
+        t2 = threading.Thread(target=read_serial_acel, args=(serPort2, baudRate))
+        t2.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+        t2.start()
+    except Exception as e1:
+        print("Error: unable to start thread 2" + str(e1))
+
+    try:
+        t3 = threading.Thread(target=read_serial_load, args=(serPort3, baudRate))
+        t3.daemon = True  # thread dies when main thread (only non-daemon thread) exits.
+        t3.start()
+    except Exception as e1:
+        print("Error: unable to start thread 3" + str(e1))
+
+
+def read_serial_stim(port, baud):
+    global tex, array_stim, start_thread_stim
+
+    array_stim = []  # array for stim data
+
+    ser = serial.Serial()
+    ser.port = port
+    ser.timeout = 1
+    ser.baudrate = baud
+    ser.xonxoff = 1
+
+    horas = time.strftime("%H")
+    n_dias = time.strftime("%a")
+    dias = time.strftime("%d")
+    mms = time.strftime("%M")
+    file_name_out_s = 'stim_data ' + n_dias + ' ' + dias + ' ' + horas + 'h' + mms + '.txt'
+
+    ar_stim = open(file_name_out_s, 'w')
+
+    try:
+        ser.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + " En -- read_serial --")
+        exit()
+
+    if ser.isOpen():
+        try:
+            ser.write(str.encode(tex))
+            ex.upd_terminal(tex)
+            print("Start capture for Stim data")
+            while start_thread_stim is True:
+                cs = ser.readline()
+                with lock:
+                    if len(cs) > 0:
+                        str_msn = cs.decode("utf-8")
+                        str_msn = str_msn.rstrip()
+                        #print(str_msn)
+                        if str_msn == '>':
+                            start_thread_stim = False
+                            print("End capture about Stim data")
+                        else:
+                            array_stim.append(str_msn)
+                            ar_stim.write(str_msn)
+                            ar_stim.write("\n")
+            ser.close()
+            ar_stim.close()
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + "En -- read_serial --")
+
+    else:
+        print("Cannot open serial port " + str(port) + "En -- read_serial --")
+        exit()
+
+    #save_data_stim()  # Thread for acel data
+    print("End Thread Stim data")
+
+
+# salva los datos del stim
+def save_data_stim():
+    global array_stim
+
+    horas = time.strftime("%H")
+    n_dias = time.strftime("%a")
+    dias = time.strftime("%d")
+    mms = time.strftime("%M")
+    file_name_out_s = 'stim_data ' + n_dias + ' ' + dias + ' ' + horas + 'h' + mms + '.txt'
+
+    ar_stim = open(file_name_out_s, 'w+')
+
+    for xs in array_stim:
+        ar_stim.write(xs)
+        ar_stim.write("\n")
+        print(xs)
+
+    ar_stim.close()
+
+    print("End generation of Stim data file")
+    ex.upd_terminal("End generation of Stim data file")
+
+
+def read_serial_acel(port, baud):
+    global tex, array_acel, end_load_capture, start_thread_acel
+
+    array_acel = []  # array for stim data
+
+    ser2 = serial.Serial()
+    ser2.port = port
+    ser2.timeout = 1
+    ser2.baudrate = baud
+    ser2.xonxoff = 1
+
+    horaa = time.strftime("%H")
+    n_diaa = time.strftime("%a")
+    diaa = time.strftime("%d")
+    mma = time.strftime("%M")
+    file_name_out_a = 'acel_data ' + n_diaa + ' ' + diaa + ' ' + horaa + 'h' + mma + '.txt'
+
+    ar_acel = open(file_name_out_a, 'w')
+
+    try:
+        ser2.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + " En -- read_serial --")
+        exit()
+
+    if ser2.isOpen():
+        try:
+            print("Start capture for Stim data")
+            while start_thread_acel is True:
+                ca = ser2.readline()
+                with lock:
+                    if len(ca) > 0:
+                        str_msn2 = ca.decode("utf-8")
+                        str_msn2 = str_msn2.rstrip()
+                        #print(str_msn2)
+                        if str_msn2 == '>':
+                            start_thread_acel = False
+                            end_load_capture = True
+                            print("End capture about Stim data")
+                        else:
+                            array_acel.append(str_msn2)
+                            ar_acel.write(str_msn2)
+                            ar_acel.write("\n")
+            ser2.close()
+            ar_acel.close()
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + "En -- read_serial --")
+
+    else:
+        print("Cannot open serial port " + str(port) + "En -- read_serial --")
+        exit()
+
+    #save_data_acel()  # Thread for acel data
+    print("End Thread Acel data")
+
+
+# salva los datos del stim
+def save_data_acel():
+    global array_acel
+
+    horaa = time.strftime("%H")
+    n_diaa = time.strftime("%a")
+    diaa = time.strftime("%d")
+    mma = time.strftime("%M")
+    file_name_out_a = 'acel_data ' + n_diaa + ' ' + diaa + ' ' + horaa + 'h' + mma + '.txt'
+
+    ar_acel = open(file_name_out_a, 'w+')
+
+    for xa in array_acel:
+        ar_acel.write(xa)
+        ar_acel.write("\n")
+        print(xa)
+
+    ar_acel.close()
+
+    print("End generation of Acel file")
+    ex.upd_terminal("End generation of Acel file")
+
+
+def read_serial_load(port, baud):
+    global tex, array_load, end_load_capture, start_thread_load, stop_thread_load
+
+    array_load = []  # array for stim data
+
+    ser3 = serial.Serial()
+    ser3.port = port
+    ser3.timeout = 1
+    ser3.baudrate = baud
+    ser3.xonxoff = 1
+
+    horal = time.strftime("%H")
+    n_dial = time.strftime("%a")
+    dial = time.strftime("%d")
+    mml = time.strftime("%M")
+    file_name_out_l = 'load_data ' + n_dial + ' ' + dial + ' ' + horal + 'h' + mml + '.txt'
+
+    ar_load = open(file_name_out_l, 'w')
+
+    try:
+        if stop_thread_load is True:
+            ser3.open()
+        else:
+            if ser3.isOpen():
+                try:
+                    ser3.write(str.encode("f"))
+                except Exception as e1:
+                    print("Error communicating...: " + str(e1) + "En -- read_serial --")
+            ser3.close()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + " En -- read_serial --")
+        exit()
+
+    if ser3.isOpen():
+        try:
+            ser3.write(str.encode("s"))
+            ex.upd_terminal("s load cell")
+            print("Start capture for Load data")
+            while start_thread_load is True:
+                cl = ser3.readline()
+                with lock:
+                    if len(cl) > 0:
+                        str_msn3 = cl.decode("utf-8")
+                        str_msn3 = str_msn3.rstrip()
+                        #print(str_msn3)
+                        if end_load_capture:
+                            start_thread_load = False
+                            ser3.write(str.encode("f"))
+                            print("End capture about load data")
+                        else:
+                            array_load.append(str_msn3)
+                            ar_load.write(str_msn3)
+                            ar_load.write("\n")
+            ser3.close()
+            ar_load.close()
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + "En -- read_serial --")
+
+    else:
+        print("Cannot open serial port " + str(port) + "En -- read_serial --")
+        exit()
+
+    save_data_load()  # Thread for acel data
+    print("End Thread Load data")
+
+
+# salva los datos del stim
+def save_data_load():
+    global array_load
+
+    horal = time.strftime("%H")
+    n_dial = time.strftime("%a")
+    dial = time.strftime("%d")
+    mml = time.strftime("%M")
+    file_name_out_l = 'load_data ' + n_dial + ' ' + dial + ' ' + horal + 'h' + mml + '.txt'
+
+    ar_load = open(file_name_out_l, 'w+')
+
+    for x in array_load:
+        ar_load.write(x)
+        ar_load.write("\n")
+        print(x)
+
+    ar_load.close()
+
+    print("End generation of Load file")
+    ex.upd_terminal("End generation of Load file")
+
+
+def concatenar_training():
+    global ts, fq, pw, tn, tf, ru, rd, ma, tng
+    # exemplo 2>50>500>1.0>5>2.0>2.0>10>4.0>1>0.5>0.5>0>1>5>500>0>0>1>0>1>0>
+    tn = tn - (ru + rd)
+    tng = str(ts) + ">" + str(fq) + ">" + str(pw) + ">" + str(tn) + ">" + str(tf) + ">" \
+          + str(ru) + ">" + str(rd) + ">" + str(ma) + ">" + "4.0>1>0.5>0.5>0>1>5>500>0>0>1>0>1>0>"
+
+
+def exit_program_and_stim():
+    print(">>>>>>>>>> Aplication closed, Stop Stimulation <<<<<<<<<<<<")
+    ex.btn_stop_seq()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    app.aboutToQuit.connect(exit_program_and_stim)
+    ex = MainWindow()
+    sys.exit(app.exec_())
