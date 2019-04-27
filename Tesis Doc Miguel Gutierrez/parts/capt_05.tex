@@ -1,0 +1,197 @@
+\chapter{RESULTADOS} \label{sec:cap5}
+
+Neste trabalho foi projetado, implementado e testado um novo sistema eletrônico de estimulação neuromuscular. Com ele é possível controlar os parâmetros de estimulação em uma grande faixa de operação. No sistema está incluído um subsistema de medição de movimento e com ele foi implementada uma técnica de medição e detecção de movimento com o intuito de auxiliar na realização do teste de excitabilidade no subsistema de detecção de movimento.
+
+Na implementação tanto do software quanto do hardware foi levada em consideração os requisitos da norma geral para equipamento eletromédicos \acrshort{ABNT} \acrshort{NBR} \acrshort{IEC} 60601-1:2014 (requisitos gerais para segurança básica e desempenho essencial) e a norma particular \acrshort{ABNT} \acrshort{NBR} \acrshort{IEC} 60601-2-10:2014 (requisitos particulares para segurança básica e desempenho essencial de estimuladores de nervos e músculos).
+
+O sistema desenvolvido está composto pelo eletroestimulador e seus acessórios (ver Figura \ref{fig:c5_f1_ect}). O eletroestimulador é o elemento principal identificado pelo gabinete onde estão encapsulados os módulos de controle, gerador de sinais, estimulação e detecção de movimento. Dentre os acessórios encontram-se: fonte médica, botão de emergência, acelerômetro e seu cabo de extensão, eletrodos e seus cabos de extensão e, finalmente, a interface de usuário e controle (aplicativo no dispositivo móvel  com conexão Bluetooth).
+
+\vspace{0.3cm}
+
+% Figura 5.1 – Eletroestimulador com todos seus acessórios.
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{1\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_c5/}{c5_f1_ect.pdf_tex}
+    \caption{Eletroestimulador com todos seus acessórios.}
+    \label{fig:c5_f1_ect}
+\end{figure*}
+
+Em suma, o sistema possui 4 canais de estimulação por corrente constante e um módulo de detecção de movimento para o exame de EDE formado por um canal de estimulação e um sensor de aceleração. Os canais e a configuração dos seus parâmetros de estimulação são controlados por meio do aplicativo no tablet. Nele, são mostradas informações referentes tanto ao processo de estimulação quanto à realização do EDE.
+
+Cada canal de estimulação fornece corrente de até 100mA com formas de onda quadrada e exponencial em configuração monofásica e bifásica. A carga máxima que suporta cada canal é de 1k$\mathrm{\Omega}$, mantendo a corrente constante. O tempo de estimulação (ou largura de pulso de ativação - PW\_On) e tempo de repouso (ou largura de pulso de desativação - PW\_Off) vão de 50$\mathrm{\mu}$s até 1s, tendo uma frequência de operação de 0,33Hz até 250Hz. A corrente de referência pode ser ajustada em passos de 1mA, a PW\_On e PW\_Off em passos de 10$\mathrm{\mu}$s e a frequência em passos de 5Hz. Os tempos de terapia e sessões podem ser ajustados desde 1 min até 24 horas.
+
+A topologia do circuito do sistema foi projetada para ser modular, habilitando a possibilidade de adicionar mais canais ao protótipo se for necessário. Nesse caso, devem ser realizadas as modificações pertinentes no hardware e no firmware da \acrshort{UC} e de igual forma no aplicativo. Finalmente, com a versão final do sistema totalmente funcional, foi possível realizar testes de bancada e normativos os quais são descritos a seguir, evidenciando seus resultados. 
+
+
+\section{TESTES DO SISTEMA PROPOSTO} 
+Inicialmente foram realizados testes de bancada dentro de um ambiente controlado. Como resultado foi validado o funcionamento e conferidas as limitações do sistema eletroestimulação proposto. 
+
+\subsection{HARDWARE INTERNO DO SISTEMA DE ESTIMULAÇÃO}
+
+\subsection*{Testes do MGS}
+
+Os primeiros testes de funcionamento do \acrshort{MGS} são realizados nas saídas dos canais do \acrshort{DAC}, verificando tanto as conexões da interface \acrshort{SPI} quanto os algoritmos de controle no firmware para gerar sinais monofásicos. A próxima parte do gerador é o amplificador diferencial e em seguida a amplificação para sinais bifásicos. Desta forma em cada canal do gerador de sinais foi realizada uma calibração com seguinte procedimento: escolheu-se primeiramente uma corrente 0mA no aplicativo. Isto deveria corresponder a uma saída de cada canal em 0$V_{DC}$ e caso contrário o canal deveria ser calibrado diretamente no circuito. Após essa calibração inicial, foram configurados os valores máximos de corrente a $\mathrm{\pm}$100mA, o que gera um sinal correspondente a uma amplitude de tensão máxima de $\mathrm{\pm}$12$V_{DC}$. Estes valores foram calibrados em cada um dos canais do \acrshort{MGS} (ver item \ref{cap:sec4.2.2}). Como resultado foi validado o funcionamento do \acrshort{MGS}. Além disso, foi possível identificar que no sinal gerado existe um nível de ruído de $\mathrm{\pm}$2\% no sinal de saída, sendo que o sinal permanece estável de acordo com o valor configurado. Esse sinal de ruído não compromete a estimulação.
+
+Outras caraterísticas validadas do sinal criado pelo gerador são: a frequência e as larguras de pulso $PW_{on}$ e $PW_{off}$. Com relação à frequência diversos testes foram realizados e não foram encontradas variações significativas. Já nas larguras de pulso $PW_{on}$ e $PW_{off}$ se procurou determinar e validar a menor quantidade de tempo que poderia ser selecionado. Para obter valores de tempo pequenos para $PW_{on}$ e $PW_{off}$ foram realizadas várias versões modificadas dos algoritmos que permitem controlar o \acrshort{DAC}. Nelas foi buscada a eficiência na execução do código do algoritmo na \acrshort{UC}. Como resultado a valor mínimo de largura de pulso foi de 50$\mathrm{\mu}$s. 
+
+
+\subsection*{Testes do ME com relação ao parâmetro de corrente}
+O componente mais relevante do módulo estimulador é o EPS. Para evidenciar o limite de corrente que o EPS de cada canal pode fornecer de forma constante na carga, foram executados três testes: mA1 = 80mA, mA2 = 100mA e mA3 = 120mA. Além do anterior, foi configurado de igual forma para cada teste um sinal quadrado simétrico de 50Hz, $PW_{on}$ e $PW_{off}$ com 200$\mathrm{\mu}$s e uma carga de 1k$\mathrm{\Omega}$. O valor da carga foi escolhido propositalmente com o intuito de se observar o comportamento do EPS em condição além máximo do projetado. 
+
+Para a execução dos testes foi escolhido o canal 1 do eletroestimulador, i.e. assumindo-se que os outros canais possuam o mesmo comportamento. Na Figura \ref{fig:c5_f2_mae} pode-se observar os resultados dos testes do EPS verificando seu desempenho na relação entre carga e corrente constante.
+
+\vspace{0.3cm}
+
+% Figura 5.2 – Eletroestimulador com todos seus acessórios.
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.7\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_c5/}{c5_f2_mae.pdf_tex}
+    \caption{Resultados dos testes do EPS.}
+    \label{fig:c5_f2_mae}
+\end{figure*}
+
+Dos resultados obtidos, observou-se que o conversor tensão-corrente e o \acrshort{EPS} do \acrshort{ME} de cada canal funcionam de acordo com o projetado. Além disso, observe-se na Figura 5.2 que correntes menores (como no caso de 80mA) podem estimular cargas de maior valor com a mesma fonte de alta tensão. No entanto na versão final do eletroestimulador o firmware garante que o maior valor de corrente que pode ser parametrizado seja 100mA, de igual forma no aplicativo esse valor é limitado na interface de controle. Agora, um resultado esperado do comportamento do EPS é que a corrente sofra uma queda quando a carga aumenta além do limite do que ele suporta. Isto é devido a que a tensão necessária para manter a corrente de referência constante na carga ultrapassa o valor da fonte de alta tensão que energiza o \acrshort{EPS}. Nesse caso a tensão que recebe a carga é o valor da fonte de alta tensão enquanto que a corrente vai diminuindo.
+
+Outros testes funcionais do \acrshort{EPS} foram realizados com relação à linearidade da corrente de saída, pois a esta verificação tem como objetivo analisar a performance do sistema e verificar se o desempenho apresentado está de acordo com as especificações propostas no desenho. 
+Para verificar a linearidade do EPS foram realizados três testes Repetitividade, regressão linear e desvio de linearidade.
+
+Para o teste de repetitividade foi escolhido realizadas três medições começando com 1mA e aumentando em passos de 10mA. 
+
+
+Nesse contexto, a Figura 5.3 mostra o gráfico da corrente de referência em função da tensão na carga obtido durante a avaliação da linearidade do \acrshort{EPS} para 50Hz (pontos de cor azul) e 250Hz (pontos de cor laranja) com $PW_{on}$e $PW_{off}$ igual a 100$\mathrm{\mu}$s em uma carga de 1k$\mathrm{\Omega}$. Também podem ser observadas as curvas de tendência polinomial (linhas de cor azul e laranja) e as equações (nas caixas) identificadas por cor para cada frequência.
+
+
+
+%%%%%%%%%%%%%%%%%%%  aqui continuo y antes deberia de colocar sobre la linearidad
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% $%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Finalmente para validar a qualidade da geometria do estímulo elétrico entregue pelo EPS foi realizado uma comparação e análise de um sinal ideal em comparação a um sinal gerado pelo EPS. Nesse contexto, foi escolhido um sinal de referência caracterizado por larguras de pulso regulares de 20ms seguindo a sequência de +10mA, -10mA, 0mA. A Figura \ref{fig:c5_f5_scc} mostra o sinal de referência.
+
+\vspace{1cm}
+% Figura 5.4 – Sinal de referência para comparação com sinal real fornecido pelo EPS.
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{1\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_c5/}{c5_f4_scc.pdf_tex}
+    \caption{Sinal de referência para comparação com sinal real fornecido pelo \acrshort{EPS}.}
+    \label{fig:c5_f5_scc}
+\end{figure*}
+
+
+Dando sequência ao teste, usando a interface de controle se iniciou uma terapia aberta e se configuraram os seguintes parâmetros: canal 1 ativado, forma de onda quadrada bipolar simétrica com amplitude de corrente $\mathrm{\pm}$10mA, larguras de pulso com 20ms, frequência de 33Hz. O estimulo criado pelo EPS foi aplicado em uma carga de 1k$\mathrm{\Omega}$ com $\mathrm{\pm}$5\% de tolerância. 
+
+Foi registrado o sinal por meio de um osciloscópio durante 500ms usando uma frequência de amostragem de 300kHz. A Figura 5.5 mostra a superposição do sinal gerado e o sinal de referência em um período de tempo de 200ms. É de esclarecer que foi usado o registro de todo o sinal para realizar os cálculos de erro meio da amplitude de corrente, do período do sinal e finalmente, o desvio padrão do período. O erro médio absoluto da amplitude resultou ser 19,57$\mathrm{\mu}$A, valor que corresponde a aproximadamente 0,2\% de erro na amplitude configurada para o estimulo elétrico. O período médio mostrou ser 20,015ms, sendo que o valor configurado foi 20ms. Finalmente o desvio padrão do período resultou em 6,165$\mathrm{\mu}$s, indicando que o sinal gerado está muito próximo do sinal de referência.
+
+
+%aqui vai a figura 5.5
+ Sinal  gerado  pelo  EPS  com  sinal  de  referência  superposto. 
+ 
+ \subsection*{Testes  do  módulo  estimulador  relacionados  com  comportamento  térmico}
+ 
+ Outro  experimento  realizado  buscou  caracterizar  o  comportamento  térmico  dos  componentes  dentro  do  estimulador.  Entre  eles,  os  componentes  que  mais  potência  dissipam  são  os  transistores  que  fazem  parte  do  espelho  de  corrente,  em  especial  os  transistores  que  fica  diretamente  conectado  à  carga  (i.e.  PNP-Q10  e  NPN-Q8  na  Figura  \ref{fig:c4_f11_mes}).  Nesse  contexto,  três  testes  foram  executados  para  monitorar  comportamento  térmico.  Neles  foi  usado  o  canal  1,  onde  foi  ajustada  a  corrente:  mA1  =  20mA,  mA2  =  40mA  e  mA3  =  100mA.  Foi  empregado  um  sinal  quadrado  simétrico  de  250Hz,  larguras  de  pulso  de  500$\mathrm{\mu}$s  e  carga  de  1k$\mathrm{\Omega}$.  Os  testes  foram  realizados  em  períodos  de  tempo  de  até  30  minutos.   
+ 
+ Inicialmente  foi  ligado  o  aparelho  e  depois  de  2  minutos  iniciou  o  experimento.  A  temperatura  foi  registrada  colocando  diretamente  sobre  o  transistor  escolhido  um  sensor  de  temperatura  durante  todo  o  experimento  como  mostrado  na  Figura  5.6.  O  resultado  do  registro  da  temperatura  do  teste  com  100mA  pode  ser  observado  na  Figura  5.7,  onde  propositalmente  foi  escolhida  a  faixa  de  35,2$^{\circ}$C  a  36,6$^{\circ}$C  para  representar  os  dados  registrados. 
+
+%aqui vai a figura 5.6
+ Setup  fixação  sensor  de  temperatura  em  transistor. 
+ 
+ %aqui vai a figura 5.7
+ Teste  de  comportamento  térmico.
+ 
+ 
+ Observa-se  que  a  temperatura  começou  rapidamente  a  se  elevar  a  partir  da  temperatura  ambiente  aumentando  até  alcançar  $\mathbf{\thickapprox }$36,55$^{\circ}$C  no  primeiro  minuto.  No  tempo  restante  do  teste,  nota-se  uma  leve  tendência  no  aumento  da  temperatura  chegando,  no  final  do  experimento  a  uma  média  de  $\mathbf{\thickapprox}$36,72$^{\circ}$C,  praticamente  mantendo-se  estável.  O  experimento  foi  repetido  nos  demais  componentes  do espelho  de  corrente  e  foram  obtidos  na  média  valores  entre  36,55$^{\circ}$C  e  37,16$^{\circ}$C.  Esses  dados  mostram  que  o  circuito  possui  um  comportamento  estável  com  relação  à  temperatura  e  a  potência  dissipada  pelos  seus  componentes.  
+
+\subsection{HARDWARE  EXTERNO  DO  SISTEMA  DE  ESTIMULAÇÃO}
+Com  este  teste  pretendeu-se  validar  o  \acrshort{MDM},  verificando  o  funcionamento  do  sensor  de  aceleração  para  pequenas  variações  de  aceleração.  Essas  variações  podem  ser  emuladas  seguindo  o  protocolo  do  teste  apresentado  na  sessão  4.2.4  e  a  plataforma  experimental.      Seguindo  o  protocolo  proposto  foi  realizado  primeiramente  um  teste  para  identificar  qual  a  menor  tensão  que  energiza  o  solenoide.  Com  isto  buscou-se  saber  se  a  vibração  gerada  na  PLE  é  suficientemente  forte  para  ser  registrada  pelo  acelerômetro.  Dessa  forma,  foi  iniciada  uma  primeira  prova  com  1$V_{DC}$,  aumentando  progressivamente  a  tensão  até  chegar  a  6,5$V_{DC}$,  onde  foi  visualizada  a  primeira  perturbação.  O  deslocamento  ($\mathbf{\bigtriangleup}$x)  gerado  na  plataforma  foi  de  aproximadamente  0,5mm.  A  determinação  do  delta  da  distância  gerada  na  PLE  pela  perturbação  foi  medida  por  meio  de  análise  de  vídeo  onde  foi  colocada  uma  referência  métrica  do  lado  da  plataforma.  Finalmente,  a  Figura  5.8  ilustra  a  medição  do  deslocamento  e  a  Figura  5.9  mostra  o  registro  da  vibração  nos  três  eixos. 
+
+%aqui vai a figura 5.8
+  Medição  do  deslocamento  da  plataforma. 
+  
+  %aqui vai a figura 5.9
+    Sinais  brutas  dos  eixos  do  acelerômetro  registradas  pelo  \acrshort{MDM}  externo.
+  
+  Para  avaliar  o  \acrshort{MDM}  em  um  teste  clínico  foi  realizado  um  teste  preliminar  na  aplicação  do  \acrshort{EDE}  e  registro  de  vibrações  musculares.  Para  isto  foi  usado  o  protocolo  da  seção  4.2.4  para  o  teste  clínico.  Um  voluntário  de  30  anos  de  idade  e  praticante  regular  de  atividades  físicas  foi  submetido  a  realização  do  \acrshort{EDE}  usando  reobase.  O  voluntário  manteve-se  sentado  em  frente  de  uma  mesa  apoiando  o  braço  direito  em  posição  supinada  sobre  ela.  O  sensor  de  aceleração  foi  fixado  no  braço  sobre  os  músculos  que  produzem  a  flexão  ulnar  e  seguidamente  foram  colocados  os  eletrodos.  Foi  selecionado  no  \acrshort{MIU}  o  teste  de  reobase  e  usando  o  \acrshort{MDM}  externo  se  realizaram  as  coletas  de  dados.  A  Figura  5.10  mostra  o  resultado  do  registro  de  uma  vibração  muscular  usando  o  \acrshort{MDM}  externo.  Na  Figura  5.10  só  é  apresentado  o  sinal  do  eixo  Z  pois  é  o  mais  afetado  pela  vibração  gerada  no  músculo.   
+  
+   %aqui vai a figura 5.10
+    Teste  clínico  sinal  bruto  da  vibração  muscular  (eixo  Z  do  sensor). 
+    
+    O  seguinte  passo  é  realizar  a  filtragem  do  sinal  e  a  posterior  detecção  da  primeira  contração  muscular.  A  Figura  5.11  mostra  o  resultado  do  filtro.  Além  disso  foi  colocado  o  sinal  de  controle  de  estimulação  com  a  finalidade  de  dar  suporte  no  entendimento  do  janelamento  de  acordo  com  a amplitude  de  corrente.  A  Figura  5.12  mostra  a  janela  onde  foi  detectada  a  primeira  contração  muscular.  Note-se  que  é  pouco  perceptível  o  pico  de  aceleração  na  janela  de  3mA  na  Figura  5.11,  mas  o  algoritmo  detectou  tal  movimento. 
+    
+      
+      % aqui vai a figura 5.11   
+       Sinal  filtrado  do  teste  clínico  de  reobase  e  superposição  do  sinal  de  controle  de  estimulação.
+       
+       % aqui vai a figura 5,12
+       Detecção  do  aparecimento  do  pico  de  aceleração  referente  à  primeira  contração  muscular.
+       
+       Ao  mesmo  tempo  em  que  foi  realizado  o  teste  de  Rb,  foi  registrado  a  amplitude  de  corrente  que  gerou  uma  contração  visualmente  perceptível  segundo  profissional  de  saúde  acompanhando  teste,  sendo  ela  3  mA.  Esse  valor  é  usado  como  ponto  de  comparação  com  o  valor  de  corrente  que  o  detector  de  movimento  encontrou.  Como  pode-se  observar  na  Figura  5.12  é  plotado  o  \textit{thresohld}  e  a  janela  onde  estão  as  amostras  que  contém  o  sinal  onde  acontece  o  pico  de  aceleração  produzido  pela  primeira  contração  do  teste  realizado.  Portanto,  comparando  os  dois  resultados  é  possível  evidenciar  que  de  forma  preliminar  o  \acrshort{MDM}  funciona.  Testes  em  diversos  músculos  e  posições  devem  ser  realizados  para  evidenciar  possíveis  problemas  no  registro  do  sinal  e  detecção  da  primeira  contração.
+       
+       
+      \subsection{TESTES  DO  HARDWARE  EM  CONDIÇÕES  EXTREMAS  DE  OPERAÇÃO}
+       
+       Para  avaliar  a  robustez  do  sistema  proposto  foi  submetido  a  uma  bateria  de  testes  de  bancada  usando  uma  carga  resistiva  fixa  em  cada  canal.  Com  essa  condição  foi  realizada  eletroestimulação  simultânea  de  cada  canal  com  o  valor  máximo  de  corrente  que  o  sistema  pode  fornecer  (100mA),  durante  um  período  de  tempo  de 1 hora.  No  transcurso  dos  testes  foram  monitorados  a  temperatura  dos  componentes  eletrônicos  e  a  geometria  das  formas  de  onda  dos  estímulos.  Como  resultado  o  sistema  se  mostrou  capaz  de  realizar  todo  o  teste  sem  alterações  nos  estímulos  e  mantendo  a  temperatura  dos  componentes  que  mais  dissipam  potência  próxima  aos  37,5$^{\circ}$C.
+       
+       \subsection{TESTES NORMATIVOS}
+       
+       Visando  o  uso  do  sistema  proposto  em  ambientes  como  a  UTI  e  em  conjunto  com  outros  dispositivos,  foram  efetivados  testes  normativos  de  compatibilidade  eletromagnética  de  emissão  irradiada  e  emissão  conduzida  (norma  ABNT  IEC  NBR  60601-1-2).  Os  testes  foram  realizados  graças  à  parceria  com  laboratório  de  certificação  de  equipamentos  eletromédicos  (LabCert)  da  UnB.  Para  realizar  os  testes  foram  usados:  câmera  anecóica  MYS310  (Micronix,  Japão)  e  estabilizador  de  impedâncias  MPW210B  (Micronix,  Japão).  
+       
+       \subsection* Testes de emissão irradiada
+       
+       O  teste  de  emissão  irradiada  é  feito  na  câmera  anecoica  de  duas  formas:  primeiro  colocando  o  sistema  com  a  tampa  do  gabinete  aberta  e  segundo  com  o  gabinete  fechado.  Com  a  tampa  do  gabinete  aberta  o  equipamento  já  apresentou  um  excelente  comportamento,  ultrapassando  (em  menos  de  1dB)  os  valores  normativos  em  apenas  uma  condição:    o  sistema  ligado  em  terapia  aberta  com  150Hz,  40mA  e  500$\mathrm{\mu}$s  de  largura  de  pulso  e  posicionado  na  câmera  anecoica  direcionado  na  antena  em  uma  posição  180$^{\circ}$.  Já  com  a  carcaça  fechada,  os  valores  de  interferência  irradiada  ficaram  bem  abaixo  daqueles  preconizados  pela  norma.  A  Figura  5.13  apresenta  o  equipamento  fechado  e  aberto  dentro  da  câmara  anecoica  sendo  submetido  ao  teste  de  interferência  irradiada  de  acordo  com  a  norma  NBR  IEC  60.601-1-2.  
+       
+       % AQUI VAI A FIGURA 5.13
+         Dispositivo  de  estimulação  dentro  da  câmara  anecoica  durante  a  realização  de  testes  normativos. 
+         
+         Os  ruídos  irradiados  pelo  equipamento  ficaram  bem  abaixo  dos  valores  preconizados  pela  norma  (linha  vermelha),  conforme  observado  na  Figura  5.14.  Tal  resultado  (linha  laranja)  é  de  suma  importância  para  este  projeto,  levando  em  consideração  que  o  novo  sistema  proposto  poderá  ser  utilizado  dentro  de  ambientes  como  a  \acrshort{UTI},  o  que  evidencia  que  o  estimulador  pode  ficar  próximo  de  vários  equipamentos  de  suporte  a  vida  sem  interferir  e  ser  interferido  em  e  por  eles. 
+         
+        %aqui vai a figura 5.14
+         Resultado  do  teste  de  emissão  irradiada.  
+         
+         Testes  de  emissão  conduzida 
+         
+         Nos  testes  de  emissão  conduzida  é  feito  usando  o  estabilizador  de  impedâncias  colocado  o  equipamento  sobre  uma  mesa  com  todos  seus  acessórios.  A  configuração  do  equipamento  de  medição  e  do  sistema  de  eletroestimulação  podem  se  observar  na  Figura  5.15  onde  ele  é  submetido  ao  teste  de  interferência  conduzida,  realizado  de  acordo  com  a  norma  ABNT  IEC  NBR  60.601-1. 
+         
+         
+         %aqui vai a figura 5.15
+         Configuração  do  teste  de  emissão  conduzida.
+         
+         É  de  mencionar  que,  nesses  testes,  o  engenheiro  responsável  pelo  laboratório  de  certificação  nos  informou  que  deveríamos  desconsiderar  os  valores  dos  primeiros  5MHz.  Dessa  forma,  é  possível observar  que  o  equipamento  ficou  dentro  dos  valores  preconizados  pela  norma.  Os  ruídos  gerados  pelo  equipamento  e  conduzidos  através  do  cabo  de  alimentação  ficaram  abaixo  dos  valores  preconizados  (linha  vermelho  a  partir  de  5MHz),  conforme  pode  ser  observado  na  Figura  5.16.
+         
+         %aqui vai a figura 5.16
+         Resultado  do  teste  de  emissão  conduzida.
+         
+         TESTE  DE  ISOLAMENTO  DO  PACIENTE 
+         
+         \subsection{MÓDULO  INTERFACE  DE  USUÁRIO}
+         
+         O  primeiro  componente  testado  foi  a  interface  de  controle  juntamente  com  a  comunicação  Bluetooth.  Verificou-se  o  correto  funcionamento,  exceto  em  algumas  situações  em  que  o  aplicativo  perdia  a  comunicação  com  o  sistema.  Como  consequência  se  evidenciou  a  necessidade  de  manter  a  segurança  do  paciente  frente  a  anterior  situação.  Portanto  foi  revisado  o  código  do  aplicativo  e  foi  implementada  uma  rotina  no  firmware  da  UC  que  constantemente  verifica  a  conexão  entre  o  aplicativo  e  o  dispositivo.  Em  caso  que  a  comunicação  seja  perdida  ou  desconectada  de  forma  não  controlada,  o  aparelho  interrompe  toda  classe  de  atividade  nos  seus  canais  e  o  aplicativo  acusa  a  perda  de  conexão  com  o  dispositivo.  A  seguir  na  Figura  5.17  são  apresentadas  duas  capturas  de  tela  da  interface  de  usuário  e  controle  do  aplicativo  da  versão  final  do  estimulador. 
+       
+       
+         
+         %aqui vai a figura 5.17
+          Telas  testadas  do  aplicativo:  terapias  aberta/fechada  onde  são  modificados  manualmente  os  parâmetros  de  estimulação  e  ativação  de  canais  (a),  e  controle  do  teste  de  Rb  andamento  e  seus  resultados  (os  testes  de  Cx  e  Ac  possuem  a  mesma  interface)  (b). 
+          
+          O  teste  da  interface  de  usuário  e  controle  começa  realizando  a  conexão  do  aplicativo  com  o  estimulador,  ativando  o  módulo  Bluetooth  do  tablet  e  pareando  os  dois  dispositivos.  Diversos  testes  de  usabilidade  foram  conduzidos  com  a  finalidade  de  validar  se  a  interface  é  fluida  e  intuitiva.  O  aplicativo  resultou  estar  dentro  do  escopo  para  que  projetado.  Alguns  erros  acusados  durante  os  testes  foram  corrigidos  aumentando  a  estabilidade  do  aplicativo,  habilitando-o  para  uso  na  versão  final.  É  de  esclarecer  que  nos  testes  anteriormente  descritos  não  foram  ativados  os  canais  do  eletroestimulador. 
+          
+          Um  teste  de  controle  do  estimulador  e  a  saída  dos  seus  canais  foi  realizado  na  sequência.  Na  Figura  5.17  é  mostrada  a  interface  para  o  controle  de  uma  terapia  aberta.  Nela  foi  testado  o  controle  e  limite  de  cada  parâmetro  de  estimulação  aleatoriamente,  conferindo  seu  correto  funcionamento  quando  ativados  os  canais  do  eletroestimulador.  Finalmente  na  Figura  5.17  (b)  pode  ser  observada  a  interface  quando  realizado  o  teste  de  reobase.  No  lado  direito  da  Figura  5.17  (b)  podem  ser  vistos  os  resultados  obtidos  em  tempo  real  do  teste  em  andamento.  
+          
+          Outro  teste  foi  realizado  para  verificar  a  interface  de  controle  em  uma  terapia  aberta.  Desta  vez  foi  ativado  somente  o  canal  1,  configurado  com  os  seguintes  parâmetros:  forma  de  onda  quadrada  simétrica  de  66Hz  com  PW\_{On}  e  PW\_{Off}  de  5ms  respectivamente  e  amplitude  de  corrente  de  10mA  para  uma  carga  fixa  de  1k$\mathrm{\Omega}$.  A  forma  de  onda  resultante  pode  ser  observada  na  Figura  5.18.  Ela  foi  registrada  no  osciloscópio  (Tektronix,  EUA).  A  partir  da  forma  de  onda  resultante  foi  conferindo  que  o  funcionamento  do  canal  1  e  os  valores  escolhidos  estavam  de  acordo  com  o  parametrizado.   Também  foi  possível  evidenciar  que  no  sinal  existia  um  pequeno  ruído  de  aproximadamente  0,2\% da  amplitude  corrente  configurada,  valor  que  não  compromete  a  estimulação.
+         
+         %aqui vai a figura 5,18
+         Sinal  quadrada  de  10V  com  carga  de  1k$\mathrm{\Omega}$ e  \textit{ripple}  de $\mathbf{\thickapprox}$5\%. 
+         
+         Como  resultado  foi  validada  a  interface  gráfica  do  aplicativo,  apresentando  fácil  manuseio,  permitindo  ao  usuário  final  o  controle  de  todo  o  sistema.  Também  as  informações  recebidas  e  exibidas  no  aplicativo  permitem  monitorar  o  funcionamento  do  sistema  quando  realizado  o  exame  de  EDE.    É  de  se  esclarecer  que  as  mudanças  de  valor  dos  parâmetros:  corrente,  frequência  e  largura  de  pulso  foram  implementadas  para  ser  manipuladas  separadamente,  i.e.  a  corrente  pode  mudar  linearmente  em  passos  de  1  em  1mA,  a  frequência  linearmente  de  5  em  5Hz  e  a  largura  de  pulso  para  PW\_{On}  e  PW\_{Off}  exponencialmente  começando  em  100$\mathrm{\mu}$s  até  1s.  É  de  se  destacar  que  mesmo  podendo  implementar  passos  de  1  em  1  para  cada  um  dos  parâmetros,  foi  evidenciado  que  era  pouco  prático  realizar  isto  para  a  frequência  e  as  larguras  de  pulso.  Outra  caraterística  do  MIU  que  foi  verificada  de  forma  simplificada  é  o  banco  de  dados  onde  são  armazenadas  informações  do  paciente  e  as  diferentes  terapias  realizadas,  assim  como  os  resultados  obtidos  do  exame  de  EDE.  Isso  pode  ser  relevante  para  o  profissional  que  usa  nosso  sistema,  pois  contar  com  o  histórico  das  terapias  e  resultados  do  EDE  pode  auxiliar  na  tomada  de  decisões  mais  acertadas  com  relação  a  manter  o  protocolo  de  estimulação  ou  realizar  mudanças  na  terapia. 
+         

@@ -1,0 +1,70 @@
+\babel@toc {portuguese}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Organiza\IeC {\c c}\IeC {\~a}o geral do sistema nervoso.\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ilustra\IeC {\c c}\IeC {\~a}o de um nervo, neur\IeC {\^o}nio e sinapses (adaptado de \cite {Fonseca2015InstrumentacaoMedular}).\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Unidades motoras (adaptado de \cite {JoseLopezChicharro2006FisiologiaEjercicio}).\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Estimula\IeC {\c c}\IeC {\~a}o el\IeC {\'e}trica do nervo por meio de eletrodos de superf\IeC {\'\i }cie (adaptado de \cite {Robinson2002EletrofisiologiaEletrofisiologico}).\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Formatos de onda t\IeC {\'\i }picos em aplica\IeC {\c c}\IeC {\~o}es de estimula\IeC {\c c}\IeC {\~a}o el\IeC {\'e}trica (adaptado de \cite {Robinson2002EletrofisiologiaEletrofisiologico, Popovic2000ControlDisabled}).\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Ondas bif\IeC {\'a}sicas e alguns par\IeC {\^a}metros b\IeC {\'a}sicos da estimula\IeC {\c c}\IeC {\~a}o el\IeC {\'e}trica (adaptado de \cite {Faria2006ImplementacaoMedulares}).\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Carga total (Q), intensidade aplicada (Ia) e largura de pulso (Lp).\relax }}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Formas de onda dos testes de \acrshort {RB}, \acrshort {CR} e \acrshort {AC}.\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Diagrama de blocos geral de um dispositivo de estimula\IeC {\c c}\IeC {\~a}o el\IeC {\'e}trica.\relax }}{16}{figure.caption.14}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Eletroestimulador baseado em m\IeC {\'a}quina de eletricidade est\IeC {\'a}tica \cite {Geddes1994TheBiology}.\relax }}{18}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Um dos primeiros eletroestimuladores desenvolvido para pesquisa \cite {Geddes1994TheBiology}.\relax }}{19}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Interface anal\IeC {\'o}gica e eletrodos do estimulador proposto na patente \cite {Reiss1996CombinationSystem}.\relax }}{20}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Gerador de sinal (a) e etapa de pot\IeC {\^e}ncia com transformador (b). Estimulador em \cite {Phillips1980ApparatusTES}.\relax }}{20}{figure.caption.18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sistema de eletroestimula\IeC {\c c}\IeC {\~a}o que usa ICD misto (adaptada de \cite {Bijak2002TheParaplegia}).\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Interface gr\IeC {\'a}fica de usu\IeC {\'a}rio ou \acrshort {ICD} em dispositivo m\IeC {\'o}vel (palmtop) \cite {Bijak2002TheParaplegia}.\relax }}{23}{figure.caption.20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Unidade de controle do estimulador da \acrshort {UFMG} \cite {Martins2008DeselvolvimentoArbitraria}.\relax }}{24}{figure.caption.21}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Gera\IeC {\c c}\IeC {\~a}o de sinal modulada usando modula\IeC {\c c}\IeC {\~a}o por amplitude de pulso, (a) sinal de modula\IeC {\c c}\IeC {\~a}o, (b) Sinal da portadora, (c) Sinal modulada \cite {Martins2008DeselvolvimentoArbitraria}.\relax }}{24}{figure.caption.22}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Circuito baseados em transformador com sa\IeC {\'\i }da de corrente (adaptado de \cite {Cheng2004DevelopmentStimulation}).\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Circuito baseados em transformador com sa\IeC {\'\i }da de corrente (adaptado de \cite {Souza2012EstagioFuncional}).\relax }}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Circuito baseados em transformador com sa\IeC {\'\i }da de tens\IeC {\~a}o (adaptado de \cite {Chen2013ADataset}).\relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Circuito do EPS utilizando ponte H (a), rela\IeC {\c c}\IeC {\~a}o de chaveamento entre S1-S4 e I1-I2 (b), e sinal do est\IeC {\'\i }mulo el\IeC {\'e}trico na carga (c) (adaptado de \cite {Hongen2011DevelopmentRehabilitation}).\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama de blocos do EPS com ponte H (adaptado de \cite {Gaiotto2012EstimuladorEletricamente}).\relax }}{29}{figure.caption.30}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Circuito do EPS usando o conversor de tens\IeC {\~a}o-corrente (adaptado de \cite {Masdar2012DevelopmentInjuries}).\relax }}{30}{figure.caption.32}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Circuito do EPS usando o conversor de tens\IeC {\~a}o-corrente (adaptado de \cite {Willand2008DesignFES.}).\relax }}{31}{figure.caption.33}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Circuito do EPS usando o conversor de tens\IeC {\~a}o-corrente com amplificador operacional de transcondut\IeC {\^a}ncia de alta tens\IeC {\~a}o (adaptado de \cite {Brunetti2011EnhancingProject}).\relax }}{31}{figure.caption.34}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Circuito baseados em espelho de corrente com controle de ativa\IeC {\c c}\IeC {\~a}o (adaptado de \cite {DeLima2002AControl}).\relax }}{32}{figure.caption.36}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Circuitos baseados em espelho de corrente (adaptado de \cite {Wu2002AApplications}).\relax }}{33}{figure.caption.37}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Circuito baseados em espelho de corrente de Wilson (caixa azul) junto com um circuito de comuta\IeC {\c c}\IeC {\~a}o de Howland (caixa laranja) (adaptado de \cite {KhosravaniSanaz2011DevelopingSystem}).\relax }}{33}{figure.caption.38}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Estimulador Compex SP 8, com especial destaque para o controle remoto com a ICD (a), EPS sem fio (b), esta\IeC {\c c}\IeC {\~a}o de carga das baterias (c) e utiliza\IeC {\c c}\IeC {\~a}o (d) (extra\IeC {\'\i }do de \cite {R2012CompexUse}).\relax }}{36}{figure.caption.39}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama geral do dispositivo de eletroestimula\IeC {\c c}\IeC {\~a}o proposto, incluindo (a) alimenta\IeC {\c c}\IeC {\~a}o do sistema, (b) interface do usu\IeC {\'a}rio, (c) m\IeC {\'o}dulo de controle e m\IeC {\'o}dulo gerador de sinal, (d) m\IeC {\'o}dulo estimulador e (e) m\IeC {\'o}dulo de detec\IeC {\c c}\IeC {\~a}o de movimento.\relax }}{39}{figure.caption.41}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces M\IeC {\'o}dulo de controle, diagrama esquem\IeC {\'a}tico do m\IeC {\'o}dulo de controle.\relax }}{41}{figure.caption.43}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama esquem\IeC {\'a}tico do circuito de isolamento ISO7140C e suas conex\IeC {\~o}es.\relax }}{42}{figure.caption.45}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama esquem\IeC {\'a}tico do \acrshort {MGS}, no qual \IeC {\'e} mostrado em destaque circuito para gerar sinal bif\IeC {\'a}sico a partir de refer\IeC {\^e}ncia monof\IeC {\'a}sica.\relax }}{44}{figure.caption.48}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Formas de onda monof\IeC {\'a}sicas que podem ser criadas pelo \acrshort {DAC} do \acrshort {MGS}.\relax }}{45}{figure.caption.49}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Sinal para ilustrar funcionamento do \acrshort {MGS}, em especial o sinal monof\IeC {\'a}sico $V_{OUTA}$ (a) e sinal bif\IeC {\'a}sico $S_{OUT}$ (b).\relax }}{46}{figure.caption.50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagrama esquem\IeC {\'a}tico do amplificador diferencial para gerar $S_{OUT}$ e o circuito amplificador subsequente para gerar a sa\IeC {\'\i }da $S_{CH1}$.\relax }}{46}{figure.caption.51}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagrama esquem\IeC {\'a}tico dos conversores de tens\IeC {\~a}o-corrente.\relax }}{47}{figure.caption.53}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama esquem\IeC {\'a}tico do \acrshort {ECW}.\relax }}{48}{figure.caption.55}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces iagrama esquem\IeC {\'a}tico do \acrshort {ECW} com resist\IeC {\^e}ncias no emissor e $R_{CARGA}$ \cite {NacimentoJunqueira2003EletroestimuladorDigital}\relax }}{49}{figure.caption.56}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Diagrama esquem\IeC {\'a}tico do \acrshort {ECW} com resist\IeC {\^e}ncias no emissor e $R_{CARGA}$ \cite {NacimentoJunqueira2003EletroestimuladorDigital}.\relax }}{51}{figure.caption.58}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o do \acrshort {ECW} com diferentes valores de carga at\IeC {\'e} 1,2k$\mathrm {\Omega }$ e $V_{CC}$ = 80V.\relax }}{52}{figure.caption.59}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o do \acrshort {ECW} nos valores m\IeC {\'a}ximos dos requisitos do sistema com rela\IeC {\c c}\IeC {\~a}o a carga e corrente.\relax }}{52}{figure.caption.60}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Posicionamento, fixa\IeC {\c c}\IeC {\~a}o e orienta\IeC {\c c}\IeC {\~a}o dos eixos do aceler\IeC {\^o}metro nos m\IeC {\'u}sculos flexores do punho.\relax }}{54}{figure.caption.62}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces M\IeC {\'o}dulo MPU6050 e a orienta\IeC {\c c}\IeC {\~a}o dos eixos \cite {Naylamp2016TutorialGiroscopio}.\relax }}{55}{figure.caption.65}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Diagrama esquem\IeC {\'a}tico da conex\IeC {\~a}o \acrshort {I2C} entre a \acrshort {UC} e o aceler\IeC {\^o}metro.\relax }}{55}{figure.caption.66}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Plataforma para teste de registro de vibra\IeC {\c c}\IeC {\~a}o/perturba\IeC {\c c}\IeC {\~a}o mec\IeC {\^a}nica.\relax }}{56}{figure.caption.68}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Diagrama esquem\IeC {\'a}tico do circuito de controle da tens\IeC {\~a}o que energiza o solenoide.\relax }}{57}{figure.caption.69}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces \textit {Setup} completo para testes de vibra\IeC {\c c}\IeC {\~a}o/perturba\IeC {\c c}\IeC {\~a}o mec\IeC {\^a}nica do \acrshort {MDM}.\relax }}{58}{figure.caption.70}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Sinais do teste de reobase.\relax }}{59}{figure.caption.72}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Exemplar de sinal bruto e sinal filtrado referente ao \acrshort {TCE}.\relax }}{60}{figure.caption.73}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Conex\IeC {\~o}es das fontes de alimenta\IeC {\c c}\IeC {\~a}o.\relax }}{62}{figure.caption.77}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Diagrama do seletor de sa\IeC {\'\i }da.\relax }}{63}{figure.caption.78}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Projeto da \acrshort {PCI} do estimulador.\relax }}{64}{figure.caption.79}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Simula\IeC {\c c}\IeC {\~a}o (a) e Montagem (b) da \acrshort {PCI} do estimulador.\relax }}{65}{figure.caption.80}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Disposi\IeC {\c c}\IeC {\~a}o dos componentes sistema do eletroestimulador no gabinete.\relax }}{66}{figure.caption.81}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Identifica\IeC {\c c}\IeC {\~a}o dos componentes do eletroestimulador. a) Vista frontal, b) vista traseira e c) vista isometrica.\relax }}{67}{figure.caption.82}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Gabinete fechado do eletroestimulador \IeC {\`a} esquerda e eletroestimulador na sua maleta de transporte com todos seus acess\IeC {\'o}rios no lado direito.\relax }}{67}{figure.caption.83}
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Fluxograma do firmware do estimulador.\relax }}{68}{figure.caption.84}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces IGC do estimulador.\relax }}{70}{figure.caption.85}
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Plot dos dados do teste de exitabilidade.\relax }}{71}{figure.caption.86}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Eletroestimulador com todos seus acess\IeC {\'o}rios.\relax }}{72}{figure.caption.87}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados dos testes do EPS.\relax }}{74}{figure.caption.90}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Sinal de refer\IeC {\^e}ncia para compara\IeC {\c c}\IeC {\~a}o com sinal real fornecido pelo \acrshort {EPS}.\relax }}{75}{figure.caption.91}
+\addvspace {10\p@ }
