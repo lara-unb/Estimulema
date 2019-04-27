@@ -1,0 +1,79 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'gto_f13.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{326.82403564bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.46644445)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.45735466,0.25171098){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RCARG\end{tabular}}}}%
+    \put(0.53425469,0.25171098){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{gto_f13.pdf}}%
+    \put(0.81866201,0.06466099){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}NO\end{tabular}}}}%
+    \put(0.85080604,0.06466099){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{gto_f13.pdf}}%
+    \put(0.48321631,0.42227504){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{gto_f13.pdf}}%
+    \put(0.03946107,0.39133929){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sinal do\end{tabular}}}}%
+    \put(0.03946107,0.3645314){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}gerador\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{gto_f13.pdf}}%
+    \put(0.28196779,0.356925){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{gto_f13.pdf}}%
+    \put(0.70964157,0.356925){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{gto_f13.pdf}}%
+    \put(0.28196779,0.19875843){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{gto_f13.pdf}}%
+    \put(0.70964157,0.19875843){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{gto_f13.pdf}}%
+    \put(0.0639269,0.22146861){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Driver meia ponte 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{gto_f13.pdf}}%
+    \put(0.76833216,0.22146861){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Driver meia ponte 2\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

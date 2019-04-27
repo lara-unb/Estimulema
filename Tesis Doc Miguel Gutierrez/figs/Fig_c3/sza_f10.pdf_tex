@@ -1,0 +1,118 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'sza_f10.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{356.58128357bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.63605942)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.92599237,0.2198943){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RCARG\end{tabular}}}}%
+    \put(0.9872782,0.2198943){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{sza_f10.pdf}}%
+    \put(0.37377254,0.3951062){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{sza_f10.pdf}}%
+    \put(0.4842165,0.56020065){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{sza_f10.pdf}}%
+    \put(0.83663159,0.2929457){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{sza_f10.pdf}}%
+    \put(0.89152988,0.00026917){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{sza_f10.pdf}}%
+    \put(0.27547784,0.41161136){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP1\end{tabular}}}}%
+    \put(0.30739394,0.41161136){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{sza_f10.pdf}}%
+    \put(0.51485942,0.36209589){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP1B\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{sza_f10.pdf}}%
+    \put(0.3137599,0.08787662){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP2\end{tabular}}}}%
+    \put(0.34567601,0.08787662){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{sza_f10.pdf}}%
+    \put(0.67128933,0.58049985){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{sza_f10.pdf}}%
+    \put(0.72044747,0.18624522){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{sza_f10.pdf}}%
+    \put(0.16375852,0.43002426){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{sza_f10.pdf}}%
+    \put(0.03669185,0.4135191){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{sza_f10.pdf}}%
+    \put(0.11012695,0.37671474){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{sza_f10.pdf}}%
+    \put(0.23911635,0.32211911){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{sza_f10.pdf}}%
+    \put(0.27547784,0.52339629){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{sza_f10.pdf}}%
+    \put(0.47785055,0.48652763){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{sza_f10.pdf}}%
+    \put(0.88065381,0.21039848){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R7\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{sza_f10.pdf}}%
+    \put(0.91770584,0.06440714){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R8\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{sza_f10.pdf}}%
+    \put(0.51675841,0.17801836){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R9\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{sza_f10.pdf}}%
+    \put(0.31248671,0.21230622){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{sza_f10.pdf}}%
+    \put(0.42103168,0.30179847){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}}%
+    \put(0.42103168,0.31388796){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}}%
+    \put(0.42103168,0.32211911){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000254}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{sza_f10.pdf}}%
+    \put(0.03669185,0.50176811){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sinal do\end{tabular}}}}%
+    \put(0.03669185,0.48082585){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}gerador\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{sza_f10.pdf}}%
+    \put(0.65275253,0.51257148){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{sza_f10.pdf}}%
+    \put(0.70765082,0.45735423){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{sza_f10.pdf}}%
+    \put(0.70765082,0.34754134){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{sza_f10.pdf}}%
+    \put(0.65275253,0.2929457){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{sza_f10.pdf}}%
+    \put(0.770253,0.41737745){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TR1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{sza_f10.pdf}}%
+    \put(0.78872506,0.12469384){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TR2\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

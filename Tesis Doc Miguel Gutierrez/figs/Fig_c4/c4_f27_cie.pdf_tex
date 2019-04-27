@@ -1,0 +1,105 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'c4_f27_cie.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{412.11497498bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.81414171)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{c4_f27_cie.pdf}}%
+    \put(0.23299322,0.37877773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Leds\end{tabular}}}}%
+    %\put(0.30470488,0.37877773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}s \end{tabular}}}}%
+    \put(0.19746915,0.34813094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}indicadores\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{c4_f27_cie.pdf}}%
+    \put(0.2682989,0.43672272){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C1\_STIM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{c4_f27_cie.pdf}}%
+    \put(0.06294359,0.78905158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a)\end{tabular}}}}%
+    %\put(0.0719702,0.78905158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{c4_f27_cie.pdf}}%
+    \put(0.56913727,0.78905158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}b)\end{tabular}}}}%
+    %\put(0.57816388,0.78905158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l})\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{c4_f27_cie.pdf}}%
+    \put(0.10079711,0.03627623){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}c)\end{tabular}}}}%
+    %\put(0.10982371,0.03627623){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}c\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{c4_f27_cie.pdf}}%
+    \put(0.02014971,0.24330583){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Acelerômetro\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{c4_f27_cie.pdf}}%
+    \put(0.10225301,0.14372197){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Botão de \end{tabular}}}}%
+    \put(0.08478216,0.10848909){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Emergencia\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{c4_f27_cie.pdf}}%
+    \put(0.29013747,0.05287354){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Canais de \end{tabular}}}}%
+    \put(0.27761669,0.01764065){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}estimulação\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{c4_f27_cie.pdf}}%
+    \put(0.69230678,0.0383145){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Leds\end{tabular}}}}%
+    \put(0.67862128,0.00308161){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}fuentes\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{c4_f27_cie.pdf}}%
+    \put(0.78053458,0.08315635){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C2\_ACEL\end{tabular}}}}%
+    %\put(0.82508526,0.08315635){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ACEL\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{c4_f27_cie.pdf}}%
+    \put(0.82362935,0.20778176){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Conversores \end{tabular}}}}%
+    \put(0.85041799,0.17546069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CC/CC\end{tabular}}}}%
+    %\put(0.88630603,0.17546069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    %\put(0.89475028,0.17546069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{c4_f27_cie.pdf}}%
+    \put(0.44504569,0.54475083){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Fonte\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{c4_f27_cie.pdf}}%
+    \put(0.52337334,0.51446801){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Chave\end{tabular}}}}%
+    \put(0.50551983,0.48010867){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Liga-desliga\end{tabular}}}}%
+    %\put(0.50299068,0.48010867){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}iga/\end{tabular}}}}%
+    %\put(0.54666781,0.48010867){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}desliga\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{c4_f27_cie.pdf}}%
+    \put(0.64892083,0.50718849){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Fusível\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{c4_f27_cie.pdf}}%
+    \put(0.8000437,0.49350299){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Entradas USB\end{tabular}}}}%
+    \put(0.79130827,0.45914365){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}STIM -ACEL \end{tabular}}}}%
+    %\put(0.86796164,0.45914365){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    %\put(0.88485013,0.45914365){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ACEL\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

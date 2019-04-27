@@ -1,0 +1,75 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'ogsn2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{607.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.24567901)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ogsn2.pdf}}%
+    \put(0.34373556,0.20436679){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sistema Nervoso\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ogsn2.pdf}}%
+    \put(0.18578802,0.14372827){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{ogsn2.pdf}}%
+    \put(0.05988136,0.08064){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Encéfalo\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{ogsn2.pdf}}%
+    \put(0.22869889,0.08145975){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Medula Espinhal\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{ogsn2.pdf}}%
+    \put(0.61093272,0.14431667){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SNP\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{ogsn2.pdf}}%
+    \put(0.44170037,0.0812379){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sistema somático\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{ogsn2.pdf}}%
+    \put(0.65644778,0.0812379){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sistema autônomo\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{ogsn2.pdf}}%
+    \put(0.51627605,0.01936481){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sistema simpático\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{ogsn2.pdf}}%
+    \put(0.75529037,0.01888259){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sistema parassimpático\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

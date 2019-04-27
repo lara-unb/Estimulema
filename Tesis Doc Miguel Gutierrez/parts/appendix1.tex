@@ -1,0 +1,210 @@
+\chapter{APÊNDICE I}\label{ap:ap1}
+
+\subsection*{Lista cronológica das versões do estimulador elétrico}
+
+A seguir é apresentado resumidamente o processo de desenvolvimento das diferentes versões que antecederam a versão final apresentada detalhadamente neste trabalho.
+
+\subsubsection*{Primeira versão}
+Na Figura \ref{fig:ap1_f1_v1} se apresenta a prova de conceito do circuito da primeira versão do sistema.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.9\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v1.pdf_tex}
+    \caption{Versão em placa de prototipagem da primeira versão do sistema.}
+    \label{fig:ap1_f1_v1}
+\end{figure*}
+
+\begin{itemize}
+    \item Principais componentes:
+    \begin{itemize}
+        \item Teensy 3.0;
+        \item DAC4921/DAC4922;
+        \item Amplificador operacional LM741;
+        \item Transistores TIP31, TIP32;
+        \item Regulares de tensão para +5$V_{DC}$ e $\mathrm{\pm}$15$V_{DC}$
+        \item Alimentação por fonte externa;
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item Saída do circuito
+\end{itemize}
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.5\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v2.pdf_tex}
+    \caption{Estímulo elétrico criado pela primeira versão do sistema.}
+    \label{fig:ap1_f1_v2}
+\end{figure*}
+
+Antes de usar \acrshort{DAC}s, na primeira versão do estimulador foi usada uma outra solução que se baseava no uso de um microcontrolador controlando suas saídas \acrshort{PWM} para gerar unicamente um sinal quadrado. Por causa da pouca eficiência que isto oferecia foi escolhido testar conversores digitais analógicos, solução que mostrou ser bastante versátil e útil para o projeto. 
+
+Inicialmente foram feitas simulações da primeira versão do sistema usando a plataforma Arduino Mega e Nano junto com o DAC4921 e DAC4922 no software de simulação Proteus 8.7 (Labcenter, EUA). Foram encontrados vários desafios sobretudo na programação do firmware. Com o DAC4921 foi possível criar algoritmos para um só canal e gerar diversas formas de onda. Replicar o código para dois canais foi relativamente simples com o DAC4922. Porém, nesse primeiro momento os canais eram totalmente dependentes, possuíam a mesma frequência podendo variar unicamente em amplitude. A partir desta versão continuou a se usar o \acrshort{DAC} para a geração e controle dos parâmetros do sinal do estimulo elétrico. 
+
+Nesta versão o circuito amplificador diferencial (que permite criar um sinal bifásico a partir de um monofásico) foi implementado usando vários componentes eletrônicos como mostrado na Figura \ref{fig:ap1_f1_v4}. Nesse circuito o sinal do \acrshort{DAC} entra como monofásico no primeiro amplificador operacional U1:A e em conjunto com o amplificador A1:B é inserido no sinal de entrada um valor DC \textit{offset} que é ajustado no potenciômetro $R_{V1}$. Finalmente no amplificador U1:C é realizada uma amplificação do sinal, sendo ajustada pelo $R_{V2}$. Por fim na sua implementação e provas de desempenho foi identificado que funcionava relativamente bem, mas inseria ruído no sinal de saída. Além disso, algumas vezes era necessário reajustar o nível \textit{offset}.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.7\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v3.pdf_tex}
+    \caption{Diagrama esquemático do diferenciador de tensão da primeira versão do sistema.}
+    \label{fig:ap1_f1_v3}
+\end{figure*}
+
+O módulo estimulador da primeira versão do sistema foi implementado com o EPS usado o espelho de corrente de Wilson junto com a arquitetura de Howland para o conversor de tensão-corrente. Finalmente, uma das caraterísticas que chamou a atenção no sinal de estimulação gerado pelo sistema desta versão é o ruído manifestado no sinal (ver Figura \ref{fig:ap1_f1_v2}). Na Quinta versão, este problema é corrigido.
+
+
+\subsubsection*{Segunda versão}
+Na Figura \ref{fig:ap1_f1_v4} se apresenta a prova de conceito do circuito em PCI da segunda versão do sistema. Basicamente nesta versão foi implementada uma fonte simétrica de até $\mathrm{\pm}$24$V_{DC}$ e foram trocados os transistores do espelho de corrente para uma versão mais ajustada aos requisitos do projeto nesse momento. O circuito foi retirado da placa de prototipagem e foi construído em \acrshort{PCI}, o que ajudou a melhorar o sinal na saída do amplificador diferencial com relação ao ruído. 
+
+A segunda versão possuía só um canal de estimulação e o controle dos parâmetros de estimulação era feito no firmware da unidade de controle. Por fim, esta versão foi utilizada pela primeira vez para realizar uma estimulação real na musculatura do antebraço esquerdo do autor, resultando em contração adequada. 
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.9\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v4.pdf_tex}
+    \caption{PCIs da segunda versão do sistema.}
+    \label{fig:ap1_f1_v4}
+\end{figure*}
+
+\begin{itemize}
+    \item Principais componentes:
+    \begin{itemize}
+        \item Teensy 3.0;
+        \item DAC4922;
+        \item Amplificador operacional TL084;
+        \item Transistores MPSA42 e MPSA92;
+        \item Regulares de tensão para +5$V_{DC}$; 
+        \item Regulador de tensão variável para ajuste de $\mathrm{\pm}$24$V_{DC}$;
+        \item Alimentação por transformador;
+    \end{itemize}
+\end{itemize}
+
+Nesta segunda versão foi testado o conceito de modularidade, colocando as diferentes partes do sistema de forma separada com a finalidade de diagnosticar falhas mais facilmente. O controle dos parâmetros do sinal foi feito via comunicação serial, podendo-se ajustar a amplitude e frequência. 
+
+Esta versão permitia criar estímulos elétricos somente com forma de onda quadrada e amplitude de até 24mA em uma carga de 1k$\mathrm{\Omega}$. O ruído que aparecia na parte positiva do sinal da primeira versão, ficou mais evidente nesta segunda versão, aparecendo em sinais que ultrapassavam 18mA. 
+
+\subsubsection*{Terceira versão}
+Na Figura \ref{fig:ap1_f1_v5} se apresenta a prova de conceito do circuito em \acrshort{PCI} da terceira versão do sistema. Basicamente nesta versão foram implementados dois canais de estimulação colocando a fonte de alimentação, a unidade de controle, o gerador de sinais, os conversores de tensão-corrente e os EPS em uma única \acrshort{PCI}. Além disso é implementada uma interface de controle analógica com botões e uma tela \acrshort{LCD} para mostrar os comandos que podem ser modificados. A terceira versão do sistema com a interface de controle pode se observar na Figura \ref{fig:ap1_f1_v6}.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.9\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v5.pdf_tex}
+    \caption{PCI da terceira versão do sistema.}
+    \label{fig:ap1_f1_v5}
+\end{figure*}
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.9\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v6.pdf_tex}
+    \caption{Interface de controle analógica da terceira versão do sistema.}
+    \label{fig:ap1_f1_v6}
+\end{figure*}
+
+\begin{itemize}
+    \item Principais componentes:
+    \begin{itemize}
+        \item Teensy 3.0;
+        \item DAC4922;
+        \item Amplificador operacional TL084;
+        \item Amplificador operacional TL082;
+        \item Transistores MPSA42 e MPSA92;
+        \item Regulares de tensão para +5$V_{DC}$ ;
+        \item Regulador de tensão variável para ajuste de $\mathrm{\pm}$24$V_{DC}$;
+        \item Alimentação por transformador;
+    \end{itemize}
+\end{itemize}
+
+O desenvolvimento da interface de controle analógica forneceu informação importante sobre o manuseio do sistema. Foram anotadas as diferentes caraterísticas implementadas na interface com a finalidade de servir de base para próximas interfaces melhorando a usabilidade da mesma.
+
+
+\subsubsection*{Quarta versão}
+
+Na Figura \ref{fig:ap1_f1_v7} se apresenta a prova de conceito do circuito em \acrshort{PCI} da quarta versão do sistema. Mudanças significativas foram implementadas nesta versão.  Primeiramente se optou por usar outro tipo de \acrshort{DAC}, o DAC121S101 (Texas Instruments, EUA) (Figura \ref{fig:ap1_f1_v7} (a)). Ele só possui um canal, a comunicação é feia sob interface \acrshort{I2C}. A ideia inicial era usar vários canais separados para ser controlados de forma independente, mas depois de vários testes, foi decidido usar o DAC124S085 com comunicação \acrshort{SPI}, mas com 4 canais (Figura \ref{fig:ap1_f1_v7} (b)). Desses tipos de \acrshort{DAC} foi percebida que a qualidade do sinal (relação sinal-ruído mais favorável) que eles geravam era superior à dos \acrshort{DAC} usados nas versões anteriores. No caso do DAC124S085 foi usado um regulador de alta precisão para melhorar o seu desempenho. Seguindo as recomendações do fabricante foi usado o regulador de alta precisão LM4132-4.1 (Texas Instruments, EUA) que estabiliza a tensão exatamente em 4,096$V_{DC}$. Em suma, foram construídos dois módulos para teste que compreendem o DAC124S085 e o seu regulador junto com componentes adicionais como recomendado pelo fabricante. A Figura \ref{fig:ap1_f1_v8} mostra o módulo usado nesta versão.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{1\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v7.pdf_tex}
+    \caption{PCIs da quarta versão do sistema, (a) com DAC121s085 e (b) com DAC124S085.}
+    \label{fig:ap1_f1_v7}
+\end{figure*}
+
+A Figura \ref{fig:ap1_f1_v7} (b) representa a quarta versão do sistema proposto. Nela pode-se observar que existem 4 canais de estimulação implementados, assim como 4 diferenciadores de tensão. Todos eles possuem as mesmas caraterísticas. O amplificador diferencial implementado nesta versão é diferente ao usado nas versões anteriores. Foi utilizada uma topologia recomendada pelo fabricante do \acrshort{DAC}.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.7\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v8.pdf_tex}
+    \caption{Módulo DAC junto com o seu regulador de precisão.}
+    \label{fig:ap1_f1_v8}
+\end{figure*}
+
+Note-se que esta versão do sistema foi desenvolvida para ser modular, pois a ideia era facilitar a substituição de qualquer conjunto de componentes de forma rápida.
+
+\begin{itemize}
+    \item Principais componentes:
+    \begin{itemize}
+        \item Teensy 3.0;
+        \item o	DAC121S085 – DAC124S085;
+        \item Amplificador operacional TL084 (versão com o DAC121S085);
+        \item Amplificador operacional TL082 (versão com o DAC121S085);
+        \item Transistores MPSA42 e MPSA92;
+        \item Regulares de tensão para +5$V_{DC}$;
+        \item Regular lineal de alta precisão +4.096$V_{DC}$
+        \item Alimentação por transformador
+    \end{itemize}
+\end{itemize}
+
+Esta topologia forneceu informações muito importantes tanto do comportamento do circuito quanto do firmware da \acrshort{UC}. Em especial, essa versão foi a primeira a ser testada com uma fonte de alta tensão DC de 150$V_{DC}$. Para isto se utilizou uma fonte de grau médico referência B096 (Tecnotrafo, Brasil). Desta forma no início dos primeiros testes foi identificado que surgiam arcos elétricos entre as trilhas do circuito do EPS. Isto surgiu uma vez que o circuito foi projetado para ser compacto e ocupar um espaço reduzido, o que acabou por comprometer o seu funcionamento para altas tensões. Adiciona-se a isso o fato de que todos as \acrshort{PCI} foram confeccionadas artesanalmente e não contavam com nenhum tipo de máscara anti-soldante ou isolante.
+
+Depois de isolar as trilhas do circuito, o sistema foi colocado em funcionamento realizando alguns testes de desempenho. Isto forneceu informação sobre o comportamento dos transistores do \acrshort{EPS} quando levados ao limite. Ou seja, colocando uma carga de 1,3k$\mathrm{\Omega}$ e uma corrente constante de 100mA, os transistores que estão diretamente ligados com a carga se superaqueciam e queimavam, os outros também dissipavam potência em menor medida sem se queimar. Foi concluído então que era necessário redesenhar a \acrshort{PCI} levando em consideração a troca dos transistores por outros com caraterísticas de alta performance e com encapsulamentos que permitissem dissipar maior potência.
+
+\subsubsection*{Quinta versão}
+A quinta versão basicamente o que mudou significativamente foi o \acrshort{EPS}. Neste foram feitas correções dos erros encontrados nas versões anteriores: ruído no sinal de saída, espaçamento entre as trilhas e finalmente mudança dos transistores MPSA42 NPN com encapsulamento TO92 para o TIP48 NPN com encapsulamento TO220 e o MPSA92 PNP com encapsulamento TO92 para o MJE5730 PNP com encapsulamento TO220.
+
+O ruído no sinal era produzido por capacitâncias parasitas no conversor de tensão-corrente, as quais foram drenadas para terra por meio da adição de um capacitor como mostrado na Figura \ref{fig:ap1_f1_v9} (a). O \acrshort{EPS} testado nesta versão é apresentado na Figura \ref{fig:ap1_f1_v9} (b).
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{1\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v9.pdf_tex}
+    \caption{Diagrama e PCI do EPS da quinta versão do sistema.}
+    \label{fig:ap1_f1_v9}
+\end{figure*}
+
+A Figura \ref{fig:ap1_f1_v10} mostra um sinal de saída no EPS com 70mA em uma carga de 1k$\mathrm{\Omega}$.
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{0.7\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v10.pdf_tex}
+    \caption{Diagrama e PCI do EPS da quinta versão do sistema.}
+    \label{fig:ap1_f1_v10}
+\end{figure*}
+
+\subsubsection*{Sexta versão}
+Na sexta versão foram incorporados todas as melhoras das versões anteriores, incluindo um gabinete para sua versão que foi apresentada na qualificação. Na Figura XXX é apresentado o sistema de eletroestimulação nomeado como a versão 1 "Estimulema".
+
+\begin{figure*}[h]
+    \centering %
+    \small %
+    \def\svgwidth{1\columnwidth}% Código LATEX define o tamanho da figura 
+    \import{figs/Fig_ap1/}{ap1_f1_v11.pdf_tex}
+    \caption{Diagrama e PCI do EPS da quinta versão do sistema.}
+    \label{fig:ap1_f1_v11}
+\end{figure*}

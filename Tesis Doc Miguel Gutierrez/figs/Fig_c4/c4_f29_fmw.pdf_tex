@@ -1,0 +1,143 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'c4_f29_fmw.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{498.86155701bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.24894371)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{c4_f29_fmw.pdf}}%
+    \put(0.4239709,1.22594134){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Inicio \end{tabular}}}}%
+    \put(0.47582897,1.22594134){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.48751558,1.22594134){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Setup()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{c4_f29_fmw.pdf}}%
+    \put(0.02245671,1.00137003){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{L}\textbf{o}\textbf{o}\textbf{p}\textbf{(}\textbf{)}\end{tabular}}}}%
+    %\put(0.02245671,1.00137003){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{L}\textbf{o}\textbf{o}\textbf{p}\textbf{ }\textbf{n}\textbf{ }\textbf{v}\textbf{e}\textbf{z}\textbf{e}\textbf{s}\textbf{:}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{c4_f29_fmw.pdf}}%
+    \put(0.02559951,1.00525412){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{L}\textbf{o}\textbf{o}\textbf{p}\textbf{(}\textbf{)}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{c4_f29_fmw.pdf}}%
+    \put(0.65022605,0.74352294){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Terapia\end{tabular}}}}%
+    \put(0.67754826,0.72544178){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.63238546,0.70740072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Diagnóstico\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{c4_f29_fmw.pdf}}%
+    \put(0.80193146,0.61649372){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Identificar \end{tabular}}}}%
+    \put(0.76234132,0.59243895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}parâmetros do Teste\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{c4_f29_fmw.pdf}}%
+    \put(0.31778914,1.1596905){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.32951584,1.1596905){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Realizar configurações iniciais\end{tabular}}}}%
+    \put(0.31275768,1.13557559){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.32444429,1.13557559){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Configurar comunicação (Serial, SPI, I2C)\end{tabular}}}}%
+    \put(0.31275768,1.11152082){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.32444429,1.11152082){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Inicializar variáveis e estruturas de dados \end{tabular}}}}%
+    \put(0.31275768,1.08746606){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.32444429,1.08746606){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Cerar canais e Selecionar pré\end{tabular}}}}%
+    \put(0.55847715,1.08746606){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.56519244,1.08746606){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}cargas\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{c4_f29_fmw.pdf}}%
+    \put(0.12889906,0.93652238){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Enviar resposta \end{tabular}}}}%
+    \put(0.13501298,0.91246761){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}de finalização\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{c4_f29_fmw.pdf}}%
+    \put(0.38969285,0.02013589){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.40137946,0.02013589){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Botão de emergência\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{c4_f29_fmw.pdf}}%
+    \put(0.42651669,0.83449006){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Ler de dados e\end{tabular}}}}%
+    \put(0.43068619,0.81043529){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}atribuí\end{tabular}}}}%
+    \put(0.4830454,0.81043529){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.48976069,0.81043529){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}los nas \end{tabular}}}}%
+    \put(0.4462817,0.78638053){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}estruturas \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{c4_f29_fmw.pdf}}%
+    \put(0.35828133,0.91006213){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Não\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{c4_f29_fmw.pdf}}%
+    \put(0.64517455,0.81765173){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sim \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{c4_f29_fmw.pdf}}%
+    \put(0.51036761,0.6285211){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Identificar \end{tabular}}}}%
+    \put(0.49557393,0.60446633){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}parâmetros da\end{tabular}}}}%
+    \put(0.52149294,0.58037147){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Terapia\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{c4_f29_fmw.pdf}}%
+    \put(0.54825387,0.69160473){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{c4_f29_fmw.pdf}}%
+    \put(0.83877535,0.70866357){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{c4_f29_fmw.pdf}}%
+    \put(0.47414514,0.49648046){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Selecionar canal de \end{tabular}}}}%
+    \put(0.5042136,0.47242569){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}estimulação\end{tabular}}}}%
+    \put(0.47494696,0.44831079){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(CH1, CH2, CH1 e \end{tabular}}}}%
+    \put(0.52985197,0.42425602){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CH2)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{c4_f29_fmw.pdf}}%
+    \put(0.26460805,0.47242569){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Aplicar \end{tabular}}}}%
+    \put(0.26741444,0.44831079){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}terapia\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{c4_f29_fmw.pdf}}%
+    \put(0.25739162,0.25172318){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Atualizar\end{tabular}}}}%
+    \put(0.2030078,0.22766842){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Parametros / parada de \end{tabular}}}}%
+    \put(0.24847131,0.20355351){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}emergencia\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{c4_f29_fmw.pdf}}%
+    \put(0.15600077,0.55154584){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sim\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{c4_f29_fmw.pdf}}%
+    \put(0.40378494,0.37073416){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Não\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{c4_f29_fmw.pdf}}%
+    \put(0.81365816,0.49541804){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Aplicar \end{tabular}}}}%
+    \put(0.80944858,0.47136327){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}teste por \end{tabular}}}}%
+    \put(0.82478349,0.44726841){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CH1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{c4_f29_fmw.pdf}}%
+    \put(0.22838558,0.38552784){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Enviar tempo de \end{tabular}}}}%
+    \put(0.23981159,0.36147307){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}estimulação e \end{tabular}}}}%
+    \put(0.25067633,0.3374183){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}finalização\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{c4_f29_fmw.pdf}}%
+    \put(0.80143032,0.36077147){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Capturar e \end{tabular}}}}%
+    \put(0.79251001,0.33669666){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}enviar dados \end{tabular}}}}%
+    \put(0.83344321,0.3126018){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}do \end{tabular}}}}%
+    \put(0.79116695,0.28854703){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}acelerômetro\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{c4_f29_fmw.pdf}}%
+    \put(0.80784493,0.23318097){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Finalizar\end{tabular}}}}%
+    \put(0.82514431,0.2091262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}teste\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{c4_f29_fmw.pdf}}%
+    \put(0.86517596,0.93655717){\color[rgb]{0.19215686,0.52156863,0.60784314}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C1\_STIM\end{tabular}}}}%
+    \put(0.85658781,0.15940555){\color[rgb]{0.75294118,0.31372549,0.2745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C2\_ACEL\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

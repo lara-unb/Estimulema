@@ -1,0 +1,99 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'khi_f19.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{396.3013916bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.42442724)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.48208593,0.21557419){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RCARG\end{tabular}}}}%
+    \put(0.54778126,0.21557419){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{khi_f19.pdf}}%
+    \put(0.179908,0.36700625){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{khi_f19.pdf}}%
+    \put(0.12976293,0.26988422){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{khi_f19.pdf}}%
+    \put(0.24627883,0.26988422){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{khi_f19.pdf}}%
+    \put(0.77541365,0.39145847){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{khi_f19.pdf}}%
+    \put(0.77541365,0.31338536){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{khi_f19.pdf}}%
+    \put(0.77541365,0.07901266){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{khi_f19.pdf}}%
+    \put(0.77541365,0.00025476){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{khi_f19.pdf}}%
+    \put(0.0457535,0.17073138){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sinal do\end{tabular}}}}%
+    \put(0.0457535,0.14425293){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}gerador\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{khi_f19.pdf}}%
+    \put(0.76526968,0.25630729){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Controle de\end{tabular}}}}%
+    \put(0.76526968,0.23050424){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ativação\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{khi_f19.pdf}}%
+    \put(0.10401374,0.20194002){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{khi_f19.pdf}}%
+    \put(0.27744347,0.20194002){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{khi_f19.pdf}}%
+    \put(0.27744347,0.08447778){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{khi_f19.pdf}}%
+    \put(0.43397652,0.28007265){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{khi_f19.pdf}}%
+    \put(0.88246338,0.07630872){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T5\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{khi_f19.pdf}}%
+    \put(0.59183766,0.28007265){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{khi_f19.pdf}}%
+    \put(0.43397652,0.16256233){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T7\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{khi_f19.pdf}}%
+    \put(0.59183766,0.16256233){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{khi_f19.pdf}}%
+    \put(0.88246338,0.38942078){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T9\end{tabular}}}}}%
+    \put(0.0667696,0.05253649){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iref\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{khi_f19.pdf}}%
+  \end{picture}%
+\endgroup%

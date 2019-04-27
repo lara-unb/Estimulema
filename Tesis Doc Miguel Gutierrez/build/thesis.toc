@@ -1,0 +1,52 @@
+\babel@toc {portuguese}{}
+\contentsline {chapter}{\numberline {1}INTRODU\IeC {\c C}\IeC {\~A}O}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}CONTEXTUALIZA\IeC {\c C}\IeC {\~A}O}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}DEFINI\IeC {\c C}\IeC {\~A}O DO PROBLEMA}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}OBJETIVOS}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}PRINCIPAL}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}ESPEC\IeC {\'I}FICOS}{4}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}ORGANIZA\IeC {\c C}\IeC {\~A}O DO MANUSCRITO}{5}{section.1.4}
+\contentsline {chapter}{\numberline {2}FUNDAMENTOS TE\IeC {\'O}RICOS}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}SISTEMA NEUROMUSCULAR}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}O SISTEMA NERVOSO}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}O SISTEMA MUSCULAR}{7}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}ESTIMULA\IeC {\c C}\IeC {\~A}O EL\IeC {\'E}TRICA}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}ELEMENTOS HIST\IeC {\'O}RICOS}{9}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}PRINC\IeC {\'I}PIOS}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}FORMA DE ONDA}{11}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}APLICA\IeC {\c C}\IeC {\~O}ES}{13}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}ESTIMULA\IeC {\c C}\IeC {\~A}O EL\IeC {\'E}TRICA E FADIGA MUSCULAR}{13}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}ELETRODIAGN\IeC {\'O}STICO DE EST\IeC {\'I}MULO}{13}{subsection.2.2.6}
+\contentsline {section}{\numberline {2.3}DISPOSITIVOS DE ESTIMULA\IeC {\c C}\IeC {\~A}O EL\IeC {\'E}TRICA E ELETRODIAGN\IeC {\'O}STICO}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}COMPONENTES DE UM SISTEMA T\IeC {\'I}PICO DE ESTIMULA\IeC {\c C}\IeC {\~A}O EL\IeC {\'E}TRICA}{15}{subsection.2.3.1}
+\contentsline {chapter}{\numberline {3}ESTADO DA ARTE}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}PERSPECTIVA HIST\IeC {\'O}RICA}{18}{section.3.1}
+\contentsline {section}{\numberline {3.2}SISTEMAS CONTEMPOR\IeC {\^A}NEOS DE ELETROESTIMULA\IeC {\c C}\IeC {\~A}O}{21}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Interface de controle}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Unidade de controle}{23}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Gerador de sinais}{24}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Est\IeC {\'a}gio de pot\IeC {\^e}ncia de sa\IeC {\'\i }da}{25}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Fontes de alimenta\IeC {\c c}\IeC {\~a}o}{34}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Detec\IeC {\c c}\IeC {\~a}o de movimento e eletrodiagn\IeC {\'o}stico}{35}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}SISTEMAS DE ELETROESTIMULA\IeC {\c C}\IeC {\~A}O DISPON\IeC {\'I}VEIS COMERCIALMENTE}{35}{section.3.3}
+\contentsline {chapter}{\numberline {4}MATERIAIS E M\IeC {\'E}TODOS}{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}REQUISITOS DO SISTEMA}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}HARDWARE}{40}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}M\IeC {\'O}DULO DE CONTROLE}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}M\IeC {\'O}DULO GERADOR DE SINAL}{42}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}M\IeC {\'O}DULO ESTIMULADOR}{46}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}M\IeC {\'O}DULO DE DETEC\IeC {\c C}\IeC {\~A}O DE MOVIMENTO}{50}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}FONTE DE ALIMENTA\IeC {\c C}\IeC {\~A}O}{60}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}SELETOR DA SA\IeC {\'I}DA DOS CANAIS DO SISTEMA DE ESTIMULA\IeC {\c C}\IeC {\~A}O}{63}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}BOT\IeC {\~A}O DE EMERG\IeC {\^E}NCIA}{63}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}LED INDICADOR}{64}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}PCI DO SISTEMA DE ESTIMULA\IeC {\c C}\IeC {\~A}O}{64}{subsection.4.2.9}
+\contentsline {subsection}{\numberline {4.2.10}MONTAGEM E FINALIZA\IeC {\c C}\IeC {\~A}O DA VERS\IeC {\~A}O FINAL DO SISTEMA DE ESTIMULA\IeC {\c C}\IeC {\~A}O}{65}{subsection.4.2.10}
+\contentsline {section}{\numberline {4.3}SOFTWARE}{66}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}FIRMWARE DO SISTEMA DE ESTIMULA\IeC {\c C}\IeC {\~A}O}{66}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}INTERFACE GR\IeC {\'A}FICA DE CONTROLE DO ESTIMULADOR}{69}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}RESULTADOS}{72}{chapter.5}
+\contentsline {section}{\numberline {5.1}TESTES DO SISTEMA PROPOSTO}{73}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}HARDWARE INTERNO DO SISTEMA DE ESTIMULA\IeC {\c C}\IeC {\~A}O}{73}{subsection.5.1.1}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS BIBLIOGR\IeC {\'A}FICAS}{75}{figure.caption.91}
+\contentsline {chapter}{\numberline {A}AP\IeC {\^E}NDICE I}{77}{appendix.A}

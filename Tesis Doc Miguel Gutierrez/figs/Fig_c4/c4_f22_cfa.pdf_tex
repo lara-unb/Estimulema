@@ -1,0 +1,103 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'c4_f22_cfa.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{259.83153534bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.76362723)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.99291159,0.23252215){\color[rgb]{0,0.50196078,0}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-150 | -15 | GND | +15 | +150\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{c4_f22_cfa.pdf}}%
+    \put(0.66830893,0.55394359){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{c4_f22_cfa.pdf}}%
+    \put(0.5115577,0.69957604){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+H\end{tabular}}}}}%
+    \put(0.5115577,0.7407787){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{c4_f22_cfa.pdf}}%
+    \put(0.66830893,0.64830989){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{c4_f22_cfa.pdf}}%
+    \put(0.5115577,0.44947993){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{c4_f22_cfa.pdf}}%
+    \put(0.59351235,0.43945033){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{c4_f22_cfa.pdf}}%
+    \put(0.40501665,0.60514197){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{CC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{c4_f22_cfa.pdf}}%
+    \put(0.56073049,0.68751341){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$CC/CC_1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{c4_f22_cfa.pdf}}%
+    \put(0.66830893,0.22852047){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{c4_f22_cfa.pdf}}%
+    \put(0.5115577,0.3580954){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+H\end{tabular}}}}}%
+    \put(0.5115577,0.39428327){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{c4_f22_cfa.pdf}}%
+    \put(0.66830893,0.32290033){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{c4_f22_cfa.pdf}}%
+    \put(0.5115577,0.12405003){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{c4_f22_cfa.pdf}}%
+    \put(0.59351235,0.11396284){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000257}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{c4_f22_cfa.pdf}}%
+    \put(0.40501665,0.27971207){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{CC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{c4_f22_cfa.pdf}}%
+    \put(0.56073049,0.36209368){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$CC/CC_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{c4_f22_cfa.pdf}}%
+    \put(0.02102419,0.51975487){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}F\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{c4_f22_cfa.pdf}}%
+    \put(0.32828013,0.41329206){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{c4_f22_cfa.pdf}}%
+    \put(0.01796109,0.46154255){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}N\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{c4_f22_cfa.pdf}}%
+    \put(0.33236403,0.49366436){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{CC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{c4_f22_cfa.pdf}}%
+    \put(0.02612959,0.57203752){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}FONTE\_MEDICA\end{tabular}}}}%
+    %\put(0.253487,0.57203752){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{c4_f22_cfa.pdf}}%
+    \put(0.75942729,0.00048711){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{c4_f22_cfa.pdf}}%
+    \put(0.01796109,0.40726075){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

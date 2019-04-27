@@ -1,0 +1,249 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'c4_f2_mdc.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{337.29295349bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.78509155)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.06328932,1.76756441){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Conector BTH\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{c4_f2_mdc.pdf}}%
+    \put(0.35162467,1.31471088){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}!SYNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{c4_f2_mdc.pdf}}%
+    \put(0.93872707,1.7400062){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+5\_D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{c4_f2_mdc.pdf}}%
+    \put(0.0521522,1.42098009){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\_CH1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{c4_f2_mdc.pdf}}%
+    \put(0.0521522,1.34127038){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\_CH2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{c4_f2_mdc.pdf}}%
+    \put(0.35162467,1.28815138){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DIN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{c4_f2_mdc.pdf}}%
+    \put(0.35162467,1.23490754){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SCLK\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{c4_f2_mdc.pdf}}%
+    \put(0.1847957,0.29662998){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{c4_f2_mdc.pdf}}%
+    \put(0.1906327,0.19034204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SC\end{tabular}}}}%
+    \put(0.21782001,0.19034204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{c4_f2_mdc.pdf}}%
+    \put(0.1877142,0.24348601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SD\end{tabular}}}}%
+    \put(0.21605643,0.24348601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{c4_f2_mdc.pdf}}%
+    \put(0.19163154,0.3497677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}VIN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{c4_f2_mdc.pdf}}%
+    \put(0.08840403,0.39761226){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ACELERÔMETRO\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{c4_f2_mdc.pdf}}%
+    \put(0.89655708,0.01217772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\_D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{c4_f2_mdc.pdf}}%
+    \put(0.18210818,1.03263712){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}IE\_BTN\_E\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{c4_f2_mdc.pdf}}%
+    \put(0.08579142,1.69216164){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}K1GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{c4_f2_mdc.pdf}}%
+    \put(0.09946312,1.5592393){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}K1RX\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{c4_f2_mdc.pdf}}%
+    \put(0.10046196,1.5857988){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}K1TX\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{c4_f2_mdc.pdf}}%
+    \put(0.08771108,1.71872114){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}K1VCC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{c4_f2_mdc.pdf}}%
+    \put(0.14531635,1.35693768){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R13\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{c4_f2_mdc.pdf}}%
+    \put(0.14531635,1.43664739){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R12\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{c4_f2_mdc.pdf}}%
+    \put(0.28510471,1.66260601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{c4_f2_mdc.pdf}}%
+    \put(0.28510471,1.56960094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}%
+    \put(0.29985016,1.56960094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.31014139,1.56960094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{c4_f2_mdc.pdf}}%
+    \put(0.37266285,0.85602112){\color[rgb]{0,0,0}\rotatebox{90.00000252}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R14\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.57250345){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0/RX1/\end{tabular}}}}%
+    \put(0.57895557,1.57250345){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.54594395){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1/TX1/\end{tabular}}}}%
+    \put(0.57773822,1.54594395){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.51938445){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{c4_f2_mdc.pdf}}%
+    \put(0.80269686,1.54594395){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.3\end{tabular}}}}%
+    \put(0.83041481,1.54594395){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.49279373){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.46623423){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.4395811){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.4130216){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.38643089){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}7/RX3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.35987139){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8/TX3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.33328068){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}9/RX2/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.30672118){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10/TX2/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.28016168){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.52389423,1.28016168){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1/MOSI\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.25357097){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12/MISO\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.22691784){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}13/SCK/LED\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=38]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.20035834){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14/A0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=39]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.17379884){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15/A1/\end{tabular}}}}%
+    \put(0.57527232,1.17379884){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=40]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.14720813){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}16/A2/\end{tabular}}}}%
+    \put(0.57527232,1.14720813){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=41]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.12064863){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}17/A3/\end{tabular}}}}%
+    \put(0.57527232,1.12064863){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=42]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.09408913){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}18/A4/T/SD\end{tabular}}}}%
+    \put(0.62334174,1.09408913){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=43]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.06749842){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}19/A5/T/SC\end{tabular}}}}%
+    \put(0.6221244,1.06749842){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=44]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.04093892){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20/A6/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=45]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,1.01434821){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}21/A7/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=46]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,0.98772629){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}22/A8/T/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=47]{c4_f2_mdc.pdf}}%
+    \put(0.51359364,0.96113557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}23/A9/T/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=48]{c4_f2_mdc.pdf}}%
+    \put(0.78655927,1.33328068){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}AGND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=49]{c4_f2_mdc.pdf}}%
+    \put(0.79923212,1.49279373){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=50]{c4_f2_mdc.pdf}}%
+    \put(0.80606796,1.57250345){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}VIN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=51]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.69535331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0/RX1/\end{tabular}}}}%
+    \put(0.56568965,0.69535331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=52]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.66879381){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1/TX1/\end{tabular}}}}%
+    \put(0.56437867,0.66879381){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=53]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.6422031){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=54]{c4_f2_mdc.pdf}}%
+    \put(0.78933731,0.66879381){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.3\end{tabular}}}}%
+    \put(0.81705526,0.66879381){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=55]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.6156436){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=56]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.58899047){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=57]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.56243097){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=58]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.53584026){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=59]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.50928076){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}7/RX3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=60]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.48269005){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8/TX3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=61]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.45613054){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}9/RX2/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=62]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.42957104){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10/TX2/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=63]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.40298033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.51059711,0.40298033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1/MOSI\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=64]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.3763272){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12/MISO\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=65]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.3497677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}13/SCK/LED\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=66]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.3232082){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14/A0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=67]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.29662998){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15/A1/\end{tabular}}}}%
+    \put(0.56191277,0.29662998){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=68]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.27005799){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}16/A2/\end{tabular}}}}%
+    \put(0.56191277,0.27005799){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=69]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.24348601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}17/A3/\end{tabular}}}}%
+    \put(0.56191277,0.24348601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=70]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.21691402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}18/A4/T/SD\end{tabular}}}}%
+    \put(0.60998219,0.21691402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=71]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.19034204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}19/A5/T/SC\end{tabular}}}}%
+    \put(0.60876485,0.19034204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=72]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.16369515){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20/A6/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=73]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.13712316){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}21/A7/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=74]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.11055118){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}22/A8/T/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=75]{c4_f2_mdc.pdf}}%
+    \put(0.50032773,0.08398232){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}23/A9/T/PWM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=76]{c4_f2_mdc.pdf}}%
+    \put(0.77329336,0.45613054){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}AGND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=77]{c4_f2_mdc.pdf}}%
+    \put(0.7859662,0.6156436){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=78]{c4_f2_mdc.pdf}}%
+    \put(0.79280205,0.69535331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}VIN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=79]{c4_f2_mdc.pdf}}%
+    \put(0.63926084,1.64622089){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C1\_STIM\end{tabular}}}}%
+    \put(0.61338451,0.77106817){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C2\_ACEL\end{tabular}}}}%
+    %\put(0.70746323,0.77106817){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0.29301432,0.10317944){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\_DADOS\end{tabular}}}}%
+    \put(0.06843337,1.18178854){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\_DADOS\end{tabular}}}}%
+    \put(0.61338451,0.88735572){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0.62533943,0.88735572){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}eensy 3.2\end{tabular}}}}%
+    \put(0.61338451,0.01217772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T\end{tabular}}}}%
+    \put(0.62533943,0.01217772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}eensy 3.2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=80]{c4_f2_mdc.pdf}}%
+    \put(0.36320503,1.1861579){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SPI\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=81]{c4_f2_mdc.pdf}}%
+  \end{picture}%
+\endgroup%

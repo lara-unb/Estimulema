@@ -1,0 +1,116 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'msd_f14.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{316.82141876bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.72451982)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.90749382,0.27956555){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RCARG\end{tabular}}}}%
+    \put(0.98414081,0.27956555){\color[rgb]{0,0.50196078,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{msd_f14.pdf}}%
+    \put(0.32436442,0.35945103){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{msd_f14.pdf}}%
+    \put(0.6936122,0.57848969){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{msd_f14.pdf}}%
+    \put(0.48458136,0.10983645){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{msd_f14.pdf}}%
+    \put(0.15992306,0.3774382){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{msd_f14.pdf}}%
+    \put(0.15992306,0.49262348){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{msd_f14.pdf}}%
+    \put(0.48597067,0.46197785){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP1\end{tabular}}}}%
+    \put(0.52571878,0.46197785){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{msd_f14.pdf}}%
+    \put(0.74727687,0.37145746){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{msd_f14.pdf}}%
+    \put(0.66714485,0.23165225){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OP1B\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{msd_f14.pdf}}%
+    \put(0.03448101,0.66972956){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{msd_f14.pdf}}%
+    \put(0.03448101,0.18042932){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-VCC\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{msd_f14.pdf}}%
+    \put(0.16340102,0.59580233){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{msd_f14.pdf}}%
+    \put(0.16340102,0.25096597){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{msd_f14.pdf}}%
+    \put(0.20517658,0.57848969){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{msd_f14.pdf}}%
+    \put(0.20517658,0.34883861){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{msd_f14.pdf}}%
+    \put(0.56678556,0.44471018){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{msd_f14.pdf}}%
+    \put(0.6866657,0.52122307){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{msd_f14.pdf}}%
+    \put(0.84756552,0.42539646){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R7\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{msd_f14.pdf}}%
+    \put(0.7869779,0.3295249){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{msd_f14.pdf}}%
+    \put(0.80788805,0.17838328){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R9\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{msd_f14.pdf}}%
+    \put(0.42604237,0.23365333){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{msd_f14.pdf}}%
+    \put(0.38426917,0.0592678){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}}%
+    \put(0.38426917,0.0732101){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}}%
+    \put(0.38426917,0.08322445){\color[rgb]{0.31372549,0.31372549,0.31372549}\rotatebox{90.00000264}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{msd_f14.pdf}}%
+    \put(0.31595798,0.49064489){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}%
+    \put(0.32853232,0.49064489){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{msd_f14.pdf}}%
+    \put(0.2553468,0.2416801){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sinal do\end{tabular}}}}%
+    \put(0.2553468,0.21567066){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}gerador\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{msd_f14.pdf}}%
+    \put(0.0449667,0.57318348){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}%
+    \put(0.0839613,0.60583017){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{msd_f14.pdf}}%
+    \put(0.0449667,0.36217159){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}%
+    \put(0.0839613,0.39475084){\color[rgb]{0.31372549,0.31372549,0.31372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V2\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

@@ -1,0 +1,118 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'c4_f25_dct.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{333.2399826bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.66659627)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{c4_f25_dct.pdf}}%
+    \put(0.23874686,0.02885769){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}HT711\end{tabular}}}}%
+    \put(0.09614693,0.28668989){\color[rgb]{0.50196078,0.50196078,0.50196078}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1k\end{tabular}}}}}%
+    \put(0.03168888,0.28668989){\color[rgb]{0.50196078,0.50196078,0.50196078}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1k\end{tabular}}}}}%
+    \put(0.96218945,0.60069782){\color[rgb]{0.50196078,0.50196078,0.50196078}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+5V$\end{tabular}}}}}%
+    \put(0.91357584,0.42280801){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0.25855241,0.21647023){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$E+$\end{tabular}}}}%
+    \put(0.19661507,0.22619295){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$E+$\end{tabular}}}}%
+    \put(0.25855241,0.19522428){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$E-$\end{tabular}}}}%
+    \put(0.20093628,0.2045869){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$E-$\end{tabular}}}}%
+    \put(0.25855241,0.15201218){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A-$\end{tabular}}}}%
+    \put(0.20093628,0.1613748){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A-$\end{tabular}}}}%
+    \put(0.25855241,0.13040613){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A+$\end{tabular}}}}%
+    \put(0.19661507,0.13976875){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A+$\end{tabular}}}}%
+    \put(0.25855241,0.08719403){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B-$\end{tabular}}}}%
+    \put(0.20093628,0.09655665){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B-$\end{tabular}}}}%
+    \put(0.25855241,0.06558798){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B+$\end{tabular}}}}%
+    \put(0.19661507,0.0749506){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B+$\end{tabular}}}}%
+    \put(0.33237308,0.21647023){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{CC}$\end{tabular}}}}%
+    \put(0.40979476,0.22619295){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{CC}$\end{tabular}}}}%
+    \put(0.33021248,0.19486418){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0.40979476,0.2045869){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0.33345339,0.06558798){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SCK\end{tabular}}}}%
+    \put(0.40979476,0.0749506){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SCK\end{tabular}}}}%
+    \put(0.34605691,0.08719403){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DT\end{tabular}}}}%
+    \put(0.40979476,0.09655665){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DT\end{tabular}}}}%
+    \put(0.56103711,0.30289443){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$12/MISO$\end{tabular}}}}%
+    \put(0.56103711,0.32450048){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$11/MOSI$\end{tabular}}}}%
+    \put(0.56103711,0.34610653){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$10/TX2/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.36771258){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$9/RX2/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.38931863){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$8/TX3$\end{tabular}}}}%
+    \put(0.56103711,0.41092468){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$7/RX3$\end{tabular}}}}%
+    \put(0.56103711,0.43253073){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$6/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.45413678){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$5/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.47574283){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$4/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.49698878){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.51859483){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.56103711,0.54020088){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1/TX1$\end{tabular}}}}%
+    \put(0.56103711,0.56180693){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0/RX1$\end{tabular}}}}%
+    \put(0.78357943,0.49698878){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0.79366226,0.56180693){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_{IN}$\end{tabular}}}}%
+    \put(0.77169611,0.36771258){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}AGND\end{tabular}}}}%
+    \put(0.78646024,0.54020088){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.3V\end{tabular}}}}%
+    \put(0.56103711,0.06558798){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$23/A9/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.08719403){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$22/A8/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.10880008){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$21/A7/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.13040613){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$20/A6/PWM$\end{tabular}}}}%
+    \put(0.56103711,0.15201218){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$19/A5/SCL$\end{tabular}}}}%
+    \put(0.56103711,0.17361823){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$18/A4/SDA$\end{tabular}}}}%
+    \put(0.56103711,0.19522428){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$17/A3$\end{tabular}}}}%
+    \put(0.56103711,0.21647023){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$16/A2$\end{tabular}}}}%
+    \put(0.56103711,0.23807628){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$15/A1$\end{tabular}}}}%
+    \put(0.56103711,0.25968233){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$14/A0$\end{tabular}}}}%
+    \put(0.56103711,0.28128838){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$13/SCK/LED$\end{tabular}}}}%
+    \put(0.13719843,0.28200858){\color[rgb]{0.50196078,0.50196078,0.50196078}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R1\end{tabular}}}}}%
+    \put(0.07238028,0.28200858){\color[rgb]{0.50196078,0.50196078,0.50196078}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R2\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{c4_f25_dct.pdf}}%
+    \put(0.06265755,0.49374785){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}LOADCELL\end{tabular}}}}%
+    \put(0.65209942,0.61976958){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{\mu}$C$\_$LOAD\end{tabular}}}}%
+    \put(0.63578235,0.00026973){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TEENSY 3.0\end{tabular}}}}%
+    \put(0.23874836,0.25536295){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}U1\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
