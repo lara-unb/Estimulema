@@ -1,7 +1,7 @@
 import sys
 import matplotlib.pyplot as plt
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 import serial
 import threading
 import numpy as np
@@ -11,8 +11,10 @@ from scipy.signal import butter, lfilter, medfilt
 __author__ = 'Miguel Gutierrez'
 
 # Original ports
-serPort1 = "COM13"
-serPort2 = "COM14"
+serPort1 = "COM3"  # Stim
+serPort2 = "COM4"  # Accel
+# ##serPort3 = "COM15"  # Loadc
+
 
 # Ports for teste
 # serPort1 = "COM8"  # Stim
@@ -37,6 +39,8 @@ cont_fig = 1
 plot_show = True
 sel_test = True
 start_receiver = False
+start_rh_test = False  # para controlar testes de Treinamento e na sequencia reobase
+ctrl_ch1_rh = False  # controle de activacao treinamento - reobase
 
 # lock to serialize console output
 lock = threading.Lock()
@@ -63,11 +67,15 @@ plot_xyz = False
 name_file = False
 start_tread = True
 
+
 msg_bytes = ''
 limit_ma_ini = 0
 limit_ma_fin = 0
 limit_pw = 0
 limit_start = 0  # To count the final message
+
+# Num treinamento para los textos de treinamento
+ntrain = 0
 
 # Stim parameters
 ts = 0
@@ -88,14 +96,16 @@ class stim_param_channel:
 ch1 = stim_param_channel()
 ch1.tn = 0  # Save de Frequency value
 ch1.tf = 0  # Save de PulseWidth value
-ch1.r = 0  # Save de TOff value
+ch1.ri = 0  # Save de TOff value
+ch1.rf = 0  # Save de TOff value
 ch1.ma = 0  # Save de Current value
 
 # For channel 2
 ch2 = stim_param_channel()
 ch2.tn = 0  # Save de Frequency value
 ch2.tf = 0  # Save de PulseWidth value
-ch2.r = 0  # Save de TOff value
+ch2.ri = 0  # Save de TOff value
+ch2.rf = 0  # Save de TOff value
 ch2.ma = 0  # Save de Current value
 
 
@@ -134,26 +144,31 @@ class MainWindow(QMainWindow):
         # for channel 1
         self.spinBox_tn_1.valueChanged.connect(self.update_var)
         self.spinBox_tf_1.valueChanged.connect(self.update_var)
-        self.spinBox_r_1.valueChanged.connect(self.update_var)
+        self.spinBox_ri_1.valueChanged.connect(self.ramp_check)
+        self.spinBox_rf_1.valueChanged.connect(self.ramp_check)
         self.spinBox_ma_1.valueChanged.connect(self.btn_change_ma1)
 
         # for channel 2
         self.spinBox_tn_2.valueChanged.connect(self.update_var)
         self.spinBox_tf_2.valueChanged.connect(self.update_var)
-        self.spinBox_r_2.valueChanged.connect(self.update_var)
+        self.spinBox_ri_2.valueChanged.connect(self.ramp_check)
+        self.spinBox_rf_2.valueChanged.connect(self.ramp_check)
         self.spinBox_ma_2.valueChanged.connect(self.btn_change_ma2)
+
+        # Training and Rheobase Test
+        self.pushButton_ch1_rh.clicked.connect(self.btn_ch1_rh)
 
         # Show interface
         self.show()
 
     # buttons ---------------------------------------------------------------
     def btn_start_rh(self):
-        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2
+        global rh, cr, s_c, start, limit_start, s_ch1, s_ch2, start_rh_test
         global start_thread_a, start_thread_s, msg_bytes, solo_mode
 
         rh = True
         start_thread_s = start_thread_a = True  # To control the threads
-        cr = s_c = s_ch1 = s_ch2 = start = False
+        start_rh_test = cr = s_c = s_ch1 = s_ch2 = start = False
 
         self.spinBox_ma_1.setValue(0)
         self.spinBox_ma_2.setValue(0)
@@ -164,12 +179,17 @@ class MainWindow(QMainWindow):
 
         self.lineEdit_terminal.setText("Start capture data for Rh -- Stim and Acel --")
 
+    def btn_ch1_rh(self):
+        global ctrl_ch1_rh
+        ctrl_ch1_rh = True
+        self.btn_start_ch1()
+
     def btn_start_cr(self):
-        global rh, cr, s_c, start, limit_pw, s_ch1, s_ch2
+        global rh, cr, s_c, start, limit_pw, s_ch1, s_ch2, start_rh_test
         global start_thread_a, start_thread_s
 
         cr = True
-        rh = s_c = s_ch1 = s_ch2 = start = False
+        start_rh_test = rh = s_c = s_ch1 = s_ch2 = start = False
         start_thread_s = start_thread_a = True  # To control the threads
 
         self.spinBox_ma_1.setValue(0)
@@ -183,36 +203,43 @@ class MainWindow(QMainWindow):
 
     def btn_start_ch1(self):
         global s_ch1, s_c, start, s_ch2, ctr_upd, stop_chx, rh, cr
+        global start_rh_test, ctrl_ch1_rh
 
         s_ch1 = start = stop_chx = True
-        s_c = s_ch2 = rh = cr = False
+        start_rh_test = s_c = s_ch2 = rh = cr = False
+
+        if ctrl_ch1_rh is True:
+            start_rh_test = True
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
+        global start_rh_test
 
         s_ch2 = start = stop_chx = True
-        s_c = s_ch1 = rh = cr = False
+        start_rh_test = s_c = s_ch1 = rh = cr = False
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
 
     def btn_start_ch1_ch2(self):
         global s_ch2, s_c, start, s_ch1, ctr_upd, stop_chx, rh, cr
+        global start_rh_test
 
         s_ch2 = s_ch1 = start = stop_chx = True
-        s_c = rh = cr = False
+        start_rh_test = s_c = rh = cr = False
 
         self.update_var()
         s_c = s_ch2 = rh = cr = start = False
         self.btn_stop_stim()
 
     def btn_stop_stim(self):
-        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx, start_tread
+        global rh, cr, s_ch1, s_ch2, s_c, start, upd, stop_chx
+        global start_rh_test, start_tread, ctr_upd
 
-        upd = False
+        start_rh_test = upd = False
         start = True
         start_tread = True
 
@@ -223,10 +250,11 @@ class MainWindow(QMainWindow):
         self.spinBox_ma_2.setValue(0)
         self.update_var()
         upd = start = False
+        ctr_upd = 0
 
     def btn_stop_ch1(self):
-        global upd, start, stop_chx
-        upd = stop_chx = False
+        global upd, start, stop_chx, start_rh_test
+        start_rh_test = upd = stop_chx = False
         start = True
 
         self.spinBox_ma_1.setValue(0)
@@ -234,8 +262,8 @@ class MainWindow(QMainWindow):
         upd = start = False
 
     def btn_stop_ch2(self):
-        global upd, start, stop_chx
-        upd = stop_chx = False
+        global upd, start, stop_chx, start_rh_test
+        start_rh_test = upd = stop_chx = False
         start = True
 
         self.spinBox_ma_2.setValue(0)
@@ -268,8 +296,32 @@ class MainWindow(QMainWindow):
     def btn_fil_plot():
         plot_and_filt()
 
+    def ramp_check(self):
+        global ch1, ch2
+
+        ch1.ri = self.spinBox_ri_1.value()
+        ch1.rf = self.spinBox_rf_1.value()
+        ch2.ri = self.spinBox_ri_2.value()
+        ch2.rf = self.spinBox_rf_2.value()
+
+        ch1.tn = self.spinBox_tn_1.value()
+        ch2.tn = self.spinBox_tn_2.value()
+
+        # parameters for channel 1 = 4
+        if (ch1.ri + ch1.rf) > ch1.tn:
+            self.message_box(1)
+
+        # parameters for channel 1 = 4
+        if (ch2.ri + ch2.rf) > ch2.tn:
+            self.message_box(2)
+
+        self.update_var()
+
     def upd_terminal(self, msn):
         self.lineEdit_terminal.setText(msn)
+
+    def upd_lcdNumber(self, msn):
+        self.lcdNumber.display(msn)
 
     def upd_val_rh(self, new_val_rh):
         self.spinBox_limit_ini_mA.setValue(new_val_rh)
@@ -287,14 +339,18 @@ class MainWindow(QMainWindow):
         # for channel 1
         ch1.tn = self.spinBox_tn_1.value()
         ch1.tf = self.spinBox_tf_1.value()
-        ch1.r = self.spinBox_r_1.value()
+        ch1.ri = self.spinBox_ri_1.value()
+        ch1.rf = self.spinBox_rf_1.value()
         ch1.ma = self.spinBox_ma_1.value()
+        ch1.tn = ch1.tn - (ch1.ri + ch1.rf)
 
         # for channel 2
         ch2.tn = self.spinBox_tn_2.value()
         ch2.tf = self.spinBox_tf_2.value()
-        ch2.r = self.spinBox_r_2.value()
+        ch2.ri = self.spinBox_ri_2.value()
+        ch2.rf = self.spinBox_rf_2.value()
         ch2.ma = self.spinBox_ma_2.value()
+        ch2.tn = ch2.tn - (ch2.ri + ch2.rf)
 
         # limits for tests
         limit_ma_ini = self.spinBox_limit_ini_mA.value()
@@ -304,11 +360,10 @@ class MainWindow(QMainWindow):
         # general parameters = 3
         msg = str(ts) + cs + str(freq) + cs + str(pw)
 
-        # parameters for channel 1 = 4
-        msg = msg + cs + str(ch1.tn) + cs + str(ch1.tf) + cs + str(ch1.r) + cs + str(ch1.ma)
+        msg = msg + cs + str(ch1.tn) + cs + str(ch1.tf) + cs + str(ch1.ri) + cs + str(ch1.rf) + cs + str(ch1.ma)
 
         # parameters for channel 2 = 4
-        msg = msg + cs + str(ch2.tn) + cs + str(ch2.tf) + cs + str(ch2.r) + cs + str(ch2.ma)
+        msg = msg + cs + str(ch2.tn) + cs + str(ch2.tf) + cs + str(ch2.ri) + cs + str(ch2.rf) + cs + str(ch2.ma)
 
         # parameters for tests = 2
         msg = msg + cs + str(limit_ma_ini) + cs + str(limit_ma_fin) + cs + str(limit_pw) + cs
@@ -361,6 +416,27 @@ class MainWindow(QMainWindow):
             print("Excitability tests start")
         else:
             print("Solo mode:   " + msg + "<<<<")
+
+    def message_box(self, sel):
+        global msg
+        msg = ""
+        if sel == 1:
+            QMessageBox.about(self, "Error", "Ramp value erro")
+            if ch1.ri > ch1.rf:
+                ch1.ri = ch1.ri - 0.5
+                self.spinBox_ri_1.setValue(ch1.ri)
+            else:
+                ch1.rf = ch1.rf - 0.5
+                self.spinBox_rf_1.setValue(ch1.rf)
+
+        if sel == 2:
+            QMessageBox.about(self, "Error", "Ramp value erro")
+            if ch2.ri > ch2.rf:
+                ch2.ri = ch2.ri - 0.5
+                self.spinBox_ri_2.setValue(ch2.ri)
+            else:
+                ch2.rf = ch2.rf - 0.5
+                self.spinBox_rf_2.setValue(ch2.rf)
 
 
 def read_serial(port, baud):
@@ -436,7 +512,7 @@ def read_serial2(port, baud):
             while start_thread_a is False:
                 pass
 
-            ser2.write(msg_bytes)
+            # ser2.write(msg_bytes)
             print("Start capture for Accelerometer data")
             while start_thread_a:
                 c = ser2.readline()
@@ -445,7 +521,7 @@ def read_serial2(port, baud):
                         str_msn = c.decode("utf-8")
                         str_msn = str_msn.rstrip()
                         print(str_msn)
-                        if str_msn == '>':
+                        if str_msn == '>': # para terminar captura
                             start_thread_a = False
                             print("End capture about Accelerometer data")
                         else:
@@ -464,10 +540,60 @@ def read_serial2(port, baud):
     print("End Thread Acel data2")
 
 
+def read_serial3(port, baud):
+    global msg_bytes, arrayt
+    global start_thread_s
+
+    arrayt = []  # array for stim data
+
+    ser = serial.Serial()
+    ser.port = port
+    ser.timeout = 1
+    ser.baudrate = baud
+    ser.xonxoff = 1
+
+    try:
+        ser.open()
+    except Exception as e:
+        print("Error open serial port: " + str(e) + " En -- read_serial --")
+        exit()
+
+    if ser.isOpen():
+        try:
+            while start_thread_s is False:
+                pass
+
+            ser.write(msg_bytes)
+            print("Start capture for Stim data")
+            while start_thread_s is True:
+                c = ser.readline()
+                with lock:
+                    if len(c) > 0:
+                        str_msn = c.decode("utf-8")
+                        str_msn = str_msn.rstrip()
+                        print(str_msn)
+                        if str_msn == '>':
+                            start_thread_s = False
+                            print("End capture about Stim data")
+                        else:
+                            arrayt.append(str_msn)
+            ser.close()
+
+        except Exception as e1:
+            print("Error communicating...: " + str(e1) + "En -- read_serial --")
+
+    else:
+        print("Cannot open serial port " + str(port) + "En -- read_serial --")
+        exit()
+
+    save_data()  # Thread for acel data
+    print("End Thread Acel data")
+
+
 def save_data():
     global arrayt, rh, cr, name_file, file_name_out_s
-
-    if rh is True:
+    rh1 = True
+    if rh1 is True:
         if name_file is True:
             hora = time.strftime("%H")
             n_dia = time.strftime("%a")
@@ -486,7 +612,7 @@ def save_data():
         else:
             file_name_out_s = 'stim_c.txt'
 
-    stim = open(file_name_out_s, 'w')
+    stim = open(file_name_out_s, 'w+')
 
     for x in arrayt:
         if rh is True:
@@ -506,9 +632,11 @@ def save_data():
 def save_data2():
     global arrayt2, rh, cr, cont_fig, plot_show, sel_test, file_name_out_a
     # global rh_acx, rh_acy, rh_acz, cr_acx, cr_acy, cr_acz
-    global name_file
+    global name_file, ctrl_ch1_rh
 
-    if rh is True:
+    rh1 = True
+
+    if rh1 is True:
         if name_file is True:
             hora = time.strftime("%H")
             n_dia = time.strftime("%a")
@@ -554,9 +682,10 @@ def save_data2():
 
     print("End generation of Acel file")
     ex.upd_terminal("End generation of Acel file, (Plot enable)")
+    ctrl_ch1_rh = False
 
 
-def stim_training():
+def stim_training():  # Function for training
     global serPort1, serPort2, baudRate, msg_bytes, start, start_tread
 
     if start_tread is True:
@@ -590,7 +719,7 @@ def stim_training():
 
 
 def read_while_stim(port, baud):
-    global start, start_receiver, ts, start_tread
+    global start, start_receiver, ts, start_tread, start_rh_test, ntrain
 
     start_receiver = True
     cont = 0
@@ -601,6 +730,18 @@ def read_while_stim(port, baud):
     ser.baudrate = baud
     ser.xonxoff = 1
 
+    # Training data
+    hora = time.strftime("%H")
+    n_dia = time.strftime("%a")
+    dia = time.strftime("%d")
+    mm = time.strftime("%M")
+    # Name for training file
+    file_training = 'Treinamento'+ str(ntrain)+ ' ' + n_dia + ' ' + dia + ' ' + hora + 'h' + mm + '.csv'
+    # Basic name
+    # file_training = "Treinamento" + str(ntrain) + ".txt"
+
+    stim_tr = open(file_training, 'w')
+
     try:
         ser.open()
     except Exception as e:
@@ -610,25 +751,45 @@ def read_while_stim(port, baud):
 
     if ser.isOpen():
         try:
+            rest = ts - cont
             print("Count Minutes")
-            print("Remaining minutes: " + str(ts - cont))
-            ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+            print("Remaining minutes: " + str(rest))
+            ex.upd_terminal("Remaining minutes: " + str(rest))
+            ex.upd_lcdNumber(rest)
             while start_receiver is True:
                 c = ser.readline()
                 if len(c) > 0:
                     str_msn = c.decode("utf-8")
                     str_msn = str_msn.rstrip()
-                    print(str_msn)
-                    if str_msn == "f":
-                        start_receiver = False
-                        print("End therapy time")
-                        ex.upd_terminal("End therapy time")
-                    else:
+                    # print(str_msn)
+                    cont_min = str_msn.find("T")
+
+                    if cont_min == 0:  # para T cuando es igual en el primer caratcer
+                        print("Llegó un minuto")
                         cont = cont + 1
                         print("Remaining minutes: " + str(ts - cont))
                         ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+                        ex.upd_lcdNumber(ts - cont)
+                    elif cont_min == -1:  # cuando es diferente de t
+                        cont_min = str_msn.find(";") # la coma da un valor mayor que cero
+                        if cont_min > 0:
+                            stim_tr.write(str_msn)
+                            stim_tr.write("\n")
+                            print(str_msn)
+                        elif str_msn == "f":
+                            start_receiver = False
+                            print("End therapy time")
+                            ex.upd_terminal("End therapy time")
+
+                    """else:
+                        cont = cont + 1
+                        print("Remaining minutes: " + str(ts - cont))
+                        ex.upd_terminal("Remaining minutes: " + str(ts - cont))
+                        ex.upd_lcdNumber(ts - cont)"""
 
             ser.close()
+            stim_tr.close()
+            ntrain = ntrain + 1
             start_tread = True
             ex.upd_terminal("End therapy time")
 
@@ -636,6 +797,10 @@ def read_while_stim(port, baud):
             print("Error communicating...: " + str(e1) + " En -- read_while_stim --")
 
         ex.upd_terminal("Ends Stimulation ...")
+        ex.upd_lcdNumber(0)
+
+        if start_rh_test is True:
+            ex.btn_start_rh()
 
 
 # Create two threads as follows
@@ -660,12 +825,14 @@ def start_test():
 
 def plot_and_filt():
     global arrayt, arrayt2, rh, cr, plot_xyz, file_name_out_a, file_name_out_s
-
     global rh_acx, rh_acy, rh_acz, cr_acx, cr_acy, cr_acz
+
+    data = ""
+    data_s = ""
 
     # aqui testo las saludas
     # rh = False
-    # rh = True
+    rh = True
 
     if rh is True:
         print("Vamos plotar para Reobase")
@@ -709,9 +876,9 @@ def plot_and_filt():
     eje_y = eje_y / bits_dac
     eje_z = eje_z / bits_dac
 
-    eje_x2 = eje_x**2
-    eje_y2 = eje_y**2
-    eje_z2 = eje_z**2
+    eje_x2 = eje_x ** 2
+    eje_y2 = eje_y ** 2
+    eje_z2 = eje_z ** 2
 
     xyz = eje_x2 + eje_y2 + eje_z2
     # Magnitude of the resulting vector
@@ -730,7 +897,7 @@ def plot_and_filt():
     lin_thsdxyz = np.ones((n, 1)) * (med_xyz + thsdxyz)
 
     # Plot the threshold signal
-    plt.plot(t, lin_thsdxyz, 'b')
+    plt.plot(t, lin_thsdxyz, 'y', label='Threshold')
     if plot_xyz is True:
         plt.plot(t, eje_x, 'b')
         plt.plot(t, eje_y, 'b')
@@ -743,10 +910,10 @@ def plot_and_filt():
     order = 10
 
     acxyz_fil = butter_lowpass_filter(eje_xyz, cut_off, fs, order)
-    plt.plot(t, acxyz_fil, 'r', linewidth=1)
+    plt.plot(t, acxyz_fil, 'r', linewidth=1, label='Butterworth Filter Accel Signal')
 
     xyz_mf = medfilt(eje_xyz, 5)
-    plt.plot(t, xyz_mf, 'y', linewidth=1)
+    plt.plot(t, xyz_mf, 'b', linewidth=1, label='Median Filter Accel signal')
 
     val_max = np.max(acxyz_fil)
     print("Valor maximo del vector: " + str(val_max))
@@ -768,6 +935,12 @@ def plot_and_filt():
     # data_s = np.loadtxt(file, delimiter=';')
     data_ma = data_s[:, 1]
     max_ma = np.max(data_ma)
+    min_ma = data_ma[1]
+
+    if min_ma == 1:
+        min_ma = 0
+    else:
+        min_ma = min_ma - 1
 
     # split stimulation signal
     div = val_max / max_ma
@@ -776,7 +949,7 @@ def plot_and_filt():
     c1 = 0
 
     if cr is True:
-       div_signal = val_max
+        div_signal = val_max
 
     for i in range(n):
         # contar milies
@@ -795,7 +968,7 @@ def plot_and_filt():
 
     # Stimulation signal
     # plt.plot(t, signal_pulse[i], 'g')
-    plt.plot(t, new_stim_signal, 'g')
+    plt.plot(t, new_stim_signal, 'g', label='Stim signal')
 
     # plt.title = 'Acceleration magnitude resulting from the XYZ axis'
     # plt.xlabel = 'time (s)'
@@ -804,17 +977,26 @@ def plot_and_filt():
     # Spike detection
     th = med_xyz + thsdxyz
 
+    # indice de interceptacion y valor en miliaps
+    indx_x = 0
+    indx_y = 0
+    val_int_str = ""
+
     if rh is True:
         for j in range(500, n):
             # contar milies
-            val_ac = acxyz_fil[j]
+            # val_ac = acxyz_fil[j]
+            val_ac = xyz_mf[j]
             if val_ac >= th:
                 print("Indice de interceptacion: " + str(j))
+                indx_x = j
                 val_int = new_stim_signal[j]
                 val_int = int(val_int / div)
-                print("Div miliamps: " + str(val_int))
+                val_int_str = str(int(val_int + min_ma))
+                print("Div miliamps: " + val_int_str)
+                indx_y = val_ac
                 if val_int > 0:
-                    #val_int = val_int + 1
+                    val_int = val_int
                     break
     elif cr is True:
         c_dx = 0  # contador de delta x
@@ -829,20 +1011,28 @@ def plot_and_filt():
         for j in range(3000, n):
             val_ac = acxyz_fil[j]
             if val_ac >= th:
+                print("Valor de x: ")
+                print(j)
                 print("Indice de interceptacion: " + str(j))
                 val_int = new_stim_signal[j]
                 val_int = int(val_int / div)
                 print("Div miliamps: " + str(val_int))
                 if val_int > 0:
-                    #val_int = val_int + 1
+                    # val_int = val_int + 1
                     break
 
+    plt.plot(indx_x, indx_y + (indx_y / 40), marker=11)
+
+    plt.text(indx_x, indx_y + (indx_y / 30), val_int_str, fontsize=16, color='r')
 
     print("Ends plot desde archivo para aceleracion")
-    val_int = 4;
-    ex.upd_val_rh(val_int*2)
+    val_int = 1
+    ex.upd_val_rh(val_int * 2)
     ex.upd_terminal("Valor de Reobase: " + str(val_int) + " Setando: " + str(val_int * 2))
+    plt.legend(loc=2)
     plt.show()
+
+    ## para leer el valor de la celula de carga
 
 
 def butter_lowpass(cut_off, fs, order=5):
