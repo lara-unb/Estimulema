@@ -3,13 +3,13 @@ close all
 clear
 
 figure();
-subplot(311);
+% subplot(311);
 title('Load Cell values');
 hold on
 x = 3;
 
 total = 13;
-pd = zeros(1,total);
+pd = zeros(total,1);
 
 for R = 1:total
 
@@ -22,7 +22,7 @@ for R = 1:total
     
 %     str_lb = "Gra: " + int2str(R);
 %     legend(str_lb)
-    pause(1);
+%     pause(1);
 %     if R > x
 %         %str_lb = "Gra: " + int2str(R);
 %         legend("1", "2", "3", "4")
@@ -33,12 +33,19 @@ for R = 1:total
 end
 
 tex = csvread('tex.txt');
-subplot(312);
+ptex = tex(1:length(tex)-1);
+
+% subplot(312);
+figure();
 plot(pd);
 title('Peak force values');
-subplot(313);
+% subplot(313);
+figure();
 plot(tex);
 title('Rheobase values');
+
+figure();
+plot(ptex, pd);
 
 
 
@@ -51,11 +58,11 @@ for R = 1:total
 %     force1 = csvread(str_txt);
     rr = findpeaks(force1(), 'MinPeakDistance', 100);
     pd(R,1) = max(rr);
-    plot(force1)
+%     plot(force1)
     
 %     str_lb = "Gra: " + int2str(R);
 %     legend(str_lb)
-    pause(1);
+%     pause(1);
 %     if R > x
 %         %str_lb = "Gra: " + int2str(R);
 %         legend("1", "2", "3", "4")

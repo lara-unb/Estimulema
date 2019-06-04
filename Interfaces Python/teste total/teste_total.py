@@ -502,6 +502,7 @@ def read_serial_acel(port, baud):
                                 print("Vibracion detectada en " + str(ct_ma) + " mA")
                                 tex_values.append(ct_ma)
                                 ser2.write(str.encode("f"))
+                                tex_values.close
                                 ser2.close()
 
                             #print("Valor de xyz: " + str(xyz))

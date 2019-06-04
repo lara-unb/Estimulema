@@ -1,5 +1,5 @@
 clc
-close all
+% close all
 clear
 
 figure();
@@ -9,7 +9,7 @@ hold on
 x = 3;
 
 total = 6;
-pd = zeros(1,total);
+pdlc = zeros(1,total);
 
 for R = 1:total
 
@@ -17,7 +17,7 @@ for R = 1:total
     %force1 = textread(str_txt,'','delimiter', ';');
     force1 = csvread(str_txt);
     rr = findpeaks(force1, 'MinPeakDistance', 100);
-    pd(R,1) = max(rr);
+    pdlc(R,1) = max(rr);
     plot(force1)
     
 %     str_lb = "Gra: " + int2str(R);
@@ -33,14 +33,16 @@ for R = 1:total
 end
 
 tex = csvread('tex.txt');
+ptex = tex(1:length(tex)-1);
 subplot(312);
-plot(pd);
+plot(pdlc);
 title('Peak force values');
 subplot(313);
 plot(tex);
 title('Rheobase values');
 
-
+total = 6;
+pdtex = zeros(1,total);
 
 for R = 1:total
 
@@ -50,7 +52,7 @@ for R = 1:total
     
 %     force1 = csvread(str_txt);
     rr = findpeaks(force1(), 'MinPeakDistance', 100);
-    pd(R,1) = max(rr);
+    pdtex(R,1) = max(rr);
     plot(force1)
     
 %     str_lb = "Gra: " + int2str(R);

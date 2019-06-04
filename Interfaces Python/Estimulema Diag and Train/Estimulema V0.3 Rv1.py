@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import serial
-import threadingr
+import threading
 import numpy as np
 import time
 from scipy.signal import butter, lfilter, medfilt

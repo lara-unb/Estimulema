@@ -1,0 +1,189 @@
+35  tex = csvread('tex.txt');
+45  title('Rheobase values');
+47  figure();
+K>> x = [1:12];
+K>> .
+ .
+ ↑
+Error: Invalid use of operator.
+ 
+K>> forca = fit(x, pd, poly2);
+Undefined function or variable 'poly2'.
+ 
+Did you mean:
+K>> forca = fit(x, pd, 'poly2');
+Error using fit>iFit (line 135)
+X must be a matrix with one or two columns.
+
+Error in fit (line 116)
+[fitobj, goodness, output, convmsg] = iFit( xdatain, ydatain, fittypeobj, ...
+ 
+K>> forca = fit(x', pd, 'poly2');
+Error using fit>iFit (line 143)
+X and Y must have the same number of rows.
+
+Error in fit (line 116)
+[fitobj, goodness, output, convmsg] = iFit( xdatain, ydatain, fittypeobj, ...
+ 
+K>> x = [1:13];
+K>> forca = fit(x', pd, 'poly2');
+K>> plot(forca)
+K>> hold on
+K>> plot(pd)
+K>> plot(x, pd)
+K>> close all, forca = fit(pd, x', 'poly2');
+K>> plot(forca)
+K>> hold on
+K>> plot(x, pd)
+K>> load = fit(ptex, x', 'poly2');
+K>> figure
+K>> plot(load)
+K>> load = fit(x', ptex, 'poly2');
+K>> plot(load)
+K>> x
+
+x =
+
+     1     2     3     4     5     6     7     8     9    10    11    12    13
+
+K>> x'
+
+ans =
+
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+    10
+    11
+    12
+    13
+
+K>> load = fit(x, ptex', 'poly2');
+Error using fit>iFit (line 135)
+X must be a matrix with one or two columns.
+
+Error in fit (line 116)
+[fitobj, goodness, output, convmsg] = iFit( xdatain, ydatain, fittypeobj, ...
+ 
+K>> load = fit(x', ptex', 'poly2');
+Error using fit>iFit (line 139)
+Y must be a column vector.
+
+Error in fit (line 116)
+[fitobj, goodness, output, convmsg] = iFit( xdatain, ydatain, fittypeobj, ...
+ 
+K>> load = fit(x', ptex, 'poly2');
+K>> load
+
+load = 
+
+     Linear model Poly2:
+     load(x) = p1*x^2 + p2*x + p3
+     Coefficients (with 95% confidence bounds):
+       p1 =    -0.01998  (-0.07496, 0.035)
+       p2 =       1.071  (0.2799, 1.862)
+       p3 =       15.84  (13.43, 18.25)
+K>> hold on
+K>> plot(ptex)
+K>> load = fit(ptex, x', 'poly2');
+K>> plot(load)
+K>> close figura 2
+K>> plot(load)
+K>> load = fit(x', ptex, 'poly2');
+K>> plot(load)
+K>> plot(ptex)
+K>> loadD = load([1:1:12]);
+K>> loadD
+
+loadD =
+
+   16.8901
+   17.9011
+   18.8721
+   19.8032
+   20.6943
+   21.5455
+   22.3566
+   23.1279
+   23.8591
+   24.5504
+   25.2018
+   25.8132
+
+K>> forcaD = forca([1:1:12])
+
+forcaD =
+
+   13.8561
+   11.1710
+    8.7984
+    6.7384
+    4.9910
+    3.5561
+    2.4338
+    1.6240
+    1.1268
+    0.9422
+    1.0701
+    1.5107
+
+K>> figure()
+K>> plot(loadD,forcaD);
+K>> hold on
+K>> plot(ptex,pd)
+K>> load
+
+load = 
+
+     Linear model Poly2:
+     load(x) = p1*x^2 + p2*x + p3
+     Coefficients (with 95% confidence bounds):
+       p1 =    -0.01998  (-0.07496, 0.035)
+       p2 =       1.071  (0.2799, 1.862)
+       p3 =       15.84  (13.43, 18.25)
+K>> forca
+
+forca = 
+
+     Linear model Poly2:
+     forca(x) = p1*x^2 + p2*x + p3
+     Coefficients (with 95% confidence bounds):
+       p1 =      0.1563  (0.0674, 0.2452)
+       p2 =      -3.154  (-4.284, -2.024)
+       p3 =       16.85  (14.02, 19.69)
+K>> rel = fit(loadD, forcaD,'poly2')
+
+rel = 
+
+     Linear model Poly2:
+     rel(x) = p1*x^2 + p2*x + p3
+     Coefficients (with 95% confidence bounds):
+       p1 =      0.1928  (0.1715, 0.2142)
+       p2 =      -9.689  (-10.61, -8.772)
+       p3 =       122.8  (113.1, 132.5)
+K>> rel2 = fit(tex, pd,'poly2')
+Error using fit>iFit (line 143)
+X and Y must have the same number of rows.
+
+Error in fit (line 116)
+[fitobj, goodness, output, convmsg] = iFit( xdatain, ydatain, fittypeobj, ...
+ 
+K>> rel2 = fit(ptex, pd,'poly2')
+
+rel2 = 
+
+     Linear model Poly2:
+     rel2(x) = p1*x^2 + p2*x + p3
+     Coefficients (with 95% confidence bounds):
+       p1 =     0.04849  (0.002633, 0.09434)
+       p2 =      -2.888  (-4.855, -0.9212)
+       p3 =       44.16  (23.31, 65)
+K>> hold on
+K>> plot(rel2)
+K>> 
