@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teste_total.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="220">
+              <caret line="597" column="15" lean-forward="true" selection-start-line="597" selection-start-column="15" selection-end-line="597" selection-end-column="15" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -23,10 +23,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python/EstimuladorV1 Rv0.py">
+        <entry file="file://$PROJECT_DIR$/../../Gits/Estimulema Diag and Train/Estimulema V0.3 Rv1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="104">
+              <caret line="607" column="39" selection-start-line="607" selection-start-column="39" selection-end-line="607" selection-end-column="39" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -45,9 +45,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stim_training</find>
-      <find>update_var</find>
-      <find>start_test</find>
       <find>read_serial</find>
       <find>upd_terminal</find>
       <find>txt</find>
@@ -69,7 +66,15 @@
       <find>start_thread_load</find>
       <find>start_thread_stim</find>
       <find>stim</find>
+      <find>calibr</find>
+      <find>ths_tex</find>
+      <find>medi</find>
+      <find>plot</find>
+      <find>plot_</find>
+      <find>cal_std</find>
+      <find>open</find>
       <find>tex_values</find>
+      <find>tex_max</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -81,23 +86,33 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="450" />
+    <option name="y" value="-11" />
+    <option name="width" value="652" />
+    <option name="height" value="445" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="teste total" type="b2602c69:ProjectViewProjectNode" />
+              <item name="teste total" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python/EstimuladorV1 Rv0.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Gits/Estimulema Diag and Train/Estimulema V0.3 Rv1.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -112,29 +127,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.teste_total">
+  <component name="RunManager" selected="Python.Estimulador V2">
     <configuration name="Estimulador V2" type="PythonConfigurationType" factoryName="Python">
-      <module name="teste total" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\Asus_Meduag\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python/EstimuladorV1 Rv0.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="char" type="PythonConfigurationType" factoryName="Python">
       <module name="teste total" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,7 +172,6 @@
     </configuration>
     <list>
       <item itemvalue="Python.Estimulador V2" />
-      <item itemvalue="Python.char" />
       <item itemvalue="Python.teste_total" />
     </list>
   </component>
@@ -196,11 +189,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15178572" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15178572" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -208,7 +201,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3584288" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.42716858" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.30441898" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -234,20 +227,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Gits/Estimulema Diag and Train/Estimulema V0.3 Rv1.py">
+    <entry file="file://$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python/EstimuladorV1 Rv0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="419" column="13" selection-start-line="419" selection-start-column="8" selection-end-line="419" selection-end-column="13" />
+        <state relative-caret-position="-2090">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Gits/EstimuladorV1/GUI Qt y Python/EstimuladorV1 Rv0.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="147">
+          <caret line="3229" selection-start-line="3229" selection-end-line="3229" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/scipy/signal/signaltools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="903" selection-start-line="903" selection-end-line="903" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Gits/Estimulema Diag and Train/Estimulema V0.3 Rv1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="607" column="39" selection-start-line="607" selection-start-column="39" selection-end-line="607" selection-end-column="39" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -256,8 +263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/teste_total.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="220">
+          <caret line="597" column="15" lean-forward="true" selection-start-line="597" selection-start-column="15" selection-end-line="597" selection-end-column="15" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

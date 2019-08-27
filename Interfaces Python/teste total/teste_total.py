@@ -5,9 +5,9 @@ import serial
 import threading
 import time
 import numpy as np
-from scipy.signal import butter, lfilter
-from os import remove
+from scipy.signal import butter, lfilter, medfilt
 import matplotlib.pyplot as plt
+
 
 __author__ = 'Miguel Gutierrez'
 
@@ -26,10 +26,9 @@ else:
     serPort2 = "COM4"  # Accel
     serPort3 = "COM11"  # load  >>> ver no nipo
 
-tex_min = 5
-tex_max = 30
-# exemplo 2>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>1>5>500>0>0>0>0>0>1>
-tex = ""
+# Valores iniciales para Teste de excitabilidade
+tex_min = 10
+tex_max = 20
 
 # Variaveis estimulacion
 ts = 1
@@ -37,9 +36,12 @@ fq = 50
 pw = 500
 tn = 5
 tf = 5
-ru = 0.5
-rd = 0.5
-ma = 50
+ru = 1
+rd = 1
+ma = 46
+
+# exemplo 2>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>1>5>500>0>0>0>0>0>1>
+tex = ""
 
 # exemplo 2.0>50>500>1.0>5>2.0>2.0>10>4.0>1>0.5>0.5>0>1>5>500>0>0>1>0>1>0>
 tng = ""
@@ -163,6 +165,7 @@ class MainWindow(QMainWindow):
 
         self.thread_view()
         time.sleep(1)
+        tex_max = tex_min + 10
 
         tex = "2>50>500>1.0>5>2.0>2.0>0>4.0>1>0.5>0.5>0>" \
               + str(tex_min) + \
@@ -463,6 +466,7 @@ def read_serial_acel(port, baud):
                         str_msn2 = ca.decode("utf-8")
                         str_msn2 = str_msn2.rstrip()
                         # print("RAW > " + str(ct) + " " + str_msn2)
+                        # problema en valor 31 porque? no sei
                         ct = ct + 1
                         if ct == 31:
                             print("RAW > " + str(ct) + " " + str_msn2)
@@ -470,39 +474,57 @@ def read_serial_acel(port, baud):
                         else:
                             str_t = str_msn2
 
-                        if cal_tex is False:
-                            acel_data = np.fromstring(str_msn2, dtype=int, sep=";")
+                        if cal_tex is False: ## no es calibracion y si teste de exitabilidade
+                            acel_data = np.fromstring(str_msn2, dtype=int, sep=";") # convierte y separa
 
                             # Normalize the axis from digital to g(m/s^2)
+                            # eje_x = medfilt(eje_x, 5)
+                            # normaliza y filtra
+
                             eje_x = acel_data[1] / bits_dac
                             eje_y = acel_data[2] / bits_dac
                             eje_z = acel_data[3] / bits_dac
+
+                            """eje_x = medfilt(acel_data[1], 9) / bits_dac
+                            eje_y = medfilt(acel_data[2], 9) / bits_dac
+                            eje_z = medfilt(acel_data[3], 9) / bits_dac"""
+
+                            #print("X: " + str(eje_x) + "\tY: " + str(eje_y) + "\tZ: " + str(eje_z))
+
                             sinal = acel_data[4]
 
-                            if sinal == 1 and ctr1 == 0:
+                            if sinal == 1 and ctr1 == 0: # comienza en el control
                                 ctr1 = 1
 
-                            if sinal == 0 and ctr1 == 1:
+                            if sinal == 0 and ctr1 == 1: # control es igual a 1
                                 ct_ma = ct_ma + 1
                                 ctr1 = 0
 
-                            eje_x2 = eje_x ** 2
-                            eje_y2 = eje_y ** 2
-                            eje_z2 = eje_z ** 2
-
                             # Magnitude of the resulting vector
-                            xyz = np.sqrt(eje_x2 + eje_y2 + eje_z2)
-                            xyz = xyz - med_tex
+                            xyz = np.sqrt((eje_x ** 2) + (eje_y ** 2) + (eje_z ** 2))
+                            xyz = xyz - med_tex  # elimino la media y normalizo a cero
 
+                            #print("Detectando vibracion")
+                            #print("XYZ =" + str(xyz))
+                            #print("Ths tex =" + str(ths_tex))
+
+
+                            # verifico que lo ha llegado en el
                             if xyz > ths_tex and stim is False and sinal == 1:
+                                #print("Detectando vibracion")
+                                #print("XYZ =" + str(xyz))
+                                #print("Ths tex =" + str(ths_tex))
                                 start_thread_acel = False
                                 ex.btn_stop()
                                 tex_min = ct_ma - 1
+                                if tex_min < 0:
+                                    tex_min = 1
                                 tex_max = ct_ma + 10
                                 print("Vibracion detectada en " + str(ct_ma) + " mA")
+                                ## Aqui salvo o valor numerico resultado do teste de exitabilidade
+                                ## e paro o teste
                                 tex_values.append(ct_ma)
                                 ser2.write(str.encode("f"))
-                                tex_values.close
                                 ser2.close()
 
                             #print("Valor de xyz: " + str(xyz))
@@ -514,6 +536,7 @@ def read_serial_acel(port, baud):
                             start_thread_load = False
                             print("End capture about Acel data en send Value for end load cell capture data")
                         else:
+                            # salvo no array os dados do acelerometro no treinamento
                             array_acel.append(str_msn2)
             ser2.close()
 
@@ -525,7 +548,7 @@ def read_serial_acel(port, baud):
         exit()
 
     # start_thread_load = False  #  Funcionando
-    save_data_acel()  # Thread for acel data
+    save_data_acel()  # array acel data para arquivo txt
 
     print("End Thread Acel data")
 
@@ -534,7 +557,7 @@ def read_serial_acel(port, baud):
         start_stim_seq = True
 
 
-# salva los datos del stim
+# salva los datos do acel tanto para acel em treinamento como para acel em teste de excitabilidade
 def save_data_acel():
     global array_acel, cal_tex, seq_name
 
@@ -571,17 +594,13 @@ def save_data_acel():
 def cal_std(name_file_cal):
     global med_tex, ths_tex, val_std, array_acel, start_tex_seq
 
-    """c = 1
-    for x in array_acel:
-        print(str(c) + x)
-        c = c + 1"""
-
     data = []
     val = False
 
+    # verifico se o aquivo existe e pode ser lido
     try:
         data = np.loadtxt(name_file_cal, delimiter=';')
-        val = True
+        val = True  # passo para o calculo do threshold
     except Exception as e:
         print("Error: " + str(e) + " in --" + name_file_cal + " El archivo esta con error")
         val = False
@@ -589,10 +608,15 @@ def cal_std(name_file_cal):
     if len(data) == 0:
         print("Lista vacia: " + str(data.all()))
 
+    ndr = 9
+
     if val is True:
         eje_x = data[:, 1]
+        eje_x = medfilt(eje_x, ndr)
         eje_y = data[:, 2]
+        eje_y = medfilt(eje_y, ndr)
         eje_z = data[:, 3]
+        eje_z = medfilt(eje_z, ndr)
         signal_pulse = data[:, 4]
 
         n = len(signal_pulse)  # Tamanho del vector
@@ -614,6 +638,8 @@ def cal_std(name_file_cal):
         # Magnitude of the resulting vector
         eje_xyz = np.sqrt(xyz)
 
+        plt.plot(t, eje_xyz, 'y')
+
         # take 500 samples to calculate the average value
         med_xyz = np.mean(eje_xyz)
         med_tex = med_xyz
@@ -621,6 +647,7 @@ def cal_std(name_file_cal):
         eje_xyz = eje_xyz - med_xyz
 
         std_xyz = np.std(eje_xyz)
+
         print("La desviacion standard es: " + str(std_xyz))
 
         # Threshold calculation based on standard deviations
@@ -632,35 +659,30 @@ def cal_std(name_file_cal):
         print("End Thread Calibration process")
         start_tex_seq = True
 
-        """
-        # linea del threshold
+        # Aqui filtra y mujestra
+        #xyz = np.sqrt((eje_x ** 2) + (eje_y ** 2) + (eje_z ** 2))
+
+        n = len(signal_pulse)
+
+        num_std = 6
+        thsdxyz = num_std * std_xyz
         lin_thsdxyz = np.ones((n, 1)) * thsdxyz
 
-        # Parameters used in the filter
-        cut_off = 30
-        fs = round(n / 2)
-        order = 10
+        plt.figure()
+        t = np.arange(0, n)
+        plt.plot(t, eje_x, 'b')
+        plt.plot(t, eje_y, 'r')
+        plt.plot(t, eje_z, 'g')
 
-        acxyz_fil = butter_lowpass_filter(eje_xyz, cut_off, fs, order)
-        # plt.plot(t, acxyz_fil, 'r', linewidth=1, label='Butterworth Filter Accel Signal')
-
-        plt.figure(1)
-
-        plt.subplot(211)
-        plt.title = '2s of gross Acceleration Data for calibration'
-        plt.xlabel = 'time (ms)'
-        plt.ylabel = 'm/s^2 - median data'
+        plt.figure()
+        plt.plot(t, eje_xyz, 'b')
         plt.plot(t, lin_thsdxyz, 'y', label='Threshold')
-        plt.plot(t, eje_xyz, 'b', linewidth=0.5)
-        print("Valor del desvio: " + str(thsdxyz))
-
-        plt.subplot(212)
-        plt.plot(t, lin_thsdxyz, 'y', label='Threshold')
-        plt.plot(t, acxyz_fil, 'b', linewidth=0.5)
-        print("Valor del desvio: " + str(med_xyz + thsdxyz))
 
         plt.show()
-        stop_stim()"""
+
+        """plt.figure()
+        plt.plot(t, eje_xyz, 'b')
+        plt.show()"""
 
 
 def butter_lowpass_filter(data, cut_off, fs, order=5):
